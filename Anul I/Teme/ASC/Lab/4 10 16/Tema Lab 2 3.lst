@@ -1,0 +1,28 @@
+     1                                  ; adunări, scaderi - word
+     2                                  ; 26. (a + c) - (b + b + d)
+     3                                  
+     4                                  bits 32
+     5                                  global start
+     6                                  extern exit
+     7                                  import exit msvcrt.dll
+     8                                  segment data use32 class=data
+     9                                  
+    10 00000000 0A00                    	a DW 10
+    11 00000002 0300                    	b DW 3
+    12 00000004 0200                        c DW 2
+    13 00000006 0100                        d DW 1
+    14                                      
+    15                                  segment code use32 class=code
+    16                                  	start:
+    17                                  	
+    18 00000000 66A1[00000000]          	mov AX, [a]; AX <- a = 10
+    19 00000006 660305[04000000]            add AX, [c]; AX <- AX + c = 10 + 2 = 12
+    20                                      
+    21 0000000D 668B1D[02000000]            mov BX, [b]; BX <- b = 3
+    22 00000014 66031D[02000000]            add BX, [b]; BX <- BX + b = 3 + 3 = 6
+    23 0000001B 66031D[06000000]            add BX, [d]; BX <- BX + d = 6 + 1 = 7
+    24                                      
+    25 00000022 6629D8                  	sub AX, BX; AX <- AX - BX = 12 - 7 = 5
+    26                                      
+    27 00000025 6A00                    	push dword 0
+    28 00000027 FF15[00000000]          	call[exit]

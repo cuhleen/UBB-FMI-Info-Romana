@@ -1,0 +1,37 @@
+     1                                  ; înmulțiri, împărțiri - a, b, c byte, d word
+     2                                  ; 26. d + [(a + b) * 5 - (c + c) * 5]
+     3                                  
+     4                                  bits 32
+     5                                  global start
+     6                                  extern exit
+     7                                  import exit msvcrt.dll
+     8                                  segment data use32 class=data
+     9                                  
+    10 00000000 07                      	a DB 7
+    11 00000001 03                      	b DB 3
+    12 00000002 04                          c DB 4
+    13 00000003 0800                        d DW 8
+    14                                      
+    15 00000005 05                          five DB 5
+    16                                      
+    17                                  segment code use32 class=code
+    18                                  	start:
+    19                                  	
+    20 00000000 A0[00000000]            	mov AL, [a]; AL <- a = 7
+    21 00000005 0205[01000000]              add AL, [b]; AL <- AL + b = 7 + 3 = 10
+    22                                      
+    23                                      mul byte 5; AX <- AL * five = 10 * 5 = 50
+    23          ******************       error: invalid combination of opcode and operands
+    24 0000000B 6689C3                      mov BX, AX; BX <- AX = 50
+    25 0000000E 66B80000                    mov AX, word 0; AX <- 0000 | eliberăm AX pentru a îl utiliza la următoarea înmulțire
+    26                                      
+    27 00000012 A0[02000000]                mov AL, [c]; AX <- c = 4
+    28 00000017 0205[02000000]              add AL, [c]; AX <- AX + c = 4 + 4 = 8
+    29 0000001D F625[05000000]              mul byte [five]; AX <- AL * five = 8 * 5 = 40
+    30                                      
+    31 00000023 6629C3                      sub BX, AX; BX <- BX - AX = 50 - 40 = 10
+    32                                      
+    33 00000026 66031D[03000000]        	add BX, [d]; BX <- BX + 8 = 10 + 8 = 18
+    34                                      
+    35 0000002D 6A00                    	push dword 0
+    36 0000002F FF15[00000000]          	call[exit]

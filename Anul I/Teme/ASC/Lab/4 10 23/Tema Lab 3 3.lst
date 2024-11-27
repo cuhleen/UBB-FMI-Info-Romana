@@ -1,0 +1,73 @@
+     1                                  ; înmulțiri, împărțiri
+     2                                  ; a - word, b - byte, c - word, d - doubleword, x - qword | interpretare fără semn
+     3                                  ; 26. (a * a + b / c - 1) / (b + c) + d - x
+     4                                  
+     5                                  bits 32
+     6                                  global start
+     7                                  extern exit
+     8                                  import exit msvcrt.dll
+     9                                  segment data use32 class=data
+    10                                  
+    11 00000000 1400                    	a dw 20
+    12 00000002 05                          b db 5
+    13 00000003 0500                        c dw 5
+    14 00000005 2C010000                    d dd 300
+    15 00000009 3200000000000000            x dq 50
+    16 00000011 0000                        rest1 dw 0
+    17 00000013 00000000                    rest2 dd 0
+    18                                      
+    19                                  segment code use32 class=code
+    20                                  	start:
+    21                                      
+    22                                      ; a * a
+    23                                      
+    24 00000000 B800000000                  mov eax, 0
+    25 00000005 66A1[00000000]              mov ax, [a]; AX = a = 20
+    26 0000000B 6689C3                      mov bx, ax; BX = AX = 20
+    27 0000000E 66F7E3                      mul bx; DX:AX = AX * BX = 20 * 20 = 400
+    28 00000011 6652                        push dx
+    29 00000013 6650                        push ax
+    30 00000015 58                          pop eax
+    31 00000016 89C3                        mov ebx, eax; EBX = EAX = 400
+    32                                  
+    33                                      ; b / c
+    34                                      
+    35 00000018 66B80000                    mov ax, 0
+    36 0000001C A0[02000000]                mov al, [b]; AL = b = 5
+    37 00000021 B900000000                  mov ecx, 0
+    38 00000026 668B0D[03000000]            mov cx, [c]; CX = c = 5
+    39 0000002D BA00000000                  mov edx, 0
+    40 00000032 66F7F1                      div cx; AX = AX / CX = 5 / 5 = 1
+    41 00000035 668915[11000000]            mov [rest1], dx
+    42                                  
+    43                                      ; a * a + b / c - 1
+    44                                      
+    45 0000003C 01D8                        add eax, ebx; EAX = EAX + EBX = 1 + 400 = 401
+    46 0000003E 83E801                      sub eax, 1; EAX = EAX - 1 = 401 - 1 = 400
+    47                                  
+    48                                      ; b + c
+    49                                      
+    50 00000041 BB00000000                  mov ebx, 0
+    51 00000046 8A1D[02000000]              mov bl, [b]; BL = b = 5
+    52 0000004C 66031D[03000000]            add bx, [c]; BX = BX + c = 5 + 5 = 10
+    53                                  
+    54                                      ; (a * a + b / c - 1) / (b + c)
+    55                                      
+    56 00000053 BA00000000                  mov edx, 0
+    57 00000058 F7F3                        div ebx; EAX = EAX / EBX = 400 / 10 = 40
+    58 0000005A 8915[13000000]              mov [rest2], edx
+    59                                  
+    60                                      ; (a * a + b / c - 1) / (b + c) + d - x
+    61                                      
+    62 00000060 8B1D[09000000]              mov ebx, [x]
+    63 00000066 8B0D[0D000000]              mov ecx, [x + 4]
+    64                                      
+    65 0000006C 0305[05000000]              add eax, dword [d]; EAX = EAX + d = 40 + 300 = 340
+    66 00000072 99                          cdq; EDX = 0000 0000
+    67 00000073 29D8                        sub eax, ebx; EAX = EAX - EBX = 340 - 50 = 290 = 0000 0122
+    68 00000075 19D1                        sbb ecx, edx; ECX = 0000 0000
+    69                                      
+    70                                      ; Rezultatul se află în ECX:EAX = 0000 0000 0000 0122
+    71                                      
+    72 00000077 6A00                    	push dword 0
+    73 00000079 FF15[00000000]          	call[exit]

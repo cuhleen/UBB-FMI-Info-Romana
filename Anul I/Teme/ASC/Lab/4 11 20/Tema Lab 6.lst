@@ -1,0 +1,53 @@
+     1                                  ; Operații pe șiruri de bytes/words/doublewords/quadwords
+     2                                  ; 26.
+     3                                  ; Se dă un șir de dublucuvinte.
+     4                                  ; Să se obțină șirul format din octeții superiori ai cuvintelor inferioare din elementele șirului de dublucuvinte,
+     5                                  ; care sunt multiplii de 10. 
+     6                                  
+     7                                  ; Exemplu:
+     8                                  ; Se dă șirul de dublucuvinte:
+     9                                  ; s DD 12345678h, 1A2B3C4Dh, FE98DC76h 
+    10                                  ; Să se obțină șirul
+    11                                  ; d DB 3Ch, DCh.
+    12                                  
+    13                                  bits 32
+    14                                  global start
+    15                                  extern exit
+    16                                  import exit msvcrt.dll
+    17                                  segment data use32 class=data
+    18                                  
+    19 00000000 785634124D3C2B1A76-     	s dd 12345678h, 1A2B3C4Dh, 0FE98DC76h 
+    19 00000009 DC98FE             
+    20                                      l equ ($ - s) / 4
+    21 0000000C 00<rept>                    d times l db 0
+    22 0000000F 00                          aux db 0
+    23 00000010 0A                          zece db 10
+    24                                      
+    25                                  segment code use32 class=code
+    26                                  	start:
+    27                                      
+    28 00000000 B903000000                  mov ecx, l; Punem lungimea șirului în ECX, fiind registrul ce se incrementează/decrementează în instrucțiunile de ciclare
+    29 00000005 E322                        jecxz final; Dacă lungimea șirului este 0, sărim direct la final
+    30 00000007 FC                          cld; "Clear Direction Flag". Direction Flag devine 0, atsfel parcurgerea șirului o efectuăm de la stânga la dreapta
+    31 00000008 BE[00000000]                mov esi, s; Șirul sursă, pe care facem operațiile
+    32 0000000D BF[0C000000]                mov edi, d; Șirul destinație, unde adăugăm elementele adecvate
+    33                                      
+    34                                      repeta:
+    35 00000012 AD                              lodsd; Încărcăm dublucuvântul elementul curent
+    36 00000013 88E0                            mov al, ah; Punem octeții superiori (cei care ne interesează) pe poziția octeților inferiori
+    37 00000015 B400                            mov ah, 0; Golim AH pentru a nu avea reziduu când împărțim
+    38 00000017 88C3                            mov bl, al; Folosim bl drept un "aux", pentru a salva AL înainte de împărțire, ca apoi dacă este divizor al lui 10 să se poată pune în d
+    39 00000019 F635[10000000]                  div byte[zece]; AL <- AL <- AX / 10 (câtul); AH <- AX % 10 (restul)
+    40 0000001F 80FC00                          cmp ah, 0
+    41 00000022 7503                            jnz sariFinalRepeta ; daca restul nu este 0, reluăm ciclul repeta. 
+    42                                          
+    43 00000024 881F                            mov [edi], bl; Punem în șirul d octeții ce se divid cu 10
+    44 00000026 47                              inc edi; Incrementăm adresa d
+    45                                          
+    46                                          sariFinalRepeta:
+    47 00000027 E2E9                        loop repeta
+    48                                          
+    49                                      final:
+    50                                      ; Exit program
+    51 00000029 6A00                    	push dword 0
+    52 0000002B FF15[00000000]          	call[exit]

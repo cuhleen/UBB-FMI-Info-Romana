@@ -1,0 +1,6 @@
+O succesiune finită de biți = Ce se găsește în storage = fișier
+Adresa = nr întreg pozitiv care definește câți octeți de memorie sunt în fața sa
+CRUD = create read update delete
+Un program în derulare = proces
+Program = un set finit de date și instrucțiuni date calculatorului
+

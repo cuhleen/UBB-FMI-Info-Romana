@@ -1,0 +1,52 @@
+     1                                  ; operații pe biți
+     2                                  ; 26.
+     3                                  ; Se dau 2 dublucuvinte R și T. Să se obțină dublucuvântul Q astfel:
+     4                                  ; biții 0-6 din Q coincid cu biții 10-16 a lui T
+     5                                  ; biții 7-24 din Q concid cu biții obtinuți 7-24 în urma aplicării R XOR T
+     6                                  ; biții 25-31 din Q coincid cu biții 5-11 a lui R
+     7                                  
+     8                                  bits 32
+     9                                  global start
+    10                                  extern exit
+    11                                  import exit msvcrt.dll
+    12                                  segment data use32 class=data
+    13                                  
+    14 00000000 AFB75777                	R dd 01110111010101111011011110101111b;  0111011 101010111101101111 0101111b
+    15 00000004 DE4BBE9B                    T dd 10011011101111100100101111011110b;  1001101 110111110010010111 1011110b
+    16 00000008 00000000                    Q dd 0; până la final Q ar trebui să fie 0111101 011101001111111000 0010010b
+    17                                      
+    18                                  segment code use32 class=code
+    19                                  	start:
+    20                                      
+    21                                      ; izolăm biții 10-16 ai lui T și îi punem pe pozițiile 0-6 din Q
+    22                                      
+    23 00000000 BB00000000                  mov ebx, 0
+    24 00000005 A1[04000000]                mov eax, [T]
+    25 0000000A 2500FC0100                  and eax, 00000000000000011111110000000000b; EAX = biții 10-16 ai lui T
+    26 0000000F B10A                        mov cl, 10
+    27 00000011 D3C8                        ror eax, cl; deplasăm biții 10-16 la pozițiile 0-6
+    28 00000013 09C3                        or ebx, eax; adăugăm în Q
+    29                                  
+    30                                      ; calculăm R XOR T și izolăm bitii 7-24 din rezultat
+    31                                      
+    32 00000015 A1[00000000]                mov eax, [R]; EAX = R
+    33 0000001A 3305[04000000]              xor eax, [T]; EAX = R XOR T
+    34 00000020 2580FFFF01                  and eax, 00000001111111111111111110000000b; izolăm biții 7-24
+    35 00000025 09C3                        or ebx, eax; punem în Q, sunt deja pe pozițiile corecte
+    36                                  
+    37                                      ; izolăm biții 5-11 ai lui R și îi punem pe pozițiile 25-31 din Q
+    38 00000027 A1[00000000]                mov eax, [R]
+    39 0000002C 25E00F0000                  and eax, 00000000000000000000111111100000b; izolăm bitii 5-11
+    40 00000031 B114                        mov cl, 20
+    41 00000033 D3C0                        rol eax, cl; mutăm biții 5-11 pe pozițiile 25-31
+    42 00000035 09C3                        or ebx, eax; adăugăm în Q
+    43                                  
+    44                                      ; punem rezultatul final în Q
+    45 00000037 891D[08000000]              mov [Q], ebx
+    46                                      
+    47                                      ; Q încă se află în EBX
+    48                                      ; EBX = 7AE9FC12h = 01111010111010011111110000010010b = numărul dorit
+    49                                      
+    50                                      ; Exit program
+    51 0000003D 6A00                    	push dword 0
+    52 0000003F FF15[00000000]          	call[exit]

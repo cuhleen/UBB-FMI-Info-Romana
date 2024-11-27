@@ -1,0 +1,25 @@
+     1                                  ; adunări, scaderi - byte
+     2                                  ; 26. (a + a) - (b + b) - c
+     3                                  
+     4                                  bits 32
+     5                                  global start
+     6                                  extern exit
+     7                                  import exit msvcrt.dll
+     8                                  segment data use32 class=data
+     9                                  
+    10 00000000 0A                      	a DB 10
+    11 00000001 03                      	b DB 3
+    12 00000002 02                          c DB 2
+    13                                      
+    14                                  segment code use32 class=code
+    15                                  	start:
+    16                                  	
+    17 00000000 A0[00000000]            	mov AL, [a]; AL <- a = 10
+    18 00000005 0205[00000000]              add AL, [a]; AL <- AL + a = 10 + 10 = 20
+    19 0000000B 8A25[01000000]              mov AH, [b]; AH <- b = 3
+    20 00000011 0225[01000000]              add AH, [b]; AH <- AH + b = 3 + 3 = 6
+    21 00000017 28E0                    	sub AL, AH; AL <- AL - AH = 20 - 6 = 14
+    22 00000019 2A05[02000000]              sub AL, [c]; AL <- Al - c = 14 - 2 = 12
+    23                                      
+    24 0000001F 6A00                    	push dword 0
+    25 00000021 FF15[00000000]          	call[exit]

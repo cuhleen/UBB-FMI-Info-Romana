@@ -1,0 +1,53 @@
+     1                                  ; adunări, scăderi
+     2                                  ; a - byte, b - word, c - double word, d - qword | interpretare cu semn
+     3                                  ; 26. (c - d - a) + (b + b) - (c + a) = b + b - a - a - d
+     4                                  
+     5                                  bits 32
+     6                                  global start
+     7                                  extern exit
+     8                                  import exit msvcrt.dll
+     9                                  segment data use32 class=data
+    10                                  
+    11 00000000 0A                      	a db 10
+    12 00000001 0500                        b dw 5
+    13 00000003 0A000000                    c dd 10; c este nefolosit, fiind adunat o dată și scăzut o dată
+    14 00000007 0200000000000000            d dq 2
+    15                                      
+    16                                  segment code use32 class=code
+    17                                  	start:
+    18                                      
+    19                                      ; b + b
+    20                                      
+    21 00000000 B800000000                  mov eax, 0
+    22 00000005 66A1[01000000]              mov ax, [b]; AX = b = 5
+    23 0000000B 98                          cwde; EAX = AX = 5
+    24 0000000C 89C3                        mov ebx, eax; EBX = EAX = 5
+    25                                      
+    26 0000000E B800000000                  mov eax, 0
+    27 00000013 66A1[01000000]              mov ax, [b]; AX = b = 5
+    28 00000019 98                          cwde; EAX = AX = 5
+    29                                      
+    30 0000001A 01C3                        add ebx, eax; EBX = EBX + EAX = 5 + 5 = 10
+    31                                      
+    32                                      ; b + b - a - a
+    33                                  	
+    34 0000001C A0[00000000]            	mov al, [a]; AL = a = 10
+    35 00000021 6698                        cbw; AX = AL = 10
+    36 00000023 98                          cwde; EAX = AX = 10
+    37 00000024 29C3                        sub ebx, eax; EBX = EBX - EAX = 10 - 10 = 0
+    38 00000026 29C3                        sub ebx, eax; EBX = EBX - EAX = 0 - 10 = -10 = FFFF FFF6
+    39                                      
+    40                                      ; b + b - a - a - d
+    41                                      
+    42 00000028 89D8                        mov eax, ebx; EAX = EBX = -10 = FFFF FFF6
+    43 0000002A 99                          cdq
+    44 0000002B 8B1D[07000000]              mov ebx, [d]; EBX = partea inferioară a lui d = 2
+    45 00000031 8B0D[0B000000]              mov ecx, [d + 4]; ECX = partea superioară a lui d = 0000 0000
+    46                                      
+    47 00000037 29D8                        sub eax, ebx; EAX = EAX - EBX = -10 - 2 = -12 = FFFF FFF4
+    48 00000039 19CA                        sbb edx, ecx; EDX = FFFF FFFF
+    49                                      
+    50                                      ; Rezultatul se află în EDX:EAX = FFFF FFFF FFFF FFF4
+    51                                      
+    52 0000003B 6A00                    	push dword 0
+    53 0000003D FF15[00000000]          	call[exit]

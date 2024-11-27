@@ -1,0 +1,12 @@
+def afiseazaMenu():
+    print("        Menu:")
+    print("1. Adăugare/Modificare")
+    print("2. Ștergere")
+    print("3. Căutare")
+    print("4. Rapoarte")
+    print("5. Filtrare")
+    print("6. Undo")
+    print("7. Exit")
+    print("8. TEST afișează toate pachetele")
+    print("9. TEST adaugă pachete default")
+    print("\n")

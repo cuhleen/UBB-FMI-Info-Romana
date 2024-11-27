@@ -1,0 +1,31 @@
+     1                                  ;Se da un sir de caractere format din litere mici.
+     2                                  ;Sa se transforme acest sir in sirul literelor mari corespunzator.
+     3                                  bits 32 
+     4                                  global start        
+     5                                  extern exit,printf ; tell nasm that exit exists even if we won't be defining it
+     6                                  import exit msvcrt.dll ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+     7                                  ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+     8                                  ; our data is declared here (the variables needed by our program)
+     9                                  segment data use32 class=data
+    10 00000000 6162636D6E              	s db 'a', 'b', 'c', 'm','n' ; declararea sirului initial s
+    11                                  	l equ $-s ; stabilirea lungimea sirului initial l
+    12 00000005 00<rept>                	d times l db 0 ; rezervarea unui spatiu de dimensiune l pentru sirul destinatie d si initializarea acestuia
+    13                                  
+    14                                  segment code use32 class=code
+    15                                  start:
+    16 00000000 B905000000              	mov ecx, l ;punem lungimea in ECX pentru a putea realiza bucla loop de ecx ori
+    17 00000005 BE00000000              	mov esi, 0     
+    18 0000000A E313                    	jecxz Sfarsit      
+    19                                  	Repeta:
+    20 0000000C 8A86[00000000]          		mov al, [s+esi]
+    21 00000012 B320                    		mov bl, 'a'-'A' ; pentru a obtine litera mare corespunzatoare literei mici, vom scadea din codul ASCII 
+    22                                  		; al literei mici diferenta dintre 'a'-'A'
+    23 00000014 28D8                    		sub al, bl             
+    24 00000016 8886[05000000]          		mov [d+esi], al    
+    25 0000001C 46                      		inc esi
+    26 0000001D E2ED                    	loop Repeta
+    27                                  	Sfarsit:;terminarea programului
+    28                                  
+    29                                  	; exit(0)
+    30 0000001F 6A00                    	push dword 0 ; push the parameter for exit onto the stack
+    31 00000021 FF15[00000000]          	call [exit] ; call exit to terminate the program

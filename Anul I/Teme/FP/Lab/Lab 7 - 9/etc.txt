@@ -1,0 +1,81 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cartiInchirieri = {}
+        for inchiriere in self.__repoInchirieri.getAll():
+            carte = inchiriere.getCarte()
+            if carte.getId() not in cartiInchirieri:
+                cartiInchirieri[carte.getId()] = 0
+            cartiInchirieri[carte.getId()] += 1
+
+        # Sortare descrescătoare după numărul de închirieri
+        cartiOrdonate = sorted(
+            cartiInchirieri.items(),
+            key=lambda x: x[1],
+            reverse=True
+        )
+
+        return [(self.__repoCarti.find(carteId), numar) for carteId, numar in cartiOrdonate]
+
+
+
+def top20LaSutaClienti(self):
+    clientiInchirieri = {}
+        for inchiriere in self.__repoInchirieri.getAll():
+            client = inchiriere.getClient()
+            if client.getId() not in clientiInchirieri:
+                clientiInchirieri[client.getId()] = 0
+            clientiInchirieri[client.getId()] += 1
+
+        # Sortare descrescătoare după numărul de închirieri
+        clientiOrdonati = sorted(
+            clientiInchirieri.items(),
+            key=lambda x: -x[1]
+        )
+
+        top_20 = int(0.2 * len(clientiOrdonati))
+        if top_20 < 1:
+            top_20 = 1
+
+        return [(self.__repoClienti.find(clientId), numar) for clientId, numar in clientiOrdonati[:top_20]]
+
+
+
+clientiInchirieri = {}
+        for inchiriere in self.__repoInchirieri.getAll():
+            client = inchiriere.getClient()
+            if client.getId() not in clientiInchirieri:
+                clientiInchirieri[client.getId()] = 0
+            clientiInchirieri[client.getId()] += 1
+
+        # Sortare după nume și număr de închirieri
+        clientiOrdonati = sorted(
+            clientiInchirieri.items(),
+            key=lambda x: (self.__repoClienti.find(x[0]).getNume(), -x[1])
+        )
+
+        return [(self.__repoClienti.find(clientId), numar) for clientId, numar in clientiOrdonati]

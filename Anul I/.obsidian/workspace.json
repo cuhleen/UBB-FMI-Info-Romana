@@ -1,0 +1,282 @@
+{
+  "main": {
+    "id": "3a22d0dbf2dcf55f",
+    "type": "split",
+    "children": [
+      {
+        "id": "3c7b7aa94caf00a8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "34d386621e02ab33",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Orar.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Orar"
+            }
+          },
+          {
+            "id": "d136d17f4a453d3c",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "ToDo.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false,
+                    true,
+                    true
+                  ]
+                }
+              },
+              "pinned": true,
+              "icon": "lucide-trello",
+              "title": "ToDo"
+            }
+          },
+          {
+            "id": "c3327b614f3706bf",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "ASC/Curs/4 11 27/Curs 9.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Curs 9"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "9fb17c6da87e5bcd",
+    "type": "split",
+    "children": [
+      {
+        "id": "284ca6b10b747840",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dabccb4d61e35f0f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "d50db87cf2974cfc",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "fa65bad45d7b29db",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "54c0b10d3bf071b9",
+    "type": "split",
+    "children": [
+      {
+        "id": "c28bffcc9c449a4c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "772cdbb53089691f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "ToDo.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for ToDo"
+            }
+          },
+          {
+            "id": "6e4a6a3717dcaa76",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "ToDo.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from ToDo"
+            }
+          },
+          {
+            "id": "e3c58a7b1ee74a9e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "dc53c9920e93f613",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "ToDo.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of ToDo"
+            }
+          },
+          {
+            "id": "e387e148c448000b",
+            "type": "leaf",
+            "state": {
+              "type": "online.tokuhirom.obsidian-pomodoro-plugin",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          },
+          {
+            "id": "d7ccf964d8734d33",
+            "type": "leaf",
+            "state": {
+              "type": "timer-view",
+              "state": {},
+              "icon": "timer",
+              "title": "Timer"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-kanban:Create new board": false,
+      "pomodoro-timer:Toggle timer panel": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
+    }
+  },
+  "active": "c3327b614f3706bf",
+  "lastOpenFiles": [
+    "ToDo.md",
+    "ASC/Curs/4 11 27/Curs 9.md",
+    "ASC/Curs/4 11 27",
+    "Teme/Algebră/pregătire 1.md",
+    "Algebră/lucrare-1r-23-24.pdf",
+    "Algebră/model parțial 1.pdf",
+    "Algebră/Curs/algebra-pt-informatica 24-25.pdf",
+    "Algebră/model parțial 2.pdf",
+    "Algebră/Seminar/4 10 15.md",
+    "ASC/Lab/4 11 27/Lab 9.md",
+    "ASC/Seminar/4 11 25.md",
+    "Algebră/Seminar/4 10 29.md",
+    "ASC/Lab/4 11 27",
+    "Algebră/Seminar/4 11 5.md",
+    "Algebră/Seminar/4 10 22.md",
+    "Algebră/Seminar/4 10 8.md",
+    "Algebră/Seminar/4 11 26.md",
+    "Algebră/Seminar/4 11 19.md",
+    "Orar.md",
+    "LC/Cursuri pdf/LC_Curs8.pdf",
+    "LC/Cursuri pdf/LC_Curs7.pdf",
+    "LC/Seminar/4 11 26.md",
+    "LC/Seminar/4 11 5.md",
+    "LC/Cursuri pdf/LC_Curs3.pdf",
+    "LC/Cursuri pdf/LC_Curs2.pdf",
+    "zzz Imagini Excalidraw/Pasted image 20241009185123.png",
+    "zzz Imagini Excalidraw/image_1.png",
+    "zzz Imagini Excalidraw/image 3.png",
+    "zzz Imagini Excalidraw/image 2.png",
+    "AM/Seminar/4 11 26.md",
+    "zzz Imagini Excalidraw/Pasted Image 20241126134059_180.png",
+    "AM/Seminar/4 11 19.md",
+    "zzz Imagini Excalidraw/Pasted Image 20241125205557_430.png",
+    "Algebră/Seminar/4 10 1.md",
+    "Algebră/Link-uri.md",
+    "Algebră/Curs/4 10 10.md",
+    "Algebră/Curs/4 10 3.md",
+    "Algebră/Seminar/4 11 12.md",
+    "zzz Imagini Excalidraw/Pasted Image 20241125192935_481.png",
+    "zzz Imagini Excalidraw/Pasted Image 20241125193024_350.png",
+    "Teme/Algebră/4 10 1.md",
+    "Algebră/Notare.md",
+    "FP/Seminar/4 11 25.md",
+    "FP/Seminar/4 11 18.md",
+    "AM/formule derivate integrale.jpg",
+    "zzz Imagini Excalidraw/Pasted Image 20241115122921_987.png",
+    "Untitled.canvas",
+    "Pg. În C/Curs/4 10 4.canvas",
+    "Teme/Pg. În C/Curs/4 10 4.canvas"
+  ]
+}

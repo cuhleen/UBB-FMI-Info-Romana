@@ -1,0 +1,37 @@
+     1                                  ; adunări, scăderi
+     2                                  ; a - byte, b - word, c - double word, d - qword | interpretare fără semn
+     3                                  ; 26. (c - b + a) - (d + a) = c - b - d
+     4                                  
+     5                                  bits 32
+     6                                  global start
+     7                                  extern exit
+     8                                  import exit msvcrt.dll
+     9                                  segment data use32 class=data
+    10                                  
+    11 00000000 03                      	a db 3; a este nefolosit, fiind adunat o dată și scăzut o dată
+    12 00000001 0500                        b dw 5
+    13 00000003 0A000000                    c dd 10
+    14 00000007 0200000000000000            d dq 2
+    15                                      
+    16                                  segment code use32 class=code
+    17                                  	start:
+    18                                      
+    19                                      ; c - b
+    20                                  	
+    21 00000000 A1[03000000]            	mov eax, dword [c]; EAX = c = 10
+    22 00000005 BB00000000                  mov ebx, 0
+    23 0000000A 668B1D[01000000]            mov bx, [b]; EBX = b
+    24 00000011 29D8                        sub eax, ebx; EAX = EAX - BX = 10 - 5 = 5
+    25                                      
+    26                                      ; c - b - d
+    27                                      
+    28 00000013 8B15[07000000]              mov edx, [d]; EDX = partea inferioară a lui d
+    29 00000019 8B0D[0B000000]              mov ecx, [d + 4]; ECX = partea superioară a lui d
+    30                                      
+    31 0000001F 29D3                        sub ebx, edx; EBX = EBX - EDX = 8 - 5 = 3
+    32 00000021 83D900                      sbb ecx, 0; Scădem și din partea superioară a lui d, dacă este necesar
+    33                                      
+    34                                      ; Rezultatul se află în ECX:EBX = 0000 0000 0000 0003
+    35                                      
+    36 00000024 6A00                    	push dword 0
+    37 00000026 FF15[00000000]          	call[exit]

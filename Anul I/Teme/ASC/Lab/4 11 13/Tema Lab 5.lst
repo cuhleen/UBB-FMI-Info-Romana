@@ -1,0 +1,78 @@
+     1                                  ; instrucțiuni de comparare, salt condiționat și de ciclare. Operații pe șiruri
+     2                                  ; 26.
+     3                                  ; Se dă un șir de octeți S
+     4                                  ; Să se determine maximul elementelor de pe pozițiile pare și minimul elementelor de pe pozițiile impare din S
+     5                                  
+     6                                  bits 32
+     7                                  global start
+     8                                  extern exit
+     9                                  import exit msvcrt.dll
+    10                                  segment data use32 class=data
+    11                                  
+    12 00000000 01FF020308040905        	s db 1, -1, 2, 3, 8, 4, 9, 5
+    13                                      l equ $ - s
+    14 00000008 00                          max_poz_pare db 0
+    15 00000009 00                          min_poz_impare db 0
+    16                                      
+    17                                  segment code use32 class=code
+    18                                  	start:
+    19                                      
+    20 00000000 B908000000                  mov ecx, l; Punem lungimea șirului în ECX, fiind registrul ce se incrementează/decrementează în instrucțiunile de ciclare
+    21 00000005 E352                        jecxz final; Dacă lungimea șirului este 0, sărim direct la final
+    22 00000007 FC                          cld; "Clear Direction Flag". Direction Flag devine 0, atsfel parcurgerea șirului o efectuăm de la stânga la dreapta
+    23 00000008 BE[00000000]                mov esi, s; Șirul sursă, pe care facem operațiile
+    24                                      
+    25                                      ; Primul element
+    26                                      
+    27 0000000D 8A06                        mov al, [esi]; Punem primul element în AL
+    28 0000000F A2[08000000]                mov [max_poz_pare], al; Fiind elementul pe poziția "0", poziție pară, este și cel mai mare
+    29 00000014 46                          inc esi; Trecem la următorul element
+    30                                  
+    31 00000015 49                          dec ecx; Decrementăm ECX (am preluat deja primul element)
+    32 00000016 E341                        jecxz final; În caz că șirul are un singur element
+    33                                      
+    34                                      ; Al doilea element
+    35                                  
+    36 00000018 8A06                        mov al, [esi]; Punem al doilea element în AL
+    37 0000001A A2[09000000]                mov [min_poz_impare], al; Fiind elementul pe poziția "1", poziție impară, este și cel mai mic
+    38 0000001F 46                          inc esi; Trecem la următorul element
+    39                                      
+    40 00000020 49                          dec ecx; Decrementăm ECX (am preluat deja al doilea element)
+    41                                      
+    42                                      ; Restul șirului
+    43                                      
+    44                                      bucla:
+    45 00000021 E336                            jecxz final; Dacă ECX este zero, șirul s-a terminat
+    46                                  
+    47 00000023 8A06                            mov al, [esi]; Elementul curent
+    48 00000025 F7C601000000                    test esi, 1; Verificăm dacă poziția este pară sau impară
+    49 0000002B 7415                            jz pozitiePara; Dacă poziția este pară, sărim la `pozitiePara`
+    50                                  
+    51                                          ; Dacă nu a intrat în jump-ul de mai sus înseamnă că poziția este impară
+    52                                          
+    53 0000002D 3A05[09000000]                  cmp al, [min_poz_impare]; Comparăm cu minimul curent
+    54 00000033 7D20                            jge urmatorulElement; Dacă este mai mare sau egal, trecem la următorul element
+    55 00000035 A2[09000000]                    mov [min_poz_impare], al; Altfel, actualizăm minimul
+    56 0000003A 8A1D[09000000]                  mov bl, [min_poz_impare]; BL <- min_poz_impare. Să se vadă mai clar în Olly Debugger
+    57                                          
+    58 00000040 EB13                            jmp urmatorulElement;
+    59                                  
+    60                                      pozitiePara:
+    61 00000042 3A05[08000000]                  cmp al, [max_poz_pare]; Comparăm cu maximul curent
+    62 00000048 7E0B                            jle urmatorulElement; Dacă este mai mic sau egal, trecem la următorul element
+    63                                          
+    64 0000004A A2[08000000]                    mov [max_poz_pare], al; Altfel, actualizăm maximul
+    65 0000004F 8A15[08000000]                  mov dl, [max_poz_pare]; DL <- max_poz_pare. Să se vadă mai clar în Olly Debugger
+    66                                  
+    67                                      urmatorulElement:
+    68 00000055 46                              inc esi
+    69 00000056 49                              dec ecx
+    70 00000057 EBC8                            jmp bucla
+    71                                          
+    72                                      ; max_poz_pare se găsește în DL
+    73                                      ; min_poz_impare se găsește în BL
+    74                                  
+    75                                      final:
+    76                                      ; Exit program
+    77 00000059 6A00                    	push dword 0
+    78 0000005B FF15[00000000]          	call[exit]

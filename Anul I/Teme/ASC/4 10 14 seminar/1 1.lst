@@ -1,0 +1,19 @@
+     1                                  ; a +- b
+     2                                  bits 32
+     3                                  global start
+     4                                  extern exit
+     5                                  import exit msvcrt.dll
+     6                                  segment data use32 class=data
+     7                                  
+     8 00000000 2C010000                	a DD 300
+     9 00000004 D5000000                	b DD 213
+    10                                  
+    11                                  segment code use32 class=code
+    12                                  	start:
+    13                                  	
+    14 00000000 A1[00000000]            	mov EAX, [a]; AL <- a
+    15                                  	;add AL, [b]; AL <- AL + b
+    16 00000005 2B05[04000000]              sub EAX, [b]; AL <- Al - b
+    17                                      
+    18 0000000B 6A00                    	push dword 0
+    19 0000000D FF15[00000000]          	call[exit]
