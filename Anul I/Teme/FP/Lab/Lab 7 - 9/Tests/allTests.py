@@ -7,37 +7,21 @@ from Tests.TestsService.TestsServiceClient import *
 from Tests.TestsService.TestsServiceCarte import *
 
 def runTestsDomain():
-    testClient()
-    testValidareClient()
-    testEgalClient()
-
-    testCarte()
-    testValidareCarte()
-    testEgalCarte()
+    TestClient()
+    TestCarte()
 
     print("\nTestele Domain rulate cu succes!")
 
 def runTestsRepo():
-    testStoreRepoClient()
-    testUpdateRepoClient()
-    testFindRepoClient()
-
-    testStoreRepoCarte()
-    testUpdateRepoCarte()
-    testFindRepoCarte()
-
-    testStoreRepoInchiriere()
+    TestRepoClient()
+    TestRepoCarte()
+    TestRepoInchiriere()
 
     print("Testele Repo rulate cu succes!")
 
 def runTestsService():
-    testAddServiceClient()
-    testActualizeazaServiceClient()
-    testFiltreServiceClient()
-
-    testAddServiceCarte()
-    testActualizeazaServiceCarte()
-    testFiltreServiceCarte()
+    TestServiceClient()
+    TestServiceCarte()
 
     print("Testele Service rulate cu succes!")
 

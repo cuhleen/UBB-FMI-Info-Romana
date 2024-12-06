@@ -1,0 +1,95 @@
+     1                                  ; operații cu fișiere text
+     2                                  ; 26.
+     3                                  ; Se dă un nume de fișier (definit în segmentul de date).
+     4                                  ; Să se creeze un fisier cu numele dat, apoi să se citească de la tastatură cuvinte până când se citește de la tastatură caracterul '$'.
+     5                                  ; Să se scrie în fișier doar cuvintele care conțin cel puțin o literă mare (uppercase). 
+     6                                  
+     7                                  bits 32
+     8                                  global start
+     9                                  extern exit, fopen, fclose, scanf, fprintf
+    10                                  import exit msvcrt.dll
+    11                                  import fopen msvcrt.dll
+    12                                  import fclose msvcrt.dll
+    13                                  import scanf msvcrt.dll
+    14                                  import fprintf msvcrt.dll
+    15                                  segment data use32 class=data
+    16                                  
+    17 00000000 657832362E74787400      	numeFisier db "ex26.txt", 0
+    18 00000009 7700                        modAcces db "w", 0
+    19 0000000B 00000000                    descriptorFisier dd 0
+    20 0000000F 257300                      formatCitire db "%s", 0
+    21 00000012 00<rept>                    buffer times 256 db 0
+    22 00000112 2400                        terminator db "$", 0
+    23 00000114 25732000                    formatAfisare db "%s ", 0
+    24                                      
+    25                                  segment code use32 class=code
+    26                                  	start:
+    27                                      
+    28                                      ; deschidem fișierul | fopen(numeFisier, modAcces)
+    29                                      
+    30 00000000 68[09000000]                push dword modAcces
+    31 00000005 68[00000000]                push dword numeFisier
+    32 0000000A FF15[00000000]              call [fopen]
+    33 00000010 83C408                      add esp, 4 * 2
+    34                                      
+    35 00000013 A3[0B000000]                mov [descriptorFisier], eax
+    36                                      
+    37                                      ; verificăm dacă funcția fopen a creat cu succes fișierul (dacă EAX != 0)
+    38                                      
+    39 00000018 83F800                      cmp eax, 0
+    40 0000001B 7460                        je iesireProgram
+    41                                      
+    42                                      ; citire | scanf(formatCitire, buffer)
+    43                                      
+    44                                      citireTastatura:
+    45 0000001D 68[12000000]                    push dword buffer
+    46 00000022 68[0F000000]                    push dword formatCitire
+    47 00000027 FF15[00000000]                  call [scanf]
+    48 0000002D 83C408                          add esp, 4 * 2
+    49                                      
+    50                                      ; verificare citire '$'
+    51                                      
+    52 00000030 BE[12000000]                mov esi, buffer; ESI pointează la începutul buffer-ului
+    53                                      
+    54                                      verificaTerminator:
+    55 00000035 AC                              lodsb; încărcăm un caracter în AL
+    56 00000036 3C00                            cmp al, 0; verificăm dacă este sfârșirul șirului
+    57 00000038 7406                            je gasesteLiteraMare
+    58 0000003A 3C24                            cmp al, '$'; verificăm dacă caracterul este '$'
+    59 0000003C 7431                            je final
+    60 0000003E EBF5                            jmp verificaTerminator; altfel continuăm
+    61                                      
+    62                                      gasesteLiteraMare:
+    63 00000040 BE[12000000]                    mov esi, buffer; resetăm pointerul pentru a verifica literele mari
+    64                                      verificaLiteraMare:
+    65 00000045 AC                              lodsb; încărcăm un caracter în AL
+    66 00000046 84C0                            test al, al; verificăm sfârșitul șirului
+    67 00000048 74D3                            je citireTastatura; dacă am parcurs tot șirul și nu am găsit litere mari, citim alt cuvânt
+    68 0000004A 3C41                            cmp al, 'A'
+    69 0000004C 72F7                            jb verificaLiteraMare; ; dacă e mai mic decât 'A' (adică dacă este altceva decăt literă mare), trecem la următorul caracter
+    70 0000004E 3C5A                            cmp al, 'Z'
+    71 00000050 77F3                            ja verificaLiteraMare; ; dacă e mai mare decât 'Z' (adică dacă este altceva decăt literă mare), trecem la următorul caracter
+    72 00000052 EB00                            jmp scrieFisier
+    73                                      
+    74                                      ; scriere în fișier | fprintf(descriptorFisier, formatAfisare, buffer)
+    75                                      
+    76                                      scrieFisier:
+    77 00000054 68[12000000]                    push dword buffer
+    78 00000059 68[14010000]                    push dword formatAfisare
+    79 0000005E FF35[0B000000]                  push dword [descriptorFisier]
+    80 00000064 FF15[00000000]                  call [fprintf]
+    81 0000006A 83C40C                          add esp, 4 * 3
+    82                                          
+    83 0000006D EBAE                            jmp citireTastatura
+    84                                      
+    85                                      final:
+    86                                          ; închidem fișierul | fclose(descriptorFisier)
+    87 0000006F 68[0B000000]                    push dword descriptorFisier
+    88 00000074 FF15[00000000]                  call [fclose]
+    89 0000007A 83C404                          add esp, 4 * 1
+    90                                      
+    91                                      iesireProgram:
+    92                                      
+    93                                      ; Exit program
+    94 0000007D 6A00                    	push dword 0
+    95 0000007F FF15[00000000]          	call[exit]

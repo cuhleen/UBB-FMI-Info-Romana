@@ -48,17 +48,17 @@
             }
           },
           {
-            "id": "c3327b614f3706bf",
+            "id": "cc1fd7cb9119de33",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ASC/Curs/4 11 27/Curs 9.md",
+                "file": "ASC/Curs/4 11 13/Curs 7.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Curs 9"
+              "title": "Curs 7"
             }
           }
         ],
@@ -93,7 +93,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "directiv",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -114,7 +114,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -227,54 +228,54 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "c3327b614f3706bf",
+  "active": "cc1fd7cb9119de33",
   "lastOpenFiles": [
-    "ToDo.md",
+    "ASC/Seminar/4 10 14.md",
+    "ASC/Lab/4 10 30/Lab 5.md",
+    "Teme/ASC/random/random.obj",
+    "Teme/ASC/random/~random.tmp",
+    "ASC/Lab/asm_tools/npp/backup/random.asm@2024-12-06_153702",
+    "ASC/Lab/asm_tools/npp/backup/random.asm@2024-12-06_153325",
+    "ASC/Lab/asm_tools/npp/backup/random.asm@2024-12-06_153229",
+    "ASC/Lab/asm_tools/npp/backup/random.asm@2024-12-06_153001",
+    "ASC/Seminar/4 10 28.md",
     "ASC/Curs/4 11 27/Curs 9.md",
-    "ASC/Curs/4 11 27",
-    "Teme/Algebră/pregătire 1.md",
-    "Algebră/lucrare-1r-23-24.pdf",
-    "Algebră/model parțial 1.pdf",
-    "Algebră/Curs/algebra-pt-informatica 24-25.pdf",
-    "Algebră/model parțial 2.pdf",
-    "Algebră/Seminar/4 10 15.md",
+    "ASC/Lab/asm_tools/npp/backup/random.asm@2024-12-06_151614",
+    "ASC/Curs/4 10 16/Curs 3.md",
+    "ASC/Lab/asm_tools/npp/backup/random.asm@2024-12-06_144344",
+    "ASC/Lab/asm_tools/ollydbg/random.udd",
+    "Teme/ASC/random/random.exe",
+    "ASC/Curs/4 10 23/Curs 4.md",
+    "ToDo.md",
+    "ASC/Curs/4 12 4/Curs 10.md",
+    "ASC/Curs/4 10 30/Curs 5.md",
+    "ASC/Curs/4 11 20/Curs 8.md",
+    "ASC/Curs/4 11 13/Curs 7.md",
+    "ASC/Curs/4 11 6/Curs 6.md",
+    "ASC/Lab/4 10 23/Lab 4.md",
+    "ASC/Lab/4 10 16/Lab 3.md",
+    "ASC/Lab/4 10 9/Lab 2.md",
+    "ASC/Lab/4 11 20/Lab 8.md",
+    "ASC/Lab/4 11 6/Lab 6.md",
     "ASC/Lab/4 11 27/Lab 9.md",
     "ASC/Seminar/4 11 25.md",
-    "Algebră/Seminar/4 10 29.md",
-    "ASC/Lab/4 11 27",
-    "Algebră/Seminar/4 11 5.md",
-    "Algebră/Seminar/4 10 22.md",
-    "Algebră/Seminar/4 10 8.md",
     "Algebră/Seminar/4 11 26.md",
-    "Algebră/Seminar/4 11 19.md",
+    "Algebră/Seminar/4 12 3.md",
     "Orar.md",
-    "LC/Cursuri pdf/LC_Curs8.pdf",
-    "LC/Cursuri pdf/LC_Curs7.pdf",
+    "LC/Seminar/4 12 3.md",
     "LC/Seminar/4 11 26.md",
-    "LC/Seminar/4 11 5.md",
-    "LC/Cursuri pdf/LC_Curs3.pdf",
-    "LC/Cursuri pdf/LC_Curs2.pdf",
+    "AM/Seminar/4 12 3.md",
+    "AM/Seminar/4 11 26.md",
+    "Teme/Algebră/pregătire 1.png",
+    "cringe.png",
     "zzz Imagini Excalidraw/Pasted image 20241009185123.png",
     "zzz Imagini Excalidraw/image_1.png",
     "zzz Imagini Excalidraw/image 3.png",
     "zzz Imagini Excalidraw/image 2.png",
-    "AM/Seminar/4 11 26.md",
     "zzz Imagini Excalidraw/Pasted Image 20241126134059_180.png",
-    "AM/Seminar/4 11 19.md",
     "zzz Imagini Excalidraw/Pasted Image 20241125205557_430.png",
-    "Algebră/Seminar/4 10 1.md",
-    "Algebră/Link-uri.md",
-    "Algebră/Curs/4 10 10.md",
-    "Algebră/Curs/4 10 3.md",
-    "Algebră/Seminar/4 11 12.md",
     "zzz Imagini Excalidraw/Pasted Image 20241125192935_481.png",
     "zzz Imagini Excalidraw/Pasted Image 20241125193024_350.png",
-    "Teme/Algebră/4 10 1.md",
-    "Algebră/Notare.md",
-    "FP/Seminar/4 11 25.md",
-    "FP/Seminar/4 11 18.md",
-    "AM/formule derivate integrale.jpg",
-    "zzz Imagini Excalidraw/Pasted Image 20241115122921_987.png",
     "Untitled.canvas",
     "Pg. În C/Curs/4 10 4.canvas",
     "Teme/Pg. În C/Curs/4 10 4.canvas"

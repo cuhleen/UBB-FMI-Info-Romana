@@ -6,21 +6,23 @@ kanban-plugin: board
 
 ## De făcut
 
-- [ ] # FP (Lab)
-	Lab 7-9
-	Pb. 4
-	@{2024-11-28}
 - [ ] # AM (Seminar)
-	[[AM/Seminar/4 11 26.md#^VDtgc7QWWA1yLZOUQYI1m|tema]]
-	@{2024-12-03}
-- [ ] # Alg (Seminar)
-	[[Algebră/Seminar/4 11 26.md#^wTQe2okrYJqhsd_Tjgrot|tema]]
-	[[Algebră/Seminar/4 11 26.md#^gqiB_Fwltx1D89IS9_Zxm|tema 2]]
-	@{2024-12-03}
+	[[AM/Seminar/4 12 3.md#^cyW3X3X_bXeODcXp1hYGW|tema]]
+	@{2024-12-10}
+- [ ] # Algebră (Seminar)
+	[[Algebră/Seminar/4 12 3.md#^qQMaCMxlvCuRhgvhYU5iy|tema]]
+	@{2024-12-10}
 
 
 ## Overdue și ar trebui să mă uit măcar peste ele
 
+- [ ] # Alg (Seminar)
+	[[Algebră/Seminar/4 11 26.md#^wTQe2okrYJqhsd_Tjgrot|tema]]
+	[[Algebră/Seminar/4 11 26.md#^gqiB_Fwltx1D89IS9_Zxm|tema 2]]
+	@{2024-12-03}
+- [ ] # AM (Seminar)
+	[[AM/Seminar/4 11 26.md#^VDtgc7QWWA1yLZOUQYI1m|tema]]
+	@{2024-12-03}
 - [ ] # AM (Seminar)
 	[[AM/Seminar/4 11 12.md#^GTu4qd9F6f9TCgumb54Sh|tema]]
 	@{2024-11-19}
@@ -38,6 +40,13 @@ kanban-plugin: board
 ## Făcute
 
 **Complete**
+- [x] # ASC (Lab)
+	Lab 8 ex. 26
+	@{2024-12-04}
+- [x] # FP (Lab)
+	Lab 7-9
+	Pb. 4
+	@{2024-11-28}
 - [x] # ASC (Lab)
 	Lab 5 ex. 26
 	[făcut](<E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 11 13>)

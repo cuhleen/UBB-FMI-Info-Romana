@@ -10,6 +10,7 @@ from Repository.repository import RepositoryClienti
 from Repository.repository import RepositoryInchiriere
 
 
+
 class ControllerCarti:
     def __init__(self, repo: RepositoryCarti, validator: validatorCarte):
         self.__repo = repo

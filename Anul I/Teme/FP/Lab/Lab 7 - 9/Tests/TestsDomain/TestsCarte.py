@@ -1,8 +1,59 @@
+import unittest
+
 from Domains.carte import *
 from Domains.validation import validatorCarte
 
+class TestCarte(unittest.TestCase):
+    def setUp(self) -> None:
+        pass
 
+    def testCarte(self):
+        c = Carte(1, "Titlu 1", "Descriere 1", "Autor 1")
+        self.assertEqual(c.getId(), 1)
+        self.assertEqual(c.getTitlu(), "Titlu 1")
+        self.assertEqual(c.getDescriere(), "Descriere 1")
+        self.assertEqual(c.getAutor(), "Autor 1")
 
+        c.setTitlu("Titlu 1 Editat")
+        self.assertEqual(c.getTitlu(), "Titlu 1 Editat")
+        c.setDescriere("Descriere 1 Editata")
+        self.assertEqual(c.getDescriere(), "Descriere 1 Editata")
+        c.setAutor("Autor 1 Editat")
+        self.assertEqual(c.getAutor(), "Autor 1 Editat")
+
+    def testEgalCarte(self):
+        c1 = Carte(1, "Titlu 1", "Descriere 1", "Autor 1")
+        c2 = Carte(1, "Titlu 2", "Descriere 2", "Autor 2")
+        self.assertEqual(c1, c2)
+
+        c3 = Carte(3, "Titlu 1", "Descriere 1", "Autor 1")
+        self.assertNotEqual(c1, c3)
+
+    def testValidCarte(self):
+        validator = validatorCarte()
+        c1 = Carte(1, "Titlu 1", "Descriere 1", "Autor 1")
+        rez = validator.validate(c1)
+        self.assertIsNone(rez)
+
+        c2 = Carte(-2, "Titlu 2", "Descriere 2", "Autor 2")
+        self.assertRaises(ValueError, validator.validate, c2)
+
+        c3 = Carte(3, "", "Descriere 3", "Autor 3")
+        self.assertRaises(ValueError, validator.validate, c3)
+
+        c4 = Carte(4, "Titlu 4", "", "Autor 4")
+        self.assertRaises(ValueError, validator.validate, c4)
+
+        c5 = Carte(5, "Titlu 5", "Descriere 5", "")
+        self.assertRaises(ValueError, validator.validate, c5)
+
+    def tearDown(self) -> None:
+        pass
+
+if __name__ == "__main__":
+    unittest.main()
+
+"""
 def testCarte():
     carte1 = Carte(1, "Titlu 1", "Descriere 1", "Autor 1")
     assert(carte1.getId() == 1)
@@ -78,3 +129,5 @@ def testEgalCarte():
     carte3 = Carte(3, "Titlu 3", "Descriere 3", "Autor 3")
 
     assert (carte1 != carte3)
+
+"""

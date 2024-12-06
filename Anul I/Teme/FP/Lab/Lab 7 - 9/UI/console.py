@@ -1,3 +1,26 @@
+from Domains.validation import validatorCarte
+from Domains.validation import validatorClient
+from Repository.repository import RepositoryCarti
+from Repository.repository import RepositoryClienti
+from Repository.repository import RepositoryInchiriere
+from Repository.repository import RepositoryCartiFile
+from Repository.repository import RepositoryClientiFile
+from Repository.repository import RepositoryInchiriereFile
+from Service.controller import ControllerCarti
+from Service.controller import ControllerClienti
+from Service.controller import ControllerInchirieri
+
+validatorCarte1 = validatorCarte()
+validatorClient1 = validatorClient()
+
+repoCarte = RepositoryCarti()
+repoClient = RepositoryClienti()
+repoInchirieri = RepositoryInchiriere()
+
+repoCarteFile = RepositoryCartiFile("Text Repos/CartiDefault.txt")
+repoClientFile = RepositoryClientiFile("Text Repos/ClientiDefault.txt")
+repoInchiriereFile = RepositoryInchiriereFile("Text Repos/InchirieriDefault.txt", repoClientFile, repoCarteFile)
+
 class Console:
     def __init__(self, cartiService, clientiService, inchirieriService):
         self.__servCarti = cartiService
@@ -23,9 +46,13 @@ class Console:
         print("63. Afișează top 20% cei mai activi clienți")
         print("D1. Adaugă cărți default")
         print("D2. Adaugă clienți default")
+        print("D31. Adaugă închirieri default 1")
+        print("D32. Adaugă închirieri default 2")
         print("P1. Afișează lista de cărți")
         print("P2. Afișează lista de clienți")
-        print("P2. Afișează lista de închirieri")
+        print("P3. Afișează lista de închirieri")
+        print("R1. Utilizează Repository-ul memorie")
+        print("R2. Utilizează Repository-ul fișier")
         print("E. Ieșire din aplicație")
 
     def citesteInfoCarte(self) -> tuple:
@@ -462,5 +489,25 @@ class Console:
                 case 'D32':
                     self.inchirieriDefault2()
                     print("S-au adăugat închirierile default 2.")
+                case 'R1':
+                    isRunning = False
+                    print("Repository memorie în uz.")
+                    cartiService = ControllerCarti(repoCarte, validatorCarte1)
+                    clientiService = ControllerClienti(repoClient, validatorClient1)
+                    inchirieriService = ControllerInchirieri(repoClient, repoCarte, repoInchirieri)
+
+                    console = Console(cartiService, clientiService, inchirieriService)
+
+                    console.run()
+                case 'R2':
+                    isRunning = False
+                    print("Repository fișier în uz.")
+                    cartiService = ControllerCarti(repoCarteFile, validatorCarte1)
+                    clientiService = ControllerClienti(repoClientFile, validatorClient1)
+                    inchirieriService = ControllerInchirieri(repoClientFile, repoCarteFile, repoInchiriereFile)
+
+                    console = Console(cartiService, clientiService, inchirieriService)
+
+                    console.run()
                 case 'E':
                     isRunning = False

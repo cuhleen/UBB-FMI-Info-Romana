@@ -1,0 +1,61 @@
+     1                                  ; apeluri de funcții sistem
+     2                                  ; 26.
+     3                                  ; Se citesc de la tastatură două numere, a și b.
+     4                                  ; Să se calculeze valoarea expresiei (a-b)*k, k fiind o constantă definită în segmentul de date. Afișati valoarea expresiei (în baza 16). 
+     5                                  
+     6                                  bits 32
+     7                                  global start
+     8                                  extern exit, scanf, printf
+     9                                  import exit msvcrt.dll
+    10                                  import scanf msvcrt.dll
+    11                                  import printf msvcrt.dll
+    12                                  
+    13                                  segment data use32 class=data
+    14                                  
+    15 00000000 00000000                	a dd 0
+    16 00000004 00000000                    b dd 0
+    17 00000008 02000000                    k dd 2
+    18 0000000C 00000000                    rez1 dd 0
+    19 00000010 00000000                    rez2 dd 0
+    20                                  
+    21 00000014 256400                      formatCitire db "%d", 0; număr întreg
+    22 00000017 2578257800                  formatAfisare db "%x%x", 0; număr hexa
+    23                                      
+    24                                  segment code use32 class=code
+    25                                  	start:
+    26                                      
+    27                                      ; scanf(formatCitire, &a)
+    28                                      
+    29 00000000 68[00000000]                push dword a
+    30 00000005 68[14000000]                push dword formatCitire
+    31                                      ; push în ordine de la dreapta la stânga, pentru ca stack-ul să le scoată corect
+    32 0000000A FF15[00000000]              call [scanf]
+    33 00000010 83C408                      add esp, 4 * 2; resetăm poziția lui ESP după
+    34                                      
+    35                                      ; scanf(formatCitire, &b)
+    36                                      
+    37 00000013 68[04000000]                push dword b
+    38 00000018 68[14000000]                push dword formatCitire
+    39 0000001D FF15[00000000]              call [scanf]
+    40 00000023 83C408                      add esp, 4 * 2
+    41                                      
+    42                                      ; (a - b) * k
+    43                                      
+    44 00000026 A1[00000000]                mov eax, [a]
+    45 0000002B 2B05[04000000]              sub eax, [b]; EAX <- a - b
+    46 00000031 F725[08000000]              mul dword [k]; EDX:EAX <- (a - b) * k
+    47                                      
+    48 00000037 8915[0C000000]              mov [rez1], EDX
+    49 0000003D A3[10000000]                mov [rez2], EAX
+    50                                      
+    51                                      ; printf(formatAfisare, rez1, rez2)
+    52                                      
+    53 00000042 FF35[10000000]              push dword [rez2]
+    54 00000048 FF35[0C000000]              push dword [rez1]
+    55 0000004E 68[17000000]                push dword formatAfisare
+    56 00000053 FF15[00000000]              call [printf]
+    57 00000059 83C40C                      add esp, 4 * 3
+    58                                      
+    59                                      ; Exit program
+    60 0000005C 6A00                    	push dword 0
+    61 0000005E FF15[00000000]          	call[exit]

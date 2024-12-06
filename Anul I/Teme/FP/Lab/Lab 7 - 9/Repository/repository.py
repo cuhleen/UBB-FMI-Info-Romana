@@ -1,3 +1,5 @@
+import csv
+
 from Domains.carte import Carte
 from Domains.client import Client
 from Domains.inchiriere import Inchiriere
@@ -82,6 +84,71 @@ class RepositoryCarti:
 
 
 
+class RepositoryCartiFile(RepositoryCarti):
+    def __init__(self, fileName:str):
+        super().__init__()
+        self.__fileName = fileName
+        self.__readFromFile()
+
+    def __readFromFile(self):
+        """
+        Citește datele din fișier și le adaugă la colecția existentă
+        :return:
+        """
+        with open(self.__fileName, mode="r", encoding="utf-8") as f:
+            reader = csv.reader(f)
+            for line in reader:
+                if line:
+                    id, titlu, descriere, autor = line
+                    id = int(id)
+                    carte = Carte(id, titlu, descriere, autor)
+                    # Verifică dacă cartea există deja în colecție
+                    if self.find(id) is None:
+                        super().store(carte)
+
+    def store(self, carte: Carte):
+        """
+        Adaugă o carte în memorie și salvează în fișier
+        :param carte: cartea de adăugat
+        """
+        super().store(carte)
+        self.__saveToFile()
+
+    def __saveToFile(self):
+        """
+        Salvează datele despre cărți în fișier
+        """
+        with open(self.__fileName, mode="w", encoding="utf-8") as f:
+            for carte in self.getAll():
+                carte_str = str(carte.getId()) + "," + carte.getTitlu() + "," + carte.getAutor() + "\n"
+                f.write(carte_str)
+
+    def sterge(self, id: int):
+        """
+        Șterge cartea cu ID-ul dat și actualizează fișierul.
+        :param id: ID-ul cărții de șters.
+        """
+        pozitie = self._RepositoryCarti__cautaCarte(id)
+        if pozitie == -1:
+            print("Nu există carte cu ID-ul dat")
+            return
+        self.getAll().pop(pozitie)
+        self.__saveToFile()
+
+    def update(self, carteActualizata: Carte):
+        """
+        Actualizează cartea cu ID-ul dat și sincronizează modificările în fișier.
+        :param carteActualizata: cartea actualizată.
+        """
+        pozitie = self._RepositoryCarti__cautaClient(carteActualizata.getId())
+        if pozitie == -1:
+            print("Nu există carte cu ID-ul dat")
+            return
+        self.getAll()[pozitie] = carteActualizata
+        self.__saveToFile()
+
+
+
 class RepositoryClienti:
     def __init__(self):
         self.__elements = []
@@ -163,13 +230,80 @@ class RepositoryClienti:
 
 
 
+class RepositoryClientiFile(RepositoryClienti):
+    def __init__(self, fileName):
+        super().__init__()
+        self.__fileName = fileName
+        self.__readFromFile()
+
+    def __readFromFile(self):
+        """
+        Citește datele din fișier și le adaugă la colecția existentă
+        :return:
+        """
+        with open(self.__fileName, mode="r", encoding="utf-8") as f:
+            lines = f.readlines()
+            for line in lines:
+                line = line.strip()
+                if line != "":
+                    id, nume, cnp = line.split(",")
+                    id = int(id)
+                    cnp = int(cnp)
+                    client = Client(id, nume, cnp)
+                    # Verifică dacă clientul există deja în colecție
+                    if self.find(id) is None:
+                        super().store(client)
+
+    def store(self, client: Client):
+        """
+        Adaugă un client în memorie și salvează în fișier
+        :param client: clientul de adăugat
+        """
+        super().store(client)
+        self.__saveToFile()
+
+    def __saveToFile(self):
+        """
+        Salvează datele despre clienți în fișier
+        """
+        with open(self.__fileName, mode="w", encoding="utf-8") as f:
+            for client in self.getAll():
+                client_str = str(client.getId()) + "," + client.getNume() + "," + str(client.getCnp()) + "\n"
+                f.write(client_str)
+
+    def sterge(self, id: int):
+        """
+        Șterge clientul cu ID-ul dat și actualizează fișierul.
+        :param id: ID-ul clientului de șters.
+        """
+        pozitie = self._RepositoryClienti__cautaClient(id)
+        if pozitie == -1:
+            print("Nu există client cu ID-ul dat")
+            return
+        self.getAll().pop(pozitie)
+        self.__saveToFile()
+
+    def update(self, clientActualizat: Client):
+        """
+        Actualizează clientul cu ID-ul dat și sincronizează modificările în fișier.
+        :param clientActualizat: clientul actualizat.
+        """
+        pozitie = self._RepositoryClienti__cautaClient(clientActualizat.getId())
+        if pozitie == -1:
+            print("Nu există client cu ID-ul dat")
+            return
+        self.getAll()[pozitie] = clientActualizat
+        self.__saveToFile()
+
+
+
 class RepositoryInchiriere:
     def __init__(self):
         self.__elements = []
 
     def find(self, inchiriere):
         """
-        Caută clientul cu ID-ul dat
+        Caută închirierea cu același client și aceeași carte
         :param inchiriere: închirierea de găsit
         :return: obiect de tip Inchiriere dacă există închiriere a cărții date de către clientul dat, None altfel
         """
@@ -230,3 +364,71 @@ class RepositoryInchiriere:
         :return: lungimea colecției de închirieri
         """
         return len(self.__elements)
+
+
+
+class RepositoryInchiriereFile(RepositoryInchiriere, ):
+    def __init__(self, fileName, repoClientiFile, repoCartiFile):
+        super().__init__()
+        self.__fileName = fileName
+        self.__repoClienti = repoClientiFile
+        self.__repoCarti = repoCartiFile
+        self.__readFromFile()
+
+    def __readFromFile(self):
+        """
+        Citește datele din fișier
+        :return:
+        """
+        with open(self.__fileName, mode="r", encoding="utf-8") as f:
+            lines = f.readlines()
+            for line in lines:
+                line = line.strip()
+                if line != "":
+                    idClient, idCarte = line.split(",")
+                    idClient = int(idClient)
+                    idCarte = int(idCarte)
+                    client = self.__repoClienti.find(idClient)
+                    carte = self.__repoCarti.find(idCarte)
+                    inc = Inchiriere(client, carte)
+                    super().store(inc)
+
+    def store(self, inchiriere:Inchiriere):
+        super().store(inchiriere)
+        self.__saveToFile()
+
+    def __saveToFile(self):
+        """
+        Salvează datele despre un client în fișier
+        :return:
+        """
+        with open(self.__fileName, mode="w", encoding="utf-8") as f:
+            for inchiriere in self.getAll():
+                client = inchiriere.getClient()
+                carte = inchiriere.getCarte()
+                inchiriere_str = str(client.getId()) + "," + str(carte.getId()) + "\n"
+                f.write(inchiriere_str)
+
+    def sterge(self, client: Client, carte: Carte):
+        """
+        Șterge închirierea din memorie și fișier cu clientul și cartea dată
+        :param client: clientul închirierii de șters
+        :param carte: cartea închirierii de șters
+        """
+        if self._RepositoryInchiriere__cautaInchiriere(client, carte) == -1:
+            print("Nu există închiriere a cărții date de către clientul dat")
+            return
+        self._RepositoryInchiriere__elements.pop(self._RepositoryInchiriere__cautaInchiriere(client, carte))
+        self.__saveToFile()
+
+    def update(self, inchiriereActualizata: Inchiriere):
+        """
+        Actualizează închirierea din memorie și fișier
+        :param inchiriereActualizata: închirierea actualizată
+        """
+        pozitie = self.__cautaInchiriere(inchiriereActualizata.getClient(), inchiriereActualizata.getCarte())
+        if pozitie == -1:
+            print("Nu există închiriere cu clientul și cartea date")
+            return
+        self.__elements[pozitie] = inchiriereActualizata
+        self.__saveToFile()

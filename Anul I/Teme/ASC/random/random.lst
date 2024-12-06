@@ -1,0 +1,21 @@
+     1                                  bits 32
+     2                                  global start
+     3                                  extern exit, fopen, fclose, scanf, fprintf
+     4                                  import exit msvcrt.dll
+     5                                  import fopen msvcrt.dll
+     6                                  import fclose msvcrt.dll
+     7                                  import scanf msvcrt.dll
+     8                                  import fprintf msvcrt.dll
+     9                                  segment data use32 class=data
+    10                                  
+    11 00000000 1D2C                    	a dw 2c1dh
+    12 00000002 7A3B                        b db 7ah, 3bh
+    13                                      
+    14                                  segment code use32 class=code
+    15                                  	start:
+    16                                      
+    17 00000000 66A1[02000000]              mov ax, [b]
+    18                                      
+    19                                      ; Exit program
+    20 00000006 6A00                    	push dword 0
+    21 00000008 FF15[00000000]          	call[exit]
