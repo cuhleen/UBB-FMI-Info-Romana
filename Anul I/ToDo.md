@@ -7,15 +7,21 @@ kanban-plugin: board
 ## De făcut
 
 - [ ] # AM (Seminar)
-	[[AM/Seminar/4 12 3.md#^cyW3X3X_bXeODcXp1hYGW|tema]]
-	@{2024-12-10}
+	[[AM/Seminar/4 12 10.md#^EwKM3Prl_8sGQP4oWnCXH|tema]]
+	@{2024-12-17}
 - [ ] # Algebră (Seminar)
-	[[Algebră/Seminar/4 12 3.md#^qQMaCMxlvCuRhgvhYU5iy|tema]]
-	@{2024-12-10}
+	[[Algebră/Seminar/4 12 10.md#^cgbQIjhVlrefqqsbIOS6i|tema]]
+	@{2024-12-17}
 
 
 ## Overdue și ar trebui să mă uit măcar peste ele
 
+- [ ] # Algebră (Seminar)
+	[[Algebră/Seminar/4 12 3.md#^qQMaCMxlvCuRhgvhYU5iy|tema]]
+	@{2024-12-10}
+- [ ] # AM (Seminar)
+	[[AM/Seminar/4 12 3.md#^cyW3X3X_bXeODcXp1hYGW|tema]]
+	@{2024-12-10}
 - [ ] # Alg (Seminar)
 	[[Algebră/Seminar/4 11 26.md#^wTQe2okrYJqhsd_Tjgrot|tema]]
 	[[Algebră/Seminar/4 11 26.md#^gqiB_Fwltx1D89IS9_Zxm|tema 2]]

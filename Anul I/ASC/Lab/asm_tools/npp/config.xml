@@ -3,13 +3,13 @@
     <FindHistory nbMaxFindHistoryPath="10" nbMaxFindHistoryFilter="10" nbMaxFindHistoryFind="10" nbMaxFindHistoryReplace="10" matchWord="no" matchCase="no" wrap="yes" directionDown="yes" fifRecuisive="yes" fifInHiddenFolder="no" dlgAlwaysVisible="no" fifFilterFollowsDoc="no" fifFolderFollowsDoc="no" searchMode="1" transparencyMode="1" transparency="150" dotMatchesNewline="no">
         <Filter name="" />
         <Filter name="" />
+        <Filter name="" />
         <Find name="eax" />
         <Find name="\t" />
         <Replace name="ecx" />
         <Replace name="    " />
     </FindHistory>
     <History nbMaxFile="10" inSubMenu="no" customLength="-1">
-        <File filename="E:\002 Facultate\Obsidian\Anul I\ASC\Lab\4 10 9\Teme\1 simplu 26.asm" />
         <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\4 10 14 seminar\1 1.asm" />
         <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\4 10 14 seminar\1 2.asm" />
         <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 10 16\Tema Lab 2 2.asm" />
@@ -19,6 +19,7 @@
         <File filename="E:\002 Facultate\Obsidian\Anul I\ASC\Lab\4 10 30\exemplu.asm" />
         <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 11 13\Tema Lab 4.asm" />
         <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 10 16\Tema Lab 2 1.asm" />
+        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\random\random.asm" />
     </History>
     <GUIConfigs>
         <GUIConfig name="ToolBar" visible="yes">standard</GUIConfig>

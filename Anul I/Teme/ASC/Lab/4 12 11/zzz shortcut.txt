@@ -1,0 +1,13 @@
+e:
+cd "002 Facultate"
+cd Obsidian
+cd "Anul I"
+cd Teme
+cd ASC
+cd Lab
+cd "4 12 11"
+dir
+nasm -fobj temaLab11modul.asm
+nasm -fobj temaLab11main.asm
+alink temaLab11main.obj temaLab11modul.obj -oPE -subsys console -entry start
+temaLab11main

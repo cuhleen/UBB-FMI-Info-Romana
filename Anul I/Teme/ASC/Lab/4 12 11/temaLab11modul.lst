@@ -1,0 +1,17 @@
+     1                                  ; Modulul "compare"
+     2                                  ; Are un număr deja în EBX (EBX inițializat cu 7FFFFFFFh în main.asm)
+     3                                  ; Primește prin stivă un număr
+     4                                  ; Dacă numărul primit este mai mic decăt EBX, pune în EBX numărul primit
+     5                                  ; Altfel, nu face nimic
+     6                                  
+     7                                  bits 32
+     8                                  global compare
+     9                                  segment code use32 class=code public
+    10                                      compare:
+    11 00000000 8B442404                        mov eax, [esp + 4]
+    12 00000004 39C3                            cmp ebx, eax
+    13 00000006 7E02                            jle skip; signed
+    14                                          
+    15 00000008 89C3                            mov ebx, eax
+    16                                      skip:
+    17 0000000A C3                              ret

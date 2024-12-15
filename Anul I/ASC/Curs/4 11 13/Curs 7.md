@@ -90,7 +90,7 @@ teo wuz here :]
 ```asm
 mov eax, [v]; mov eax dword ptr [DS:405000]
 mov eax, [ebx]; DS
-mov eax, [evp]; SS
+mov eax, [ebp]; SS
 mov eax, [ebp * 2]; mov eax dword ptr [SS:ebp + ebp]
 mov eax, [ebp * 3]; SS
 mov eax, [ebp * 4]; DS

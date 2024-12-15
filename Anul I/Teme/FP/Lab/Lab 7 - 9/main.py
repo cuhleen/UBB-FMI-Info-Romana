@@ -11,7 +11,7 @@ from Service.controller import ControllerClienti
 from Service.controller import ControllerInchirieri
 from UI.console import Console
 from Tests.allTests import runAlltests
-p1
+
 runAlltests()
 
 validatorCarte1 = validatorCarte()

@@ -103,7 +103,7 @@ Registru de bază: EAX, EBX, ECX, EDX, EBP, ESI, EDI, ESP
 Registru de index: EAX, EBX ECX, EDX, EBP, ESI, EDI
 - ESP *nu* are voie sa fie registru de index
 
-<sup>*</sup>*Formula de 1 noaptea*
+<sup>*</sup>*Formula de 2 noaptea*
 
 ### Moduri de adresare la memorie:
 - **directă**, atunci când apare numai <span>[constantă]</span>
