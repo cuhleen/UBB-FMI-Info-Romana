@@ -10,16 +10,16 @@
         <Replace name="    " />
     </FindHistory>
     <History nbMaxFile="10" inSubMenu="no" customLength="-1">
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\4 10 14 seminar\1 1.asm" />
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\4 10 14 seminar\1 2.asm" />
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 10 16\Tema Lab 2 2.asm" />
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 10 16\Tema Lab 2 3.asm" />
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 10 16\Tema Lab 2 4.asm" />
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 10 16\Tema Lab 2 5.asm" />
-        <File filename="E:\002 Facultate\Obsidian\Anul I\ASC\Lab\4 10 30\exemplu.asm" />
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 11 13\Tema Lab 4.asm" />
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 10 16\Tema Lab 2 1.asm" />
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\random\random.asm" />
+        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\5 1 8\temaLab12modul.asm" />
+        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 12 4\Tema Lab 8 1.asm" />
+        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 10 23\Tema Lab 3 1.asm" />
+        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 10 23\Tema Lab 3 2.asm" />
+        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 10 23\Tema Lab 3 3.asm" />
+        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 10 23\Tema Lab 3 4.asm" />
+        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 11 6\Tema Lab 4.asm" />
+        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 11 13\Tema Lab 5.asm" />
+        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 11 20\Tema Lab 6.asm" />
+        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 12 4\Tema Lab 8 2.asm" />
     </History>
     <GUIConfigs>
         <GUIConfig name="ToolBar" visible="yes">standard</GUIConfig>
@@ -67,7 +67,7 @@
             <ActiveTabs cont="0" activeTab="-1" />
             <ActiveTabs cont="1" activeTab="-1" />
             <ActiveTabs cont="2" activeTab="-1" />
-            <ActiveTabs cont="3" activeTab="0" />
+            <ActiveTabs cont="3" activeTab="-1" />
         </GUIConfig>
     </GUIConfigs>
     <ProjectPanels>

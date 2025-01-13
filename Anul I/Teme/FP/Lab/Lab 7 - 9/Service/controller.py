@@ -72,6 +72,17 @@ class ControllerCarti:
                 listaFiltrata.append(elem)
         return listaFiltrata
 
+    def filtreazaDupaAutorRecursiv(self, autor:str, lista:list = None, index:int=0, listaFiltrata:list=None) -> list:
+        if lista is None:
+            lista = self.__repo.getAll()
+        if listaFiltrata is None:
+            listaFiltrata = []
+        if index == len(lista):
+            return listaFiltrata
+        if lista[index].getAutor() == autor:
+            listaFiltrata.append(lista[index])
+        return self.filtreazaDupaAutorRecursiv(autor, lista, index + 1, listaFiltrata)
+
     def addDefault(self):
         self.adaugaCarte(101, "No Longer Human", "It tells the story of a troubled man incapable of revealing his true self to others, and who, instead, maintains a façade of hollow jocularity, later turning to a life of alcoholism and drug abuse before his final disappearance.", "Osamu Dazai")
         self.adaugaCarte(102, "The Trial", "It tells the story of Josef K., a man arrested and prosecuted by a remote, inaccessible authority, with the nature of his crime revealed neither to him nor to the reader.", "Franz Kafka")
@@ -262,6 +273,66 @@ class ControllerInchirieri:
                 inchiriere.setClient(self.__repoClienti.find(idClient))
                 inchiriere.setCarte(self.__repoCarti.find(idCarte))
 
+    def quick_sort(self, array, key=lambda x: x, reverse=False, cmp=None):
+        if len(array) <= 1:
+            return array
+
+        pivot = array[len(array) // 2]
+        if cmp is None:
+            cmp = lambda a, b: (key(a) > key(b)) - (key(a) < key(b))
+
+        less = [x for x in array if cmp(x, pivot) < 0]
+        equal = [x for x in array if cmp(x, pivot) == 0]
+        greater = [x for x in array if cmp(x, pivot) > 0]
+
+        result = self.quick_sort(less, key, reverse, cmp) + equal + self.quick_sort(greater, key, reverse, cmp)
+        return result[::-1] if reverse else result
+
+    def gnome_sort(self, array, key=lambda x: x, reverse=False, cmp=None):
+        if cmp is None:
+            cmp = lambda a, b: (key(a) > key(b)) - (key(a) < key(b))
+
+        i = 0
+        while i < len(array):
+            if i == 0 or cmp(array[i - 1], array[i]) <= 0:
+                i += 1
+            else:
+                array[i], array[i - 1] = array[i - 1], array[i]
+                i -= 1
+
+        return array[::-1] if reverse else array
+
+    def merge_sort(self, array, key=lambda x: x, reverse=False, cmp=None):
+        if len(array) <= 1:
+            return array
+
+        if cmp is None:
+            cmp = lambda a, b: (key(a) > key(b)) - (key(a) < key(b))
+
+        mid = len(array) // 2
+        left = self.merge_sort(array[:mid], key, reverse, cmp)
+        right = self.merge_sort(array[mid:], key, reverse, cmp)
+
+        return self.merge(left, right, key, reverse, cmp)
+
+    def merge(self, left, right, key, reverse, cmp):
+        result = []
+        i = j = 0
+
+        while i < len(left) and j < len(right):
+            if cmp(left[i], right[j]) <= 0:
+                result.append(left[i])
+                i += 1
+            else:
+                result.append(right[j])
+                j += 1
+
+        result.extend(left[i:])
+        result.extend(right[j:])
+
+        return result[::-1] if reverse else result
+
+
 
     def celeMaiInchiriate(self):
         """
@@ -284,6 +355,28 @@ class ControllerInchirieri:
 
         return [(self.__repoCarti.find(carteId).getTitlu(), numar) for carteId, numar in cartiOrdonate]
 
+    # Complexitatea funcției de mai sus este O(n + m*log(m)) unde n este numărul de închirieri și m este numărul de cărți
+
+    def celeMaiInchiriateQS(self):
+        """
+        Returnează lista celor mai închiriate cărți, ordonate descrescător după numărul de închirieri.
+        """
+        cartiInchirieri = {}
+        for inchiriere in self.__repoInchirieri.getAll():
+            carte = inchiriere.getCarte()
+            if carte.getId() not in cartiInchirieri:
+                cartiInchirieri[carte.getId()] = 0
+            cartiInchirieri[carte.getId()] += 1
+
+        # Sortare descrescătoare folosind funcția noastră quick_sort
+        cartiOrdonate = self.quick_sort(
+            list(cartiInchirieri.items()),
+            key=lambda x: x[1],
+            reverse=True
+        )
+
+        return [(self.__repoCarti.find(carteId).getTitlu(), numar) for carteId, numar in cartiOrdonate]
+
     def clientiCuCartiInchiriate(self):
         """
         Returnează lista de clienți cu cărți închiriate, ordonată după nume și numărul de închirieri.
@@ -299,6 +392,44 @@ class ControllerInchirieri:
         # Sortare după nume și număr de închirieri
         clientiOrdonati = sorted(
             clientiInchirieri.items(),
+            key=lambda x: (self.__repoClienti.find(x[0]).getNume(), -x[1])
+        )
+
+        return [(self.__repoClienti.find(clientId).getNume(), numar) for clientId, numar in clientiOrdonati]
+
+    def clientiCuCartiInchiriateGS(self):
+        """
+        Returnează lista de clienți cu cărți închiriate, ordonată după nume și numărul de închirieri.
+        """
+        clientiInchirieri = {}
+        for inchiriere in self.__repoInchirieri.getAll():
+            client = inchiriere.getClient()
+            if client.getId() not in clientiInchirieri:
+                clientiInchirieri[client.getId()] = 0
+            clientiInchirieri[client.getId()] += 1
+
+        # Sortare folosind funcția noastră gnome_sort
+        clientiOrdonati = self.gnome_sort(
+            list(clientiInchirieri.items()),
+            key=lambda x: (self.__repoClienti.find(x[0]).getNume(), -x[1])
+        )
+
+        return [(self.__repoClienti.find(clientId).getNume(), numar) for clientId, numar in clientiOrdonati]
+
+    def clientiCuCartiInchiriateMS(self):
+        """
+        Returnează lista de clienți cu cărți închiriate, ordonată după nume și numărul de închirieri.
+        """
+        clientiInchirieri = {}
+        for inchiriere in self.__repoInchirieri.getAll():
+            client = inchiriere.getClient()
+            if client.getId() not in clientiInchirieri:
+                clientiInchirieri[client.getId()] = 0
+            clientiInchirieri[client.getId()] += 1
+
+        # Sortare folosind funcția noastră merge_sort
+        clientiOrdonati = self.merge_sort(
+            list(clientiInchirieri.items()),
             key=lambda x: (self.__repoClienti.find(x[0]).getNume(), -x[1])
         )
 

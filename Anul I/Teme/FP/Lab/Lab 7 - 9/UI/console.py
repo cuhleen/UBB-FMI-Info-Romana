@@ -53,6 +53,8 @@ class Console:
         print("P3. Afișează lista de închirieri")
         print("R1. Utilizează Repository-ul memorie")
         print("R2. Utilizează Repository-ul fișier")
+        print("Rec1. Caută carte după autor utilizând funcția recursivă")
+        print("Rec2. Afișează lista de cărți utilizând funcția recursivă")
         print("E. Ieșire din aplicație")
 
     def citesteInfoCarte(self) -> tuple:
@@ -67,12 +69,28 @@ class Console:
         for carte in listaCarti:
             print(carte)
 
+    def afiseazaCartiRecursiv(self, listaCarti, index:int=0):
+        if index < len(listaCarti):
+            print(listaCarti[index])
+            return self.afiseazaCartiRecursiv(listaCarti, index + 1)
+
     def filtreazaDupaAutorUI(self):
         autorDorit = input("Autorul de căutat: ")
 
         listaFiltrata = self.__servCarti.filtreazaDupaAutor(autorDorit)
         if len(listaFiltrata) > 0:
-            print("Melodiile care au autorul " + autorDorit + " sunt:")
+            print("Cărțile care au autorul " + autorDorit + " sunt:")
+            self.afiseazaCarti(listaFiltrata)
+        else:
+            print("Nu există cărți cu autorul " + autorDorit + ".")
+
+    def filtreazaDupaAutorRecursivUI(self):
+        autorDorit = input("Autorul de căutat: ")
+
+        # Apelarea funcției recursivă
+        listaFiltrata = self.__servCarti.filtreazaDupaAutorRecursiv(autorDorit)
+        if len(listaFiltrata) > 0:
+            print("Cărțile care au autorul " + autorDorit + " sunt:")
             self.afiseazaCarti(listaFiltrata)
         else:
             print("Nu există cărți cu autorul " + autorDorit + ".")
@@ -408,7 +426,7 @@ class Console:
 
     def celeMaiInchiriateUI(self):
         print("Cele mai închiriate cărți:\n")
-        for nume, numar in self.__servInchirieri.celeMaiInchiriate():
+        for nume, numar in self.__servInchirieri.celeMaiInchiriateQS():
             if numar == 1:
                 print('"' + nume + '" - ' + "o închiriere")
             else:
@@ -416,7 +434,7 @@ class Console:
 
     def clientiCuCartiInchiriateUI(self):
         print("Clienții cu cărți închiriate:\n")
-        for nume, numar in self.__servInchirieri.clientiCuCartiInchiriate():
+        for nume, numar in self.__servInchirieri.clientiCuCartiInchiriateMS():
             if numar == 1:
                 print(nume + ": o carte închiriată")
             else:
@@ -466,9 +484,9 @@ class Console:
                 case '52':
                     self.stergeInchiriereUI()
                 case '61':
-                    self.celeMaiInchiriateUI()
+                    self.celeMaiInchiriateUI() #Quick Sort aici
                 case '62':
-                    self.clientiCuCartiInchiriateUI()
+                    self.clientiCuCartiInchiriateUI() #Merge Sort aici
                 case '63':
                     self.top20LaSutaClientiUI()
                 case 'P1':
@@ -509,5 +527,9 @@ class Console:
                     console = Console(cartiService, clientiService, inchirieriService)
 
                     console.run()
+                case 'REC1':
+                    self.filtreazaDupaAutorRecursivUI()
+                case 'REC2':
+                    self.afiseazaCartiRecursiv(self.__servCarti.getAll())
                 case 'E':
                     isRunning = False

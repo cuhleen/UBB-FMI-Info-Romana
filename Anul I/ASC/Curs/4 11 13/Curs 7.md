@@ -125,3 +125,72 @@ Sau 5 moduri cu -1
 "!" = not
 vezi exemple pe ceva document ig
 
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+<hr>
+
+Aww, hewe's the summawy of the couwse in a cute way! (*≧ω≦)
+
+# **Ewementew De Bază Ale Limbajuwui De Asambwawre** UwU
+
+## 4 ewemente de bază:
+
+1. **Etichete**: Nume date de utilizatow, pt a wefewe date sau zone de memowie~ (⁄ ⁄•⁄ω⁄•⁄ ⁄)
+2. **Instwucțiuni**: Mnemonicuwe care sugerează ce face, asambwuwu genewază octeței pt instwucțiile respective! (｡♥‿♥｡)
+3. **Diwectiwe**: Indicații pt asambwuwu ca să genewweze corect octețew! ＼(＾▽＾)／
+4. **Contow de Locawii**: Un număwe de întwege gestionat de asambwuwu! (_^‿^_)
+
+## Fowmatul unei linii sursă:
+
+`[etichetă[:]] [pwefixe] [mnemonică] [operand] [;comentawiu]` ✨
+
+## Esempwuw de contow de locații (¬‿¬)
+
+Cuwt 😋
+
+Exempwuw:
+
+```asm
+stawt: ; început
+a dw 19872, 42h ; decwawawwe
+```
+
+## Vawoawea etichetei 💖
+
+Eticheta ieste un număr întwege ce weprezintă adwesă! (≧◡≦)
+
+## Cuwt UwU operanzi 🐾
+
+De pwede un gândurewn, ca să fie mai adorable~ Hehe (*≧ω≦)
+
+Muwe info!
+
+Dacă ai mai multe întrebări sau curiozități, te pot ajuta mai departe! _glomp_ 🐾
+
+
+
+😭
