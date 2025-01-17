@@ -1,0 +1,106 @@
+     1                                  ; Se citește de la tastatură un număr natural n, urmat de mai multe numere pozitive (ultimul număr citit va fi 0).
+     2                                  ; Să se scrie în fișierul output.txt numai numerele care conțin exact n cifre impare.
+     3                                  
+     4                                  bits 32
+     5                                  global start
+     6                                  extern exit, scanf, fopen, fclose, fprintf
+     7                                  import exit msvcrt.dll
+     8                                  import scanf msvcrt.dll
+     9                                  import fprintf msvcrt.dll
+    10                                  import fopen msvcrt.dll
+    11                                  import fclose msvcrt.dll
+    12                                  
+    13                                  segment data use32 class=data
+    14                                  
+    15 00000000 00000000                    n dd 0
+    16 00000004 256400                      formatCitireN db "%d", 0
+    17 00000007 256400                      formatCitireNumar db "%d", 0
+    18 0000000A 25645C6E00                  formatScriere db "%d\n", 0
+    19 0000000F 7700                        modAcces db "w", 0
+    20 00000011 6F75747075742E7478-         numeFisier db "output.txt", 0
+    20 0000001A 7400               
+    21 0000001C 00000000                    descriptorFisier dd 0
+    22 00000020 00000000                    numar dd 0
+    23                                  
+    24                                  segment code use32 class=code
+    25                                      start:
+    26                                  
+    27                                      ; Deschidem fișierul | fopen(numeFisier, modAcces)
+    28 00000000 68[0F000000]                push dword modAcces
+    29 00000005 68[11000000]                push dword numeFisier
+    30 0000000A FF15[00000000]              call [fopen]
+    31 00000010 83C408                      add esp, 8
+    32                                  
+    33 00000013 A3[1C000000]                mov [descriptorFisier], eax
+    34                                  
+    35                                      ; Verificăm dacă fișierul a fost deschis cu succes
+    36 00000018 83F800                      cmp eax, 0
+    37 0000001B 0F848C000000                je final
+    38                                  
+    39                                      ; Citim n | scanf("%d", &n)
+    40 00000021 8D05[00000000]              lea eax, [n]
+    41 00000027 50                          push eax
+    42 00000028 68[04000000]                push dword formatCitireN
+    43 0000002D FF15[00000000]              call [scanf]
+    44 00000033 83C408                      add esp, 8
+    45                                  
+    46                                      citire_numar:
+    47                                      ; Citim un număr | scanf("%d", &numar)
+    48 00000036 8D05[20000000]              lea eax, [numar]
+    49 0000003C 50                          push eax
+    50 0000003D 68[07000000]                push dword formatCitireNumar
+    51 00000042 FF15[00000000]              call [scanf]
+    52 00000048 83C408                      add esp, 8
+    53                                  
+    54                                      ; Verificăm dacă numărul este 0
+    55 0000004B A1[20000000]                mov eax, [numar]
+    56 00000050 83F800                      cmp eax, 0
+    57 00000053 744C                        je finalizare
+    58                                  
+    59                                      ; Verificăm câte cifre impare are numărul
+    60 00000055 B900000000                  mov ecx, 0          ; Counter pentru cifre impare
+    61 0000005A 89C3                        mov ebx, eax        ; Salvăm numărul în ebx
+    62                                  
+    63                                      verifica_cifre:
+    64 0000005C 83FB00                      cmp ebx, 0
+    65 0000005F 741B                        je compara_cifre
+    66                                  
+    67                                      ; Extragem ultima cifră
+    68 00000061 BA00000000                  mov edx, 0
+    69 00000066 89D8                        mov eax, ebx
+    70 00000068 BF0A000000                  mov edi, 10
+    71 0000006D F7F7                        div edi             ; eax = ebx / 10, edx = ebx % 10
+    72                                  
+    73                                      ; Verificăm dacă cifra este impară
+    74 0000006F F7C201000000                test edx, 1
+    75 00000075 7401                        jz cifra_para
+    76                                  
+    77 00000077 41                          inc ecx             ; Incrementăm numărul de cifre impare
+    78                                  
+    79                                      cifra_para:
+    80 00000078 89C3                        mov ebx, eax        ; Trecem la următoarea cifră
+    81 0000007A EBE0                        jmp verifica_cifre
+    82                                  
+    83                                      compara_cifre:
+    84                                      ; Comparăm numărul de cifre impare cu n
+    85 0000007C A1[00000000]                mov eax, [n]
+    86 00000081 39C1                        cmp ecx, eax
+    87 00000083 75B1                        jne citire_numar
+    88                                  
+    89                                      ; Scriem numărul în fișier | fprintf(descriptorFisier, "%d\n", numar)
+    90 00000085 FF35[20000000]              push dword [numar]
+    91 0000008B 68[0A000000]                push dword formatScriere
+    92 00000090 FF35[1C000000]              push dword [descriptorFisier]
+    93 00000096 FF15[00000000]              call [fprintf]
+    94 0000009C 83C40C                      add esp, 12
+    95                                  
+    96 0000009F EB95                        jmp citire_numar
+    97                                  
+    98                                      finalizare:
+    99                                      ; Închidem fișierul
+   100 000000A1 FF35[1C000000]              push dword [descriptorFisier]
+   101 000000A7 FF15[00000000]              call [fclose]
+   102                                  
+   103                                      final:
+   104 000000AD 6A00                        push dword 0
+   105 000000AF FF15[00000000]              call [exit]

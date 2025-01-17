@@ -1,6 +1,5 @@
 ==Vezi pdf!!==
 # Reprezentarea instrucțiunilor mașină
-
 Ce bytes generează asamblorul : [prefix] + cod + [ModRM] + [SIB] + [deplasament] + [imediat]
 
 *ModRM = mod register / memory*

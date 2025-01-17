@@ -1,0 +1,127 @@
+     1                                  ; Să se scrie un prgram în limbaj de asamblare care citește un nume de fișier (maxim 50 de caractere) de la tastatură.
+     2                                  ; Programul va citi, apoi, conținutul întregului fișier dat (maxim 100 de caractere), va determina și va afișa pe ecran, în baza 16, numărul de consoane.
+     3                                  ; Fișierul conține litere mici, mari, numere, spații, și caractere speciale.
+     4                                  ; Nu este permisă utilizarea specificatorului de format "%x" pentru a afișa în baza 16.
+     5                                  
+     6                                  bits 32
+     7                                  global start
+     8                                  extern exit, fopen, fclose, scanf, printf, fread
+     9                                  import exit msvcrt.dll
+    10                                  import fopen msvcrt.dll
+    11                                  import fclose msvcrt.dll
+    12                                  import scanf msvcrt.dll
+    13                                  import printf msvcrt.dll
+    14                                  import fread msvcrt.dll
+    15                                  
+    16                                  segment data use32 class=data
+    17                                  
+    18 00000000 00000000                    numeFisier dd 0
+    19 00000004 257300                      formatCitire db "%s", 0
+    20 00000007 257800                      formatAfisare db "%x", 0
+    21 0000000A 7200                        modAcces db "r", 0
+    22 0000000C 00000000                    descriptorFisier dd 0
+    23 00000010 00000000                    nrConsoane dd 0
+    24                                      
+    25                                      len equ 100
+    26 00000014 00<rept>                    text times len db 0
+    27                                  
+    28                                  segment code use32 class=code
+    29                                      start:
+    30                                      
+    31                                      ; citire de la tastatură a numelui de fișier | scanf(formatCitire, numeFisier)
+    32                                      
+    33 00000000 68[00000000]                push dword numeFisier
+    34 00000005 68[04000000]                push dword formatCitire
+    35 0000000A FF15[00000000]              call [scanf]
+    36 00000010 83C408                      add esp, 4 * 2
+    37                                      
+    38                                      ; deschidem fișierul | fopen(numeFisier, modAcces)
+    39                                      
+    40 00000013 68[0A000000]                push dword modAcces
+    41 00000018 68[00000000]                push dword numeFisier
+    42 0000001D FF15[00000000]              call [fopen]
+    43 00000023 83C408                      add esp, 4 * 2
+    44                                      
+    45 00000026 A3[0C000000]                mov [descriptorFisier], eax
+    46                                      
+    47                                      ; verificăm dacă funcția fopen a deschis fișierul cu succes (dacă EAX != 0)
+    48                                   
+    49 0000002B 83F800                      cmp eax, 0
+    50 0000002E 0F848F000000                je final
+    51                                   
+    52                                      ; Începem să citim din fișier | fread(text, 1, len, descriptorFisier)
+    53                                      
+    54 00000034 FF35[0C000000]              push dword [descriptorFisier]
+    55 0000003A 6A64                        push dword len
+    56 0000003C 6A01                        push dword 1
+    57 0000003E 68[14000000]                push dword text
+    58 00000043 FF15[00000000]              call [fread]
+    59 00000049 83C410                      add esp, 4 * 4
+    60                                      
+    61                                      ; Luăm caracter cu caracter ce se află în text, verificăm dacă caracterele sunt consoane
+    62                                   
+    63 0000004C B964000000                  mov ecx, len; folosit ca numărător
+    64 00000051 8D35[14000000]              lea esi, [text]; ESI indică începutul buffer-ului text
+    65 00000057 31C0                        xor eax, eax; resetăm numărul de consoane
+    66                                      
+    67                                      contor_consoane:
+    68 00000059 8A06                            mov al, [esi]; caracterul curent
+    69 0000005B 3C00                            cmp al, 0; dacă am ajuns la sfârșitul textului
+    70 0000005D 7441                            je calculeaza_consoane
+    71                                  
+    72                                          ; verificăm dacă este literă mare sau mică
+    73 0000005F 3C41                            cmp al, 'A'
+    74 00000061 7C3A                            jl urmatorul_caracter
+    75 00000063 3C5A                            cmp al, 'Z'
+    76 00000065 7E08                            jle verifica_consoana
+    77 00000067 3C61                            cmp al, 'a'
+    78 00000069 7C32                            jl urmatorul_caracter
+    79 0000006B 3C7A                            cmp al, 'z'
+    80 0000006D 7E00                            jle verifica_consoana
+    81                                          
+    82                                      verifica_consoana:
+    83 0000006F 3C61                            cmp al, 'a'
+    84 00000071 742A                            je urmatorul_caracter
+    85 00000073 3C65                            cmp al, 'e'
+    86 00000075 7426                            je urmatorul_caracter
+    87 00000077 3C69                            cmp al, 'i'
+    88 00000079 7422                            je urmatorul_caracter
+    89 0000007B 3C6F                            cmp al, 'o'
+    90 0000007D 741E                            je urmatorul_caracter
+    91 0000007F 3C75                            cmp al, 'u'
+    92 00000081 741A                            je urmatorul_caracter
+    93 00000083 3C41                            cmp al, 'A'
+    94 00000085 7416                            je urmatorul_caracter
+    95 00000087 3C45                            cmp al, 'E'
+    96 00000089 7412                            je urmatorul_caracter
+    97 0000008B 3C49                            cmp al, 'I'
+    98 0000008D 740E                            je urmatorul_caracter
+    99 0000008F 3C4F                            cmp al, 'O'
+   100 00000091 740A                            je urmatorul_caracter
+   101 00000093 3C55                            cmp al, 'U'
+   102 00000095 7406                            je urmatorul_caracter
+   103                                          
+   104 00000097 FF05[10000000]                  inc dword [nrConsoane]
+   105                                          
+   106                                      urmatorul_caracter:
+   107 0000009D 46                              inc esi; trecem la următorul caracter
+   108 0000009E E2B9                            loop contor_consoane
+   109                                      
+   110                                      calculeaza_consoane:
+   111                                          ; printf(formatAfisare, nrConsoane)
+   112 000000A0 A1[10000000]                    mov eax, [nrConsoane]
+   113 000000A5 50                              push eax
+   114 000000A6 68[07000000]                    push dword formatAfisare
+   115 000000AB FF15[00000000]                  call [printf]
+   116 000000B1 83C408                          add esp, 4 * 2
+   117                                          
+   118                                      ; închidem fișierul | fclose(descriptorFisier)
+   119                                      
+   120 000000B4 FF35[0C000000]              push dword [descriptorFisier]
+   121 000000BA FF15[00000000]              call [fclose]
+   122 000000C0 83C404                      add esp, 4 * 1
+   123                                          
+   124                                      final:
+   125                                   
+   126 000000C3 6A00                        push dword 0
+   127 000000C5 FF15[00000000]              call [exit]

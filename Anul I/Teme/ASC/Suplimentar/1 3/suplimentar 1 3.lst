@@ -1,0 +1,147 @@
+     1                                  ;Se citesc cifre de la tastatură până la întâlnirea caracterului "!"
+     2                                  ; Să se determine cel mai mare număr format prin folosirea fiecărei cifre impare citite o singură dată.
+     3                                  ; Scrieți numărul obținut într-un fișier numit result.txt
+     4                                  
+     5                                  bits 32
+     6                                  
+     7                                  global start
+     8                                  extern exit, fopen, fclose, scanf, fprintf
+     9                                  import exit msvcrt.dll
+    10                                  import fopen msvcrt.dll
+    11                                  import fclose msvcrt.dll
+    12                                  import scanf msvcrt.dll
+    13                                  import fprintf msvcrt.dll
+    14                                  
+    15                                  segment data use32 class=data
+    16                                  
+    17 00000000 00                          cifra db 0              ; Cifra citită
+    18 00000001 256300                      formatCitire db "%c", 0 ; Format pentru citire un caracter
+    19 00000004 00                          unu db 0                ; Flag pentru cifra 1
+    20 00000005 00                          trei db 0               ; Flag pentru cifra 3
+    21 00000006 00                          cinci db 0              ; Flag pentru cifra 5
+    22 00000007 00                          sapte db 0              ; Flag pentru cifra 7
+    23 00000008 00                          noua db 0               ; Flag pentru cifra 9
+    24                                  
+    25 00000009 7700                        modAcces db "w", 0
+    26 0000000B 726573756C742E7478-         numeFisier db "result.txt", 0
+    26 00000014 7400               
+    27 00000016 00000000                    descriptorFisier dd 0
+    28 0000001A 43656C206D6169206D-         formatScriere db "Cel mai mare numar este: %d", 0
+    28 00000023 617265206E756D6172-
+    28 0000002C 20657374653A202564-
+    28 00000035 00                 
+    29                                  
+    30                                  segment code use32 class=code
+    31                                      start:
+    32                                      
+    33                                      ; Deschidem fișierul | fopen(numeFisier, modAcces)
+    34                                      
+    35 00000000 68[09000000]                push dword modAcces
+    36 00000005 68[0B000000]                push dword numeFisier
+    37 0000000A FF15[00000000]              call [fopen]
+    38 00000010 83C408                      add esp, 4 * 2
+    39                                      
+    40 00000013 A3[16000000]                mov [descriptorFisier], eax
+    41                                      
+    42                                      ; Verificăm dacă fișierul s-a deschis cu succes
+    43                                      
+    44 00000018 83F800                      cmp eax, 0
+    45 0000001B 0F84D7000000                je final
+    46                                      
+    47                                      ; Începem să citim de la tastatură | scanf(formatCitire, cifra)
+    48                                      
+    49                                      citire_numar:
+    50 00000021 8D05[00000000]                  lea eax, [cifra]
+    51 00000027 50                              push eax
+    52 00000028 68[01000000]                    push formatCitire
+    53 0000002D FF15[00000000]                  call [scanf]
+    54 00000033 83C408                          add esp, 4 * 2
+    55                                      
+    56                                          ; Verificăm dacă am citit caracterul de final "!"
+    57 00000036 0FB605[00000000]                movzx eax, byte [cifra]
+    58 0000003D 83F821                          cmp eax, '!'
+    59 00000040 7448                            je calcul_numar
+    60                                      
+    61                                          ; Procesăm cifrele impare
+    62 00000042 83F831                          cmp eax, '1'
+    63 00000045 7416                            je set_unu
+    64 00000047 83F833                          cmp eax, '3'
+    65 0000004A 741A                            je set_trei
+    66 0000004C 83F835                          cmp eax, '5'
+    67 0000004F 741E                            je set_cinci
+    68 00000051 83F837                          cmp eax, '7'
+    69 00000054 7422                            je set_sapte
+    70 00000056 83F839                          cmp eax, '9'
+    71 00000059 7426                            je set_noua
+    72                                          
+    73 0000005B EBC4                            jmp citire_numar
+    74                                  
+    75                                      set_unu:
+    76 0000005D C605[04000000]01                mov byte [unu], 1
+    77 00000064 EBBB                            jmp citire_numar
+    78                                  
+    79                                      set_trei:
+    80 00000066 C605[05000000]01                mov byte [trei], 1
+    81 0000006D EBB2                            jmp citire_numar
+    82                                  
+    83                                      set_cinci:
+    84 0000006F C605[06000000]01                mov byte [cinci], 1
+    85 00000076 EBA9                            jmp citire_numar
+    86                                  
+    87                                      set_sapte:
+    88 00000078 C605[07000000]01                mov byte [sapte], 1
+    89 0000007F EBA0                            jmp citire_numar
+    90                                  
+    91                                      set_noua:
+    92 00000081 C605[08000000]01                mov byte [noua], 1
+    93 00000088 EB97                            jmp citire_numar
+    94                                  
+    95                                      calcul_numar:
+    96                                          ; Construim cel mai mare număr posibil
+    97 0000008A 31C9                            xor ecx, ecx ; ECX va fi numărul rezultat
+    98                                          
+    99 0000008C A0[08000000]                    mov al, [noua]
+   100 00000091 84C0                            test al, al
+   101 00000093 7406                            jz skip_9
+   102 00000095 6BC90A                          imul ecx, ecx, 10
+   103 00000098 83C109                          add ecx, 9
+   104                                      skip_9:
+   105 0000009B A0[07000000]                    mov al, [sapte]
+   106 000000A0 84C0                            test al, al
+   107 000000A2 7406                            jz skip_7
+   108 000000A4 6BC90A                          imul ecx, ecx, 10
+   109 000000A7 83C107                          add ecx, 7
+   110                                      skip_7:
+   111 000000AA A0[06000000]                    mov al, [cinci]
+   112 000000AF 84C0                            test al, al
+   113 000000B1 7406                            jz skip_5
+   114 000000B3 6BC90A                          imul ecx, ecx, 10
+   115 000000B6 83C105                          add ecx, 5
+   116                                      skip_5:
+   117 000000B9 A0[05000000]                    mov al, [trei]
+   118 000000BE 84C0                            test al, al
+   119 000000C0 7406                            jz skip_3
+   120 000000C2 6BC90A                          imul ecx, ecx, 10
+   121 000000C5 83C103                          add ecx, 3
+   122                                      skip_3:
+   123 000000C8 A0[04000000]                    mov al, [unu]
+   124 000000CD 84C0                            test al, al
+   125 000000CF 7406                            jz skip_1
+   126 000000D1 6BC90A                          imul ecx, ecx, 10
+   127 000000D4 83C101                          add ecx, 1
+   128                                      skip_1:
+   129                                  
+   130                                          ; Scriem rezultatul în fișier
+   131 000000D7 51                              push ecx
+   132 000000D8 68[1A000000]                    push dword formatScriere
+   133 000000DD FF35[16000000]                  push dword [descriptorFisier]
+   134 000000E3 FF15[00000000]                  call [fprintf]
+   135 000000E9 83C40C                          add esp, 4 * 3
+   136                                      
+   137                                          ; Închidem fișierul
+   138 000000EC FF35[16000000]                  push dword [descriptorFisier]
+   139 000000F2 FF15[00000000]                  call [fclose]
+   140                                      
+   141                                      final:
+   142 000000F8 6A00                            push dword 0
+   143 000000FA FF15[00000000]                  call [exit]

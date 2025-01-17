@@ -25,10 +25,10 @@ Directivele se adresează asamblorului
 ## Formatul unei linii sursă
 `[etichetă[:]] [prefixe] [mnemonică] [operand] [;comentariu]`
 `[gânditul]` - opțional
+
 ##### Exemplu:
 `aici: jmp acolo ; sărim acolo`
 `etichetă + mnemonică + operand + comentariu`
-
 
 ```asm
 start: ; început

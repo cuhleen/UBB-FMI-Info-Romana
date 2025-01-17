@@ -4,22 +4,26 @@
         <Filter name="" />
         <Filter name="" />
         <Filter name="" />
+        <Filter name="" />
+        <Find name="numeFisier)" />
+        <Find name="modAcces)" />
+        <Find name="numeFisier" />
+        <Find name="fprintf" />
+        <Find name="text" />
+        <Find name="fopen" />
         <Find name="eax" />
         <Find name="\t" />
         <Replace name="ecx" />
         <Replace name="    " />
     </FindHistory>
     <History nbMaxFile="10" inSubMenu="no" customLength="-1">
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\5 1 8\temaLab12modul.asm" />
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 12 4\Tema Lab 8 1.asm" />
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 10 23\Tema Lab 3 1.asm" />
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 10 23\Tema Lab 3 2.asm" />
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 10 23\Tema Lab 3 3.asm" />
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 10 23\Tema Lab 3 4.asm" />
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 11 6\Tema Lab 4.asm" />
         <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 11 13\Tema Lab 5.asm" />
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 11 20\Tema Lab 6.asm" />
+        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\4 10 14 seminar\1 1.asm" />
+        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 12 4\Tema Lab 8 1.asm" />
+        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 12 11\temaLab11main.asm" />
+        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 12 11\temaLab11modul.asm" />
         <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 12 4\Tema Lab 8 2.asm" />
+        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 11 20\Tema Lab 6.asm" />
     </History>
     <GUIConfigs>
         <GUIConfig name="ToolBar" visible="yes">standard</GUIConfig>
@@ -61,7 +65,7 @@
         <GUIConfig name="MISC" fileSwitcherWithoutExtColumn="no" backSlashIsEscapeCharacterForSql="yes" newStyleSaveDlg="no" isFolderDroppedOpenFiles="no" docPeekOnTab="no" docPeekOnMap="no" />
         <GUIConfig name="searchEngine" searchEngineChoice="2" searchEngineCustom="" />
         <GUIConfig name="SmartHighLight" matchCase="no" wholeWordOnly="yes" useFindSettings="no" onAnotherView="no">yes</GUIConfig>
-        <GUIConfig name="ScintillaPrimaryView" lineNumberMargin="show" bookMarkMargin="show" indentGuideLine="show" folderMarkStyle="box" lineWrapMethod="aligned" currentLineHilitingShow="show" scrollBeyondLastLine="no" disableAdvancedScrolling="no" wrapSymbolShow="hide" Wrap="yes" borderEdge="yes" edge="no" edgeNbColumn="80" zoom="2" zoom2="0" whiteSpaceShow="hide" eolShow="hide" borderWidth="2" smoothFont="no" />
+        <GUIConfig name="ScintillaPrimaryView" lineNumberMargin="show" bookMarkMargin="show" indentGuideLine="show" folderMarkStyle="box" lineWrapMethod="aligned" currentLineHilitingShow="show" scrollBeyondLastLine="no" disableAdvancedScrolling="no" wrapSymbolShow="hide" Wrap="yes" borderEdge="yes" edge="no" edgeNbColumn="80" zoom="4" zoom2="0" whiteSpaceShow="hide" eolShow="hide" borderWidth="2" smoothFont="no" />
         <GUIConfig name="DockingManager" leftWidth="200" rightWidth="200" topHeight="200" bottomHeight="200">
             <PluginDlg pluginName="AsmPlugin.dll" id="2" curr="3" prev="-1" isVisible="yes" />
             <ActiveTabs cont="0" activeTab="-1" />

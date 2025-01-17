@@ -48,15 +48,51 @@
             }
           },
           {
-            "id": "2fde7ef89061ae18",
+            "id": "d0bd9de631157a3c",
             "type": "leaf",
             "state": {
               "type": "excalidraw",
               "state": {
-                "file": "FP/Seminar/5 1 13.md"
+                "file": "AM/Seminar/5 1 17.md"
               },
               "icon": "excalidraw-icon",
-              "title": "5 1 13"
+              "title": "5 1 17"
+            }
+          },
+          {
+            "id": "cd007649274271f2",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "AM/Curs/5 1 10/curs13.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "curs13"
+            }
+          },
+          {
+            "id": "2916f29e63e4bc98",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "AM/formule derivate integrale.jpg"
+              },
+              "icon": "lucide-image",
+              "title": "formule derivate integrale"
+            }
+          },
+          {
+            "id": "f1d717da664c79bb",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "AM/Seminar/5 1 14.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "5 1 14"
             }
           }
         ],
@@ -225,53 +261,53 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "2fde7ef89061ae18",
+  "active": "d0bd9de631157a3c",
   "lastOpenFiles": [
-    "zzz Imagini Excalidraw/20250108_190739.jpg",
-    "FP/Seminar/5 1 13.md",
-    "Pasted Image 20250113133618_411.png",
-    "Pasted Image 20250113122610_687.png",
+    "zzz Imagini Excalidraw/Pasted Image 20250117125945_186.png",
+    "AM/Seminar/5 1 17.md",
+    "AM/Notare.md",
+    "zzz Imagini Excalidraw/Pasted Image 20250117124055_951.png",
+    "AM/Seminar/5 1 14.md",
+    "AM/Seminar/4 10 1.md",
+    "AM/Curs/5 1 10/curs13.pdf",
+    "AM/Seminar/seminar13.pdf",
+    "zzz Imagini Excalidraw/Pasted Image 20250117123408_968.png",
+    "zzz Imagini Excalidraw/Pasted Image 20250117122722_550.png",
+    "AM/formule derivate integrale.jpg",
+    "AM/Curs/curs14.pdf",
     "ToDo.md",
-    "FP/Seminar/4 12 16.md",
-    "Orar.md",
-    "zzz Altele/Săptămâni Impare.md",
-    "AM/Curs/curs13.pdf",
+    "Teme/Algebră/pregătire 2.md",
+    "Algebră/Seminar/4 11 26.md",
+    "Algebră/model parțial 2 1.pdf",
+    "Algebră/Seminar/4 12 10.md",
+    "Algebră/Seminar/5 1 14.md",
+    "Teme/Algebră/notite algebra.pdf",
+    "zzz Imagini Excalidraw/Pasted Image 20250116072833_570.png",
+    "zzz Imagini Excalidraw/Pasted Image 20250116071517_897.png",
+    "zzz Imagini Excalidraw/Pasted Image 20250116065902_444.png",
+    "zzz Imagini Excalidraw/Pasted Image 20250116065110_276.png",
+    "zzz Imagini Excalidraw/Pasted Image 20250115222547_965.png",
+    "Algebră/model parțial 1 2.pdf",
+    "Algebră/model parțial 1 1.pdf",
+    "Algebră/model-lucrare-2.pdf",
+    "Algebră/Seminar/4 12 3.md",
     "Algebră/Curs/algebra-pt-informatica 24-25.pdf",
-    "ASC/Curs/5 1 8/Curs 13.md",
+    "ASC/Curs/5 1 15/Curs 14.md",
+    "Orar.md",
+    "Algebră/Seminar/4 12 17.md",
     "ASC/Curs/4 11 13/Curs 7.md",
     "ASC/Curs/4 12 18/Curs 12.md",
-    "ASC/Curs/5 1 8",
-    "ASC/Lab/asm_tools/npp/backup/temaLab12modul.asm@2025-01-08_144132",
-    "ASC/Lab/asm_tools/npp/backup/temaLab12modul.asm@2025-01-08_143508",
-    "ASC/Lab/asm_tools/npp/backup/temaLab12modul.asm@2025-01-08_143212",
-    "ASC/Lab/asm_tools/npp/backup/temaLab12modul.asm@2025-01-08_142423",
-    "ASC/Seminar/4 12 13/Seminar 7 - rezolvare.md",
-    "ASC/Seminar/4 12 13/Seminar 7 - exemplu practic.pdf",
-    "ASC/Seminar/4 10 14.md",
-    "ASC/Seminar/4 12 13/Seminar 7 - rezolvare.txt",
-    "ASC/Seminar/4 12 13/New Text Document.txt",
-    "FP/Notare.md",
-    "ASC/Lab/4 12 18/Lab 12.md",
-    "ASC/Notare.md",
-    "Algebră/Seminar/4 12 17.md",
-    "Algebră/Seminar/4 12 10.md",
-    "Algebră/Seminar/4 12 10.png",
-    "LC/Seminar/4 12 17.md",
-    "LC/Seminar/4 12 3.md",
-    "LC/Seminar/4 12 10.md",
-    "AM/Seminar/4 12 17.md",
     "AM/Seminar/4 12 10.md",
-    "FP/Seminar/4 12 9.md",
-    "zzz Imagini Excalidraw/Pasted Image 20241216125736_517.png",
-    "zzz Imagini Excalidraw/Pasted Image 20241216125538_913.png",
-    "zzz Imagini Excalidraw/Pasted Image 20241216124352_110.png",
-    "zzz Imagini Excalidraw/Pasted Image 20241216123458_414.png",
-    "zzz Imagini Excalidraw/Pasted Image 20241216122847_392.png",
-    "zzz Imagini Excalidraw/Pasted Image 20241216122656_244.png",
-    "ASC/Curs/4 12 11/Curs 11.md",
-    "ASC/Seminar/4 12 9.md",
+    "AM/Seminar/4 12 3.md",
+    "ASC/Curs/5 1 15",
     "ASC/Seminar/4 11 11.md",
-    "ASC/Seminar/4 10 28.md",
+    "ASC/Seminar/4 11 25.md",
+    "ASC/Seminar/4 12 9.md",
+    "AM/Seminar/4 10 22.md",
+    "LC/Seminar/5 1 14.md",
+    "AM/Seminar/4 12 17.md",
+    "FP/Seminar/5 1 13.md",
+    "FP/Seminar/4 12 16.md",
     "Untitled.canvas",
     "Pg. În C/Curs/4 10 4.canvas",
     "Teme/Pg. În C/Curs/4 10 4.canvas"

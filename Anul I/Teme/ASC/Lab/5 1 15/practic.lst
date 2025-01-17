@@ -1,0 +1,183 @@
+     1                                  ; Se citeste de la tastatura un nume de fisier, un caracter special s (orice caracter in afara de litere si cifre) si un numar n reprezentat pe octet.
+     2                                  ; Fisierul contine cuvinte separate prin spatiu. Sa se scrie in fisierul output.txt aceleasi cuvinte transformate astfel:
+     3                                  ; al n-lea caracter din fiecare cuvant se transforma in caracterul special.
+     4                                  ; (Daca numarul de caractere al cuvantului este mai mic decat n, cuvantul se va prefixa cu caracterul special s )
+     5                                  ;
+     6                                  ; Exemplu:
+     7                                  ; nume fisier:input.txt
+     8                                  ; continut fisier: mere pere banane mandarine
+     9                                  ; s: +
+    10                                  ; n: 6
+    11                                  ; output.txt: ++mere ++pere banan+ manda+
+    12                                  
+    13                                  bits 32
+    14                                  
+    15                                  global start
+    16                                  extern exit, fopen, fclose, scanf, fread, fprintf
+    17                                  import exit msvcrt.dll
+    18                                  import fopen msvcrt.dll
+    19                                  import fclose msvcrt.dll
+    20                                  import scanf msvcrt.dll
+    21                                  import fread msvcrt.dll
+    22                                  import fprintf msvcrt.dll
+    23                                  
+    24                                  segment data use32 class=data
+    25                                  
+    26 00000000 <res 00000064>              numeFisier resb 100
+    27 00000064 7200                        modAcces db "r", 0
+    28 00000066 00000000                    descriptorFisier dd 0
+    29                                      len equ 100; lungimea textului din fișier
+    30 0000006A 00<rept>                    text times len db 0
+    31                                      
+    32 000000CE 6F75747075742E7478-         numeFisierOutput dd "output.txt", 0
+    32 000000D7 74000000000000     
+    33 000000DE 6100                        modAccesOutput db "a", 0
+    34 000000E0 00000000                    descriptorFisierOutput dd 0
+    35 000000E4 257300                      formatAfisareOutput db "%s", 0
+    36                                      
+    37 000000E7 00                          s db 0; caracterul special
+    38 000000E8 257300                      formatCitireString db "%s", 0
+    39                                      
+    40 000000EB 00000000                    n dd 0
+    41 000000EF 256400                      formatCitireNumar db "%d", 0
+    42                                      
+    43                                  segment code use32 class=code
+    44                                      start:
+    45                                      
+    46                                      ; Citim numele fișierului | scanf(formatCitireString, numeFisier)
+    47                                      
+    48 00000000 68[00000000]                push dword numeFisier
+    49 00000005 68[E8000000]                push dword formatCitireString
+    50 0000000A FF15[00000000]              call [scanf]
+    51 00000010 83C408                      add esp, 4 * 2
+    52                                      
+    53                                      ; Deschidem fișierul din care citim | fopen(numeFisier, modAcces)
+    54                                      
+    55 00000013 68[64000000]                push dword modAcces
+    56 00000018 68[00000000]                push dword numeFisier
+    57 0000001D FF15[00000000]              call [fopen]
+    58 00000023 83C408                      add esp, 4 * 2
+    59                                      
+    60                                      ; Verificăm dacă fișierul s-a deschis cu succes
+    61                                      
+    62 00000026 83F800                      cmp eax, 0
+    63 00000029 0F84E9000000                je final
+    64                                      
+    65 0000002F A3[66000000]                mov [descriptorFisier], eax
+    66                                      
+    67                                      ; Deschidem fișierul în care afișăm | fopen(numeFisierOutput, modAccesOutput)
+    68                                      
+    69 00000034 68[DE000000]                push dword modAccesOutput
+    70 00000039 68[CE000000]                push dword numeFisierOutput
+    71 0000003E FF15[00000000]              call [fopen]
+    72 00000044 83C408                      add esp, 4 * 2
+    73                                      
+    74                                      ; Verificăm dacă fișierul s-a deschis cu succes
+    75                                      
+    76 00000047 83F800                      cmp eax, 0
+    77 0000004A 0F84C8000000                je final
+    78                                      
+    79 00000050 A3[E0000000]                mov [descriptorFisierOutput], eax
+    80                                      
+    81                                      ; Citim caracterul special | scanf(formatCitireString, s)
+    82                                      
+    83 00000055 68[E7000000]                push dword s
+    84 0000005A 68[E8000000]                push dword formatCitireString
+    85 0000005F FF15[00000000]              call [scanf]
+    86 00000065 83C408                      add esp, 4 * 2
+    87                                      
+    88                                      ; Citim n | scanf(formatCitireNumar, n)
+    89                                      
+    90 00000068 68[EB000000]                push dword n
+    91 0000006D 68[EF000000]                push dword formatCitireNumar
+    92 00000072 FF15[00000000]              call [scanf]
+    93 00000078 83C408                      add esp, 4 * 2
+    94                                      
+    95                                      ; Începem să citim din fișier | fread(text, 1, len, descriptorFisier)
+    96                                      
+    97 0000007B FF35[66000000]              push dword [descriptorFisier]
+    98 00000081 6A64                        push dword len
+    99 00000083 6A01                        push dword 1
+   100 00000085 68[6A000000]                push dword text
+   101 0000008A FF15[00000000]              call [fread]
+   102 00000090 83C410                      add esp, 4 * 4
+   103                                      
+   104                                      ; Luăm caracter cu caracter ce se află în text, numărăm câte caractere sunt în fiecare cuvânt
+   105                                   
+   106 00000093 BA01000000                  mov edx, 1; Folosesc EDX drept un toggle pentru ultimul cuvânt (vezi eticheta "ultimul_cuvant")
+   107                                   
+   108 00000098 B964000000                  mov ecx, len; folosit ca numărător
+   109 0000009D 8D35[6A000000]              lea esi, [text]; ESI indică începutul buffer-ului text
+   110                                      
+   111 000000A3 31DB                        xor ebx, ebx; resetăm numărul de caractere al cuvântului curent
+   112                                      
+   113                                      citire_cuvant:
+   114 000000A5 8A06                            mov al, [esi]; caracterul curent
+   115                                          
+   116 000000A7 3C20                            cmp al, " "; dacă am citit complet un cuvânt
+   117 000000A9 7408                            je verifica_nr_litere
+   118 000000AB 3C00                            cmp al, 0; sau dacă am ajuns la finalul textului
+   119 000000AD 7447                            je ultimul_cuvant
+   120                                          
+   121 000000AF 43                              inc ebx
+   122                                          
+   123                                      urmatorul_caracter:
+   124 000000B0 46                              inc esi; trecem la următorul caracter
+   125 000000B1 E2F2                            loop citire_cuvant
+   126                                      
+   127                                      verifica_nr_litere:
+   128 000000B3 8B0D[EB000000]                  mov ecx, [n]
+   129 000000B9 39CB                            cmp ebx, ecx
+   130 000000BB 7730                            ja sufix
+   131                                          
+   132                                          ; PRIMUL CAZ, PREFIX
+   133                                          ; Scriem de două ori caracterul special, apoi cuvântul
+   134                                          
+   135                                          ; Scriere în fișier fprintf(descriptorFisierOutput, formatAfisareOutput, string)
+   136                                          
+   137 000000BD 68[E7000000]                    push dword s
+   138 000000C2 68[E4000000]                    push dword formatAfisareOutput
+   139 000000C7 68[E0000000]                    push dword descriptorFisierOutput
+   140 000000CC FF15[00000000]                  call [fprintf]
+   141 000000D2 83C40C                          add esp, 4 * 3
+   142                                          
+   143 000000D5 68[E7000000]                    push dword s
+   144 000000DA 68[E4000000]                    push dword formatAfisareOutput
+   145 000000DF 68[E0000000]                    push dword descriptorFisierOutput
+   146 000000E4 FF15[00000000]                  call [fprintf]
+   147 000000EA 83C40C                          add esp, 4 * 3
+   148                                          
+   149                                          sufix:
+   150                                          
+   151                                          ; AL DOILEA CAZ, SUFIX
+   152                                          ; Scriem caracterul special în loc de al n-lea caracter
+   153                                          
+   154                                          
+   155                                          
+   156                                          
+   157                                          
+   158 000000ED 83FA00                          cmp edx, 0
+   159 000000F0 7408                            je inchide_fisiere
+   160 000000F2 31DB                            xor ebx, ebx
+   161 000000F4 EBAF                            jmp citire_cuvant
+   162                                      
+   163                                      ultimul_cuvant:
+   164 000000F6 31D2                            xor edx, edx
+   165 000000F8 EBB9                            jmp verifica_nr_litere
+   166                                      
+   167                                      inchide_fisiere:
+   168                                      
+   169                                          ; Închidem fișierele | fclose(descriptorFisier) | fclose(descriptorFisierOutput)
+   170                                         
+   171 000000FA FF35[66000000]                  push dword [descriptorFisier]
+   172 00000100 FF15[00000000]                  call [fclose]
+   173 00000106 83C404                          add esp, 4 * 1
+   174                                         
+   175 00000109 FF35[E0000000]                  push dword [descriptorFisierOutput]
+   176 0000010F FF15[00000000]                  call [fclose]
+   177 00000115 83C404                          add esp, 4 * 1
+   178                                      
+   179                                      final:
+   180                                      
+   181 00000118 6A00                        push dword 0
+   182 0000011A FF15[00000000]              call [exit]
