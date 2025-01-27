@@ -101,7 +101,7 @@ Reprezentarea adreselor respectă principiul *reprezentării little endian*
 </ol>
 Registru de bază: EAX, EBX, ECX, EDX, EBP, ESI, EDI, ESP
 Registru de index: EAX, EBX ECX, EDX, EBP, ESI, EDI
-- ESP *nu* are voie sa fie registru de index
+- ESP *nu* are voie să fie registru de index
 
 <sup>*</sup>*Formula de 2 noaptea*
 

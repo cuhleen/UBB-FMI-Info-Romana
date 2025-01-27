@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "3c7b7aa94caf00a8",
+        "id": "5b0d25d0bc6d68e3",
         "type": "tabs",
         "children": [
           {
-            "id": "34d386621e02ab33",
+            "id": "d2ad0d83a9a5b133",
             "type": "leaf",
             "pinned": true,
             "state": {
@@ -24,7 +24,7 @@
             }
           },
           {
-            "id": "d136d17f4a453d3c",
+            "id": "b1016eec79190288",
             "type": "leaf",
             "pinned": true,
             "state": {
@@ -48,51 +48,17 @@
             }
           },
           {
-            "id": "d0bd9de631157a3c",
+            "id": "6486ec3801ca1a71",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
+              "type": "markdown",
               "state": {
-                "file": "AM/Seminar/5 1 17.md"
+                "file": "Teme/ASC/Teorie și altele pentru examen.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "excalidraw-icon",
-              "title": "5 1 17"
-            }
-          },
-          {
-            "id": "cd007649274271f2",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "AM/Curs/5 1 10/curs13.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "curs13"
-            }
-          },
-          {
-            "id": "2916f29e63e4bc98",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "AM/formule derivate integrale.jpg"
-              },
-              "icon": "lucide-image",
-              "title": "formule derivate integrale"
-            }
-          },
-          {
-            "id": "f1d717da664c79bb",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "AM/Seminar/5 1 14.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "5 1 14"
+              "icon": "lucide-file",
+              "title": "Teorie și altele pentru examen"
             }
           }
         ],
@@ -168,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "ToDo.md",
+                "file": "Teme/ASC/Teorie și altele pentru examen.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -178,7 +144,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for ToDo"
+              "title": "Backlinks for Teorie și altele pentru examen"
             }
           },
           {
@@ -240,8 +206,7 @@
               "title": "Timer"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "horizontal",
@@ -261,53 +226,54 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "d0bd9de631157a3c",
+  "active": "6486ec3801ca1a71",
   "lastOpenFiles": [
-    "zzz Imagini Excalidraw/Pasted Image 20250117125945_186.png",
-    "AM/Seminar/5 1 17.md",
-    "AM/Notare.md",
-    "zzz Imagini Excalidraw/Pasted Image 20250117124055_951.png",
-    "AM/Seminar/5 1 14.md",
-    "AM/Seminar/4 10 1.md",
-    "AM/Curs/5 1 10/curs13.pdf",
-    "AM/Seminar/seminar13.pdf",
-    "zzz Imagini Excalidraw/Pasted Image 20250117123408_968.png",
-    "zzz Imagini Excalidraw/Pasted Image 20250117122722_550.png",
-    "AM/formule derivate integrale.jpg",
-    "AM/Curs/curs14.pdf",
-    "ToDo.md",
-    "Teme/Algebră/pregătire 2.md",
-    "Algebră/Seminar/4 11 26.md",
-    "Algebră/model parțial 2 1.pdf",
-    "Algebră/Seminar/4 12 10.md",
-    "Algebră/Seminar/5 1 14.md",
-    "Teme/Algebră/notite algebra.pdf",
-    "zzz Imagini Excalidraw/Pasted Image 20250116072833_570.png",
-    "zzz Imagini Excalidraw/Pasted Image 20250116071517_897.png",
-    "zzz Imagini Excalidraw/Pasted Image 20250116065902_444.png",
-    "zzz Imagini Excalidraw/Pasted Image 20250116065110_276.png",
-    "zzz Imagini Excalidraw/Pasted Image 20250115222547_965.png",
-    "Algebră/model parțial 1 2.pdf",
-    "Algebră/model parțial 1 1.pdf",
-    "Algebră/model-lucrare-2.pdf",
-    "Algebră/Seminar/4 12 3.md",
-    "Algebră/Curs/algebra-pt-informatica 24-25.pdf",
-    "ASC/Curs/5 1 15/Curs 14.md",
-    "Orar.md",
-    "Algebră/Seminar/4 12 17.md",
     "ASC/Curs/4 11 13/Curs 7.md",
-    "ASC/Curs/4 12 18/Curs 12.md",
-    "AM/Seminar/4 12 10.md",
-    "AM/Seminar/4 12 3.md",
-    "ASC/Curs/5 1 15",
-    "ASC/Seminar/4 11 11.md",
-    "ASC/Seminar/4 11 25.md",
-    "ASC/Seminar/4 12 9.md",
-    "AM/Seminar/4 10 22.md",
+    "Teme/ASC/Teorie și altele pentru examen.md",
+    "ToDo.md",
+    "ASC/Curs/4 10 30/Curs 5.md",
+    "ASC/Curs/4 10 16/Curs 3.md",
+    "Orar.md",
+    "ASC/Curs/5 1 15/Curs 14.md",
+    "LC/Subiecte examen.pdf",
+    "Teme/LC/Logica propozițiilor.png",
+    "Teme/LC/Logica predicatelor.png",
+    "Teme/LC/Algebre boolene.pdf",
+    "Teme/LC/Ex. idk.md",
+    "LC/Cursuri pdf/LC_Curs11.pdf",
     "LC/Seminar/5 1 14.md",
+    "LC/Seminar/Seminarii 214/Sem13_212_20250110WhiteBoard02.pdf",
+    "LC/Cursuri pdf/LC_Curs10.pdf",
+    "LC/Cursuri pdf/LC_Curs9.pdf",
+    "zzz Imagini Excalidraw/Pasted Image 20250124184713_048.png",
+    "Teme/LC/~$nsultatii19_01_2025.docx",
+    "Teme/LC/Ex. idk.png",
+    "zzz Imagini Excalidraw/Pasted Image 20250124184647_735.png",
+    "zzz Imagini Excalidraw/Pasted Image 20250124184324_941.png",
+    "zzz Imagini Excalidraw/Pasted Image 20250124184100_748.png",
+    "zzz Imagini Excalidraw/Pasted Image 20250124183916_722.png",
+    "Teme/LC/Consultatii19_01_2025.docx",
+    "LC/Seminar/Seminarii 214/Sem12_212_20241220WhiteBoard02.pdf",
+    "LC/Seminar/Seminarii 214/Sem10_212_20241206WhiteBoard03.pdf",
+    "Teme/LC/Logica predicatelor.md",
+    "Teme/LC/Logica propozițiilor.md",
+    "zzz Imagini Excalidraw/Pasted Image 20250124130254_673.png",
+    "zzz Imagini Excalidraw/Pasted Image 20250124130024_764.png",
+    "Teme/AM/Suplimentar/Ex. valori extreme.md",
+    "Teme/AM/Suplimentar/Ex. whatever.md",
+    "Teme/AM/Suplimentar/Ex. integrale.md",
+    "Teme/AM/Suplimentar/Overview.md",
+    "LC/Seminar/4 12 17.md",
+    "Teme/LC/Pregătire parțial 1.md",
+    "LC/Seminar/4 11 5.md",
+    "AM/Seminar/5 1 14.md",
+    "AM/Curs/4 11 8/Curs 6.md",
+    "AM/Seminar/5 1 17.md",
+    "AM/Seminar/4 10 29.md",
     "AM/Seminar/4 12 17.md",
-    "FP/Seminar/5 1 13.md",
-    "FP/Seminar/4 12 16.md",
+    "AM/Seminar/4 11 5.md",
+    "Teme/AM/Suplimentar/Ex. valori extreme 1.md",
+    "AM/Seminar/4 11 12.md",
     "Untitled.canvas",
     "Pg. În C/Curs/4 10 4.canvas",
     "Teme/Pg. În C/Curs/4 10 4.canvas"
