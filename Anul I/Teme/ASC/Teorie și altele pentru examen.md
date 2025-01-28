@@ -1,6 +1,14 @@
 
 <div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+
 # ***Cerința I***
+
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
 <div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
 
 
@@ -506,7 +514,15 @@ Exemplu: `mov ax, [EBP + ECX + 4]`
 
 
 <div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+
 # ***Cerința II***
+
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
 <div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
 
 
@@ -909,9 +925,765 @@ Pune în memorie de două ori 78|56|34|12
 
 
 <div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+
 # ***Cerința III***
+
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+
+
+## 1. Se dau următoarele 5 secvențe de ASM. Care este rezultatul și efectul lor? Cum se vor seta CF și OF pentru a) -> d) și de ce? Detaliați efectul complet al tuturor liniilor sursă, scriind toate valorile implicate, în baza 2 și baza 16, signed și unsigned. La e) înlocuiți ultima instrucțiuni cu alta astfel încât rezultatul să fie același. Justificați și explicați.
+
+### a)
+```asm
+mov eax, 200
+mov ebx, 254h
+idiv bl
+```
+
+##### `mov eax, 200`
+200 = 1100 1000b = C8h
+Signed și unsigned e la fel (200 încape pe dword)
+
+##### `mov ebx, 254h`
+254h = 2 `*` 16<sup>2</sup> + 5 `*` 16<sup>1</sup> + 4 `*` 1 = 2 `*` 256 + 5 `*` 16 + 4 `*` 1 = 596 (signed și unsigned pe dword)
+
+##### `idiv bl`
+`AX / BL = AL rest AH`
+
+EAX
+`00|00|00|C8`
+`       ^AX^`
+AX = 200
+
+EBX
+`00|00|02|54`
+`      BH|BL`
+BL = 54h = 84
+
+AX / BL = 200 / 84 = 2 rest 32
+AL = 2 = 2h
+AH = 32 = 20h
+
+==! La împărțire nu se modifică CF sau OF !==
+
+### b)
+```asm
+mov ax, 256h
+mov dx, -1
+add ah, dh
+```
+
+##### `mov ax, 256h`
+256h = 2 `*` 16<sup>2</sup> + 5 `*` 16<sup>1</sup> + 6 `*` 1 = 2 `*` 256 + 5 `*` 16 + 6 `*` 1 = 598 (signed și unsigned pe word)
+
+##### `mov dx, -1`
+-1
+|-1| = 1 = 0000 0000 0000 0001
+Complementul față de 2 => 1111 1111 1111 1111b = FF FF h
+FFFFh = 65535 unsigned
+FFFFh = -1 signed
+
+##### `add ah, dh`
+AH = 02h
+AL = 56h
+
+DH = FFh
+DL = FFh
+
+AH + DH = 02h + FFh
+*Adunare fără semn, pentru CF:*
+`  0000 0000 0000 0010 +`
+`  1111 1111 1111 1111`
+`---------------------`
+`1 0000 0000 0000 0001`
+^ CF
+CF = 1 (avem transport fără semn)
+
+*Adunare cu semn, pentru OF:*
+-1 + 2 = 1 ∈ [-128, 127]
+OF = 0
+
+În AH va fi 01h = 1 decimal, signed și unsigned
+
+### c)
+```asm
+mov ax, ~(16h|32)
+mov bx 2000h>>4
+imul bh
+```
+
+##### `mov ax, ~(16h|32)`
+16h = 1 `*` 16<sup>1</sup> + 6 `*` 1 = 16 + 6 = 22 (signed și unsigned pe word) = 0000 0000 0001 0110b
+32 = 20h = 0000 0000 0010 0000b
+
+16h|32 => 16h|20h
+`0000 0000 0001 0110`
+`0000 0000 0010 0000`
+`0000 0000 0011 0110`
+
+~(16h|32)
+`1111 1111 1100 1001` = FF C9 = 15 `*` 16<sup>3</sup> + 15 `*` 16<sup>2</sup> + 12 `*` 16 + 9 `*` 1 = 65481 (unsigned)
+Complementul față de 2 => 0000 0000 0011 0111 = -55 (signed)
+
+##### `mov bx, 2000h>>4`
+2000h = 2 `*` 16<sup>3</sup> = 2 `*` 4096 = 8192 (signed și unsigned pe word)
+2000h = 0010 0000 0000 0000b
+
+2000h>>4
+Shift la dreapta cu 4 biți
+`0010 0000 0000 0000`
+`0000 0010 0000 0000` = 200h
+
+##### `imul bh`
+AL `*` BH = AX
+
+AX
+`1111 1111 1100 1001`
+`   ^AH^  |   ^AL^  `
+AL = 65481 sau -55, depinzând de interpretare
+folosim imul deci interpretare cu semn deci AL = -55
+
+BX
+`0000 0010 0000 0000`
+`   ^BH^  |   ^BL^  `
+
+BH = 02h = 2
+
+AL `*` BH = AX
+-55 `*` 2 = -110 (interpretare cu semn)
+65536 - 110 = 65426 (interpretare fără semn)
+
+-110 încape și pe byte ([-128, 127]), deci sigur încape pe word
+CF = OF = 0
+
+### d)
+```asm
+mov ax, 21 << 7
+mov bh, 10h ^ 3
+sub bh, al
+```
+
+##### `mov ax, 21 << 7`
+21 = 15h = 0001 0101b
+Shift AX la stânga cu 7 poziții
+`0000 0000 0001 0101`
+`0000 1010 1000 0000` = 09 80h = 2688 (signed și unsigned pe word)
+##### `mov bh, 10h^3`
+10h = 16 = 0001 0000b
+3 = 03h = 0000 0011b
+
+`0001 0000` = 10h
+`0000 0011` = 03h
+`0001 0011` = 10h ^ 3 = 13h = 16 + 3 = 19 (signed și unsigned pe byte)
+
+##### `sub bh, al`
+BH = 0001 0011
+AX
+`0000 1010 1000 0000`
+`   ^AH^  |   ^AL^  `
+AL = 1000 0000
+
+BH - AL
+`0001 0011 -`
+`1000 0000`
+`---------`
+`1001 0011` cu un împrumut din neant => CF = 1
+
+1001 0011b = 147 unsigned
+147 - 256 = -109 signed
+
+număr pozitiv - număr negativ = număr negativ
+OF = 1
+
+### e)
+```asm
+shl bh, 8
+add bx, ax
+mov eax, ebx
+```
+
+##### `mov eax, ebx`
+Echivalent cu `lea eax, [ebx]`
+
+## 2.1. Care vor fi valorile din Carry Flag, Auxiliary Flag, Sign Flag, Overflow Flag, și Zero Flag la finalul următoarelor secvențe? Justificați și explicați în detaliu efectul fiecărei linii
+
+### a)
+```asm
+mov ah, 129
+mov bh, 9Fh
+add ah, bh
+```
+
+##### `mov ah, 129`
+AH = 129 = 0100 0001b = 41h
+Încape pe AH
+
+##### `mov bh, 9Fh`
+BH = 9F = 1001 1111 = 9 `*` 16 + 15 = 144 + 15 = 159
+Încape pe BH
+
+##### `add ah, bh`
+*Unsigned, pentru CF*
+AH = AH + BH = 129 + 159 = 288
+NU încape pe AH
+Se transformă în 288 - 256 = 32
+CF = 1 (nu a încăput pe octet fără semn)
+
+*Signed, pentru OF*
+129 se transformă în 129 - 256 = -127
+159 se transformă în 159 - 256 = -97
+-127 + (-97) = -224 ∉ [-128, 127]
+OF = 1
+
+ZF = 0 (rezultatul nu a fost 0)
+SF = 0 (semnul a ce se salvează în AH)
+AF = idk, 4/5 flag-uri e destul, mai și pierzi mai și nu câștigi
+
+### b)
+```asm
+mov ax, 128
+sar al, 7
+imul ah
+```
+
+##### `mov ax, 128`
+128 = 1000 0000 = 80h
+AX = 00 80h
+
+##### `sar al, 7`
+AL
+`1000 0000`
+Shift Arithmetic Right cu 7 poziții -> completează cu bitul de semn (cel mai semnificativ bit) 7 poziții
+`1111 1111`
+
+##### `imul ah`
+AX = AH `*` AL
+AH = 0
+AL = -1 (suntem pe imul deci semn)
+În AX va fi 0
+
+ZF = 0 ==! ZF nu se setează decât la adunări și scăderi !==
+SF = 0 (0 e considerat pozitiv)
+CF = OF = 0 (0 încape pe octet)
+
+### c)
+```asm
+mov ax, 256
+mov bx, -1
+add ah, bh
+```
+
+##### `mov ax, 256`
+256 = 0000 0001 0000 0000b = 01 00h
+
+##### `mov bx, -1`
+-1 = FF FFh
+
+##### `add ah, bh`
+AH = 01h
+BH = FFh
+AH = AH + BH
+`  0000 0001 +`
+`  1111 1111`
+`-----------`
+`1 0000 0000` => în AH încape doar 0000 0000b
+^ CF = 1
+OF = 1 (număr pozitiv + număr negativ = număr pozitiv (e ok))
+ZF = 1 (rezultatul ultimei operații efectuate (more like ultimei adunări/scăderi efectuate) este 0)
+SF = 0 (0 e considerat pozitiv)
+
+### d)
+```asm
+mov ah, 128|2
+mov bh, 90h>>3
+sub ah, bh
+```
+
+##### `mov ah, 128|2`
+128 = 1000 0000b
+2 = 0000 0010b
+128|2 = 1000 0010b = 82h = 130
+
+##### `mov bh, 90h>>3`
+90h = 1001 0000
+90h>>3 = 0001 0010 = 12h = 18
+
+##### `sub ah, bh`
+`1000 0010 -`
+`0001 0010`
+`---------`
+`0111 0000` = 70h = 112 signed și unsigned
+CF = 0
+OF = 1 (număr negativ - număr pozitiv = număr pozitiv (nu e ok))
+ZF = 0
+SF = 0
+
+## 2.2. Dați exemple de instrucțiuni ASM care...:
+### a) ... au doi operanzi *expliciți* de **mărimi diferite**
+`movsx ax, al`
+
+### b) ... au doi operanzi *impliciți* de **mărimi diferite**
+`cbw`
+
+### c) ... au doi operanzi *expliciți* **din memorie**
+==Nu există! Nu pot fi ambii operanzi din memorie!==
+
+### d) ... au doi operanzi *impliciți* **din memorie**
+`movsb`
+
+### e) ... au doi operanzi *impliciți* de **aceeași mărime**
+`movsb`
+
+## 3. Se dau următoarele 5 secvențe de ASM. Care este rezultatul și efectul lor? Cum se vor seta CF și OF pentru a) -> d) și de ce? Detaliați efectul complet al tuturor liniilor sursă, scriind toate valorile implicate, în baza 2 și baza 16, signed și unsigned. La e) înlocuiți ultima instrucțiuni cu alta astfel încât rezultatul să fie același. Justificați și explicați.
+
+### a)
+```asm
+mov ax, 1000h
+mov bl, 1000b + 10b
+div bl
+```
+
+##### `mov ax, 1000h`
+1000h = 16<sup>3</sup> = 4096 (signed și unsigned pe word)
+
+##### `mov bl, 1000b + 10b`
+1000b = 8h = 8
+10b = 2h = 2
+1000b + 10b = 8 + 2 = 10 = Ah (signed și unsigned pe byte)
+
+##### `div bl`
+AX / BL = AL rest AH
+AX = 4096
+BL = 10
+AL = 409 - NU încape pe byte -> division overflow -> *run-time error* -> programul se oprește
+
+### b)
+```asm
+mov ah, 0BCh
+mov al, 0DEh
+add ah, al
+```
+
+##### `mov ah, 0BCh`
+BCh = 11 `*` 16 + 12 = 176 + 12 = 188 unsigned
+188 - 256 = -68 signed
+
+##### `mov al, 0DEh`
+DEh = 13 `*` 16 + 14 = 208 + 14 = 222 unsigned
+222 - 256 = -34 signed
+
+##### `add ah, al`
+*Unsigned*
+`  1011 1100 +`
+`  1101 1110`
+`-----------`
+`1 1001 1010`
+^ CF = 1
+*Signed*
+-68 + (-34) = -102 ∈ [-128, 127]
+OF = 0
+
+**SAU**
+
+*Unsigned*
+188 + 222 = 410 ∉ [0, 255]
+CF = 1
+În AH va fi 410 - 256 = 154
+*Signed*
+154 - 256 = -102 ∈ [-128, 127]
+
+### c)
+```asm
+mov ax, 1001h
+mov bx, 1111b
+imul bl
+```
+
+##### `mov ax, 1001h`
+1001h = 16<sup>3</sup> + 1 = 4097 (signed și unsigned pe word)
+
+##### `mov bx, 1111b`
+1111b = Fh = 15 (signed și unsigned pe word)
+BX este 00 0Fh
+
+##### `imul bl`
+BL = 0Fh = 15
+AL = 01h = 1
+AX = 15 (signed și unsigned pe word)
+CF = OF = 0
+
+### d)
+```asm
+mov dh, 62h
+mov ch, 200
+sub dh, ch
+```
+
+##### `mov dh, 62h`
+62h = 6 `*` 16 + 2 = 98 (signed și unsigned pe byte)
+
+##### `mov ch, 200`
+200 = C8h
+C8h = 200 unsigned = -56 signed
+
+##### `sub dh, ch`
+*Signed, pentru CF*
+98 - 200 = -102 ∉ [0, 256]
+*Unsigned, pentru OF*
+98 - (-56) = 154 ∉ [-128, 127]
+
+CF = OF = 1
+
+## 4.1. Prezentați o clasificare a următoarelor 14 instrucțiuni în categorii bazate pe criteriul de "efect identic asupra lui EBX". Explicați și justificați.
+
+### 1) `lea ebx, [ebx + 6]`
+Adună la EBX 6 și mută rezultatul în EBX
+**Categoria I.1**
+
+### 2) `lea ebx, [bx + 6]`
+Adună la BX 6 și mută rezultatul în EBX
+**Categoria I.2**
+
+### 3) `lea bx, [bx + 6]`
+Adună la BX 6 și mută rezultatul în BX
+**Categoria I.3**
+
+### 4) `lea bx, [ebx + 6]`
+Adună la EBX 6 și mută în BX
+**Categoria I.3**
+
+### 5) `mov ebx, ebx + 6`
+##### *Syntax Error*
+Acest tip de adunare este valid doar în calculul de offset
+**Categoria II**
+
+### 6) `mov ebx, [ebx + 6]`
+Încearcă să pună valoarea de la adresa `ebx + 6`, dacă e validă
+**Categoria III**
+
+### 7) `movzx ebx, [ebx + 6]`
+##### *Syntax Error*
+Trebuie precizată dimensiunea pentru `[ebx + 6]`
+**Categoria II**
+
+### 8) `movzx ebx, [bx + 6]`
+##### *Syntax Error*
+Trebuie precizată dimensiunea pentru `[ebx + 6]`
+**Categoria II**
+
+### 9) `add bx, 6`, `movzx ebx, bx`
+Adaugă 6 la BX și mută rezultatul în BX
+**Categoria I.3**
+
+A doua instrucțiune nu face nimic relevant
+
+### 10) `mov [ebx], dword [bx + 6]`
+##### *Syntax Error*
+Nu pot fi ambii operanzi din memorie
+**Categoria II**
+
+### 11) `add ebx, 6`
+Adună 6 la EBX și mută rezultatul în EBX
+**Categoria I.1**
+
+### 12) `add bx, 6`
+Adună 6 la BX și mută rezultatul în BX
+**Categoria I.3**
+
+### 13) `push [ebx + 6]`, `pop ebx`
+##### *Syntax Error*
+Trebuie precizată dimensiunea pentru `[ebx + 6]` (word sau dword)
+**Categoria II**
+
+### 14) `xchg ebx, [ebx + 6]`
+Pune în EBX valoarea de la adresa `ebx + 6`, dacă e validă
+**Categoria III**
+
+## 4.2. Se dă următoarea secvență de ASM. Scrieți o singură instrucțiune ASM care să aibă același efect (cu excepția valorii din AX). Explicați sau justificați de ce are același efect.
+
+```asm
+cld
+push ax
+mov ax, [esp + 2]
+stosw
+lea edi, [edi - 2]
+add esp, 4
+```
+
+##### `cld`
+Clear Direction Flag => direcția de la stânga la dreapta => EDI crește la instrucțiuni precum stosw
+
+##### `push ax`
+AX se află la ESP + 2
+
+##### `mov ax, esp + 2`
+`mov ax, ax`
+
+##### `stosw`
+Ia de pe stivă un word (conveniently, fix pe AX) și îl pune la adresa EDI
+[EDI] = AX
+EDI <- EDI + 2 (+2 pentru că a luat word)
+
+##### `lea edi, [edi - 2]`
+Scade 2 din EDI, anulează efectul incrementării făcute de stosw
+
+##### `add esp, 4`
+Ajustează stiva, eliminând cele două cuvinte de 16 biți care au fost implicate (cel salvat cu `push ax` și cel folosit cu `mov ax`).
+
+##### Răspuns:
+Efectul principal al secvenței este scrierea unui cuvânt de 16 biți (inițial în AX) la adresa indicată de EDI, fără a modifica poziția finală a EDI și fără a păstra modificări permanente în stivă.
+Echivalent cu `mov [edi], ax` (doar asta s-a schimbat, toate celelalte valori au fost restaurate)
+
+## 5.1. Explicați funcționarea și efectul fiecăreia dintre următoarele instrucțiuni
+### 1) `lea eax, [6 + esp]`
+Mută în EAX valoarea 6 + ESP
+Lea scapă de parantezele pătrate
+
+### 2) `mov eax, 6 + esp`
+##### *Syntax Error*
+ESP nu e o valoare determinabilă la momentul asamblării
+
+### 3) `movsx ax, [6 + esp]`
+Pune în AX cu sign extended un byte de la adresa [6 + esp]
+
+### 4) `mov ebp, [6 + ebp * 2]`
+Pune în EBP un dword de la adresa [6 + ebp * 2]
+
+### 5) `mov [6 + ebp * 2], 12`
+##### *Syntax Error*
+Trebuie specificată dimensiunea măcar la unul dintre operanzi
+
+### 6) `mov ebp, [ebx + esp]`
+ESP se ia drept bază deoarece NU poate fi index
+EBX index
+Pune în EBP un dword de la adresa [ebx + esp]
+
+### 7) `movsx [6 + esp], eax`
+pune la adresa [6 + esp] valoarea din EAX
+
+### 8) `mov [6 + esp * 2], [6 + esp]`
+##### *Syntax Error*
+ESP nu poate fi index
+*Invalid effective address*
+
+### 9) `mov [6 + ebp * 2], [6 + esp]`
+##### *Syntax Error*
+Nu pot fi ambii operanzi din memorie
+
+### 10) `movzx eax, [6 + ebp * 2]`
+##### *Syntax Error*
+Trebuie specificată dimensiunea operandului din dreapta pentru că acolo poate fi byte sau word
+
+## 5.2. Se dă următoarea secvență de 12 instrucțiuni ASM. Scrieți o singură instrucțiune ASM care să aibă același efect ca și secvența dată și explicați/justificați de ce se obține același efect. Detaliați efectul fiecărei linii din secvența dată
+
+```asm
+push edx
+push eax
+pop edx
+xor dh, dh
+shl edx, 16
+clc
+rcr edx, 16
+add edx, ebx
+push edx
+pop esi
+lodsb
+pop edx
+```
+
+##### `push edx`
+Pune EDX pe stivă
+Stiva este astfel
+
+
+| EDX |
+| --- |
+|     |
+
+
+##### `push eax`
+Pune EAX pe stivă
+
+| EDX |
+| --- |
+| EAX |
+|     |
+
+##### `pop EDX`
+Pune în EDX pe EAX
+EDX este `|  |  |AH|AL|`
+
+| EDX |
+| --- |
+|     |
+
+##### `xor dh, dh`
+DH = 0
+
+##### `shl edx, 16`
+EDX este `|  |  |AH|AL|`
+EDX devine `|AH|AL|00|00|`
+DH este 0, EDX este `|00|AL|00|00|`
+
+##### `clc`
+Clear Carry Flag
+CF = 0
+
+##### `rcr edx, 16`
+EDX este `|00|AL|00|00|`
+EDX devine `|00|00|00|AL|`
+
+##### `add edx, ebx`
+EDX devine EBX + AL
+
+##### `push EDX`
+Pune EDX pe stivă
+
+| EDX |
+| --- |
+| EDX |
+|     |
+
+##### `pop esi`
+Pune în ESI pe EDX, care este de fapt EBX + AL
+
+##### `lodsb`
+Pune în AL un byte de la [ESI] adică de la [EBX + AL]
+Adică `xlat`
+
+##### `pop edx`
+Returnează valoarea din EDX
+
+| EDX |
+| --- |
+|     |
+
+##### Răspuns
+Echivalent cu `xlat`.
+
+
+
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+
+# ***Cerința IV***
+
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
 <div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
 
 
 
-skibidi
+Tatăl nostru, Care eşti în ceruri, Sfinţească-se numele Tău; Vie împărăţia Ta; Facă-se voia Ta, precum în cer şi pe pământ. Pâinea noastră cea spre fiinţă dă-ne-o nouă astăzi; Şi ne iartă nouă greşelile noastre, precum şi noi iertăm greşiţilor noştri; și nu ne duce pe noi în ispită, ci ne izbăveşte de cel rău. Că a Ta este împărăţia şi puterea şi slava în veci. Amin!
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+ASC Core
+![[Pasted image 20250128165144.png]]
+
+
