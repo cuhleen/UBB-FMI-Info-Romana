@@ -110,7 +110,7 @@ dd start - start1; merge!
 segment code...
 	start
 	
-	mov ah, la1;AH = 0
+	mov ah, la1; AH = 0
 	mov bh, c; BH = -6 = FA
 	mov ch, la; obj format can handle only 16 or 32 byte relocation (offset NU încape pe un byte)
 	
@@ -134,7 +134,7 @@ segment code...
 	
 	mov ah, a + b; ok! Dar nu este adunare de pointeri, e adunare de scalari
 				 ; a + b = [a - $$] + [b - $$]
-	mov ax, b + A; ok! La fel ^
+	mov ax, b + a; ok! La fel ^
 	mov ax, [a + b]; invalid effective address! Asta chiar e adunare de pointeri! Deci interzisă! Deci syntax error
 
 	var1 dd a + b; syntax error | expression is not simple or relocatable

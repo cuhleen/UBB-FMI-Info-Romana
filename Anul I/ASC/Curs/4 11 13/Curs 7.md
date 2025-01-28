@@ -86,6 +86,7 @@ teo wuz here :]
 **CS** - pentru etichete de cod destinație ale unor salturi
 **SS** - în adresări SIB ce folosesc *ebp* sau *esp* drept bază
 **DS** - pentru restul accesărilor de date
+
 ### Exemple
 ```asm
 mov eax, [v]; mov eax dword ptr [DS:405000]

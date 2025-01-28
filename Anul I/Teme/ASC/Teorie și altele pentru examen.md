@@ -1,12 +1,19 @@
 
-# **Flag-uri**
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+# ***Cerința I***
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+
+
+
+## **Flag-uri**
 Un flag este un identificator reprezentat pe un bit. O configurație a registrului de flag-uri indică un rezumat sintetic al execuției fiecărei instrucțiuni.
 Pentru x86, registrul EFLAGS are 32 de biți, dintre care sunt folosiți uzual numai 9: CF<sub>(Carry Flag)</sub>, OF<sub>(Overflow Flag)</sub>, SF<sub>(Sign Flag)</sub>, ZF<sub>(Zero Flag)</sub>, DF<sub>(Direction Flag)</sub>, IF<sub>(Interrupt Flag)</sub>, TF<sub>(Trap Flag)</sub>, AF<sub>(Auxiliary Flag)</sub>, PF<sub>(Parity Flag)</sub>.
 Flag-urile se împart în două categorii: cele care raportează efectul generat de ultima operație efectuată (*CF*, OF, PF, AF, ZF, SF), și cele cu efect ulterior setării de către programator (*CF*, TF, IF, DF).
 
 ### Carry Flag
 Carry Flag-ul este un flag de transport, semnalează depășirea în cazul interpretării fără semn. Are valoarea 1 în cazul în care efectul în cadrul ultimei operații efectuate s-a produs un transport în afara domeniului de reprezentare al rezultatului și valoarea 0 în caz contrar.
-**Exemple**:
+
+Exemple:
 1.
 ```asm
 mov al, 100
@@ -201,7 +208,7 @@ Parity Flag ia valoarea 1 dacă ultimul octet al ultimei operații efectuate est
 
 <hr>
 
-# **Conceptul de depășire**
+## **Conceptul de depășire**
 Conceptul de Overflow este folosit pentru a semnala faptul că rezultatul unei anumite operații nu a încăput în spațiul destinat acestuia. În funcție de ce operație este vorba, setarea CF și OF se va face după anumite reguli, rezultqnd diferite concluzii legate de ultima operație efectuată.
 
 ### *Adunare*
@@ -355,7 +362,7 @@ adc dx, cx
 ```
 
 <hr>
-# **Multimodul**
+## **Multimodul**
 ### Codul de apel
 Codul de apel este codul scris înainte de apelarea unei funcții.
 
@@ -381,7 +388,7 @@ Coduld e ieșire este codul scris la finalul unei funcții apelate.
 
 <hr>
 
-# **Stiva**
+## **Stiva**
 Stiva este compusă din două părți: baza (EBP) și vârful (ESP).
 Când scoatem un element  de pe stivă, ESP crește cu 4 octeți (`pop`), se salvează vârful stivei în variabila dată ca parametru (`push parametru`).
 
@@ -394,6 +401,7 @@ Când scoatem un element  de pe stivă, ESP crește cu 4 octeți (`pop`), se sal
 | ///////// | <- ESP |
 | ‎         | ‎      |
 | ‎         | ‎      |
+
 Rolul stivei este de a crea spațiu de variabile locale și de a transmite parametrii care nu sunt regiștrii.
 
 ##### Responsabilități
@@ -405,7 +413,7 @@ Convenția CDECL în ASM este să transmită parametrii pe stivă și să salvez
 
 <hr>
 
-# **Memorie**
+## **Memorie**
 ### Adresă de memorie
 Adresa de memorie este un identificator al poziției unei locații de memorie pe care procesorul o poate accesa pentru citire sau scriere.
 
@@ -463,12 +471,12 @@ Implică doar operanzi direcți și imediați. Adresare la memorie unde apare do
 Exemplu: `mov eax, [a + 4]`
 
 ### Adresare bazată
-Intervin regiștrii de bază. Adresare la memorie unde apare doar [bază]
+Intervin regiștrii de bază. Adresare la memorie unde apare doar [bază].
 
 Exemplu: `mov eax, [ebx]`
 
 ### Adresare indexată
-Intervin regiștrii de index (și implicit scală). Adresare la memorie unde apare doar [index * scală]
+Intervin regiștrii de index (și implicit scală). Adresare la memorie unde apare doar [index * scală].
 
 Exemplu: `mov eax, [2 * eax]`
 
@@ -478,7 +486,7 @@ Care nu e directă (🤯).
 Exemplu: `mov ax, [ebx + v + 4]`
 
 ### Adresă NEAR
-Formată doar din offset, segmentul se adaugă implicit în loading time
+Formată doar din offset, segmentul se adaugă implicit în loading time.
 
 Exemplu: `mov eax, [v]`
 
@@ -493,7 +501,417 @@ Exemplu: `mov ax, [ESP]`
 Restul.
 Exemplu: `mov ax, [EBP + ECX + 4]`
 
-==Mai multe exemple [[ASC/Curs/4 11 13/Curs 7#Utilizarea operanzilor din memorie|aici]]==
+==Mai multe exemple [[ASC/Curs/4 11 13/Curs 7#Utilizarea operanzilor din memorie|aici]].==
 
-<hr>
 
+
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+# ***Cerința II***
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+
+
+
+## 1.1. Prezentați și justificați structura din memorie a următorului segment. Dacă identificati date sau linii sursăpe care le considerați incorecte sintactic, justificati motivul și ignorați apoi acele valori sau linii în construirea modulului de reprezentare în memorie a segmentului de date.
+```asm
+segment data use32 class=data
+	x dw -256, 256h
+	y dw 256|-256, 256h & 256
+	z db $ - z, y - x
+	  db 'y' - 'x', 'y - x'
+	a db 512>>2, -512<<2
+	b dw z - a, !(z - a)
+	c dd ($ - b) + (d - $), $ - 2 * y + 3
+	d db -128, 128^(~128)
+	e times 2 resw 6
+	times 2 dd 1234h, 5678h
+```
+
+##### `x dw -256, 256h`
+-256 se transformă în baza 2, apoi în baza 16
+|-256| = 256 = 2<sup>8</sup> = 1 0000 0000
+Complementul față de 2 => 1111 1111 0000 0000 = FF00
+În memorie va fi 00|FF
+
+256h = 0256h
+În memorie va fi 56|02
+
+##### `y dw 256|-256, 256h & 256`
+`x|y` = `or x, y`
+256|-256 se transormă în baza 2, apoi în baza 16
+256 = 2<sup>8</sup> = 1 0000 0000 = 0000 0001 0000 0000 (pe word)
+|-256| = 256 = 2<sup>8</sup> = 1 0000 0000
+Complementul față de 2 => 1111 1111 0000 0000
+256|-256 = 1111 1111 0000 0000 = FF00
+În memorie va fi 00|FF
+
+`x&y` = `and x, y`
+256 se transformă în baza 2 apoi în baza 16
+256 = 2<sup>8</sup> = 1 0000 0000 = 0000 0001 0000 0000 (pe word)
+256h = 0256h = 0000 0010 0101 0110
+
+`0000 0010 0101 0110` = 256h
+`0000 0001 0000 0000` = 256
+`0000 0000 0000 0000` = 256h & 256
+În memorie va fi 00|00
+
+##### `z db $-z, y - x`
+##### `  db 'y' - 'x', 'y - x'`
+`$ - z` = 0 => în memorie va fi 00
+`y - x` = 4 => în memorie va fi 04
+
+În memorie va fi 00|04
+
+`'y' - 'x'`
+Le scade codurile ASCII, 'y' - 'x' = 1 => în memorie va fi 01
+`'y - x'` va pune separat codurile fiecăruia => în memorie va fi 'y'|'-'|'x'
+
+##### `a db 512>>2, -512<<2`
+`512>>2`
+Shift la dreapta cu 2 biți a lui 512
+
+512 / 2<sup>2</sup> = 128 = 2<sup>7</sup> = 1000 0000
+În memorie va fi 80
+
+`-512<<2`
+Shift la stânga cu 2 biți a lui -512
+|-512| = 512 = 2<sup>9</sup> = 10 0000 0000
+Complement față de 2 => 1111 1110 0000 0000
+-512<<2
+1111 1000 0000 0000 = F8|00
+Luăm doar un byte => în memorie va fi 00
+
+==?????????????????????????????????????????????????==
+
+##### `b dw z - a, !(z - a)`
+`z - a`
+z - a = -6
+|-6| = 6 = 0110
+Complement față de 2 => 1111 1111 1111 1010 = FFFA
+În memorie va fi FA|FF
+
+`!(z - a)` = !(-6)
+În memorie va fi 00|00
+
+==?????????????????????????????????????????????????==
+
+##### `c dd ($ - b) + (d - $), $ - 2 * y + 3`
+`$ - b` = 4
+`d - $` = 4 (doar un elemenet de acolo e valid)
+=> 4 + 4 = 8
+În memorie va fi 08|00|00|00
+
+`2 * y`
+Înmulțirea de pointeri nu e validă! *Syntax error*
+
+##### `d db -128, 128^(~128)`
+-128
+-128 + 256 = 128 (Adunarea sau scăderea cu 256 nu schimbă numărul pe octet) = 2<sup>7</sup> = 1000 0000 = 80h 
+În memorie va fi 80
+
+`128^(~128)`
+`~` - complementul
+`^` - xor
+În memorie va fi FF
+
+##### `e times 2 resw 6`
+##### `  times 2 dd 1234h, 5678h`
+`times 2 resw 6`
+Un word în memorie = 00|00
+În memorie va fi:
+00|00|00|00|00|00|00|00|00|00|00|00
+(Adică 6 * 2 de |00|)
+
+`times 2 dd 1234h, 5678h`
+34|12|00|00|78|56|00|00|34|12|00|00|78|56|00|00|
+
+## 1.2. Scrieți o singură instrucțiune ASM care să aibă același efect (excepție unele flag-uri) ca și secvența dată și explicați/justificați de ce se obține același efect. Detaliați efectul fiecărei linii din secvența dată
+
+```asm
+mov bh, 7Fh
+cmp BH, AL
+rcr ah, 1
+sar ah, 7
+```
+
+`mov bh, 7Fh`
+BH = 0111 1111
+`cmp BH, AL`
+Scădere fictivă `BH - AL`, dacă bitul de semn AL este 1 atunci CF este 1, altfel CF este 0
+`rcr ah, 1`
+==! Shift-ările nu se transmit de la AH la AL !==
+Pune pe prima poziție din CF (Rotate Carry Right = completează cu CF)
+`sar ah, 7`
+Shift Arithmetic Right (completează cu bitul de semn)
+În AH va fi bitul de semn al lui AL
+
+=> Echivalent cu `movsx ax, al` sau `cbw`
+
+## 2.1. Prezentați și justificați structura din memorie a următorului segment. Dacă identificati date sau linii sursăpe care le considerați incorecte sintactic, justificati motivul și ignorați apoi acele valori sau linii în construirea modulului de reprezentare în memorie a segmentului de date.
+
+```asm
+a1 db '256'
+a2 dw 256, 256h
+a3 dw $ + a2
+a4 equ -256/4
+a5 db 256>>1, 256<<1
+a6 dw a5 - a2, !(a5 - a2)
+a7 dw [a2], ~a2
+a8 dd 256h^256, 256256h
+a9 dd $ - a9
+a10 db 256, -255
+a11 dw 256h - 256
+a12 dw 256 - 256h
+a13 dw -256
+a14 dw -256h
+a15 db 2, 5, 6, 25, 6, 2, 56
+```
+
+##### `a1 db '256'`
+Le consideră caractere, pe fiecare dintre ele separat
+În memorie va fi '2'|'5'|'6'
+
+##### `a2 dw 256, 256h`
+256 = 2<sup>8</sup> = 1 0000 0000 = 0100h
+În memorie va fi 00|01
+
+256h = 0256h
+În memorie va fi 56|02
+
+##### `a3 dw $ + a2`
+==! Adunarea de pointeri nu e validă !==
+
+##### `a4 equ -256/4`
+==! Nu ocupă memorie !==
+
+##### `a5 db 256>>1, 256<<1`
+256>>1 = 2<sup>8</sup> / 2<sup>1</sup> = 2<sup>7</sup> = 1000 0000 = 80h
+În memorie va fi 80
+
+256<<1 = 2<sup>8</sup> * 2<sup>1</sup> = 2<sup>9</sup> = 0010 0000 0000 = 0200h
+Suntem pe byte, se salvează doar ultimul octet
+În memorie va fi 00
+
+==?????????????????????????????????????????????????==
+
+##### `a6 dw a5 - a2, !(a5 - a2)`
+`a5 - a2` = 4
+În memorie va fi 04|00
+
+`!(a5 - a2)` = !4 = 0
+În memorie va fi 00|00
+
+==?????????????????????????????????????????????????==
+
+##### `a7 dw [a2], ~a2`
+==! Valoarea din a2 nu e determinabilă la momentul asamblării !==
+==! Nu se pot face operații pe biți decât cu valori scalare !==
+
+##### `a8 dd 256h^256, 256256h`
+`256h^256`
+`0000 0010 0101 0110` = 256h
+`0000 0001 0000 0000` = 256
+`0000 0011 0101 0110` = 0356h pe word = 00 00 03 56 pe dword
+În memorie va fi 56|03|00|00
+
+`256256h` în memorie va fi 56|62|25|00
+
+##### `a9 dd $ - a9`
+Prima dată atribuie valoare, apoi crește contorul => va fi 0
+În memorie va fi 00|00|00|00
+
+##### `a10 db 256, -255`
+256 = 2<sup>8</sup> = 1 0000 0000
+Suntem pe byte deci se salvează numai ultimul octet
+În memorie va fi 00
+
+-255
+-255 + 256 = 1 (pe byte scăderea sau adunarea cu 256 nu schimbă ultimul octet)
+În memorie va fi 01
+
+##### `a11 dw 256h - 256`
+`0000 0010 0101 0110 -`
+`0000 0001 0000 0000`
+`-------------------`
+`0000 0001 0101 0110` = 0156h
+În memorie va fi 56|01
+
+##### `a12 dw 256-256h`
+`0000 0001 0000 0000 -`
+`0000 0010 0101 0110`
+`-------------------`
+`1111 1110 1010 1010` = FE AA
+În memorie va fi AA|FE
+
+##### `a13 dw -256`
+Aici nu merge regula cu +256, deoarece suntem pe word
+|-256| = 256 == 1 0000 0000
+Complementul față de 2 => 1111 1111 0000 0000 = FF 00
+În memorie va fi 00|FF
+
+##### `a14 dw -256h`
+|-256h| = 256h = 0000 0010 0101 0110
+Complementul față de 2 => 1111 1101 1010 1010 = FD AA
+În memorie va fi AA|FD
+
+##### `a15 db 2, 5, 6, 25, 6, 2, 56`
+Numerele se transformă în hexa
+În memorie va fi 02|05|06|19|06|02|38
+
+## 3.1. Care este numărul MINIM de biți necesari pentru reprezentarea numerelor de mai jos? Justificați și explicați răspunsul prin detalierea mecanismului de reprezentare a valorilor (exemplu: numărul minim de biți necesari pentru reprezentarea numărului 5 este 3: 101b; pentru 16 e 5: 10000b). Pentru fiecare număr scrieți reprezentarea în baza 2 și baza 16.
+##### 61
+![[Pasted image 20250127184207.png]]
+##### -62
+![[Pasted image 20250127184230.png]]
+##### 130
+![[Pasted image 20250127184256.png]]
+##### -129
+![[Pasted image 20250127184310.png]]
+
+## 3.2. Scrieți o singură instrucțiune ASM care să aibă același efect (excepție unele flag-uri) ca și secvența dată și explicați/justificați de ce se obține același efect. Detaliați efectul fiecărei linii din secvența dată
+
+```asm
+xor ah, ah
+cwde
+add ebx, eax
+mov al, [ebx]
+```
+
+`xor ah, ah`
+Pune 0 în AH
+`cwde`
+Pune în partea high din EAX 0 (EAX va fi 00|00|00|AL)
+`add ebx, eax`
+EBX va fi EBX + AL
+`mov al, [ebx]`
+AL va fi [EBX + AL] => echivalent cu `xlat`
+
+## 4.1. Prezentați și justificați structura din memorie a următorului segment. Dacă identificati date sau linii sursăpe care le considerați incorecte sintactic, justificati motivul și ignorați apoi acele valori sau linii în construirea modulului de reprezentare în memorie a segmentului de date.
+
+```asm
+a1 db '256,-256'
+a2 dw 256, 256h
+a3 dw $ - a2
+a4 equ -256/4
+a5 db 128>>1, -128<<1
+a6 dw a2 - a5, ~(a2 - a5)
+a7 dd [a2], !a2
+a8 dd 256h ^ 256, 256256h
+a9 dd ($ - a8) + (a10 - $)
+a10 dw -255, 256
+a11 resb 6
+a12 times 4 dw 256
+a13 dw times 4 -128
+times 2 resw 2
+times 2 dd 12345678h
+```
+
+##### `a1 db '256,-256'`
+Le consideră caractere pe fiecare, un caracter ocupă un byte
+În memorie va fi '2'|'5'|'6'|','|'-'|'2'|'5'|'6'
+
+##### `a2 dw 256, 256h`
+256 = 2<sup>8</sup> = 0000 0001 0000 0000 = 0100h
+În memorie va fi 00|01
+
+256h = 0256h
+În memorie va fi 56|02
+
+##### `a3 dw $ - a2`
+`$ - a2` = 4 
+Au fost declarate 2 word-uri = 4 bytes între locația curentă și a2
+
+*Dar dacă ar fi fost* `a3 dw 20h, $ - a2` *?*
+*Ar fi fost la fel,* `$` *e începutul liniei*
+
+##### `a4 equ -256/4`
+==! Nu ocupă memorie !==
+
+##### `a5 db 128>>1, -128<<1`
+128>>1 = 2<sup>7</sup> / 2<sup>1</sup> = 2<sup>6</sup> = 64 = 0100 0000 = 40h
+În memorie va fi 40
+
+-128<<1
+|-128| = -128 + 256 = 128
+128 * 2 = 256 = 2<sup>8</sup> = 1 0000 0000
+Suntem pe byte, luăm doar ultimii 2 octeți
+În memorie va fi 00
+
+***Alternativ***
+
+-128 * 2 = -256
+Nu încape pe byte
+-256 + 256 = 0
+În memorie va fi 00
+
+##### `a6 dw a2 - a5, ~(a2 - a5)`
+a2 - a5 = -6 (între a2 și a5 sunt 6 bytes)
+|-6| = 6 = 0000 0110
+Complementul față de 2 = 1111 1010 = FA
+Pe word se face FF FA
+În memorie va fi FA|FF
+
+~(a2 - a5) = ~1111 1111 1111 1010 = 0000 0000 0000 0101 = 0005h
+În memorie va fi 05|00
+
+##### `a7 dd [a2], !a2`
+==! Valoarea din a2 nu e determinabilă la momentul asamblării !==
+==! Nu se pot face operații pe biți decât cu valori scalare !==
+
+##### `a8 dd 256h ^ 256, 256256h`
+`0000 0010 0101 0110` = 256h
+`0000 0001 0000 0000` = 256
+`0000 0011 0101 0110` = 0356h
+În memorie va fi 56|03|00|00
+
+256256h
+În memorie va fi 56|62|25|00
+
+##### `a9 dd ($ - a8) + (a10 - $)`
+`$ - a8` = 8 (8 bytes (2 dword-uri) între locația curentă și a8)
+`a10 - $` = 4 (4 bytes (1 dword) între locația curentă și a10)
+
+##### `a10 dw -255, 256`
+-255
+|-255| = 255 = 0000 0000 1111 1111
+Complementul față de 2 = 1111 1111 0000 0001 = FF01h
+În memorie va fi 01|FF
+
+256 = 2<sup>8</sup> = 0000 0001 0000 0000 = 0100h
+În memorie va fi 00|01
+
+##### `a11 resb 6`
+Rezervă 6 bytes
+Un byte este |00|
+În memorie va fi 00|00|00|00|00|00
+
+##### `a12 times 4 dw 256`
+256 = 2<sup>8</sup> = 0000 0001 0000 0000 = 0100h
+Pune de 4 ori în memorie asta
+În memorie va fi 00|01|00|01|00|01|00|01
+
+##### `a13 dw times 4 -128`
+*Syntax error*
+Trebuia să fie `a13 times 4 dw -128`
+
+##### `times 2 resw 2`
+Rezervă de 2 ori 2 word-uri
+Un word este 00|00
+Două word-uri 00|00|00|00
+De două ori două word-uri 00|00|00|00|00|00|00|00
+În memorie va fi 00|00|00|00|00|00|00|00
+
+##### `times 2 dd 12345678h`
+Un dword este 00|00|00|00
+Numărul 12345678h încape pe dword
+Pune în memorie de două ori 78|56|34|12
+În memorie va fi 78|56|34|12|78|56|34|12
+
+
+
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+# ***Cerința III***
+<div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
+
+
+
+skibidi
