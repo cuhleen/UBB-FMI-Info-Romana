@@ -5,6 +5,7 @@ from Domains.client import Client
 from Domains.inchiriere import Inchiriere
 
 
+
 class RepositoryCarti:
     def __init__(self):
         self.__elements = []

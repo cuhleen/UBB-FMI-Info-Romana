@@ -8,16 +8,15 @@
      8                                  import fprintf msvcrt.dll
      9                                  segment data use32 class=data
     10                                  
-    11 00000000 00000100                	a dd 10000h
-    12 00000004 0200                        b dw 2
-    13                                      
-    14                                  segment code use32 class=code
-    15                                  	start:
-    16                                      
-    17 00000000 B0FE                        mov al, -2
-    18 00000002 B380                        mov bl, -128
-    19 00000004 F6E8                        imul al
-    20                                      
-    21                                      ; Exit program
-    22 00000006 6A00                    	push dword 0
-    23 00000008 FF15[00000000]          	call[exit]
+    11 00000000 73657800                    b dd 'sex'
+    12 00000004 73000000                    c dd 's'
+    13 00000008 65780000                    e dd 'ex'
+    14                                      
+    15                                  segment code use32 class=code
+    16                                  	start:
+    17                                      
+    18                                      
+    19                                      
+    20                                      ; Exit program
+    21 00000000 6A00                    	push dword 0
+    22 00000002 FF15[00000000]          	call[exit]

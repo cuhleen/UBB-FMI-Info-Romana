@@ -41,7 +41,7 @@ add al, ah
 ; CF = 1
 ```
 
-Ca și regulă generală pe un octet, un număr < 0 se transformă în număr fără semn, scăzând acel număr din cardinalul intervalului de reprezentare, 256 ([0, 255] interval octet).
+Ca și regulă generală pe un octet, un număr < 0 se transformă în număr fără semn, scăzând acel număr din cardinalul intervalului de reprezentare (, pentru byte fiind 256 ([0, 255] interval octet)).
 
 Exemple:
 1.
@@ -64,7 +64,7 @@ sub al, ah
 ```
 
 ### Overflow Flag
-Overflow Flag este tot un flag de transport, dar acesta semnalează depăsire în cazul interpretării cu semn. Are valoarea 1 în cazul în care în cadrul ultimei operații efectuate s-a produs un transport în afara domeniului de reprezentare al rezultatului și valoarea 0 în caz contrar.
+Overflow Flag este tot un flag de transport, dar acesta semnalează depășire în cazul interpretării cu semn. Are valoarea 1 în cazul în care în cadrul ultimei operații efectuate s-a produs un transport în afara domeniului de reprezentare al rezultatului și valoarea 0 în caz contrar.
 Ca și regulă generală pe octet, dacă x∈[128, 255] atunci îl putem aducem în intervalul de reprezentare scăzând 256 din el.
 
 ==! Adunarea sau scăderea cu 256 nu schimbă CF și OF pe octet !==
@@ -109,13 +109,14 @@ sub al, ah
 ; OF = 1
 ```
 
-Pentru operația de **înmulțire** CF = OF = 1 dacă rezultatul obținut nu încape în același interval cu cei 2 operanzi (`byte * byte = word`, `word * word = doubleword`, `doubleword * doubleword = quadword`).
+Pentru operația de **înmulțire**, CF = OF = 1 dacă rezultatul obținut nu încape în același interval cu cei 2 operanzi (`byte * byte = word`, `word * word = doubleword`, `doubleword * doubleword = quadword`).
 
 Exemple:
 ##### fără semn
 ```asm
 mov al, -1
 mov ah, 2
+mul ah
 
 ; -1 * 2 = (256 - 1) * 2 = 255 * 2 > 255
 ; OF = CF = 1
@@ -124,16 +125,16 @@ mov ah, 2
 ```asm
 mov al, -1
 mov ah, 2
-imul al
+imul ah
 
 ; -1 * 2 = -2 ∈ [-128, 127]
 ; CF = OF = 0
 ```
 
-La operația de **împărțire**, dacă rezultatul nu încape în spațiul de reprezentare alocat, se produce *run-time error*, programul se oprește, deci e irelevantă valoarea din flag-uri.
+La operația de **împărțire**, dacă rezultatul nu încape în spațiul de reprezentare alocat, se produce *run-time error*, mai precis *division overflow*, programul oprindu-se, deci e irelevantă valoarea din flag-uri.
 
 ### Zero Flag
-Zero Flag indică dacă rezultatul ultimei operații este sau nu 0. ===Totuși acest flag nu se setează la înmulțire și împărțire, indiferent de rezultat.== Astfel, pentru adunare și scădere, ZF = 1 dacă rezultatul ultimei operații efectuate este 0, altfel ZF = 0.
+Zero Flag indică dacă rezultatul ultimei operații este sau nu 0. ==Totuși acest flag nu se setează la înmulțire și împărțire, indiferent de rezultat.== Astfel, pentru adunare și scădere, ZF = 1 dacă rezultatul ultimei operații efectuate este 0, altfel ZF = 0.
 
 Exemple:
 1.
@@ -147,7 +148,8 @@ add al, ah
 ZF = 1
 ```
 2.
-```mov al, -1
+```asm
+mov al, -1
 mov ah, 255
 sub al, ah
 
@@ -156,7 +158,8 @@ sub al, ah
 ```
 
 ### Sign Flag
-Sign Flag indică bitul de semn al rezulattului ultimei operații efectuate. Rezultatul va fi adus la intervalul de reprezentare admisibil (ex.: pe octet la [-128, 127]).
+Sign Flag indică bitul de semn al rezultatului ultimei operații efectuate. Rezultatul va fi adus la intervalul de reprezentare admisibil (ex.: pe octet la [-128, 127]).
+
 Exemple:
 1.
 ```asm
@@ -177,25 +180,40 @@ add al, ah
 ; SF = 1
 ```
 
-Pentru imul SF = 1 numai dacă înmulțim un număr pozitiv cu un număr negativ altfel SF = 0
-Pentru mul va fi valoarea bitului de semn din AL/AX/DX
+Pentru imul, SF = 1 numai dacă înmulțim un număr pozitiv cu un număr negativ altfel SF = 0
+Pentru mul, SF va fi valoarea bitului de semn din AL/AX/DX
 
 ### Interrupt Flag
 Interrupt Flag este folosit pentru secțiuni critice. Atunci când IF = 1 se oprește rularea oricărui alt proces. Nu poate fi setat sub 32 de biți.
 
 ### Trap Flag
-Trap Flag oprește mașina după fiecare instrcțiune dacă este setat cu 1. Nu poate fi schimbat.
+Trap Flag oprește mașina după fiecare instrucțiune dacă este setat cu 1. Nu poate fi schimbat.
 
 ### Auxiliary Flag
 Auxiliary Flag reține valoarea transportului de la bitul 3 la bitul 4.
 
+Exemplu:
+```asm
+mov ah, 0
+mov al, 1111b
+mov bl, 1
+add al, bl
+
+; AX = 0000 1111
+; BL =      0001
+; al + bl = 1111 + 0001 = 1 0000
+; acel 1 se pune în ah
+; transport de la bitul 3 la bitul 4
+; AF = 1
+```
+
 ### Direction Flag
-Direction Flag este folosit la lucrul cu șiruri. Dacă DF = 0 parcurgerea se face de la stânga la drepata, altfel parcurgerea e de la drepata la stânga.
+Direction Flag este folosit la lucrul cu șiruri. Dacă DF = 0 parcurgerea se face de la stânga la dreapta, altfel parcurgerea e de la dreapta la stânga.
 
 ### Parity Flag
 Parity Flag ia valoarea 1 dacă ultimul octet al ultimei operații efectuate este 0 (adică dacă este par rezultatul), și invers.
 
-### Instrucțiuni pentru a încarca/scoate tot registrul de flag-uri
+### Instrucțiuni pentru a încărca/scoate tot registrul de flag-uri
 `PUSHF`
 `POPF`
 
@@ -210,14 +228,14 @@ Parity Flag ia valoarea 1 dacă ultimul octet al ultimei operații efectuate est
 `STD` - Set Direction Flag => DF = 1
 
 ##### Interrupt Flag
-==Poate fi setat doar sub 16 biți, sub 32 de biți programatorului luându-i-se această posibilitate==
+==Poate fi setat doar sub 16 biți, sub 32 de biți programatorului luându-i-se această posibilitate.==
 `CLI` - Clear Interrupt Flag => IF = 0
 `STI` - Set Interrupt Flag => IF = 1
 
 <hr>
 
 ## **Conceptul de depășire**
-Conceptul de Overflow este folosit pentru a semnala faptul că rezultatul unei anumite operații nu a încăput în spațiul destinat acestuia. În funcție de ce operație este vorba, setarea CF și OF se va face după anumite reguli, rezultqnd diferite concluzii legate de ultima operație efectuată.
+Conceptul de Overflow este folosit pentru a semnala faptul că rezultatul unei anumite operații nu a încăput în spațiul destinat acestuia. În funcție de ce operație este vorba, setarea CF și OF se va face după anumite reguli, rezultând diferite concluzii legate de ultima operație efectuată.
 
 ### *Adunare*
 ##### Fără semn
@@ -323,7 +341,7 @@ sub al, ah
 ```
 
 ### **Înmulțire**
-La înmulțire, OF și CF semnalează depășire în mod diferit. S-a hotărât că depășirea înseamnă faptul că rezultatul nu a încăput în același interval de reprezentare cu operanzii (ex.: `byte * byte` chiar a generat un rezultat care încare doar pe word).
+La înmulțire, OF și CF semnalează depășire în mod diferit. S-a hotărât că depășirea înseamnă faptul că rezultatul nu a încăput în același interval de reprezentare cu operanzii (ex.: `byte * byte` chiar a generat un rezultat care încape doar pe word).
 
 Exemple:
 1.
@@ -332,7 +350,8 @@ mov al, 20
 mov ah, 20
 mul ah
 
-; 20 * 20 = 400 care NU încape pe byte
+; AX = AL * AH
+; AX = 20 * 20 = 400 care încape pe word, dar NU încape pe byte, mărimea operandului inițial
 ; CF = OF = 1
 ```
 2.
@@ -359,10 +378,10 @@ div bl
 ; câtul se pune în AL
 ; restul se pune în AH
 ; 409 nu încape în AL
-; programul se oprește, division overflow
+; programul se oprește, division overflow, run-time error
 ```
 
-Există mai multe moduri prin care se poate ține cont de depășiri. Asamblorul ne oferă două instrucțuni specifice pentru adunare și scădere: `ADC` (Add with Carry) și `SBB` (Sub with Borrow) în care ține cont de transportul existent din flag-uri.
+Există mai multe moduri prin care se poate ține cont de depășiri. Asamblorul ne oferă două instrucțuni specifice pentru adunare și scădere: `ADC` (Add with Carry) și `SBB` (Sub with Borrow); în care se ține cont de transportul existent din flag-uri.
 Deobicei nu se ține cont de carry, dar atunci când avem un număr salvat, de exemplu în DX:AX și altul în CX:BX, dacă vrem să le adunăm, vom proceda astfel:
 ```asm
 add ax, bx
@@ -370,6 +389,7 @@ adc dx, cx
 ```
 
 <hr>
+
 ## **Multimodul**
 ### Codul de apel
 Codul de apel este codul scris înainte de apelarea unei funcții.
@@ -383,10 +403,10 @@ Codul de intrare este codul scris la începutul unei funcții apelate.
 
 - se crează un stackframe nou - `push EBP`, `mov EBP, ESP`
 - alocăm spațiu pentru variabilele locale (variabile pentru modulul separat) - `sub ESP, nr_octeti`, spre exemplu pentru EAX for fi 4 octeți
-- salvare resurse nevolatile (salvâm regiștrii care nu țin de apel) - exemplu: EAX nu ține de apel, dar vrem să-l folosim => `mov [EBP - 4], EAX`
+- salvare resurse nevolatile (salvăm regiștrii care nu țin de apel) - exemplu: EAX nu ține de apel, dar vrem să-l folosim => `mov [EBP - 4], EAX`
 
 ### Codul de ieșire
-Coduld e ieșire este codul scris la finalul unei funcții apelate.
+Codul de ieșire este codul scris la finalul unei funcții apelate.
 
 - restaurare resurse nevolatile - `mov EAX, [EBP - 4]`
 - eliberare spațiu de variabile locale - `add ESP, nr_octeti`
@@ -398,7 +418,8 @@ Coduld e ieșire este codul scris la finalul unei funcții apelate.
 
 ## **Stiva**
 Stiva este compusă din două părți: baza (EBP) și vârful (ESP).
-Când scoatem un element  de pe stivă, ESP crește cu 4 octeți (`pop`), se salvează vârful stivei în variabila dată ca parametru (`push parametru`).
+Când scoatem un element de pe stivă, ESP crește cu 4 octeți (`pop`), se salvează vârful stivei în variabila dată ca parametru (`pop parametru`).
+Când punem un element pe stivă, ESP scade cu 4 octeți (`push`).
 
 |           | <- EBP |
 | --------- | ------ |
@@ -428,12 +449,12 @@ Adresa de memorie este un identificator al poziției unei locații de memorie pe
 Exemplu: pentru memoria flat primul element din memorie va avea adresa 32 de 0 (pe 32 de biți)
 
 ### Segment de memorie
-Un segment de memorie estge o diviziune logică a memoriei, o succesiune de locatii de moemorie menite să servească scopuri similare.
+Un segment de memorie este o diviziune logică a memoriei, o succesiune de locații de memorie menite să servească scopuri similare.
 
 Exemplu: code segment conține instrucțiuni mașină (de la 1 la 15 octeți)
 
 ### Offset
-Offset-ul estge numărul de octeți adăugați la o adresă de bază, numărul de octeți de la adresa de început de segment până la locația căreia îi vrem offset-ul.
+Offset-ul este numărul de octeți adăugați la o adresă de bază, numărul de octeți de la adresa de început de segment până la locația căreia îi vrem offset-ul.
 
 Exemplu: în data segment
 ```asm
@@ -527,7 +548,8 @@ Exemplu: `mov ax, [EBP + ECX + 4]`
 
 
 
-## 1.1. Prezentați și justificați structura din memorie a următorului segment. Dacă identificati date sau linii sursăpe care le considerați incorecte sintactic, justificati motivul și ignorați apoi acele valori sau linii în construirea modulului de reprezentare în memorie a segmentului de date.
+## 1.1. Prezentați și justificați structura din memorie a următorului segment. Dacă identificați date sau linii sursă pe care le considerați incorecte sintactic, justificați motivul și ignorați apoi acele valori sau linii în construirea modulului de reprezentare în memorie a segmentului de date.
+
 ```asm
 segment data use32 class=data
 	x dw -256, 256h
@@ -662,7 +684,7 @@ Shift Arithmetic Right (completează cu bitul de semn)
 
 => Echivalent cu `movsx ax, al` sau `cbw`
 
-## 2.1. Prezentați și justificați structura din memorie a următorului segment. Dacă identificati date sau linii sursăpe care le considerați incorecte sintactic, justificati motivul și ignorați apoi acele valori sau linii în construirea modulului de reprezentare în memorie a segmentului de date.
+## 2.1. Prezentați și justificați structura din memorie a următorului segment. Dacă identificați date sau linii sursă pe care le considerați incorecte sintactic, justificați motivul și ignorați apoi acele valori sau linii în construirea modulului de reprezentare în memorie a segmentului de date.
 
 ```asm
 a1 db '256'
@@ -760,7 +782,7 @@ Suntem pe byte deci se salvează numai ultimul octet
 
 ##### `a13 dw -256`
 Aici nu merge regula cu +256, deoarece suntem pe word
-|-256| = 256 == 1 0000 0000
+|-256| = 256 = 1 0000 0000
 Complementul față de 2 => 1111 1111 0000 0000 = FF 00
 În memorie va fi 00|FF
 
@@ -937,7 +959,7 @@ Pune în memorie de două ori 78|56|34|12
 <div style="background-color: #E77A59; height: 10px; width: 100%;"></div>
 
 
-## 1. Se dau următoarele 5 secvențe de ASM. Care este rezultatul și efectul lor? Cum se vor seta CF și OF pentru a) -> d) și de ce? Detaliați efectul complet al tuturor liniilor sursă, scriind toate valorile implicate, în baza 2 și baza 16, signed și unsigned. La e) înlocuiți ultima instrucțiuni cu alta astfel încât rezultatul să fie același. Justificați și explicați.
+## 1. Se dau următoarele 5 secvențe de ASM. Care este rezultatul și efectul lor? Cum se vor seta CF și OF pentru a) -> d) și de ce? Detaliați efectul complet al tuturor liniilor sursă, scriind toate valorile implicate, în baza 2 și baza 16, signed și unsigned. La e) înlocuiți ultima instrucțiune cu alta astfel încât rezultatul să fie același. Justificați și explicați.
 
 ### a)
 ```asm
@@ -1194,7 +1216,7 @@ AH = AH + BH
 `-----------`
 `1 0000 0000` => în AH încape doar 0000 0000b
 ^ CF = 1
-OF = 1 (număr pozitiv + număr negativ = număr pozitiv (e ok))
+OF = 0 (număr pozitiv + număr negativ = număr pozitiv (e ok))
 ZF = 1 (rezultatul ultimei operații efectuate (more like ultimei adunări/scăderi efectuate) este 0)
 SF = 0 (0 e considerat pozitiv)
 
@@ -1584,6 +1606,221 @@ Echivalent cu `xlat`.
 
 
 Tatăl nostru, Care eşti în ceruri, Sfinţească-se numele Tău; Vie împărăţia Ta; Facă-se voia Ta, precum în cer şi pe pământ. Pâinea noastră cea spre fiinţă dă-ne-o nouă astăzi; Şi ne iartă nouă greşelile noastre, precum şi noi iertăm greşiţilor noştri; și nu ne duce pe noi în ispită, ci ne izbăveşte de cel rău. Că a Ta este împărăţia şi puterea şi slava în veci. Amin!
+
+## **Cod ASM**
+
+### Un Modul
+
+```asm
+bits32
+global start
+extern exit, [functie1], [functie2], ..., [functieN]
+import exit msvcrt.dll
+import [functie1] msvcrt.dll
+import [functie2] msvcrt.dll
+...
+import [functieN] msvcrt.dll
+
+segment data use32 class=data
+
+	; declarări
+
+segment code use32 class=code
+start:
+
+	; cod
+
+push dword 0
+call [exit]
+```
+
+### Multimodul
+
+##### main.asm
+```asm
+bits32
+global start
+extern functieModul
+extern exit, [functie1], [functie2], ..., [functieN]
+import exit msvcrt.dll
+import [functie1] msvcrt.dll
+import [functie2] msvcrt.dll
+...
+import [functieN] msvcrt.dll
+
+segment data use32 class=data
+
+	; declarări
+
+segment code use32 class=code
+start:
+
+	; cod
+
+	; să zicem că modulul îl utilizează pe EAX
+	; îl transmitem prin stivă
+	push EAX
+	call functieModul
+	add esp, 4 * 1
+
+push dword 0
+call [exit]
+```
+
+##### modul.asm
+```asm
+bits32
+global functieModul
+
+segment code use32 class=code public ; ATENȚIE!! public
+	functieModul:
+		; să zicem că modulul îl utilizează pe EAX
+		; îi preluăm valoarea de la poziția ESP + 4
+		mov eax, [esp + 4]
+		; dacă vrem să transmitem un parametru o putem face prin EBX
+		; să zicem că vrem să îl dăm înapoi pe EAX
+		mov ebx, eax
+	ret
+```
+
+## **Sintaxa funcțiilor ASM**
+
+==! Se dau push în ordine de la dreapta la stânga !==
+
+### scanf(formatCitire, &chestieDeCitit)*
+`formatCitire db "[val]", 0`
+- "%d" - decimal
+- "%s" - string
+- "%c" - char
+- "%x" - hexa
+- "%o" - octal
+
+```asm
+push dword chestieDeCitit
+push dword formatCitire
+call [scanf]
+add esp, 4 * 2
+```
+
+### printf(formatAfisare, &chestieDeAfisat)
+`formatAfisare db "[val]", 0`
+- "%d" - decimal
+- "%s" - string
+- "%c" - char
+- "%x" - hexa
+- "%o" - octal
+
+`formatAfisare` poate fi și ceva de tipul "%x%x" (push la două chestii de afișat, le afișează back to back) sau "%x %x" (push la două chestii de afișat, le afișează cu un spațiu între)
+
+```asm
+push dword chestieDeAfisat
+push dword formatAfisare
+call [printf]
+add esp, 4 * 2
+```
+
+### fopen(numeFisier, modAcces)
+`modAcces db "[val]", 0`
+- "r" = read
+- "w" = write, scrie de la începutul fișierului
+- "a" = append, nu șterge tot ca write
+- "r+" = "r" dar fișierul trebuie să existe
+- "w+" = "w" dar fișierul nu trebuie să existe
+- "a+" = "a" dar fișierul nu trebuie să existe
+
+```asm
+push dword modAcces
+push dword numeFisier
+call [fopen]
+add esp, 4 * 2
+
+; descriptorul fișierului se pune automat în EAX
+; noi vrem să îl punem într-o variabilă nouă "descriptorFisier", un doubleword inițializat cu 0
+
+mov [descriptorFisier], eax
+; verificăm dacă funcția fopen a creat cu succes fișierul (dacă descriptorFisier != 0)
+cmp eax, 0
+je iesireProgram
+
+```
+
+### fclose(descriptorFisier)
+`descriptorFisier dd 0`
+
+```asm
+push dword descriptorFisier
+call [fclose]
+add esp, 4 * 1
+```
+
+### fscanf(descriptorFisier, formatCitire, chestieDeCitit)
+`descriptorFisier dd 0`
+`formatCitire db "[val]", 0`
+- "%d" - decimal
+- "%s" - string
+- "%c" - char
+- "%x" - hexa
+- "%o" - octal
+
+```asm
+push dword chestieDeCitit
+push dword formatCitire
+push dword [descriptorFisier]
+call [fscanf]
+add esp, 4 * 3
+```
+
+### fread(buffer, size = 1, bufferLen, descriptorFisier)
+`descriptorFisier dd 0`
+`bufferLen equ [val2]; lungimea textului din fișier`
+`buffer times bufferLen db 0; chestia de afișat`
+
+```asm
+push dword [descriptorFisier]
+push dword bufferLen
+push dword 1
+push dword buffer
+call [fread]
+add esp, 4 * 4
+```
+
+### fprintf(descriptorFisier, formatAfisare, chestieDeAfisat)
+`descriptorFisier dd 0`
+`formatAfisare db "[val]", 0`
+- "%d" - decimal
+- "%s" - string
+- "%c" - char
+- "%x" - hexa
+- "%o" - octal
+
+`formatAfisare` poate fi și ceva de tipul "%x%x" (push la două chestii de afișat, le afișează back to back) sau "%x %x" (push la două chestii de afișat, le afișează cu un spațiu între)
+
+```asm
+push dword chestieDeAfisat
+push dword formatAfisare
+push dword [descriptorFisier]
+call [fprintf]
+add esp, 4 * 3
+```
+
+### fwrite(buffer, size = 1, bufferLen, descriptorFisier)
+`descriptorFisier dd 0`
+`bufferLen equ [val2]; lungimea textului din fișier`
+`buffer times bufferLen db 0; chestia de afișat`
+
+```asm
+push dword [descriptorFisier]
+push dword bufferLen
+push dword 1
+push dword buffer
+call [fwrite]
+add esp, 4 * 4
+```
+
+
+
+
+
 
 <br>
 <br>

@@ -48,21 +48,45 @@
             }
           },
           {
-            "id": "6486ec3801ca1a71",
+            "id": "67e9e9eccf11ab04",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Teme/FP/Rezolvări Practic/Rezolvări practic.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Rezolvări practic"
+            }
+          },
+          {
+            "id": "c785e4ebfa5ee6ab",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Teme/ASC/Teorie și altele pentru examen.md",
+                "file": "Teme/FP/Practic.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Teorie și altele pentru examen"
+              "title": "Practic"
+            }
+          },
+          {
+            "id": "4bd95b254747fb14",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Teme/FP/Rezolvări Practic/Subiectul 10.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Subiectul 10"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -81,7 +105,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -195,16 +220,6 @@
               "icon": "lucide-file",
               "title": "Plugin no longer active"
             }
-          },
-          {
-            "id": "d7ccf964d8734d33",
-            "type": "leaf",
-            "state": {
-              "type": "timer-view",
-              "state": {},
-              "icon": "timer",
-              "title": "Timer"
-            }
           }
         ]
       }
@@ -222,58 +237,57 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "obsidian-kanban:Create new board": false,
-      "pomodoro-timer:Toggle timer panel": false,
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "6486ec3801ca1a71",
+  "active": "4bd95b254747fb14",
   "lastOpenFiles": [
+    "Teme/FP/Lab/Lab 7 - 9/Domains/validation.py~",
+    "Teme/FP/Rezolvări Practic/Subiectul 11.pdf",
+    "Teme/FP/Rezolvări Practic/Subiectul 12.pdf",
+    "Teme/FP/Rezolvări Practic/Subiectul 13.pdf",
+    "Teme/FP/Rezolvări Practic/Subiectul 14.jpeg",
+    "Teme/FP/Rezolvări Practic/Subiectul 8.pdf",
+    "Teme/FP/Rezolvări Practic/Subiectul 9.pdf",
+    "Teme/FP/Practic.md",
+    "Teme/FP/Rezolvări Practic/Rezolvări practic.pdf",
+    "Teme/FP/Programare Dinamică/~$ogramareDinamica_ProblemeSpecifice.docx",
+    "Teme/FP/Programare Dinamică/~$Elevi.xlsx",
+    "Teme/FP/Programare Dinamică/subs_max_cresc/subs_max_cresc.cbp",
+    "Teme/FP/Programare Dinamică/subs_max_cresc/sir.in",
+    "Teme/FP/Rezolvări Practic/asd.jpeg",
+    "FP/Seminar/5 1 13.md",
+    "ToDo.md",
+    "ASC/Curs/4 10 23/Curs 4.md",
+    "ASC/Seminar/4 10 15.md",
+    "ASC/Lab/4 10 9/Lab 2.md",
+    "Algebră/Curs/4 10 10.md",
+    "Algebră/Curs/4 10 3.md",
+    "Teme/ASC/Teorie și altele pentru examen.md",
+    "ASC/Seminar/4 11 25.md",
+    "ASC/Curs/5 1 8/Curs 13.md",
+    "ASC/Curs/5 1 15/Curs 14.md",
+    "ASC/Curs/4 10 30/Curs 5.md",
+    "ASC/Lab/4 10 2/Lab 1.md",
     "zzz Imagini Excalidraw/Pasted image 20250128165144.png",
     "ASC/Curs/4 12 11/Curs 11.md",
-    "Teme/ASC/Teorie și altele pentru examen.md",
-    "ToDo.md",
     "zzz Imagini Excalidraw/Pasted image 20250127184310.png",
     "zzz Imagini Excalidraw/Pasted image 20250127184207.png",
     "zzz Imagini Excalidraw/Pasted image 20250127184230.png",
     "Pasted image 20250127190217.png",
     "zzz Imagini Excalidraw/Pasted image 20250127184256.png",
-    "ASC/~$c-subject.docx",
     "ASC/Curs/4 11 13/Curs 7.md",
-    "ASC/Curs/4 10 30/Curs 5.md",
     "ASC/Curs/4 10 16/Curs 3.md",
     "Orar.md",
-    "ASC/Curs/5 1 15/Curs 14.md",
-    "LC/Subiecte examen.pdf",
     "Teme/LC/Logica propozițiilor.png",
     "Teme/LC/Logica predicatelor.png",
-    "Teme/LC/Algebre boolene.pdf",
     "Teme/LC/Ex. idk.md",
-    "LC/Cursuri pdf/LC_Curs11.pdf",
     "LC/Seminar/5 1 14.md",
-    "LC/Seminar/Seminarii 214/Sem13_212_20250110WhiteBoard02.pdf",
-    "LC/Cursuri pdf/LC_Curs10.pdf",
-    "LC/Cursuri pdf/LC_Curs9.pdf",
-    "zzz Imagini Excalidraw/Pasted Image 20250124184713_048.png",
-    "Teme/LC/~$nsultatii19_01_2025.docx",
-    "Teme/LC/Ex. idk.png",
-    "zzz Imagini Excalidraw/Pasted Image 20250124184647_735.png",
-    "Teme/LC/Consultatii19_01_2025.docx",
-    "LC/Seminar/Seminarii 214/Sem12_212_20241220WhiteBoard02.pdf",
     "Teme/LC/Logica predicatelor.md",
     "Teme/LC/Logica propozițiilor.md",
     "Teme/AM/Suplimentar/Ex. valori extreme.md",
     "Teme/AM/Suplimentar/Ex. whatever.md",
     "Teme/AM/Suplimentar/Ex. integrale.md",
-    "Teme/AM/Suplimentar/Overview.md",
-    "LC/Seminar/4 12 17.md",
-    "Teme/LC/Pregătire parțial 1.md",
-    "LC/Seminar/4 11 5.md",
-    "AM/Seminar/5 1 14.md",
-    "AM/Curs/4 11 8/Curs 6.md",
-    "AM/Seminar/5 1 17.md",
-    "AM/Seminar/4 10 29.md",
-    "AM/Seminar/4 12 17.md",
-    "AM/Seminar/4 11 5.md",
     "Untitled.canvas",
     "Pg. În C/Curs/4 10 4.canvas",
     "Teme/Pg. În C/Curs/4 10 4.canvas"

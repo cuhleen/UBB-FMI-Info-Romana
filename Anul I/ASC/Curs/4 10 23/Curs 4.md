@@ -5,7 +5,7 @@
 [Reminder Complement](<Lab 1#Complementul>)
 
 ## Definiție
-Matematic, *reprezentarea* unui număr *negativ* în *complementul față de doi*, este valoarea <span style="background-color:#8a6624">2<sup >n</sup> - V</span>, unde V este valoarea absolută a numărului reprezentat
+Matematic, *reprezentarea* unui număr *negativ* în *complementul față de doi*, este valoarea <span style="background-color:#8a6624">2<sup>n</sup> - V</span>, unde V este valoarea absolută a numărului reprezentat
 
 ## Motto
 Cu complementul față de 2 **"interpretăm reprezentări și reprezentăm interpretări"**

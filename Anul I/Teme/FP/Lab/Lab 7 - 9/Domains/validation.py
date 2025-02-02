@@ -18,11 +18,11 @@ class validatorCarte:
             errors.append("ID-ul cărții trebuie să fie un număr natural pozitiv")
 
         if len(carte.getTitlu()) < 1:
-            errors.append("Titlul cărții trebuie să aiba cel puțin un caracter")
+            errors.append("Titlul cărții trebuie să aibă cel puțin un caracter")
         if len(carte.getDescriere()) < 1:
-            errors.append("Descrierea cărții trebuie să aiba cel puțin un caracter")
+            errors.append("Descrierea cărții trebuie să aibă cel puțin un caracter")
         if len(carte.getAutor()) < 1:
-            errors.append("Autorul cărții trebuie să aiba cel puțin un caracter")
+            errors.append("Autorul cărții trebuie să aibă cel puțin un caracter")
 
         if len(errors) > 0:
             error_message = '\n'.join(errors)

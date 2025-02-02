@@ -71,8 +71,6 @@ Din fericire nu se cere la examen, asta e mai mult doar să știm unde să căut
 
 <hr>
 
-
-
 # EXAMEN ==!! ȚINE MINTE DOUĂ STRUCTURI DIN FIECARE CELE 4 CATEGORII DE PREFIXE (8 TOTAL) !!==
 
 <hr>

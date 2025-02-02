@@ -8,15 +8,14 @@ import scanf msvcrt.dll
 import fprintf msvcrt.dll
 segment data use32 class=data
 
-	a dd 10000h
-    b dw 2
+    b dd 'sex'
+    c dd 's'
+    e dd 'ex'
     
 segment code use32 class=code
 	start:
     
-    mov al, -2
-    mov bl, -128
-    imul al
+    
     
     ; Exit program
 	push dword 0

@@ -5,11 +5,13 @@
         <Filter name="" />
         <Filter name="" />
         <Filter name="" />
+        <Filter name="" />
+        <Find name="text" />
+        <Find name="fread" />
         <Find name="numeFisier)" />
         <Find name="modAcces)" />
         <Find name="numeFisier" />
         <Find name="fprintf" />
-        <Find name="text" />
         <Find name="fopen" />
         <Find name="eax" />
         <Find name="\t" />
@@ -17,13 +19,11 @@
         <Replace name="    " />
     </FindHistory>
     <History nbMaxFile="10" inSubMenu="no" customLength="-1">
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 11 13\Tema Lab 5.asm" />
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\4 10 14 seminar\1 1.asm" />
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 12 4\Tema Lab 8 1.asm" />
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 12 11\temaLab11main.asm" />
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 12 11\temaLab11modul.asm" />
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 12 4\Tema Lab 8 2.asm" />
-        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\4 11 20\Tema Lab 6.asm" />
+        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Lab\5 1 8\temaLab12modul.asm" />
+        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Suplimentar\1 1\suplimentar 1 1.asm" />
+        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Suplimentar\1 2\suplimentar 1 2.asm" />
+        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\Suplimentar\1 3\suplimentar 1 3.asm" />
+        <File filename="E:\002 Facultate\Obsidian\Anul I\Teme\ASC\random\random.asm" />
     </History>
     <GUIConfigs>
         <GUIConfig name="ToolBar" visible="yes">standard</GUIConfig>
