@@ -273,28 +273,24 @@
       "color": "5loVDsUrtcUoS_Q5UNLMg"
     },
     {
-      "path": "Semestrul II/MAdRaPdMsI",
+      "path": "Semestrul II/OOP",
       "color": "x3eNN1ku7gJhbVwPTClxG"
     },
     {
-      "path": "Semestrul II/OOP",
+      "path": "Semestrul II/SDA",
       "color": "NYjsI_ceVJUclOQpmBnxF"
     },
     {
-      "path": "Semestrul II/SDA",
+      "path": "Semestrul II/Sisteme de Operare",
       "color": "7pSs16J_AzbHV5FEIpd7d"
     },
     {
-      "path": "Semestrul II/Sisteme de Operare",
+      "path": "Semestrul II/Sisteme Dinamice",
       "color": "R86SaXdVDPfdUJ8bD94iq"
     },
     {
-      "path": "Semestrul II/Sisteme Dinamice",
-      "color": "jvxE5KWJreQiaUaLI4Ls7"
-    },
-    {
       "path": "Semestrul II/Teme",
-      "color": "U9SwXAz6qEESDBucBSlqV"
+      "color": "jvxE5KWJreQiaUaLI4Ls7"
     },
     {
       "path": "Semestrul II/Geometrie",
@@ -302,23 +298,23 @@
     },
     {
       "path": "Semestrul II/Sisteme Dinamice/Notare.md",
-      "color": "cGxUYLN4Rk1YE2INbCKuR"
+      "color": "x0WQC5ac87QZGqnW_eNaC"
     },
     {
       "path": "Semestrul II/Sisteme Dinamice/Curs",
-      "color": "cGxUYLN4Rk1YE2INbCKuR"
+      "color": "x0WQC5ac87QZGqnW_eNaC"
     },
     {
       "path": "Semestrul II/SDA/Curs",
-      "color": "N7eoJQ9ngakwN9xCSVn2H"
+      "color": "Tv_PsssUe6_DNn_ey3bws"
     },
     {
       "path": "Semestrul II/SDA/Notare.md",
-      "color": "N7eoJQ9ngakwN9xCSVn2H"
+      "color": "Tv_PsssUe6_DNn_ey3bws"
     },
     {
       "path": "Semestrul II/Sisteme Dinamice/Seminar",
-      "color": "cGxUYLN4Rk1YE2INbCKuR"
+      "color": "x0WQC5ac87QZGqnW_eNaC"
     },
     {
       "path": "Semestrul II/Geometrie/Curs",
@@ -338,23 +334,59 @@
     },
     {
       "path": "Semestrul II/OOP/Curs",
-      "color": "Tv_PsssUe6_DNn_ey3bws"
+      "color": "1nBt6BRjl7YFtbpT1t6WA"
     },
     {
       "path": "Semestrul II/OOP/Notare.md",
-      "color": "Tv_PsssUe6_DNn_ey3bws"
+      "color": "1nBt6BRjl7YFtbpT1t6WA"
     },
     {
       "path": "Semestrul II/OOP/Lab",
-      "color": "Tv_PsssUe6_DNn_ey3bws"
+      "color": "1nBt6BRjl7YFtbpT1t6WA"
     },
     {
       "path": "Semestrul II/SDA/Lab",
-      "color": "N7eoJQ9ngakwN9xCSVn2H"
+      "color": "Tv_PsssUe6_DNn_ey3bws"
     },
     {
       "path": "Semestrul II/SDA/L1.pdf",
+      "color": "Tv_PsssUe6_DNn_ey3bws"
+    },
+    {
+      "path": "Semestrul II/SDA/Seminar",
+      "color": "Tv_PsssUe6_DNn_ey3bws"
+    },
+    {
+      "path": "Semestrul II/OOP/Seminar",
+      "color": "1nBt6BRjl7YFtbpT1t6WA"
+    },
+    {
+      "path": "Semestrul II/Sisteme de Operare/Notare.md",
       "color": "N7eoJQ9ngakwN9xCSVn2H"
+    },
+    {
+      "path": "Semestrul II/Algoritmica Grafelor/Seminar",
+      "color": "7BKwi3pzaAxjF8j3xe8o-"
+    },
+    {
+      "path": "Semestrul II/Sisteme Dinamice/Lab",
+      "color": "x0WQC5ac87QZGqnW_eNaC"
+    },
+    {
+      "path": "Semestrul II/Algoritmica Grafelor/Lab",
+      "color": "7BKwi3pzaAxjF8j3xe8o-"
+    },
+    {
+      "path": "Semestrul II/Sisteme de Operare/Curs",
+      "color": "N7eoJQ9ngakwN9xCSVn2H"
+    },
+    {
+      "path": "Semestrul II/Sisteme de Operare/Seminar",
+      "color": "N7eoJQ9ngakwN9xCSVn2H"
+    },
+    {
+      "path": "Semestrul II/SDA/SDA Descriere&Cerinte.pdf",
+      "color": "Tv_PsssUe6_DNn_ey3bws"
     }
   ]
 }

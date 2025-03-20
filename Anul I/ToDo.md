@@ -6,10 +6,16 @@ kanban-plugin: board
 
 ## De făcut
 
+- [ ] # Algoritmica Grafelor
+	5 3 7
+	cerinta_laborator_01.txt
+	ex. 2
+	@{2025-03-21}
 
 
-## Overdue și ar trebui să mă uit măcar peste ele
+## Ar trebui să mă uit măcar peste ele
 
+- [ ] # SD (Seminar + Curs)
 
 
 ## Făcute

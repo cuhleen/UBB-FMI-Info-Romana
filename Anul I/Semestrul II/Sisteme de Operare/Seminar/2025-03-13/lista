@@ -1,0 +1,446 @@
+/home/collie_dawg/ubb-os/lab/2025-02-26/HelloWorld.c
+/home/collie_dawg/ubb-os/lab/2025-02-26/Adunare.c
+/home/collie_dawg/ubb-os/lab/2025-02-26/Fisiere1.c
+/home/collie_dawg/ubb-c/server_tcp.c
+/home/collie_dawg/ubb-c/matrix.c
+/home/collie_dawg/ubb-c/create_child.c
+/home/collie_dawg/ubb-c/client_tcp.c
+/home/collie_dawg/ubb-c/create_file.c
+/home/collie_dawg/ubb-c/pelea_mod_2.c
+/home/collie_dawg/c-test-practice-2/matrix-from-binary.c
+/home/collie_dawg/c-test-practice-2/hello-remember.c
+/home/collie_dawg/c-test-practice-2/matrix-from-text.c
+/home/collie_dawg/c-test-practice-2/matrix-to-binary.c
+/home/collie_dawg/pelea_mod_2/main.c
+/home/collie_dawg/pelea_mod_2/types/tipuri_algebrice.c
+/home/collie_dawg/c_project/main.c
+/home/collie_dawg/c_project/teste/teste.c
+/home/collie_dawg/c_project/domain/student.c
+/home/collie_dawg/c_project/validare/validator_student.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/StringTools.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/TestUtilityLoader.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/Embed.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/AsyncGen.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/TypeConversion.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/Coroutine.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/Overflow.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/ObjectHandling.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/Printing.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/ImportExport.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/FunctionArguments.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/CythonFunction.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/MemoryView_C.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/Buffer.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/Exceptions.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/CommonStructures.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/ModuleSetupCode.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/Optimize.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/ExtensionTypes.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/CMath.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/Builtins.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/Complex.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/Profile.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/Capsule.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Debugger/Tests/cfuncs.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/f2py/src/fortranobject.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/mingw/gfortran_vs2003_hack.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_avx512_icl.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_avx512_cnl.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_vsx3.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_vxe2.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_avx512_knm.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_neon.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_avx512f.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_avx512cd.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_avx.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_sse41.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_neon_fp16.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_vx.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_avx512_clx.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_asimdfhm.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_vsx4.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_fma3.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_neon_vfpv4.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_vxe.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_sse3.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/extra_avx512dq_mask.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_f16c.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_vsx.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/test_flags.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_asimddp.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_ssse3.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/extra_vsx4_mma.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_avx512_knl.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_popcnt.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_avx512_skx.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_avx2.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_fma4.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/extra_avx512bw_mask.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/extra_avx512f_reduce.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_sse42.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_asimd.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_sse2.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_sse.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_vsx2.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/extra_vsx_asm.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_asimdhp.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/distutils/checks/cpu_xop.c
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/config-3.11-x86_64-linux-gnu/config.c
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/Algoritmica Grafelor/Lab/5 3 7/cmake-build-debug/CMakeFiles/3.29.6/CompilerIdC/CMakeCCompilerId.c
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/SDA/Lab/5 3 12/cmake-build-debug/CMakeFiles/3.29.6/CompilerIdC/CMakeCCompilerId.c
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/SDA/Lab/5 2 28/TAD Colectie/cmake-build-debug/CMakeFiles/3.29.6/CompilerIdC/CMakeCCompilerId.c
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/OOP/Lab/5 3 13/main.c
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/OOP/Lab/5 3 13/UI/ui.c
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/OOP/Lab/5 3 13/Service/validator.c
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/OOP/Lab/5 3 13/Service/service.c
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/OOP/Lab/5 3 13/Domain/cheltuiala.c
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/OOP/Lab/5 3 13/cmake-build-debug/CMakeFiles/3.29.6/CompilerIdC/CMakeCCompilerId.c
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/OOP/Lab/5 3 13/Repo/lista.c
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/OOP/Lab/5 3 13/Repo/repo.c
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/OOP/Lab/5 2 27/cerinta1.c
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/OOP/Lab/5 3 6/cerinta14.c
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/OOP/Lab/5 3 6/cerinta3.c
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul I/Teme/ASC/Lab/5 1 8/temaLab12main.c
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul I/Pg. În C/Lab/4 10 25/exemplu.c
+/home/collie_dawg/c-test-practice/matrix-from-binary.c
+/home/collie_dawg/c-test-practice/hello-remember.c
+/home/collie_dawg/c-test-practice/matrix-from-text.c
+/home/collie_dawg/c-test-practice/matrix-to-binary.c
+/home/collie_dawg/.local/share/Trash/files/Fisiere1.c
+/home/collie_dawg/.steam/debian-installation/ubuntu12_32/steam-runtime.old/usr/include/Cg/cgGL.h
+/home/collie_dawg/.steam/debian-installation/ubuntu12_32/steam-runtime.old/usr/include/Cg/cg.h
+/home/collie_dawg/.steam/debian-installation/ubuntu12_32/steam-runtime/usr/include/Cg/cgGL.h
+/home/collie_dawg/.steam/debian-installation/ubuntu12_32/steam-runtime/usr/include/Cg/cg.h
+/home/collie_dawg/pelea_mod_2/types/tipuri_algebrice.h
+/home/collie_dawg/c_project/teste/teste.h
+/home/collie_dawg/c_project/domain/student.h
+/home/collie_dawg/c_project/validare/validator_student.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/math_int8.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_float2_impl.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_int3_impl.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_int4_impl.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_float3.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_int8.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/math_fast.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_uchar4_impl.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_float4_impl.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_int2_impl.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_uchar3.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_uint3.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_float8_impl.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_float2.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/math_intersect.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/hash.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/transform.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/transform_inverse.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_int2.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/math.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/texture.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_uint3_impl.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_uchar4.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/math_int4.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/atomic.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_int8_impl.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/math_float2.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_uchar3_impl.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_spectrum.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_uchar2.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_int3.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/math_float3.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_ushort4.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_uint2.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/math_int2.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_int4.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_uchar2_impl.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/math_float4.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_float4.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/math_int3.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/static_assert.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/color.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_uint4.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/half.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/defines.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/rect.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/math_float8.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/projection.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_float3_impl.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_float8.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/math_matrix.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_uint2_impl.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/util/types_uint4_impl.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/light/tree.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/light/light.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/light/triangle.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/light/common.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/light/area.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/light/sample.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/light/spot.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/light/point.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/light/background.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/light/distribution.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/light/distant.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/sample/mapping.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/sample/pattern.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/sample/mis.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/sample/util.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/sample/tabulated_sobol.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/sample/sobol_burley.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/sample/lcg.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/bvh/traversal.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/bvh/bvh.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/bvh/shadow_all.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/bvh/util.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/bvh/volume_all.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/bvh/local.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/bvh/volume.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/bvh/types.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/bvh/nodes.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/metal/function_constants.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/metal/compat.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/metal/context_begin.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/metal/bvh.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/metal/globals.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/metal/context_end.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/optix/compat.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/optix/bvh.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/optix/globals.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/hiprt/bvh.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/hiprt/globals.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/hiprt/common.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/hiprt/hiprt_kernels.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/cuda/compat.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/cuda/config.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/cuda/globals.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/hip/compat.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/hip/config.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/hip/globals.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/gpu/kernel.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/gpu/parallel_sorted_index.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/gpu/work_stealing.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/gpu/image.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/gpu/parallel_prefix_sum.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/device/gpu/parallel_active_index.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/vector_rotate.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/blackbody.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/noise.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/math_util.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/sepcomb_hsv.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/svm.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/voronoi.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/noisetex.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/mapping.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/tex_coord.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/light_path.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/gamma.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/camera.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/value.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/ramp_util.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/checker.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/brightness.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/color_util.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/convert.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/vector_transform.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/sepcomb_vector.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/wave.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/displace.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/math.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/gradient.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/closure.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/bevel.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/fresnel.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/clamp.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/voxel.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/fractal_noise.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/image.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/ies.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/invert.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/vertex_color.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/ramp.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/map_range.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/wireframe.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/hsv.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/geometry.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/brick.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/sepcomb_color.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/wavelength.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/bump.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/white_noise.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/attribute.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/mix.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/node_types_template.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/ao.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/aov.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/normal.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/types.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/sky.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/mapping_util.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/svm/magic.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/util/lookup_table.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/util/differential.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/util/profiling.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/util/nanovdb.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/util/ies.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/util/color.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/geom/motion_point.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/geom/triangle.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/geom/patch.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/geom/curve_intersect.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/geom/triangle_intersect.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/geom/motion_curve.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/geom/motion_triangle_shader.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/geom/primitive.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/geom/curve.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/geom/point_intersect.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/geom/motion_triangle.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/geom/subd_triangle.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/geom/motion_triangle_intersect.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/geom/point.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/geom/attribute.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/geom/volume.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/geom/object.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/geom/shader_data.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/geom/geom.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/data_arrays.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/closure/bsdf_sheen.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/closure/bsdf_util.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/closure/bsdf_ray_portal.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/closure/bsdf_ashikhmin_velvet.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/closure/alloc.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/closure/bsdf_principled_hair_huang.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/closure/bsdf_hair.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/closure/bsdf_diffuse.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/closure/bsdf_transparent.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/closure/bsdf_diffuse_ramp.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/closure/bsdf.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/closure/bsdf_ashikhmin_shirley.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/closure/bssrdf.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/closure/bsdf_microfacet.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/closure/bsdf_toon.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/closure/volume.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/closure/emissive.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/closure/bsdf_principled_hair_chiang.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/closure/bsdf_phong_ramp.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/closure/bsdf_oren_nayar.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/osl/osl.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/osl/services_gpu.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/osl/closures_setup.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/osl/closures_template.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/osl/types.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/tables.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/film/write.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/film/adaptive_sampling.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/film/cryptomatte_passes.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/film/data_passes.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/film/light_passes.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/film/denoising_passes.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/film/read.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/film/aov_passes.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/data_template.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/camera/camera.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/camera/projection.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/bake/bake.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/types.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/surface_shader.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/shade_shadow.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/subsurface_disk.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/init_from_bake.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/shadow_catcher.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/state.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/displacement_shader.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/volume_shader.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/shade_dedicated_light.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/path_state.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/megakernel.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/state_template.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/intersect_subsurface.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/intersect_shadow.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/intersect_volume_stack.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/shadow_state_template.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/guiding.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/shadow_linking.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/intersect_dedicated_light.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/shade_background.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/shade_light.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/volume_stack.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/state_flow.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/shade_volume.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/subsurface_random_walk.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/mnee.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/intersect_closest.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/shade_surface.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/subsurface.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/init_from_camera.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/source/kernel/integrator/state_util.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/shader/vector4.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/shader/node_math.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/shader/matrix33.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/shader/color4.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/shader/node_fresnel.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/shader/node_voronoi.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/shader/node_noise.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/shader/node_ramp_util.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/shader/node_hash.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/shader/stdosl.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/shader/vector2.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/shader/node_fractal_voronoi.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/shader/color2.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/shader/node_color.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/shader/stdcycles.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/shader/oslutil.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/scripts/addons_core/cycles/shader/node_color_blend.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/MaterialX/libraries/stdlib/genosl/include/vector4.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/MaterialX/libraries/stdlib/genosl/include/matrix33.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/MaterialX/libraries/stdlib/genosl/include/color4.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/MaterialX/libraries/stdlib/genosl/include/vector2.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/MaterialX/libraries/stdlib/genosl/include/mx_funcs.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/Cython/Utility/arrayarray.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/f2py/src/fortranobject.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/__multiarray_api.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/npy_3kcompat.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/arrayscalars.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/halffloat.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/npy_no_deprecated_api.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/old_defines.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/libdivide/libdivide.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/ndarraytypes.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/ufuncobject.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/npy_common.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/arrayobject.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/npy_endian.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/npy_math.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/npy_interrupt.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/noprefix.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/_neighborhood_iterator_imp.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/oldnumeric.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/experimental_dtype_api.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/random/distributions.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/random/bitgen.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/numpyconfig.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/ndarrayobject.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/_numpyconfig.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/__ufunc_api.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/utils.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/npy_os.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/4.2/python/lib/python3.11/site-packages/numpy/core/include/numpy/npy_cpu.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/lib/usd/hd/resources/codegenTemplates/schemaClass.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/lib/usd/usd/resources/codegenTemplates/tokens.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/lib/usd/usd/resources/codegenTemplates/schemaClass.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/lib/usd/usd/resources/codegenTemplates/api.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/lib/materialx/libraries/stdlib/genosl/include/vector4.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/lib/materialx/libraries/stdlib/genosl/include/matrix33.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/lib/materialx/libraries/stdlib/genosl/include/color4.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/lib/materialx/libraries/stdlib/genosl/include/vector2.h
+/home/collie_dawg/000 Stuff/Steam Downloads/steamapps/common/Blender/lib/materialx/libraries/stdlib/genosl/include/mx_funcs.h
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/SDA/Lab/5 2 28/TAD Colectie/TestScurt.h
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/SDA/Lab/5 2 28/TAD Colectie/Colectie.h
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/SDA/Lab/5 2 28/TAD Colectie/TestExtins.h
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/SDA/Lab/5 2 28/TAD Colectie/IteratorColectie.h
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/OOP/Lab/5 3 13/UI/ui.h
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/OOP/Lab/5 3 13/Service/validator.h
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/OOP/Lab/5 3 13/Service/service.h
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/OOP/Lab/5 3 13/Domain/cheltuiala.h
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/OOP/Lab/5 3 13/Repo/repo.h
+/home/collie_dawg/000 Stuff/001 Facultate/Anul I/Semestrul II/OOP/Lab/5 3 13/Repo/lista.h
+/home/collie_dawg/.local/share/Trash/files/tipuri_algebrice.h

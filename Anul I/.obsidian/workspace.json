@@ -48,32 +48,21 @@
             }
           },
           {
-            "id": "d86ea5e32e763bcc",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
-              "state": {
-                "file": "Semestrul II/SDA/L1.pdf"
-              },
-              "icon": "lucide-file-text",
-              "title": "L1"
-            }
-          },
-          {
-            "id": "4f3c28e9d3459e13",
+            "id": "9b8ad4b90d6677c1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Semestrul II/Algoritmica Grafelor/Notare.md",
+                "file": "Semestrul II/Sisteme de Operare/Curs/5 3 13.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Notare"
+              "title": "5 3 13"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -93,7 +82,7 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": true
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -224,57 +213,58 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "obsidian-kanban:Create new board": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false
+      "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "d2ad0d83a9a5b133",
+  "active": "9b8ad4b90d6677c1",
   "lastOpenFiles": [
-    "Semestrul II/Algoritmica Grafelor/Notare.md",
     "Orar.md",
-    "Semestrul II/SDA/L1.pdf",
-    "Semestrul II/SDA/Lab/5 2 28/TAD Colectie/cmake-build-debug/CMakeFiles/TAD_Colectie.dir/App.cpp.obj.d",
-    "Semestrul II/SDA/Lab/5 2 28/TAD Colectie/cmake-build-debug/TAD_Colectie.exe",
-    "Semestrul II/SDA/Lab/5 2 28/TAD Colectie/cmake-build-debug/CMakeFiles/TAD_Colectie.dir/TestExtins.cpp.obj",
-    "Semestrul II/SDA/Lab/5 2 28/TAD Colectie/cmake-build-debug/CMakeFiles/TAD_Colectie.dir/TestExtins.cpp.obj.d",
-    "Semestrul II/SDA/Lab/5 2 28/TAD Colectie/cmake-build-debug/CMakeFiles/TAD_Colectie.dir/Colectie.cpp.obj",
-    "Semestrul II/SDA/Lab/5 2 28/TAD Colectie/cmake-build-debug/CMakeFiles/TAD_Colectie.dir/App.cpp.obj",
-    "Semestrul II/SDA/Lab/5 2 28/TAD Colectie/cmake-build-debug/CMakeFiles/TAD_Colectie.dir/TestScurt.cpp.obj",
-    "Semestrul II/SDA/Lab/5 2 28/TAD Colectie/cmake-build-debug/CMakeFiles/TAD_Colectie.dir/IteratorColectie.cpp.obj",
-    "Semestrul II/SDA/Lab/5 2 28/TAD Colectie/cmake-build-debug/Testing/Temporary/LastTest.log",
     "ToDo.md",
-    "Semestrul II/OOP/Notare.md",
-    "Semestrul II/Sisteme de Operare/Notare.md",
-    "Semestrul II/OOP/Curs/Untitled.md",
-    "Semestrul II/Geometrie/Seminar/5 2 26.md",
-    "Semestrul II/Algoritmica Grafelor/Curs/5 2 25.md",
-    "Semestrul II/Geometrie/Curs/5 2 25.md",
+    "Semestrul II/Sisteme de Operare/Curs/5 3 20.md",
+    "Semestrul II/Sisteme Dinamice/Curs/5 3 17.md",
+    "Semestrul II/Sisteme Dinamice/Curs/5 3 10.md",
     "Semestrul II/Sisteme Dinamice/Curs/5 2 24.md",
+    "Semestrul II/Algoritmica Grafelor/Curs/5 3 11.md",
+    "Semestrul II/Algoritmica Grafelor/Curs/5 3 18.md",
+    "Semestrul II/Algoritmica Grafelor/Curs/5 3 4.md",
+    "Semestrul II/Algoritmica Grafelor/Curs/5 2 25.md",
+    "Semestrul II/Sisteme de Operare/Curs/5 3 13.md",
+    "Semestrul II/Geometrie/Seminar/5 3 19.md",
+    "Semestrul II/Geometrie/Seminar/Drawing 2025-03-19 14.03.13.excalidraw.md",
+    "Semestrul II/Algoritmica Grafelor/Seminar/5 3 18.md",
+    "Semestrul II/Algoritmica Grafelor/Seminar/5 3 11.md",
+    "Semestrul II/Algoritmica Grafelor/Seminar/5 3 4.md",
+    "Semestrul II/OOP/Notare.md",
+    "Semestrul II/SDA/Seminar/5 3 17.md",
+    "zzz Imagini Excalidraw/20250317_134918.jpg",
+    "Semestrul II/SDA/Seminar/5 3 3.md",
+    "Drawing 2025-03-13 21.31.03.excalidraw.md",
+    "Semestrul II/Sisteme de Operare/Seminar/5 3 13.md",
+    "Untitled.canvas",
+    "Semestrul II/Sisteme de Operare/Seminar",
+    "Semestrul II/Sisteme de Operare/Curs",
+    "Semestrul II/OOP/Lab/5 3 13/Repo/repo.h~",
+    "Semestrul II/OOP/Lab/5 3 13/Repo/lista.c~",
+    "Semestrul II/OOP/Lab/5 3 13/Repo/lista.h~",
+    "Semestrul II/OOP/Lab/5 3 13/cmake-build-debug/CMakeCache.txt.tmpdd31e",
+    "Semestrul II/OOP/Lab/5 3 13/cmake-build-debug/CMakeCache.txt.tmpe719f",
+    "Semestrul II/OOP/Lab/5 3 13/cmake-build-debug/CMakeCache.txt.tmpbd4a4",
+    "Semestrul II/OOP/Lab/5 3 13/cmake-build-debug/CMakeCache.txt.tmp57d9b",
+    "Semestrul II/OOP/Lab/5 3 13/cmake-build-debug/CMakeCache.txt.tmpc41cb",
+    "Semestrul II/Geometrie/Seminar/5 3 12.md",
+    "Semestrul II/Sisteme Dinamice/Seminar/5 3 10.md",
     "Semestrul II/Sisteme Dinamice/Seminar/5 2 24.md",
-    "Semestrul II/Sisteme Dinamice/Notare.md",
-    "zzz Imagini Excalidraw/Pasted image 20250224151241.png",
+    "Semestrul I/AM/Seminar/5 1 17.md",
+    "zzz Imagini Excalidraw/Pasted Image 20250310140153_914.png",
+    "zzz Imagini Excalidraw/Pasted Image 20250310135924_366.png",
+    "zzz Imagini Excalidraw/Pasted Image 20250310135959_132.png",
+    "zzz Imagini Excalidraw/Pasted Image 20250310140023_621.png",
+    "zzz Imagini Excalidraw/Pasted Image 20250310140105_555.png",
     "Semestrul II/SDA/Notare.md",
-    "Semestrul II/Untitled.md",
+    "zzz Imagini Excalidraw/Pasted image 20250224151241.png",
     "zzz Altele/Pasted image 20241002103108.png",
-    "Semestrul I/Teme/FP/Teoretic.md",
     "Semestrul I/Teme/FP/Rezolvări Teoretic/Subiectul 14.jpeg",
     "Teme/FP/Rezolvări Practic/Subiectul 14.jpeg",
-    "Teme/FP/Practic.md",
-    "Teme/FP/Rezolvări Practic/asd.jpeg",
-    "Semestrul I/FP/Seminar/5 1 13.md",
-    "Semestrul I/ASC/Curs/4 10 23/Curs 4.md",
-    "Semestrul I/ASC/Seminar/4 10 15.md",
-    "Semestrul I/ASC/Lab/4 10 9/Lab 2.md",
-    "Semestrul I/Algebră/Curs/4 10 10.md",
-    "Semestrul I/Algebră/Curs/4 10 3.md",
-    "Semestrul I/Teme/ASC/Teorie și altele pentru examen.md",
-    "Semestrul I/ASC/Seminar/4 11 25.md",
-    "Semestrul I/ASC/Curs/5 1 8/Curs 13.md",
-    "zzz Imagini Excalidraw/Pasted image 20250128165144.png",
-    "zzz Imagini Excalidraw/Pasted image 20250127184310.png",
-    "zzz Imagini Excalidraw/Pasted image 20250127184207.png",
-    "zzz Imagini Excalidraw/Pasted image 20250127184230.png",
-    "Pasted image 20250127190217.png",
-    "Untitled.canvas",
     "Semestrul I/Pg. În C/Curs/4 10 4.canvas",
     "Teme/Pg. În C/Curs/4 10 4.canvas"
   ]
