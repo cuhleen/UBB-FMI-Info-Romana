@@ -1,0 +1,1 @@
+/usr/bin/c++ --coverage -Wall -Wextra -g CMakeFiles/Lab_8___9.dir/consola.cpp.o CMakeFiles/Lab_8___9.dir/Film.cpp.o CMakeFiles/Lab_8___9.dir/main.cpp.o CMakeFiles/Lab_8___9.dir/repo.cpp.o CMakeFiles/Lab_8___9.dir/service.cpp.o CMakeFiles/Lab_8___9.dir/teste.cpp.o CMakeFiles/Lab_8___9.dir/validator.cpp.o CMakeFiles/Lab_8___9.dir/ShoppingCart.cpp.o -o Lab_8___9 

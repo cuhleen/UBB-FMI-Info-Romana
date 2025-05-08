@@ -1,0 +1,87 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9 - undo - fisier/repo.h
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9 - undo - fisier/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/service.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9 - undo - fisier/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include "Film.h"
+        -:    3:#include <utility>
+        -:    4:#include <vector>
+        -:    5:#include <string>
+        -:    6:#include <ostream>
+        -:    7:
+        -:    8:using std::vector;
+        -:    9:using std::string;
+        -:   10:using std::ostream;
+        -:   11:
+        -:   12:class Repo {
+        -:   13:private:
+        -:   14:
+        -:   15:	vector<Film> filme;
+        -:   16:
+        -:   17:	//verifica daca film a fost introdus deja in repository
+        -:   18:	bool exista(const Film& film);
+        -:   19:
+        -:   20:public:
+        -:   21:	virtual ~Repo() = default;
+        -:   22:
+        -:   23:	Repo() = default;
+        -:   24:	//Repo() = default;
+        -:   25:	//nu permitem copierea de obiecte
+        -:   26:	Repo(const Repo& other) = delete;
+        -:   27:
+        -:   28:	/*
+        -:   29:	Adauga film in repository
+        -:   30:	arunca exceptie daca exista deja un film cu acelasi titlu
+        -:   31:	*/
+        -:   32:	virtual void adaugaFilm(const Film& film);
+        -:   33:
+        -:   34:	/*
+        -:   35:	Sterge film dupa titlu din repository
+        -:   36:	arunca exceptie daca nu s-a gasit titlul filmului
+        -:   37:	*/
+        -:   38:	virtual void stergeFilm(int pozitie);
+        -:   39:
+        -:   40:	/*
+        -:   41:	Modifica un film din repository
+        -:   42:	arunca exceptie daca nu exista titlul filmului sau noile date sunt invalide
+        -:   43:	*/
+        -:   44:	virtual void modificaFilm(Film filmModificat, int pozitie);
+        -:   45:
+        -:   46:	/*
+        -:   47:	Cauta film in repository
+        -:   48:	arunca exceptie daca nu se gaseste filmul
+        -:   49:	*/
+        -:   50:	const Film& cautaFilm(const string& titlu);
+        -:   51:
+        -:   52:	int cautaPozitieDupaTitlu(const string& titluFilm) const;
+        -:   53:
+        -:   54:	/*
+        -:   55:	Functia getAll returneaza toate filmele din repository
+        -:   56:	*/
+        -:   57:	const vector<Film>& getAll() const noexcept;
+        -:   58:	virtual void incarcaDinFisier(const string& numeFisier);
+        -:   59:	virtual void salveazaInFisier(const string& numeFisier);
+        -:   60:	//virtual ~Repo();
+        -:   61:};
+        -:   62:
+        -:   63:class ExceptieRepo {
+        -:   64:
+        -:   65:	string mesajEroare;
+        -:   66:
+        -:   67:public:
+        -:   68:
+function _ZN12ExceptieRepoC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   69:	explicit ExceptieRepo(string mesaj) :mesajEroare{std::move( mesaj )} {}
+    %%%%%:   69-block  0
+call    0 never executed
+call    1 never executed
+        -:   70:
+        -:   71:	friend ostream& operator<<(ostream& out, const ExceptieRepo& exceptie);
+        -:   72:
+        -:   73:	string getMesaj() { return this->mesajEroare; }
+        -:   74:
+        -:   75:
+        -:   76:
+        -:   77:};
+        -:   78:
+        -:   79:ostream& operator<<(ostream& out, const ExceptieRepo& exceptie);

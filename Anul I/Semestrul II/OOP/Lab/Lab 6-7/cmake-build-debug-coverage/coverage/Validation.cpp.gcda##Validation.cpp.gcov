@@ -1,0 +1,474 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/Validation.cpp
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/cmake-build-debug-coverage/CMakeFiles/Lab6.dir/Validation.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/cmake-build-debug-coverage/CMakeFiles/Lab6.dir/Validation.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "Validation.h"
+        -:    2:
+        -:    3:#include <cassert>
+        -:    4:
+function _ZNK19ValidationException10getMessageB5cxx11Ev called 5 returned 100% blocks executed 100%
+        5:    5:string ValidationException::getMessage() const {
+        5:    6:    return message;
+        5:    6-block  0
+call    0 returned 5
+        -:    7:}
+        -:    8:
+function _ZN10Validation12validateFilmERK4Film called 12 returned 58% blocks executed 65%
+       12:    9:void Validation::validateFilm(const Film& film) {
+       12:   10:    if (film.getTitle().empty()) {
+       12:   10-block  0
+call    0 returned 12
+branch  1 taken 12 (fallthrough)
+branch  2 taken 0 (throw)
+       12:   10-block  1
+call    3 returned 12
+call    4 returned 12
+branch  5 taken 1 (fallthrough)
+branch  6 taken 11
+    $$$$$:   10-block  2
+call    7 never executed
+        3:   11:        throw ValidationException("Name cannot be empty");
+        1:   11-block  0
+call    0 returned 1
+        1:   11-block  1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   11-block  2
+call    4 returned 1
+call    5 returned 1
+        1:   11-block  3
+call    6 returned 0
+    $$$$$:   11-block  4
+    $$$$$:   11-block  5
+    $$$$$:   11-block  6
+call    7 never executed
+        -:   12:    }
+       11:   13:    if (film.getGenre().empty()) {
+       11:   13-block  0
+call    0 returned 11
+branch  1 taken 11 (fallthrough)
+branch  2 taken 0 (throw)
+       11:   13-block  1
+call    3 returned 11
+call    4 returned 11
+branch  5 taken 1 (fallthrough)
+branch  6 taken 10
+    $$$$$:   13-block  2
+call    7 never executed
+        3:   14:        throw ValidationException("Genre cannot be empty");
+        1:   14-block  0
+call    0 returned 1
+        1:   14-block  1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   14-block  2
+call    4 returned 1
+call    5 returned 1
+        1:   14-block  3
+call    6 returned 0
+    $$$$$:   14-block  4
+    $$$$$:   14-block  5
+    $$$$$:   14-block  6
+call    7 never executed
+        -:   15:    }
+       10:   16:    if (film.getActor().empty()) {
+       10:   16-block  0
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+       10:   16-block  1
+call    3 returned 10
+call    4 returned 10
+branch  5 taken 1 (fallthrough)
+branch  6 taken 9
+    $$$$$:   16-block  2
+call    7 never executed
+        3:   17:        throw ValidationException("Actor cannot be empty");
+        1:   17-block  0
+call    0 returned 1
+        1:   17-block  1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   17-block  2
+call    4 returned 1
+call    5 returned 1
+        1:   17-block  3
+call    6 returned 0
+    $$$$$:   17-block  4
+    $$$$$:   17-block  5
+    $$$$$:   17-block  6
+call    7 never executed
+        -:   18:    }
+        9:   19:    if (film.getYear() <= 0) {
+        9:   19-block  0
+call    0 returned 9
+branch  1 taken 2 (fallthrough)
+branch  2 taken 7
+        6:   20:        throw ValidationException("Year must be positive");
+        2:   20-block  0
+call    0 returned 2
+        2:   20-block  1
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   20-block  2
+call    4 returned 2
+call    5 returned 2
+        2:   20-block  3
+call    6 returned 0
+    $$$$$:   20-block  4
+    $$$$$:   20-block  5
+    $$$$$:   20-block  6
+call    7 never executed
+        -:   21:    }
+        7:   22:}
+        7:   22-block  0
+        -:   23:
+function _Z14testValidationv called 1 returned 100% blocks executed 46%
+        1:   24:void testValidation() {
+        1:   24-block  0
+        5:   25:    Film p1("Film1", "Genre1", "Actor1", 10.0);
+        1:   25-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   25-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   25-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   25-block  3
+call    9 returned 1
+call   10 returned 1
+        1:   25-block  4
+call   11 returned 1
+        1:   25-block  5
+call   12 returned 1
+    $$$$$:   25-block  6
+    $$$$$:   25-block  7
+    $$$$$:   25-block  8
+call   13 never executed
+    $$$$$:   25-block  9
+    $$$$$:   25-block 10
+    $$$$$:   25-block 11
+call   14 never executed
+    $$$$$:   25-block 12
+    $$$$$:   25-block 13
+        -:   26:    try {
+        1:   27:        Validation::validateFilm(p1);
+        1:   27-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   28:    }
+    =====:   29:    catch (ValidationException) {
+    $$$$$:   29-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    $$$$$:   29-block  1
+call    2 never executed
+call    3 never executed
+    =====:   30:        throw ValidationException("Validation failed for valid film");
+call    0 never executed
+    $$$$$:   30-block  0
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    $$$$$:   30-block  1
+call    4 never executed
+call    5 never executed
+    $$$$$:   30-block  2
+call    6 never executed
+    $$$$$:   30-block  3
+    $$$$$:   30-block  4
+    $$$$$:   30-block  5
+call    7 never executed
+        -:   31:        assert(false);
+    =====:   32:    }
+    $$$$$:   32-block  0
+call    0 never executed
+    $$$$$:   32-block  1
+call    1 never executed
+        5:   33:    Film p2("", "Genre1", "Actor1", 10);
+        1:   33-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   33-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   33-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   33-block  3
+call    9 returned 1
+call   10 returned 1
+        1:   33-block  4
+call   11 returned 1
+        1:   33-block  5
+call   12 returned 1
+    $$$$$:   33-block  6
+    $$$$$:   33-block  7
+    $$$$$:   33-block  8
+call   13 never executed
+    $$$$$:   33-block  9
+    $$$$$:   33-block 10
+    $$$$$:   33-block 11
+call   14 never executed
+    $$$$$:   33-block 12
+    $$$$$:   33-block 13
+        -:   34:    try {
+        1:   35:        Validation::validateFilm(p2);
+        1:   35-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        -:   36:    }
+        1:   37:    catch (ValidationException &e) {
+        1:   37-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   37-block  1
+call    2 returned 1
+        1:   38:        assert(e.getMessage() == "Name cannot be empty");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   38-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   38-block  1
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    $$$$$:   38-block  2
+call    8 never executed
+        1:   38-block  3
+call    9 returned 1
+    $$$$$:   38-block  4
+call   10 never executed
+    $$$$$:   38-block  5
+        1:   39:    }
+call    0 returned 1
+    $$$$$:   39-block  0
+call    1 never executed
+        5:   40:    Film p3("Film1", "", "Actor1", 10);
+        1:   40-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   40-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   40-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   40-block  3
+call    9 returned 1
+call   10 returned 1
+        1:   40-block  4
+call   11 returned 1
+        1:   40-block  5
+call   12 returned 1
+    $$$$$:   40-block  6
+    $$$$$:   40-block  7
+    $$$$$:   40-block  8
+call   13 never executed
+    $$$$$:   40-block  9
+    $$$$$:   40-block 10
+    $$$$$:   40-block 11
+call   14 never executed
+    $$$$$:   40-block 12
+    $$$$$:   40-block 13
+        -:   41:    try {
+        1:   42:        Validation::validateFilm(p3);
+        1:   42-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        -:   43:    }
+        1:   44:    catch (ValidationException &e) {
+        1:   44-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   44-block  1
+call    2 returned 1
+        1:   45:        assert(e.getMessage() == "Genre cannot be empty");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   45-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   45-block  1
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    $$$$$:   45-block  2
+call    8 never executed
+        1:   45-block  3
+call    9 returned 1
+    $$$$$:   45-block  4
+call   10 never executed
+    $$$$$:   45-block  5
+        1:   46:    }
+call    0 returned 1
+    $$$$$:   46-block  0
+call    1 never executed
+        5:   47:    Film p4("Film1", "Genre1", "", 10);
+        1:   47-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   47-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   47-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   47-block  3
+call    9 returned 1
+call   10 returned 1
+        1:   47-block  4
+call   11 returned 1
+        1:   47-block  5
+call   12 returned 1
+    $$$$$:   47-block  6
+    $$$$$:   47-block  7
+    $$$$$:   47-block  8
+call   13 never executed
+    $$$$$:   47-block  9
+    $$$$$:   47-block 10
+    $$$$$:   47-block 11
+call   14 never executed
+    $$$$$:   47-block 12
+    $$$$$:   47-block 13
+        -:   48:    try {
+        1:   49:        Validation::validateFilm(p4);
+        1:   49-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        -:   50:    }
+        1:   51:    catch (ValidationException &e) {
+        1:   51-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   51-block  1
+call    2 returned 1
+        1:   52:        assert(e.getMessage() == "Actor cannot be empty");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   52-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   52-block  1
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    $$$$$:   52-block  2
+call    8 never executed
+        1:   52-block  3
+call    9 returned 1
+    $$$$$:   52-block  4
+call   10 never executed
+    $$$$$:   52-block  5
+        1:   53:    }
+call    0 returned 1
+    $$$$$:   53-block  0
+call    1 never executed
+        5:   54:    Film p5("Film1", "Genre1", "Actor1", -10);
+        1:   54-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   54-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   54-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   54-block  3
+call    9 returned 1
+call   10 returned 1
+        1:   54-block  4
+call   11 returned 1
+        1:   54-block  5
+call   12 returned 1
+    $$$$$:   54-block  6
+    $$$$$:   54-block  7
+    $$$$$:   54-block  8
+call   13 never executed
+    $$$$$:   54-block  9
+    $$$$$:   54-block 10
+    $$$$$:   54-block 11
+call   14 never executed
+    $$$$$:   54-block 12
+    $$$$$:   54-block 13
+        -:   55:    try {
+        1:   56:        Validation::validateFilm(p5);
+        1:   56-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        -:   57:    }
+        1:   58:    catch (ValidationException &e) {
+        1:   58-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   58-block  1
+call    2 returned 1
+        1:   59:        assert(e.getMessage() == "Year must be positive");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   59-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   59-block  1
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    $$$$$:   59-block  2
+call    8 never executed
+        1:   59-block  3
+call    9 returned 1
+    $$$$$:   59-block  4
+call   10 never executed
+    $$$$$:   59-block  5
+        1:   60:    }
+call    0 returned 1
+    $$$$$:   60-block  0
+call    1 never executed
+        1:   61:}
+        1:   61-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+    $$$$$:   61-block  1
+call    5 never executed
+    $$$$$:   61-block  2
+call    6 never executed
+    $$$$$:   61-block  3
+call    7 never executed
+    $$$$$:   61-block  4
+call    8 never executed
+    $$$$$:   61-block  5
+call    9 never executed

@@ -1,0 +1,121 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9 - undo - fisier/validator.cpp
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9 - undo - fisier/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/validator.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9 - undo - fisier/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/validator.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "validator.h"
+        -:    2:#include <assert.h>
+        -:    3:#include <sstream>
+        -:    4:
+function _ZN9Validator9valideazaERK4Film called 42 returned 93% blocks executed 84%
+       42:    5:void Validator::valideaza(const Film& film) {
+       42:    6:	vector<string> mesajEroare;
+       42:    6-block  0
+call    0 returned 42
+       42:    7:	if (film.getTitluFilm().empty()) mesajEroare.emplace_back("Titlu invalid!\n");
+call    0 returned 42
+branch  1 taken 42 (fallthrough)
+branch  2 taken 0 (throw)
+       42:    7-block  0
+call    3 returned 42
+call    4 returned 42
+branch  5 taken 2 (fallthrough)
+branch  6 taken 40
+        2:    7-block  1
+call    7 returned 2
+branch  8 taken 2 (fallthrough)
+branch  9 taken 0 (throw)
+    $$$$$:    7-block  2
+       42:    8:	if (film.getGenFilm().empty()) mesajEroare.emplace_back("Gen invalid!\n");
+       42:    8-block  0
+call    0 returned 42
+branch  1 taken 42 (fallthrough)
+branch  2 taken 0 (throw)
+       42:    8-block  1
+call    3 returned 42
+call    4 returned 42
+branch  5 taken 2 (fallthrough)
+branch  6 taken 40
+        2:    8-block  2
+call    7 returned 2
+branch  8 taken 2 (fallthrough)
+branch  9 taken 0 (throw)
+    $$$$$:    8-block  3
+       42:    9:	if (film.getAnAparitie() < 1500) mesajEroare.emplace_back("An invalid!\n");
+       42:    9-block  0
+call    0 returned 42
+branch  1 taken 42 (fallthrough)
+branch  2 taken 0 (throw)
+       42:    9-block  1
+branch  3 taken 3 (fallthrough)
+branch  4 taken 39
+        3:    9-block  2
+call    5 returned 3
+branch  6 taken 3 (fallthrough)
+branch  7 taken 0 (throw)
+       42:   10:	if (film.getActorPrincipal().empty()) mesajEroare.emplace_back("Actor principal invalid!\n");
+       42:   10-block  0
+call    0 returned 42
+branch  1 taken 42 (fallthrough)
+branch  2 taken 0 (throw)
+       42:   10-block  1
+call    3 returned 42
+call    4 returned 42
+branch  5 taken 2 (fallthrough)
+branch  6 taken 40
+        2:   10-block  2
+call    7 returned 2
+branch  8 taken 2 (fallthrough)
+branch  9 taken 0 (throw)
+    $$$$$:   10-block  3
+       42:   11:	if (!mesajEroare.empty()) {
+       42:   11-block  0
+call    0 returned 42
+branch  1 taken 3 (fallthrough)
+branch  2 taken 39
+        3:   12:		throw ExceptieValidare(mesajEroare);
+        3:   12-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0 (throw)
+        3:   12-block  1
+call    4 returned 3
+call    5 returned 3
+call    6 returned 3
+    $$$$$:   12-block  2
+    $$$$$:   12-block  3
+call    7 never executed
+        -:   13:	}
+       42:   14:}
+       39:   14-block  0
+call    0 returned 39
+        3:   14-block  1
+call    1 returned 3
+        -:   15:
+function _ZlsRSoRK16ExceptieValidare called 1 returned 100% blocks executed 100%
+        1:   16:ostream& operator<<(ostream& out, const ExceptieValidare& exceptie) {
+        5:   17:	for (const auto& mesaj : exceptie.mesajEroare) {
+        1:   17-block  0
+call    0 returned 1
+call    1 returned 1
+        4:   17-block  1
+call    2 returned 4
+        4:   17-block  2
+call    3 returned 4
+        5:   17-block  3
+call    4 returned 5
+branch  5 taken 4
+branch  6 taken 1 (fallthrough)
+        4:   18:		out << mesaj << " ";
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:   18-block  0
+call    3 returned 4
+branch  4 taken 4 (fallthrough)
+branch  5 taken 0 (throw)
+        -:   19:	}
+        1:   20:	return out;
+        1:   20-block  0
+        1:   20-block  1
+        -:   21:}

@@ -1,0 +1,337 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9/repo.cpp
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/repo.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/repo.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "repo.h"
+        -:    2:
+function _ZN4Repo10adaugaFilmERK4Film called 44 returned 98% blocks executed 64%
+       44:    3:void Repo::adaugaFilm(const Film& film) {
+       44:    4:	if (exista(film)) {
+       44:    4-block  0
+call    0 returned 44
+branch  1 taken 1 (fallthrough)
+branch  2 taken 43
+        1:    5:		throw ExceptieRepo("Filmul cu titlul " + film.getTitluFilm() + " este deja adaugat!\n");
+        1:    5-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:    5-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:    5-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:    5-block  3
+call   10 returned 1
+call   11 returned 1
+call   12 returned 1
+call   13 returned 1
+call   14 returned 0
+    $$$$$:    5-block  4
+call   15 never executed
+    $$$$$:    5-block  5
+call   16 never executed
+    $$$$$:    5-block  6
+    $$$$$:    5-block  7
+    $$$$$:    5-block  8
+    $$$$$:    5-block  9
+call   17 never executed
+        -:    6:	}
+       43:    7:	filme.push_back(film);
+       43:    7-block  0
+call    0 returned 43
+       43:    8:}
+        -:    9:
+function _ZN4Repo10stergeFilmEi called 3 returned 100% blocks executed 82%
+        3:   10:void Repo::stergeFilm(int pozitie) {
+        -:   11:	// if (pozitie != filme.size() - 1) {
+        -:   12:	// 	for (pozitie; pozitie < filme.size() - 1; pozitie++) {
+        -:   13:	// 		filme[pozitie] = filme[pozitie + 1];
+        -:   14:	// 	}
+        -:   15:	// 	filme.pop_back();
+        -:   16:	// }
+        -:   17:	// else {
+        -:   18:	// 	filme.pop_back();
+        -:   19:	// }
+        -:   20:
+       3*:   21:	if (pozitie < 0 || pozitie >= filme.size()) return; // optional, protecție
+        3:   21-block  0
+branch  0 taken 3 (fallthrough)
+branch  1 taken 0
+        3:   21-block  1
+call    2 returned 3
+branch  3 taken 0 (fallthrough)
+branch  4 taken 3
+    %%%%%:   21-block  2
+        3:   21-block  3
+        3:   21-block  4
+branch  5 taken 0 (fallthrough)
+branch  6 taken 3
+    %%%%%:   21-block  5
+        3:   22:	if (pozitie != filme.size() - 1) {
+        3:   22-block  0
+call    0 returned 3
+branch  1 taken 2 (fallthrough)
+branch  2 taken 1
+        2:   23:		std::copy(filme.begin() + pozitie + 1, filme.end(), filme.begin() + pozitie);
+        2:   23-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+call    3 returned 2
+call    4 returned 2
+call    5 returned 2
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+        2:   23-block  1
+    $$$$$:   23-block  2
+    $$$$$:   23-block  3
+        -:   24:	}
+        3:   25:	filme.pop_back();
+        3:   25-block  0
+call    0 returned 3
+        -:   26:}
+        -:   27:
+function _ZN4Repo12modificaFilmE4Filmi called 3 returned 67% blocks executed 63%
+        3:   28:void Repo::modificaFilm(const Film filmModificat, int pozitie) {
+        3:   29:	if (!exista(filmModificat)) {
+        3:   29-block  0
+call    0 returned 3
+branch  1 taken 1 (fallthrough)
+branch  2 taken 2
+        1:   30:		throw ExceptieRepo("Titlul " + filmModificat.getTitluFilm() + " nu a fost gasit!\n");
+        1:   30-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   30-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   30-block  2
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:   30-block  3
+call   10 returned 1
+call   11 returned 1
+call   12 returned 1
+call   13 returned 1
+call   14 returned 0
+    $$$$$:   30-block  4
+call   15 never executed
+    $$$$$:   30-block  5
+call   16 never executed
+    $$$$$:   30-block  6
+    $$$$$:   30-block  7
+    $$$$$:   30-block  8
+    $$$$$:   30-block  9
+call   17 never executed
+        -:   31:	}
+        2:   32:	filme[pozitie].setGenFilm(filmModificat.getGenFilm());
+        2:   32-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   32-block  1
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   32-block  2
+call    7 returned 2
+    $$$$$:   32-block  3
+call    8 never executed
+    $$$$$:   32-block  4
+call    9 never executed
+        2:   33:	filme[pozitie].setAnAparitie(filmModificat.getAnAparitie());
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+        2:   34:	filme[pozitie].setActorPrincipal(filmModificat.getActorPrincipal());
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   34-block  0
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   34-block  1
+call    7 returned 2
+    $$$$$:   34-block  2
+call    8 never executed
+        -:   35:
+        2:   36:}
+        -:   37:
+function _ZN4Repo6existaERK4Film called 47 returned 100% blocks executed 92%
+       47:   38:bool Repo::exista(const Film& film) {
+        -:   39:	try {
+       91:   40:		cautaFilm(film.getTitluFilm());
+       47:   40-block  0
+call    0 returned 47
+branch  1 taken 47 (fallthrough)
+branch  2 taken 0 (throw)
+       47:   40-block  1
+call    3 returned 47
+branch  4 taken 3 (fallthrough)
+branch  5 taken 44 (throw)
+        3:   40-block  2
+call    6 returned 3
+       44:   40-block  3
+call    7 returned 44
+       44:   40-block  4
+        3:   41:		return true;
+        -:   42:	}
+       44:   43:	catch (ExceptieRepo&) {
+       44:   43-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 44
+       44:   43-block  1
+call    2 returned 44
+       44:   44:		return false;}
+        -:   45:}
+        -:   46:
+function _ZN4Repo9cautaFilmERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 61 returned 20% blocks executed 74%
+       61:   47:const Film& Repo::cautaFilm(const string& titluFilm) {
+      149:   48:	for (const auto& film : filme) {
+       61:   48-block  0
+call    0 returned 61
+call    1 returned 61
+      100:   48-block  1
+call    2 returned 100
+       88:   48-block  2
+call    3 returned 88
+      149:   48-block  3
+call    4 returned 149
+branch  5 taken 100
+branch  6 taken 49 (fallthrough)
+      100:   49:		if (film.getTitluFilm() == titluFilm) {
+call    0 returned 100
+branch  1 taken 100 (fallthrough)
+branch  2 taken 0 (throw)
+      100:   49-block  0
+call    3 returned 100
+call    4 returned 100
+branch  5 taken 12 (fallthrough)
+branch  6 taken 88
+    $$$$$:   49-block  1
+       12:   50:			return film;
+       12:   50-block  0
+       12:   50-block  1
+        -:   51:		}
+        -:   52:	}
+       49:   53:	throw ExceptieRepo("Nu s-a gasit filmul cu titlul " + titluFilm + "!\n");
+       49:   53-block  0
+call    0 returned 49
+call    1 returned 49
+branch  2 taken 49 (fallthrough)
+branch  3 taken 0 (throw)
+       49:   53-block  1
+call    4 returned 49
+branch  5 taken 49 (fallthrough)
+branch  6 taken 0 (throw)
+       49:   53-block  2
+call    7 returned 49
+call    8 returned 49
+call    9 returned 49
+call   10 returned 0
+    $$$$$:   53-block  3
+call   11 never executed
+    $$$$$:   53-block  4
+    $$$$$:   53-block  5
+    $$$$$:   53-block  6
+call   12 never executed
+        -:   54:}
+        -:   55:
+function _ZNK4Repo21cautaPozitieDupaTitluERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 5 returned 60% blocks executed 83%
+        5:   56:int Repo::cautaPozitieDupaTitlu(const string& titluFilm) const {
+        5:   57:	int pozitie = -1, i = -1;
+       23:   58:	for (const auto& film : filme) {
+        5:   58-block  0
+call    0 returned 5
+call    1 returned 5
+       18:   58-block  1
+call    2 returned 18
+       18:   58-block  2
+call    3 returned 18
+       23:   58-block  3
+call    4 returned 23
+branch  5 taken 18
+branch  6 taken 5 (fallthrough)
+       18:   59:		i++;
+       18:   60:		if (film.getTitluFilm() == titluFilm) {
+call    0 returned 18
+branch  1 taken 18 (fallthrough)
+branch  2 taken 0 (throw)
+       18:   60-block  0
+call    3 returned 18
+call    4 returned 18
+branch  5 taken 3 (fallthrough)
+branch  6 taken 15
+    $$$$$:   60-block  1
+        3:   61:			pozitie = i;
+        3:   61-block  0
+        -:   62:		}
+        -:   63:	}
+        5:   64:	if (pozitie == -1) {
+        5:   64-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 3
+        2:   65:		throw ExceptieRepo("Nu exista film cu titlul " + titluFilm);
+        2:   65-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   65-block  1
+call    4 returned 2
+call    5 returned 2
+call    6 returned 0
+    $$$$$:   65-block  2
+    $$$$$:   65-block  3
+call    7 never executed
+        -:   66:	}
+        3:   67:	return pozitie;
+        3:   67-block  0
+        3:   67-block  1
+        -:   68:}
+        -:   69:
+function _ZNK4Repo6getAllEv called 24 returned 100% blocks executed 100%
+       24:   70:const vector<Film>& Repo::getAll() const noexcept {
+       24:   71:	return this->filme;
+       24:   71-block  0
+        -:   72:}
+        -:   73:
+        -:   74://Repo::~Repo() 
+        -:   75://{
+        -:   76://}
+        -:   77:
+function _ZlsRSoRK12ExceptieRepo called 1 returned 100% blocks executed 100%
+        1:   78:ostream& operator<<(ostream& out, const ExceptieRepo& exceptie) {
+       43:   79:	for (const auto& mesaj: exceptie.mesajEroare)
+        1:   79-block  0
+call    0 returned 1
+call    1 returned 1
+       42:   79-block  1
+call    2 returned 42
+       42:   79-block  2
+call    3 returned 42
+       43:   79-block  3
+call    4 returned 43
+branch  5 taken 42
+branch  6 taken 1 (fallthrough)
+       42:   80:		out << mesaj;
+call    0 returned 42
+branch  1 taken 42 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   81:	return out;
+        1:   81-block  0
+        1:   81-block  1
+        -:   82:}

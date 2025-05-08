@@ -1,0 +1,89 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 2 - 4 - Copy/Domain/medicament.c
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 2 - 4 - Copy/cmake-build-debug-coverage/CMakeFiles/5_3_13.dir/Domain/medicament.c.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 2 - 4 - Copy/cmake-build-debug-coverage/CMakeFiles/5_3_13.dir/Domain/medicament.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "medicament.h"
+        -:    2:
+        -:    3:#include <stdio.h>
+        -:    4:#include <stdlib.h>
+        -:    5:#include <string.h>
+        -:    6:
+function creeazaMedicament called 179 returned 100% blocks executed 100%
+      179:    7:Medicament* creeazaMedicament(int id, int concentratie, int cantitate, char* nume) {
+      179:    8:    Medicament* medicament = malloc(sizeof(Medicament));
+      179:    9:    size_t numarDeCaractere = 0;
+      179:   10:    if (nume != NULL)
+      179:   10-block  0
+branch  0 taken 179 (fallthrough)
+branch  1 taken 0
+      179:   11:        numarDeCaractere = strlen(nume) + 1;
+      179:   11-block  0
+      179:   12:    medicament->nume = malloc(sizeof(char) * numarDeCaractere);
+      179:   13:    if (medicament->nume != NULL)
+      179:   13-block  0
+branch  0 taken 179 (fallthrough)
+branch  1 taken 0
+      179:   14:        if (nume != NULL)
+      179:   14-block  0
+branch  0 taken 179 (fallthrough)
+branch  1 taken 0
+      179:   15:            strcpy(medicament->nume, nume);
+      179:   15-block  0
+      179:   16:    medicament->id = id;
+      179:   17:    medicament->concentratie = concentratie;
+      179:   18:    medicament->cantitate = cantitate;
+      179:   19:    return medicament;
+      179:   19-block  0
+        -:   20:}
+        -:   21:
+function distrugeMedicament called 177 returned 100% blocks executed 100%
+      177:   22:void distrugeMedicament(Medicament* medicament) {
+      177:   23:    free(medicament->nume);
+      177:   24:    medicament->cantitate = 0;
+      177:   25:    medicament->concentratie = 0;
+      177:   26:    free(medicament);
+      177:   27:}
+        -:   28:
+function valideazaMedicament called 38 returned 100% blocks executed 100%
+       38:   29:int valideazaMedicament(Medicament* medicament) {
+       38:   30:    if (medicament->id < 0) {
+       38:   30-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 37
+        1:   31:        return 1;
+        1:   31-block  0
+        -:   32:    }
+       37:   33:    if (medicament->concentratie < 0 || medicament->concentratie > 100) {
+       37:   33-block  0
+branch  0 taken 36 (fallthrough)
+branch  1 taken 1
+       36:   33-block  1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 35
+        2:   34:        return 2;
+        2:   34-block  0
+        -:   35:    }
+       35:   36:    if (medicament->cantitate < 0) {
+       35:   36-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 34
+        1:   37:        return 3;
+        1:   37-block  0
+        -:   38:    }
+       34:   39:    if (strlen(medicament->nume) == 0){
+       34:   39-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 33
+        1:   40:        return 4;
+        1:   40-block  0
+        -:   41:    }
+       33:   42:    return 0;
+       33:   42-block  0
+        -:   43:}
+        -:   44:
+function copiazaMedicament called 119 returned 100% blocks executed 100%
+      119:   45:Medicament* copiazaMedicament(Medicament* medicament) {
+      119:   46:    return creeazaMedicament(medicament->id, medicament->concentratie, medicament->cantitate, medicament->nume);
+      119:   46-block  0
+call    0 returned 119
+        -:   47:}

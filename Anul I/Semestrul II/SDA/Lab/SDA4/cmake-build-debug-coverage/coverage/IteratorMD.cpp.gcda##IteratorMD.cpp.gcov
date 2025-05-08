@@ -1,0 +1,58 @@
+        -:    0:Source:/mnt/c/Users/Tudor Macri/Downloads/SDA4/Proiect C++/IteratorMD.cpp
+        -:    0:Graph:/mnt/c/Users/Tudor Macri/Downloads/SDA4/cmake-build-debug-coverage/CMakeFiles/SDA4.dir/Proiect_C++/IteratorMD.cpp.gcno
+        -:    0:Data:/mnt/c/Users/Tudor Macri/Downloads/SDA4/cmake-build-debug-coverage/CMakeFiles/SDA4.dir/Proiect_C++/IteratorMD.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "IteratorMD.h"
+        -:    2:#include "MD.h"
+        -:    3:
+        -:    4:using namespace std;
+        -:    5:
+function _ZN10IteratorMDC2ERK2MD called 9 returned 100% blocks executed 100%
+        9:    6:IteratorMD::IteratorMD(const MD& _md): md(_md) {
+        9:    7:	current = md.head;
+        9:    8:}
+        -:    9:
+function _ZNK10IteratorMD7elementEv called 177194 returned 100% blocks executed 57%
+   177194:   10:TElem IteratorMD::element() const{
+   177194:   11:	if (!valid()) {
+   177194:   11-block  0
+call    0 returned 177194
+branch  1 taken 0 (fallthrough)
+branch  2 taken 177194
+    #####:   12:		throw exception();
+    %%%%%:   12-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   13:	}
+   177194:   14:	return md.nodes[current].element;
+   177194:   14-block  0
+        -:   15:}
+        -:   16:
+function _ZNK10IteratorMD5validEv called 706342 returned 100% blocks executed 100%
+   706342:   17:bool IteratorMD::valid() const {
+   706342:   18:	return current != -1;
+   706342:   18-block  0
+        -:   19:}
+        -:   20:
+function _ZN10IteratorMD7urmatorEv called 352834 returned 100% blocks executed 50%
+   352834:   21:void IteratorMD::urmator() {
+   352834:   22:	if (!valid()) {
+   352834:   22-block  0
+call    0 returned 352834
+branch  1 taken 0 (fallthrough)
+branch  2 taken 352834
+    #####:   23:		throw exception();
+    %%%%%:   23-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   24:	}
+   352834:   25:	current = md.nodes[current].next;
+   352834:   26:}
+        -:   27:
+function _ZN10IteratorMD4primEv called 4 returned 100% blocks executed 100%
+        4:   28:void IteratorMD::prim() {
+        4:   29:	current = md.head;
+        4:   30:}
+        -:   31:

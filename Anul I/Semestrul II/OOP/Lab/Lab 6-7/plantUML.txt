@@ -1,0 +1,125 @@
+@startuml
+!theme hacker
+' Film.h
+class Film {
+    - string title
+    - string genre
+    - string actor
+    - int year
+    + string getTitle() const
+    + string getGenre() const
+    + string getActor() const
+    + int getYear() const
+    + Film(string title, string genre, string actor, int year)
+    + Film(const Film &film)
+    + Film()
+    + bool operator==(const Film &other) const
+    + Film &operator=(const Film &other)
+}
+
+' Validation.h
+class ValidationException {
+    - string message
+    + ValidationException(string message)
+    + string getMessage() const
+}
+
+class Validation {
+    + static void validateFilm(const Film &film)
+}
+
+ValidationException --> Validation : used by
+
+' FilmRepo.h
+class RepoException {
+    - string message
+    + RepoException(string message)
+    + string getMessage() const
+}
+
+class FilmRepo {
+    - VectorDinamic<Film> products
+    + void addFilm(const Film &p)
+    + void removeFilm(const string &name)
+    + void updateFilm(const string &name, const Film &newFilm)
+    + int searchFilm(const string &name) const
+    + VectorDinamic<Film> getAll() const
+}
+
+RepoException --> FilmRepo : used by
+FilmRepo --> Film : manages
+
+' TemplateDynamicVector.h
+class VectorDinamic<Element> {
+    - int dimensiune
+    - int capacitate
+    - Element *elemente
+    + VectorDinamic()
+    + VectorDinamic(const VectorDinamic &other)
+    + ~VectorDinamic()
+    + VectorDinamic &operator=(const VectorDinamic &other)
+    + VectorDinamic(VectorDinamic &&other)
+    + VectorDinamic &operator=(VectorDinamic &&other)
+    + void add(const Element &element)
+    + Element &get(int pozitieElement) const
+    + void set(int pozitieElement, const Element &element)
+    + int size() const
+    + void push_back(const Element &element)
+    + void pop_back()
+    + Element &operator[](int index)
+    + IteratorVector<Element> begin() const
+    + IteratorVector<Element> end() const
+}
+
+class IteratorVector<Element> {
+    - const VectorDinamic<Element> &vector
+    - int pozitieElement
+    + IteratorVector(const VectorDinamic<Element> &vector) noexcept
+    + IteratorVector(const VectorDinamic<Element> &vector, int pozitieElement) noexcept
+    + bool valid() const noexcept
+    + Element &element() const noexcept
+    + void next() noexcept
+    + Element &operator*()
+    + IteratorVector &operator++()
+    + bool operator==(const IteratorVector &other) noexcept
+    + bool operator!=(const IteratorVector &other) noexcept
+}
+
+VectorDinamic --> IteratorVector : uses
+FilmRepo --> VectorDinamic : uses
+
+' Service.h
+class Service {
+    - FilmRepo filmRepo
+    - Validation validator
+    + Service(FilmRepo filmRepo, Validation validator)
+    + void addFilm(const string &name, const string &type, const string &manufacturer, int price)
+    + void removeFilm(const string &name)
+    + void updateFilm(const string &name, const Film &newProduct)
+    + int searchFilm(const string &name) const
+    + VectorDinamic<Film> getAll() const
+    + VectorDinamic<Film> filterFilms(const string &choice, const string &filter) const
+    + VectorDinamic<Film> sortFilms(const string &choice, int order) const
+}
+
+Service --> FilmRepo : depends on
+Service --> Validation : depends on
+
+' Interface.h
+class Interface {
+    - Service service
+    + Interface(Service service)
+    + void Run()
+}
+
+Interface --> Service : depends on
+
+' Tests.h
+class Tests {
+    + static void runAllTests()
+}
+
+Tests --> FilmRepo : tests
+Tests --> Service : tests
+Tests --> Validation : tests
+@enduml

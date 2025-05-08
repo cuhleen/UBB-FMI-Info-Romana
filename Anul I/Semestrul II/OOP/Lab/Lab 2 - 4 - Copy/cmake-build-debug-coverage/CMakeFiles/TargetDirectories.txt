@@ -1,0 +1,3 @@
+/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 2 - 4 - Copy/cmake-build-debug-coverage/CMakeFiles/5_3_13.dir
+/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 2 - 4 - Copy/cmake-build-debug-coverage/CMakeFiles/edit_cache.dir
+/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 2 - 4 - Copy/cmake-build-debug-coverage/CMakeFiles/rebuild_cache.dir

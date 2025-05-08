@@ -1,0 +1,31 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6 - 7/Domain/validator.h
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6 - 7/cmake-build-debug-coverage/CMakeFiles/Lab_6___7.dir/Domain/Validator.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6 - 7/cmake-build-debug-coverage/CMakeFiles/Lab_6___7.dir/Domain/Validator.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include "Film.h"
+        -:    3:#include <vector>
+        -:    4:#include <string>
+        -:    5:
+        -:    6:using std::vector;
+        -:    7:using std::string;
+        -:    8:using std::ostream;
+        -:    9:
+        -:   10:class ExceptieValidare {
+        -:   11:    vector<string> mesajEroare;
+        -:   12:public:
+function _ZN16ExceptieValidareC2ESt6vectorINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESaIS6_EE called 3 returned 100% blocks executed 100%
+        3:   13:    ExceptieValidare(vector<string> erori) :mesajEroare{erori} {}
+        3:   13-block  0
+call    0 returned 3
+        -:   14:    friend ostream& operator<<(ostream& out, const ExceptieValidare& exceptie);
+        -:   15:
+        -:   16:    vector<string> getMesaj() { return mesajEroare; }
+        -:   17:};
+        -:   18:
+        -:   19:ostream& operator<<(ostream& out, const ExceptieValidare& exceptie);
+        -:   20:
+        -:   21:class Validator {
+        -:   22:public:
+        -:   23:    void valideaza(const Film& film);
+        -:   24:};

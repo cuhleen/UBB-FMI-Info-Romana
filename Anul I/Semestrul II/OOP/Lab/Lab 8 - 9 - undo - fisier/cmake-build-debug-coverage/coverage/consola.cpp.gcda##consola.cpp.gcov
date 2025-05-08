@@ -1,0 +1,1294 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9 - undo - fisier/consola.cpp
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9 - undo - fisier/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/consola.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9 - undo - fisier/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/consola.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "consola.h"
+        -:    2:#include "Film.h"
+        -:    3:#include <iostream>
+        -:    4:#include <string>
+        -:    5:
+        -:    6:using std::cin;
+        -:    7:using std::cout;
+        -:    8:
+        -:    9:constexpr int Optiune_Adaugare_Film = 1;
+        -:   10:constexpr int Optiune_Stergere_Film = 2;
+        -:   11:constexpr int Optiune_Modificare_Film = 3;
+        -:   12:constexpr int Optiune_Afisare_Filme = 4;
+        -:   13:constexpr int Optiune_Cautare_Film = 5;
+        -:   14:constexpr int Optiune_Filtrare_Film = 6;
+        -:   15:constexpr int Optiune_Sortare_Film = 7;
+        -:   16:constexpr int Optiune_Adaugare_Cos = 8;
+        -:   17:constexpr int Optiune_Stergere_Cos = 9;
+        -:   18:constexpr int Optiune_Afisare_Cos = 10;
+        -:   19:constexpr int Optiune_Eliberare_Cos = 11;
+        -:   20:constexpr int Optiune_Genereaza_Cos = 12;
+        -:   21:constexpr int Optiune_Export_Cos = 13;
+        -:   22:constexpr int Optiune_Iesire = 0;
+        -:   23:
+function _ZN2UI13ui_adaugaFilmEv called 0 returned 0% blocks executed 0%
+    #####:   24:void UI::ui_adaugaFilm() {
+        -:   25:	int anAparitie;
+    #####:   26:	string titluFilm, genFilm, actorPrincipal;
+    %%%%%:   26-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:   27:	cin.ignore();
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   28:	cout << "Introduceti titlul filmului: ";
+    %%%%%:   28-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   29:	getline(cin, titluFilm);
+    %%%%%:   29-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   30:	cout << "Introduceti genul filmului: ";
+    %%%%%:   30-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   31:	getline(cin, genFilm);
+    %%%%%:   31-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   32:	cout << "Introduceti anul aparitiei filmului: ";
+    %%%%%:   32-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   33:	cin >> anAparitie;
+    %%%%%:   33-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   34:	cin.ignore();
+    %%%%%:   34-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   35:	cout << "Introduceti numele actorului care joaca in rolul principal: ";
+    %%%%%:   35-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   36:	getline(cin, actorPrincipal);
+    %%%%%:   36-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   37:	service.adaugaFilm(titluFilm, genFilm, anAparitie, actorPrincipal);
+    %%%%%:   37-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   38:	cout << "Filmul " << titluFilm << " a fost adaugat cu succes!\n";
+    %%%%%:   38-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   38-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   38-block  2
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    #####:   39:}
+    %%%%%:   39-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:   39-block  1
+call    3 never executed
+    $$$$$:   39-block  2
+call    4 never executed
+    $$$$$:   39-block  3
+call    5 never executed
+        -:   40:
+function _ZN2UI13ui_stergeFilmEv called 0 returned 0% blocks executed 0%
+    #####:   41:void UI::ui_stergeFilm() {
+    #####:   42:	string titluFilm;
+    %%%%%:   42-block  0
+call    0 never executed
+    #####:   43:	cin.ignore();
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   44:	cout << "Introduceti titlul filmului pentru stergere: ";
+    %%%%%:   44-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   45:	getline(cin, titluFilm);
+    %%%%%:   45-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   46:	service.stergeFilm(titluFilm);
+    %%%%%:   46-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   47:	cout << "Filmul " << titluFilm << " a fost sters cu succes!\n";
+    %%%%%:   47-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   47-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   47-block  2
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    #####:   48:}
+    %%%%%:   48-block  0
+call    0 never executed
+    $$$$$:   48-block  1
+call    1 never executed
+        -:   49:
+function _ZN2UI15ui_modificaFilmEv called 0 returned 0% blocks executed 0%
+    #####:   50:void UI::ui_modificaFilm() {
+        -:   51:	int anAparitie;
+    #####:   52:	string titluFilm, genFilm, actorPrincipal;
+    %%%%%:   52-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:   53:	cin.ignore();
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   54:	cout << "Introduceti titlul filmului pentru modificat: ";
+    %%%%%:   54-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   55:	getline(cin, titluFilm);
+    %%%%%:   55-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   56:	cout << "Introduceti noul gen al filmului: ";
+    %%%%%:   56-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   57:	getline(cin, genFilm);
+    %%%%%:   57-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   58:	cout << "Introduceti noul an al aparitiei filmului: ";
+    %%%%%:   58-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   59:	cin >> anAparitie;
+    %%%%%:   59-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   60:	cin.ignore();
+    %%%%%:   60-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   61:	cout << "Introduceti numele actorului care joaca in rolul principal: ";
+    %%%%%:   61-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   62:	getline(cin, actorPrincipal);
+    %%%%%:   62-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   63:	service.modificaFilm(titluFilm, genFilm, anAparitie, actorPrincipal);
+    %%%%%:   63-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   64:	cout << "Filmul " << titluFilm << " a fost modificat cu succes!\n";
+    %%%%%:   64-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   64-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   64-block  2
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    #####:   65:}
+    %%%%%:   65-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:   65-block  1
+call    3 never executed
+    $$$$$:   65-block  2
+call    4 never executed
+    $$$$$:   65-block  3
+call    5 never executed
+        -:   66:
+function _ZN2UI16ui_afiseazaFilmeERKSt6vectorI4FilmSaIS1_EE called 0 returned 0% blocks executed 0%
+    #####:   67:void UI::ui_afiseazaFilme(const vector<Film>& filme) {
+    #####:   68:	if (filme.empty()) {
+    %%%%%:   68-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:   69:		cout << "\nNu exista filme in lista!\n";
+    %%%%%:   69-block  0
+call    0 never executed
+    #####:   70:		return;
+        -:   71:	}
+    #####:   72:	cout << "Filme: \n";
+    %%%%%:   72-block  0
+call    0 never executed
+    #####:   73:	cout << "=================================\n";
+call    0 never executed
+    #####:   74:	int i = 0;
+    #####:   75:	for (const auto& film : filme) {
+call    0 never executed
+call    1 never executed
+    %%%%%:   75-block  0
+call    2 never executed
+    %%%%%:   75-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed (fallthrough)
+    #####:   76:		i++;
+    #####:   77:		cout << i << ". " << film.getTitluFilm() << "; gen: " << film.getGenFilm() << "; aparut in anul: " << film.getAnAparitie() << "; Actor in rolul principal: " << film.getActorPrincipal() << "\n";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   77-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   77-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:   77-block  2
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:   77-block  3
+call   12 never executed
+branch 13 never executed (fallthrough)
+branch 14 never executed (throw)
+    %%%%%:   77-block  4
+call   15 never executed
+branch 16 never executed (fallthrough)
+branch 17 never executed (throw)
+    %%%%%:   77-block  5
+call   18 never executed
+branch 19 never executed (fallthrough)
+branch 20 never executed (throw)
+    %%%%%:   77-block  6
+call   21 never executed
+branch 22 never executed (fallthrough)
+branch 23 never executed (throw)
+    %%%%%:   77-block  7
+call   24 never executed
+branch 25 never executed (fallthrough)
+branch 26 never executed (throw)
+    %%%%%:   77-block  8
+call   27 never executed
+branch 28 never executed (fallthrough)
+branch 29 never executed (throw)
+    %%%%%:   77-block  9
+call   30 never executed
+branch 31 never executed (fallthrough)
+branch 32 never executed (throw)
+    %%%%%:   77-block 10
+call   33 never executed
+branch 34 never executed (fallthrough)
+branch 35 never executed (throw)
+    %%%%%:   77-block 11
+call   36 never executed
+branch 37 never executed (fallthrough)
+branch 38 never executed (throw)
+    %%%%%:   77-block 12
+call   39 never executed
+branch 40 never executed (fallthrough)
+branch 41 never executed (throw)
+    %%%%%:   77-block 13
+call   42 never executed
+call   43 never executed
+call   44 never executed
+call   45 never executed
+    $$$$$:   77-block 14
+call   46 never executed
+    $$$$$:   77-block 15
+    $$$$$:   77-block 16
+call   47 never executed
+    $$$$$:   77-block 17
+    $$$$$:   77-block 18
+call   48 never executed
+    $$$$$:   77-block 19
+        -:   78:	}
+    #####:   79:	cout << "=================================\n";
+    %%%%%:   79-block  0
+call    0 never executed
+        -:   80:}
+        -:   81:
+function _ZN2UI12ui_cautaFilmEv called 0 returned 0% blocks executed 0%
+    #####:   82:void UI::ui_cautaFilm() {
+    #####:   83:	string titluFilm;
+    %%%%%:   83-block  0
+call    0 never executed
+    #####:   84:	cin.ignore();
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   85:	cout << "Introduceti titlul filmului cautat: ";
+    %%%%%:   85-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   86:	getline(cin, titluFilm);
+    %%%%%:   86-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   87:	Film film = service.cautaFilm(titluFilm);
+    %%%%%:   87-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   88:	cout << film.getTitluFilm() << "; gen: " << film.getGenFilm() << "; aparut in anul: " << film.getAnAparitie() << "; Actor in rolul principal: " << film.getActorPrincipal() << "\n";
+    %%%%%:   88-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   88-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   88-block  2
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:   88-block  3
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:   88-block  4
+call   12 never executed
+branch 13 never executed (fallthrough)
+branch 14 never executed (throw)
+    %%%%%:   88-block  5
+call   15 never executed
+branch 16 never executed (fallthrough)
+branch 17 never executed (throw)
+    %%%%%:   88-block  6
+call   18 never executed
+branch 19 never executed (fallthrough)
+branch 20 never executed (throw)
+    %%%%%:   88-block  7
+call   21 never executed
+branch 22 never executed (fallthrough)
+branch 23 never executed (throw)
+    %%%%%:   88-block  8
+call   24 never executed
+branch 25 never executed (fallthrough)
+branch 26 never executed (throw)
+    %%%%%:   88-block  9
+call   27 never executed
+branch 28 never executed (fallthrough)
+branch 29 never executed (throw)
+    %%%%%:   88-block 10
+call   30 never executed
+branch 31 never executed (fallthrough)
+branch 32 never executed (throw)
+    %%%%%:   88-block 11
+call   33 never executed
+branch 34 never executed (fallthrough)
+branch 35 never executed (throw)
+    %%%%%:   88-block 12
+call   36 never executed
+call   37 never executed
+call   38 never executed
+    $$$$$:   88-block 13
+call   39 never executed
+    $$$$$:   88-block 14
+    $$$$$:   88-block 15
+call   40 never executed
+    $$$$$:   88-block 16
+    $$$$$:   88-block 17
+call   41 never executed
+    $$$$$:   88-block 18
+    #####:   89:}
+call    0 never executed
+call    1 never executed
+    $$$$$:   89-block  0
+call    2 never executed
+    $$$$$:   89-block  1
+call    3 never executed
+        -:   90:
+function _ZN2UI11ui_filtrareEv called 0 returned 0% blocks executed 0%
+    #####:   91:void UI::ui_filtrare() {
+        -:   92:	// 1 -> gen / 2 -> anul aparitiei / 0 -> iesire (sunt optiunile utilizatorului)
+        -:   93:	int reperFiltrare;
+    #####:   94:	cin.ignore();
+    %%%%%:   94-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   95:	cout << "Alegeti reperul de filtrare (1 -> gen / 2 -> anul aparitiei / 0 -> iesire): ";
+    %%%%%:   95-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   96:	cin >> reperFiltrare;
+    %%%%%:   96-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   97:	if (reperFiltrare == 1) {
+    %%%%%:   97-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   98:		string genFilm;
+    %%%%%:   98-block  0
+call    0 never executed
+    #####:   99:		cout << "Introduceti genul dupa care sa se filtreze: ";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  100:		cin.ignore();
+    %%%%%:  100-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  101:		getline(cin, genFilm);
+    %%%%%:  101-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  102:		ui_afiseazaFilme(service.filtreazaDupaGen(genFilm));
+    %%%%%:  102-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  102-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  102-block  2
+call    6 never executed
+    $$$$$:  102-block  3
+call    7 never executed
+    $$$$$:  102-block  4
+    #####:  103:	}
+call    0 never executed
+    $$$$$:  103-block  0
+call    1 never executed
+    #####:  104:	else if (reperFiltrare == 2) {
+    %%%%%:  104-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+        -:  105:		int anAparitie;
+    #####:  106:		cout << "Introduceti anul dupa care sa se filtreze: ";
+    %%%%%:  106-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  107:		cin >> anAparitie;
+    %%%%%:  107-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  108:		ui_afiseazaFilme(service.filtreazaDupaAnAparitie(anAparitie));
+    %%%%%:  108-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  108-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  108-block  2
+call    6 never executed
+    $$$$$:  108-block  3
+call    7 never executed
+    $$$$$:  108-block  4
+        -:  109:	}
+    #####:  110:	else if (reperFiltrare == 0) return;
+    %%%%%:  110-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  110-block  1
+    %%%%%:  110-block  2
+        -:  111:	else {
+    #####:  112:		cout << "Reper de filtrare necunoscut!\n";
+    %%%%%:  112-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  113:		ui_filtrare();
+    %%%%%:  113-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  114:	}
+        -:  115:}
+        -:  116:
+function _ZN2UI10ui_sortareEv called 0 returned 0% blocks executed 0%
+    #####:  117:void UI::ui_sortare() {
+        -:  118:	// 1 -> titlu / 2 -> actor principal / 3 -> anul aparitiei + gen / 0 -> iesire (pentru reperul de sortare) -> prima optiune a utilizatorului
+        -:  119:	// 1 -> crescator / 2 -> descrescator (pentru ordinea de sortare) -> a doua optiune a utilizatorului
+        -:  120:	int reperSortare, ordineSortare;
+    #####:  121:	cin.ignore();
+    %%%%%:  121-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  122:	cout << "Alegeti reperul dupa care sa se sorteze (1 -> titlu / 2 -> actor principal / 3 -> anul aparitiei + gen / 0 -> iesire): ";
+    %%%%%:  122-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  123:	cin >> reperSortare;
+    %%%%%:  123-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  124:	if (reperSortare == 0) return;
+    %%%%%:  124-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  124-block  1
+    %%%%%:  124-block  2
+    #####:  125:	if (reperSortare != 1 && reperSortare != 2 && reperSortare != 3) {
+    %%%%%:  125-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  125-block  1
+branch  2 never executed (fallthrough)
+branch  3 never executed
+    %%%%%:  125-block  2
+branch  4 never executed (fallthrough)
+branch  5 never executed
+    #####:  126:		cout << "Reper invalid! Va rugam sa introduceti 1, 2 sau 3!\n";
+    %%%%%:  126-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  127:		ui_sortare();
+    %%%%%:  127-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  128:	}
+    #####:  129:	cout << "Alegeti ordinea de sortare (1 -> crescator / 2 -> descrescator): ";
+    %%%%%:  129-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  130:	cin >> ordineSortare;
+    %%%%%:  130-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  131:	if (ordineSortare != 1 && ordineSortare != 2) {
+    %%%%%:  131-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  131-block  1
+branch  2 never executed (fallthrough)
+branch  3 never executed
+    #####:  132:		cout << "Ordine de sortare invalida! Va rugam sa introduceti 1 sau 2!\n";
+    %%%%%:  132-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  133:		ui_sortare();
+    %%%%%:  133-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  134:	}
+    #####:  135:	vector<Film> filme = service.sorteaza(reperSortare, ordineSortare);
+    %%%%%:  135-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  136:	ui_afiseazaFilme(filme);
+    %%%%%:  136-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  137:}
+    %%%%%:  137-block  0
+call    0 never executed
+    $$$$$:  137-block  1
+call    1 never executed
+        -:  138:
+function _ZN2UI14ui_adaugaInCosEv called 0 returned 0% blocks executed 0%
+    #####:  139:void UI::ui_adaugaInCos()
+        -:  140:{
+    #####:  141:	string titluFilm;
+    %%%%%:  141-block  0
+call    0 never executed
+    #####:  142:	cin.ignore();
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  143:	cout << "Introduceti titlul filmului de adaugat in cos: ";
+    %%%%%:  143-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  144:	getline(cin, titluFilm);
+    %%%%%:  144-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  145:	service.adaugaInCos(titluFilm);
+    %%%%%:  145-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  146:}
+    %%%%%:  146-block  0
+call    0 never executed
+    $$$$$:  146-block  1
+call    1 never executed
+        -:  147:
+function _ZN2UI15ui_stergeDinCosEv called 0 returned 0% blocks executed 0%
+    #####:  148:void UI::ui_stergeDinCos()
+        -:  149:{
+    #####:  150:	string titluFilm;
+    %%%%%:  150-block  0
+call    0 never executed
+    #####:  151:	cin.ignore();
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  152:	cout << "Introduceti titlul filmului de adaugat in cos: ";
+    %%%%%:  152-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  153:	getline(cin, titluFilm);
+    %%%%%:  153-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  154:	service.stergeDinCos(titluFilm);
+    %%%%%:  154-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  155:}
+    %%%%%:  155-block  0
+call    0 never executed
+    $$$$$:  155-block  1
+call    1 never executed
+        -:  156:
+function _ZN2UI14ui_afiseazaCosEv called 0 returned 0% blocks executed 0%
+    #####:  157:void UI::ui_afiseazaCos()
+        -:  158:{
+    #####:  159:	cout << "\nIn cos sunt " << shoppingCart.getNumFilms() << " filme:\n";
+    %%%%%:  159-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  159-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  159-block  2
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  159-block  3
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    #####:  160:	vector<Film> listaCos = shoppingCart.getCart();
+    %%%%%:  160-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  161:
+    #####:  162:	for (const auto& film : listaCos)
+    %%%%%:  162-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:  162-block  1
+call    2 never executed
+    %%%%%:  162-block  2
+call    3 never executed
+branch  4 never executed
+branch  5 never executed (fallthrough)
+    #####:  163:		cout << film.getTitluFilm() << "\n";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  163-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  163-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  163-block  2
+call    9 never executed
+call   10 never executed
+    $$$$$:  163-block  3
+call   11 never executed
+    $$$$$:  163-block  4
+        -:  164:
+    #####:  165:	cout << "\n";
+    %%%%%:  165-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  166:}
+    %%%%%:  166-block  0
+call    0 never executed
+    $$$$$:  166-block  1
+call    1 never executed
+        -:  167:
+function _ZN2UI16ui_elibereazaCosEv called 0 returned 0% blocks executed 0%
+    #####:  168:void UI::ui_elibereazaCos()
+        -:  169:{
+    #####:  170:	shoppingCart.clearCart();
+    %%%%%:  170-block  0
+call    0 never executed
+    #####:  171:	cout<<"Cosul a fost eliberat";
+call    0 never executed
+    #####:  172:}
+        -:  173:
+function _ZN2UI15ui_genereazaCosEv called 0 returned 0% blocks executed 0%
+    #####:  174:void UI::ui_genereazaCos()
+        -:  175:{
+        -:  176:	int n;
+    #####:  177:	cout<<"Cate filme aleatorii sa se puna in cos?\n";
+    %%%%%:  177-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  178:	cin>>n;
+    %%%%%:  178-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  179:	service.genereazaCos(n);
+    %%%%%:  179-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  180:}
+    %%%%%:  180-block  0
+        -:  181:
+function _ZN2UI12ui_exportCosEv called 0 returned 0% blocks executed 0%
+    #####:  182:void UI::ui_exportCos()
+        -:  183:{
+    #####:  184:	std::cout << "Introduceti numele fisierului (ex: cos_filme.html): ";
+    %%%%%:  184-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  185:	string numeFisier;
+    %%%%%:  185-block  0
+call    0 never executed
+    #####:  186:	cin.ignore();
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  187:	getline(cin, numeFisier);
+    %%%%%:  187-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  188:	service.exportaCosInHTML(numeFisier);
+    %%%%%:  188-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  189:}
+    %%%%%:  189-block  0
+call    0 never executed
+    $$$$$:  189-block  1
+call    1 never executed
+        -:  190:
+function _ZN2UI7ruleazaEv called 1 returned 100% blocks executed 44%
+        1:  191:void UI::ruleaza() {
+        -:  192:	
+        6:  193:	service.adaugaFilm("John Wick: Chapter 4", "Actiune", 2020, "Keanu Reeves");
+        1:  193-block  0
+        1:  193-block  1
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  193-block  2
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  193-block  3
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  193-block  4
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  193-block  5
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  193-block  6
+call   15 never executed
+    $$$$$:  193-block  7
+    $$$$$:  193-block  8
+    $$$$$:  193-block  9
+call   16 never executed
+    $$$$$:  193-block 10
+    $$$$$:  193-block 11
+    $$$$$:  193-block 12
+call   17 never executed
+    $$$$$:  193-block 13
+    $$$$$:  193-block 14
+call   18 never executed
+        6:  194:	service.adaugaFilm("The Imitation Game", "Drama", 2021, "Benedict Cumberbatch");
+        1:  194-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  194-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  194-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  194-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  194-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  194-block  5
+call   15 never executed
+    $$$$$:  194-block  6
+    $$$$$:  194-block  7
+    $$$$$:  194-block  8
+call   16 never executed
+    $$$$$:  194-block  9
+    $$$$$:  194-block 10
+    $$$$$:  194-block 11
+call   17 never executed
+    $$$$$:  194-block 12
+    $$$$$:  194-block 13
+call   18 never executed
+        6:  195:	service.adaugaFilm("Titanic", "Romance", 2020, "Leonardo DiCaprio");
+        1:  195-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  195-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  195-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  195-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  195-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  195-block  5
+call   15 never executed
+    $$$$$:  195-block  6
+    $$$$$:  195-block  7
+    $$$$$:  195-block  8
+call   16 never executed
+    $$$$$:  195-block  9
+    $$$$$:  195-block 10
+    $$$$$:  195-block 11
+call   17 never executed
+    $$$$$:  195-block 12
+    $$$$$:  195-block 13
+call   18 never executed
+        6:  196:	service.adaugaFilm("Avatar 2", "Actiune", 2022, "Sam Worthington");
+        1:  196-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  196-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  196-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  196-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  196-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  196-block  5
+call   15 never executed
+    $$$$$:  196-block  6
+    $$$$$:  196-block  7
+    $$$$$:  196-block  8
+call   16 never executed
+    $$$$$:  196-block  9
+    $$$$$:  196-block 10
+    $$$$$:  196-block 11
+call   17 never executed
+    $$$$$:  196-block 12
+    $$$$$:  196-block 13
+call   18 never executed
+        7:  197:	service.adaugaFilm("The Revenant", "Drama", 2022, "Leonardo DiCaprio");
+        1:  197-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  197-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  197-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  197-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  197-block  4
+call   12 returned 1
+call   13 returned 1
+call   14 returned 1
+    $$$$$:  197-block  5
+call   15 never executed
+    $$$$$:  197-block  6
+    $$$$$:  197-block  7
+    $$$$$:  197-block  8
+call   16 never executed
+    $$$$$:  197-block  9
+    $$$$$:  197-block 10
+    $$$$$:  197-block 11
+call   17 never executed
+    $$$$$:  197-block 12
+    $$$$$:  197-block 13
+call   18 never executed
+        -:  198:	
+        -:  199:	while (true) {
+        1:  200:		cout << "\n\n";
+        1:  200-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  201:		cout << "  Meniu inchiriere filme: \n";
+        1:  201-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  202:		cout << "1. Adauga film.\n";
+        1:  202-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  203:		cout << "2. Sterge film.\n";
+        1:  203-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  204:		cout << "3. Modifica film.\n";
+        1:  204-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  205:		cout << "4. Afiseaza toate filmele disponibile pentru inchiriere.\n";
+        1:  205-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  206:		cout << "5. Cauta un film dupa titlu.\n";
+        1:  206-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  207:		cout << "6. Filtreaza filme dupa titlu / anul aparitiei.\n";
+        1:  207-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  208:		cout << "7. Sorteaza filme dupa titlu / actorul principal / anul aparitiei + gen.\n";
+        1:  208-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  209:		cout << "8. Adauga un film in cos.\n";
+        1:  209-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  210:		cout << "9. Sterge un film din cos.\n";
+        1:  210-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  211:		cout << "10. Afiseaza filmele in cos.\n";
+        1:  211-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  212:		cout << "11. Elibereaza cos.\n";
+        1:  212-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  213:		cout << "12. Genereaza cos.\n";
+        1:  213-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  214:		cout << "13. Exporteaza cos.\n";
+        1:  214-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  215:		cout << "0. Iesire din aplicatie.\n";
+        1:  215-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  216:		cout << "\n";
+        1:  216-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  217:		int comanda;
+        1:  218:		cout << ">>>";
+        1:  218-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  219:		cin >> comanda;
+        1:  219-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  220:		try {
+        1:  221:			switch (comanda) {
+        1:  221-block  0
+branch  0 taken 0
+branch  1 taken 0
+branch  2 taken 0
+branch  3 taken 0
+branch  4 taken 0
+branch  5 taken 0
+branch  6 taken 0
+branch  7 taken 0
+branch  8 taken 0
+branch  9 taken 0
+branch 10 taken 0
+branch 11 taken 0
+branch 12 taken 0
+branch 13 taken 1
+branch 14 taken 0
+    #####:  222:			case Optiune_Adaugare_Film:
+    #####:  223:				ui_adaugaFilm();
+    %%%%%:  223-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  224:				break;
+    %%%%%:  224-block  0
+    #####:  225:			case Optiune_Stergere_Film:
+    #####:  226:				ui_stergeFilm();
+    %%%%%:  226-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  227:				break;
+    %%%%%:  227-block  0
+    #####:  228:			case Optiune_Modificare_Film:
+    #####:  229:				ui_modificaFilm();
+    %%%%%:  229-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  230:				break;
+    %%%%%:  230-block  0
+    #####:  231:			case Optiune_Afisare_Filme:
+    #####:  232:				ui_afiseazaFilme(service.getAll());
+    %%%%%:  232-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  232-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    #####:  233:				break;
+    %%%%%:  233-block  0
+    #####:  234:			case Optiune_Cautare_Film:
+    #####:  235:				ui_cautaFilm();
+    %%%%%:  235-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  236:				break;
+    %%%%%:  236-block  0
+    #####:  237:			case Optiune_Filtrare_Film:
+    #####:  238:				ui_filtrare();
+    %%%%%:  238-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  239:				break;
+    %%%%%:  239-block  0
+    #####:  240:			case Optiune_Sortare_Film:
+    #####:  241:				ui_sortare();
+    %%%%%:  241-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  242:				break;
+    %%%%%:  242-block  0
+    #####:  243:			case Optiune_Adaugare_Cos:
+    #####:  244:				ui_adaugaInCos();
+    %%%%%:  244-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  245:				break;
+    %%%%%:  245-block  0
+    #####:  246:			case Optiune_Stergere_Cos:
+    #####:  247:				ui_stergeDinCos();
+    %%%%%:  247-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  248:				break;
+    %%%%%:  248-block  0
+    #####:  249:			case Optiune_Afisare_Cos:
+    #####:  250:				ui_afiseazaCos();
+    %%%%%:  250-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  251:				break;
+    %%%%%:  251-block  0
+    #####:  252:			case Optiune_Eliberare_Cos:
+    #####:  253:				ui_elibereazaCos();
+    %%%%%:  253-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  254:				break;
+    %%%%%:  254-block  0
+    #####:  255:			case Optiune_Genereaza_Cos:
+    #####:  256:				ui_genereazaCos();
+    %%%%%:  256-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  257:				break;
+    %%%%%:  257-block  0
+    #####:  258:			case Optiune_Export_Cos:
+    #####:  259:				ui_exportCos();
+    %%%%%:  259-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  260:				break;
+    %%%%%:  260-block  0
+        1:  261:			case Optiune_Iesire:
+        1:  262:				return;
+        1:  262-block  0
+        1:  262-block  1
+    #####:  263:			default:
+    #####:  264:				cout << "Comanda necunoscuta!\n";
+    %%%%%:  264-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  265:			}
+    #####:  266:			cout << '\n';
+    %%%%%:  266-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  267:		}
+    =====:  268:		catch (const ExceptieRepo& exceptie) {
+    $$$$$:  268-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  268-block  1
+call    3 never executed
+    =====:  269:			cout << exceptie << "\n";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:  269-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    =====:  270:		}
+    $$$$$:  270-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:  270-block  1
+call    3 never executed
+    =====:  271:		catch (const ExceptieValidare& exceptie) {
+    $$$$$:  271-block  0
+call    0 never executed
+    =====:  272:			cout << exceptie << "\n";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:  272-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    =====:  273:		}
+    $$$$$:  273-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:  273-block  1
+call    3 never executed
+    #####:  274:	}
+    %%%%%:  274-block  0
+        -:  275:}
+        -:  276:
+function _ZN2UID2Ev called 1 returned 100% blocks executed 100%
+        1:  277:UI::~UI() 
+        -:  278:= default;

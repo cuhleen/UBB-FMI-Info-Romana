@@ -1,0 +1,1986 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/Service.cpp
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/cmake-build-debug-coverage/CMakeFiles/Lab6.dir/Service.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/cmake-build-debug-coverage/CMakeFiles/Lab6.dir/Service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "Service.h"
+        -:    2:#include <cassert>
+        -:    3:#include <cstring>
+        -:    4:#include <iostream>
+        -:    5:
+function _ZN7Service7addFilmERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_S7_i called 7 returned 86% blocks executed 36%
+        7:    6:void Service::addFilm(const string &name, const string &type, const string &manufacturer, int price) {
+        7:    7:	const Film p(name, type, manufacturer, price);
+        7:    7-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
+branch  2 taken 0 (throw)
+        7:    7-block  1
+call    3 returned 7
+branch  4 taken 7 (fallthrough)
+branch  5 taken 0 (throw)
+        7:    7-block  2
+call    6 returned 7
+branch  7 taken 7 (fallthrough)
+branch  8 taken 0 (throw)
+        7:    7-block  3
+call    9 returned 7
+call   10 returned 7
+call   11 returned 7
+call   12 returned 7
+    $$$$$:    7-block  4
+    $$$$$:    7-block  5
+call   13 never executed
+    $$$$$:    7-block  6
+    $$$$$:    7-block  7
+call   14 never executed
+    $$$$$:    7-block  8
+        7:    8:	Validation::validateFilm(p);
+call    0 returned 7
+branch  1 taken 6 (fallthrough)
+branch  2 taken 1 (throw)
+        -:    9:	try {
+        6:   10:		filmRepo.addFilm(p);
+        6:   10-block  0
+call    0 returned 6
+branch  1 taken 6 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   11:	}
+    =====:   12:	catch (RepoException re) {
+    $$$$$:   12-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    $$$$$:   12-block  1
+call    2 never executed
+call    3 never executed
+    =====:   13:		std::cout << re.getMessage();
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:   13-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    $$$$$:   13-block  1
+call    6 never executed
+    $$$$$:   13-block  2
+call    7 never executed
+    $$$$$:   13-block  3
+    =====:   14:	}
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    $$$$$:   14-block  0
+call    4 never executed
+    $$$$$:   14-block  1
+call    5 never executed
+        7:   15:}
+        6:   15-block  0
+call    0 returned 6
+        1:   15-block  1
+call    1 returned 1
+        -:   16:
+function _ZN7Service10removeFilmERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 3 returned 100% blocks executed 15%
+        3:   17:void Service::removeFilm(const string &name) {
+        -:   18:	try {
+        3:   19:		filmRepo.removeFilm(name);
+        3:   19-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   20:	}
+    =====:   21:	catch (RepoException re) {
+    $$$$$:   21-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    $$$$$:   21-block  1
+call    2 never executed
+call    3 never executed
+    =====:   22:		std::cout << re.getMessage();
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:   22-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    $$$$$:   22-block  1
+call    6 never executed
+    $$$$$:   22-block  2
+call    7 never executed
+    $$$$$:   22-block  3
+    =====:   23:	}
+call    0 never executed
+call    1 never executed
+    $$$$$:   23-block  0
+call    2 never executed
+    $$$$$:   23-block  1
+call    3 never executed
+        3:   24:}
+        3:   24-block  0
+        -:   25:
+function _ZN7Service10updateFilmERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERK4Film called 1 returned 100% blocks executed 15%
+        1:   26:void Service::updateFilm(const string &name, const Film &newFilm) {
+        -:   27:	try {
+        1:   28:		filmRepo.updateFilm(name, newFilm);
+        1:   28-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   29:	}
+    =====:   30:	catch (RepoException re) {
+    $$$$$:   30-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    $$$$$:   30-block  1
+call    2 never executed
+call    3 never executed
+    =====:   31:		std::cout << re.getMessage();
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:   31-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    $$$$$:   31-block  1
+call    6 never executed
+    $$$$$:   31-block  2
+call    7 never executed
+    $$$$$:   31-block  3
+    =====:   32:	}
+call    0 never executed
+call    1 never executed
+    $$$$$:   32-block  0
+call    2 never executed
+    $$$$$:   32-block  1
+call    3 never executed
+        -:   33:
+        1:   34:}
+        1:   34-block  0
+        -:   35:
+function _ZNK7Service10searchFilmERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 100%
+        1:   36:int Service::searchFilm(const string &name) const {
+        1:   37:	return filmRepo.searchFilm(name);
+        1:   37-block  0
+call    0 returned 1
+        -:   38:}
+        -:   39:
+function _ZNK7Service6getAllEv called 3 returned 100% blocks executed 100%
+        3:   40:VectorDinamic<Film> Service::getAll() const {
+        3:   41:	return filmRepo.getAll();
+        3:   41-block  0
+call    0 returned 3
+        -:   42:}
+        -:   43:
+function _ZNK7Service11filterFilmsERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_ called 3 returned 100% blocks executed 72%
+        3:   44:VectorDinamic<Film> Service::filterFilms(const string &choice, const string &filter) const {
+        3:   45:	VectorDinamic<Film> result;
+        3:   45-block  0
+call    0 returned 3
+        3:   46:	if (choice == "Manufacturer") {
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   46-block  0
+branch  3 taken 1 (fallthrough)
+branch  4 taken 2
+        4:   47:		for (int i = 0; i < filmRepo.getAll().size(); i++) {
+        1:   47-block  0
+        3:   47-block  1
+        4:   47-block  2
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:   47-block  3
+call    3 returned 4
+call    4 returned 4
+branch  5 taken 3
+branch  6 taken 1
+    $$$$$:   47-block  4
+        3:   48:			if (filmRepo.getAll()[i].getActor() == filter) {
+        3:   48-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   48-block  1
+call    3 returned 3
+call    4 returned 3
+branch  5 taken 3 (fallthrough)
+branch  6 taken 0 (throw)
+        3:   48-block  2
+call    7 returned 3
+call    8 returned 3
+call    9 returned 3
+branch 10 taken 2 (fallthrough)
+branch 11 taken 1
+    $$$$$:   48-block  3
+call   12 never executed
+    $$$$$:   48-block  4
+    $$$$$:   48-block  5
+        2:   49:				result.push_back(filmRepo.getAll()[i]);
+        2:   49-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   49-block  1
+call    3 returned 2
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   49-block  2
+call    7 returned 2
+    $$$$$:   49-block  3
+call    8 never executed
+    $$$$$:   49-block  4
+        -:   50:			}
+        -:   51:		}
+        2:   52:	} else if (choice == "Year") {
+        2:   52-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   52-block  1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 1
+        4:   53:		for (int i = 0; i < filmRepo.getAll().size(); i++) {
+        1:   53-block  0
+        3:   53-block  1
+        4:   53-block  2
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:   53-block  3
+call    3 returned 4
+call    4 returned 4
+branch  5 taken 3
+branch  6 taken 1
+    $$$$$:   53-block  4
+        3:   54:			if (filmRepo.getAll()[i].getYear() == std::stod(filter)) {
+        3:   54-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   54-block  1
+call    3 returned 3
+call    4 returned 3
+branch  5 taken 3 (fallthrough)
+branch  6 taken 0 (throw)
+        3:   54-block  2
+call    7 returned 3
+branch  8 taken 3 (fallthrough)
+branch  9 taken 0 (throw)
+        3:   54-block  3
+call   10 returned 3
+branch 11 taken 2 (fallthrough)
+branch 12 taken 1
+    $$$$$:   54-block  4
+call   13 never executed
+    $$$$$:   54-block  5
+        2:   55:				result.push_back(filmRepo.getAll()[i]);
+        2:   55-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   55-block  1
+call    3 returned 2
+call    4 returned 2
+branch  5 taken 2 (fallthrough)
+branch  6 taken 0 (throw)
+        2:   55-block  2
+call    7 returned 2
+    $$$$$:   55-block  3
+call    8 never executed
+    $$$$$:   55-block  4
+        -:   56:			}
+        -:   57:		}
+        1:   58:	} else if (choice == "Name") {
+        1:   58-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   58-block  1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0
+        4:   59:		for (int i = 0; i < filmRepo.getAll().size(); i++) {
+        1:   59-block  0
+        3:   59-block  1
+        4:   59-block  2
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:   59-block  3
+call    3 returned 4
+call    4 returned 4
+branch  5 taken 3
+branch  6 taken 1 (fallthrough)
+    $$$$$:   59-block  4
+        3:   60:			if (filmRepo.getAll()[i].getTitle() == filter) {
+        3:   60-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   60-block  1
+call    3 returned 3
+call    4 returned 3
+branch  5 taken 3 (fallthrough)
+branch  6 taken 0 (throw)
+        3:   60-block  2
+call    7 returned 3
+call    8 returned 3
+call    9 returned 3
+branch 10 taken 1 (fallthrough)
+branch 11 taken 2
+    $$$$$:   60-block  3
+call   12 never executed
+    $$$$$:   60-block  4
+    $$$$$:   60-block  5
+        1:   61:				result.push_back(filmRepo.getAll()[i]);
+        1:   61-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   61-block  1
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   61-block  2
+call    7 returned 1
+    $$$$$:   61-block  3
+call    8 never executed
+    $$$$$:   61-block  4
+        -:   62:			}
+        -:   63:		}
+        -:   64:	}
+        3:   65:	return result;
+        3:   65-block  0
+        3:   65-block  1
+    =====:   66:}
+    $$$$$:   66-block  0
+call    0 never executed
+        -:   67:
+function _ZNK7Service9sortFilmsERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEi called 3 returned 100% blocks executed 62%
+        3:   68:VectorDinamic<Film> Service::sortFilms(const string &choice, int order) const {
+        3:   69:	VectorDinamic<Film> result;
+        3:   69-block  0
+call    0 returned 3
+       13:   70:	for (int i = 0; i < filmRepo.getAll().size(); i++) {
+       13:   70-block  0
+call    0 returned 13
+branch  1 taken 13 (fallthrough)
+branch  2 taken 0 (throw)
+       13:   70-block  1
+call    3 returned 13
+call    4 returned 13
+branch  5 taken 10
+branch  6 taken 3 (fallthrough)
+    $$$$$:   70-block  2
+       10:   71:		result.push_back(filmRepo.getAll()[i]);
+       10:   71-block  0
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+       10:   71-block  1
+call    3 returned 10
+call    4 returned 10
+branch  5 taken 10 (fallthrough)
+branch  6 taken 0 (throw)
+       10:   71-block  2
+call    7 returned 10
+    $$$$$:   71-block  3
+call    8 never executed
+    $$$$$:   71-block  4
+        -:   72:	}
+        3:   73:	if (choice == "Name") {
+        3:   73-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   73-block  1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 2
+        3:   74:		for (int i = 0; i < result.size() - 1; i++) {
+        1:   74-block  0
+        2:   74-block  1
+        3:   74-block  2
+call    0 returned 3
+branch  1 taken 2
+branch  2 taken 1
+        5:   75:			for (int j = i + 1; j < result.size(); j++) {
+        2:   75-block  0
+        3:   75-block  1
+        5:   75-block  2
+call    0 returned 5
+branch  1 taken 3
+branch  2 taken 2 (fallthrough)
+       3*:   76:				if (strcmp(result[i].getTitle().c_str(), result[j].getTitle().c_str()) > 0 && order == 1 || strcmp(result[j].getTitle().c_str(), result[i].getTitle().c_str()) < 0 && order == 2) {
+        3:   76-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0 (throw)
+        3:   76-block  1
+call    4 returned 3
+call    5 returned 3
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:   76-block  2
+call    9 returned 3
+branch 10 taken 1 (fallthrough)
+branch 11 taken 2
+        1:   76-block  3
+branch 12 taken 0 (fallthrough)
+branch 13 taken 1
+        2:   76-block  4
+call   14 returned 2
+call   15 returned 2
+branch 16 taken 2 (fallthrough)
+branch 17 taken 0 (throw)
+        2:   76-block  5
+call   18 returned 2
+call   19 returned 2
+call   20 returned 2
+branch 21 taken 2 (fallthrough)
+branch 22 taken 0 (throw)
+        2:   76-block  6
+call   23 returned 2
+branch 24 taken 0 (fallthrough)
+branch 25 taken 2
+    %%%%%:   76-block  7
+branch 26 never executed (fallthrough)
+branch 27 never executed
+        1:   76-block  8
+        2:   76-block  9
+        3:   76-block 10
+branch 28 taken 2 (fallthrough)
+branch 29 taken 1
+        2:   76-block 11
+call   30 returned 2
+        3:   76-block 12
+branch 31 taken 2 (fallthrough)
+branch 32 taken 1
+        2:   76-block 13
+call   33 returned 2
+        3:   76-block 14
+branch 34 taken 3 (fallthrough)
+branch 35 taken 0
+        3:   76-block 15
+call   36 returned 3
+        3:   76-block 16
+branch 37 taken 3 (fallthrough)
+branch 38 taken 0
+        3:   76-block 17
+call   39 returned 3
+        3:   76-block 18
+branch 40 taken 1 (fallthrough)
+branch 41 taken 2
+    $$$$$:   76-block 19
+branch 42 never executed (fallthrough)
+branch 43 never executed
+    $$$$$:   76-block 20
+call   44 never executed
+    $$$$$:   76-block 21
+    $$$$$:   76-block 22
+branch 45 never executed (fallthrough)
+branch 46 never executed
+    $$$$$:   76-block 23
+call   47 never executed
+    $$$$$:   76-block 24
+    $$$$$:   76-block 25
+branch 48 never executed (fallthrough)
+branch 49 never executed
+    $$$$$:   76-block 26
+call   50 never executed
+    $$$$$:   76-block 27
+    $$$$$:   76-block 28
+branch 51 never executed (fallthrough)
+branch 52 never executed
+    $$$$$:   76-block 29
+call   53 never executed
+    $$$$$:   76-block 30
+        1:   77:					Film temp = result[i];
+        1:   77-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   78:					result[i] = result[j];
+        1:   78-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   79:					result[j] = temp;
+        1:   79-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   80:				}
+        1:   80-block  0
+call    0 returned 1
+    $$$$$:   80-block  1
+call    1 never executed
+        -:   81:			}
+        -:   82:		}
+        2:   83:	} else if (choice == "Year") {
+        2:   83-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   83-block  1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 1
+        4:   84:		for (int i = 0; i < result.size() - 1; i++) {
+        1:   84-block  0
+        3:   84-block  1
+        4:   84-block  2
+call    0 returned 4
+branch  1 taken 3
+branch  2 taken 1
+        9:   85:			for (int j = i + 1; j < result.size(); j++) {
+        3:   85-block  0
+        6:   85-block  1
+        9:   85-block  2
+call    0 returned 9
+branch  1 taken 6
+branch  2 taken 3 (fallthrough)
+       6*:   86:				if (result[i].getYear() > result[j].getYear() && order == 1 || result[j].getYear() < result[i].getYear() && order == 2) {
+        6:   86-block  0
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 6 (fallthrough)
+branch  3 taken 0 (throw)
+        6:   86-block  1
+call    4 returned 6
+call    5 returned 6
+branch  6 taken 6 (fallthrough)
+branch  7 taken 0 (throw)
+        6:   86-block  2
+branch  8 taken 4 (fallthrough)
+branch  9 taken 2
+        4:   86-block  3
+branch 10 taken 0 (fallthrough)
+branch 11 taken 4
+        2:   86-block  4
+call   12 returned 2
+call   13 returned 2
+branch 14 taken 2 (fallthrough)
+branch 15 taken 0 (throw)
+        2:   86-block  5
+call   16 returned 2
+call   17 returned 2
+branch 18 taken 2 (fallthrough)
+branch 19 taken 0 (throw)
+        2:   86-block  6
+branch 20 taken 0 (fallthrough)
+branch 21 taken 2
+    %%%%%:   86-block  7
+branch 22 never executed (fallthrough)
+branch 23 never executed
+        4:   86-block  8
+        2:   86-block  9
+        6:   86-block 10
+branch 24 taken 4 (fallthrough)
+branch 25 taken 2
+        4:   87:					Film temp = result[i];
+        4:   87-block  0
+call    0 returned 4
+call    1 returned 4
+branch  2 taken 4 (fallthrough)
+branch  3 taken 0 (throw)
+        4:   88:					result[i] = result[j];
+        4:   88-block  0
+call    0 returned 4
+call    1 returned 4
+call    2 returned 4
+branch  3 taken 4 (fallthrough)
+branch  4 taken 0 (throw)
+        4:   89:					result[j] = temp;
+        4:   89-block  0
+call    0 returned 4
+call    1 returned 4
+branch  2 taken 4 (fallthrough)
+branch  3 taken 0 (throw)
+        4:   90:				}
+        4:   90-block  0
+call    0 returned 4
+    $$$$$:   90-block  1
+call    1 never executed
+        -:   91:			}
+        -:   92:		}
+        1:   93:	} else if (choice == "Name + Type") {
+        1:   93-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   93-block  1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0
+        3:   94:		for (int i = 0; i < result.size() - 1; i++) {
+        1:   94-block  0
+        2:   94-block  1
+        3:   94-block  2
+call    0 returned 3
+branch  1 taken 2
+branch  2 taken 1 (fallthrough)
+        5:   95:			for (int j = i + 1; j < result.size(); j++) {
+        2:   95-block  0
+        3:   95-block  1
+        5:   95-block  2
+call    0 returned 5
+branch  1 taken 3
+branch  2 taken 2 (fallthrough)
+       3*:   96:				if ((strcmp(result[i].getTitle().c_str(), result[j].getTitle().c_str()) > 0 || strcmp(result[i].getTitle().c_str(), result[j].getTitle().c_str()) == 0 && strcmp(result[i].getGenre().c_str(), result[j].getGenre().c_str()) > 0) && order == 1 || (strcmp(result[j].getTitle().c_str(), result[i].getTitle().c_str()) < 0 || strcmp(result[i].getTitle().c_str(), result[j].getTitle().c_str()) == 0 && strcmp(result[i].getGenre().c_str(), result[j].getGenre().c_str()) < 0) && order == 2) {
+        3:   96-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0 (throw)
+        3:   96-block  1
+call    4 returned 3
+call    5 returned 3
+call    6 returned 3
+branch  7 taken 3 (fallthrough)
+branch  8 taken 0 (throw)
+        3:   96-block  2
+call    9 returned 3
+branch 10 taken 2 (fallthrough)
+branch 11 taken 1
+        2:   96-block  3
+call   12 returned 2
+call   13 returned 2
+branch 14 taken 2 (fallthrough)
+branch 15 taken 0 (throw)
+        2:   96-block  4
+call   16 returned 2
+call   17 returned 2
+call   18 returned 2
+branch 19 taken 2 (fallthrough)
+branch 20 taken 0 (throw)
+        2:   96-block  5
+call   21 returned 2
+branch 22 taken 0 (fallthrough)
+branch 23 taken 2
+    %%%%%:   96-block  6
+call   24 never executed
+call   25 never executed
+branch 26 never executed (fallthrough)
+branch 27 never executed (throw)
+    %%%%%:   96-block  7
+call   28 never executed
+call   29 never executed
+call   30 never executed
+branch 31 never executed (fallthrough)
+branch 32 never executed (throw)
+    %%%%%:   96-block  8
+call   33 never executed
+branch 34 never executed (fallthrough)
+branch 35 never executed
+        1:   96-block  9
+branch 36 taken 0 (fallthrough)
+branch 37 taken 1
+        2:   96-block 10
+call   38 returned 2
+call   39 returned 2
+branch 40 taken 2 (fallthrough)
+branch 41 taken 0 (throw)
+        2:   96-block 11
+call   42 returned 2
+call   43 returned 2
+call   44 returned 2
+branch 45 taken 2 (fallthrough)
+branch 46 taken 0 (throw)
+        2:   96-block 12
+call   47 returned 2
+branch 48 taken 2 (fallthrough)
+branch 49 taken 0
+        2:   96-block 13
+call   50 returned 2
+call   51 returned 2
+branch 52 taken 2 (fallthrough)
+branch 53 taken 0 (throw)
+        2:   96-block 14
+call   54 returned 2
+call   55 returned 2
+call   56 returned 2
+branch 57 taken 2 (fallthrough)
+branch 58 taken 0 (throw)
+        2:   96-block 15
+call   59 returned 2
+branch 60 taken 0 (fallthrough)
+branch 61 taken 2
+    %%%%%:   96-block 16
+call   62 never executed
+call   63 never executed
+branch 64 never executed (fallthrough)
+branch 65 never executed (throw)
+    %%%%%:   96-block 17
+call   66 never executed
+call   67 never executed
+call   68 never executed
+branch 69 never executed (fallthrough)
+branch 70 never executed (throw)
+    %%%%%:   96-block 18
+call   71 never executed
+branch 72 never executed (fallthrough)
+branch 73 never executed
+    %%%%%:   96-block 19
+branch 74 never executed (fallthrough)
+branch 75 never executed
+        1:   96-block 20
+        2:   96-block 21
+        3:   96-block 22
+branch 76 taken 0 (fallthrough)
+branch 77 taken 3
+    %%%%%:   96-block 23
+call   78 never executed
+        3:   96-block 24
+branch 79 taken 0 (fallthrough)
+branch 80 taken 3
+    %%%%%:   96-block 25
+call   81 never executed
+        3:   96-block 26
+branch 82 taken 2 (fallthrough)
+branch 83 taken 1
+        2:   96-block 27
+call   84 returned 2
+        3:   96-block 28
+branch 85 taken 2 (fallthrough)
+branch 86 taken 1
+        2:   96-block 29
+call   87 returned 2
+        3:   96-block 30
+branch 88 taken 2 (fallthrough)
+branch 89 taken 1
+        2:   96-block 31
+call   90 returned 2
+        3:   96-block 32
+branch 91 taken 2 (fallthrough)
+branch 92 taken 1
+        2:   96-block 33
+call   93 returned 2
+        3:   96-block 34
+branch 94 taken 0 (fallthrough)
+branch 95 taken 3
+    %%%%%:   96-block 35
+call   96 never executed
+        3:   96-block 36
+branch 97 taken 0 (fallthrough)
+branch 98 taken 3
+    %%%%%:   96-block 37
+call   99 never executed
+        3:   96-block 38
+branch 100 taken 2 (fallthrough)
+branch 101 taken 1
+        2:   96-block 39
+call   102 returned 2
+        3:   96-block 40
+branch 103 taken 2 (fallthrough)
+branch 104 taken 1
+        2:   96-block 41
+call   105 returned 2
+        3:   96-block 42
+branch 106 taken 3 (fallthrough)
+branch 107 taken 0
+        3:   96-block 43
+call   108 returned 3
+        3:   96-block 44
+branch 109 taken 3 (fallthrough)
+branch 110 taken 0
+        3:   96-block 45
+call   111 returned 3
+        3:   96-block 46
+branch 112 taken 1 (fallthrough)
+branch 113 taken 2
+    $$$$$:   96-block 47
+branch 114 never executed (fallthrough)
+branch 115 never executed
+    $$$$$:   96-block 48
+call   116 never executed
+    $$$$$:   96-block 49
+    $$$$$:   96-block 50
+branch 117 never executed (fallthrough)
+branch 118 never executed
+    $$$$$:   96-block 51
+call   119 never executed
+    $$$$$:   96-block 52
+    $$$$$:   96-block 53
+branch 120 never executed (fallthrough)
+branch 121 never executed
+    $$$$$:   96-block 54
+call   122 never executed
+    $$$$$:   96-block 55
+    $$$$$:   96-block 56
+branch 123 never executed (fallthrough)
+branch 124 never executed
+    $$$$$:   96-block 57
+call   125 never executed
+    $$$$$:   96-block 58
+    $$$$$:   96-block 59
+branch 126 never executed (fallthrough)
+branch 127 never executed
+    $$$$$:   96-block 60
+call   128 never executed
+    $$$$$:   96-block 61
+    $$$$$:   96-block 62
+branch 129 never executed (fallthrough)
+branch 130 never executed
+    $$$$$:   96-block 63
+call   131 never executed
+    $$$$$:   96-block 64
+    $$$$$:   96-block 65
+branch 132 never executed (fallthrough)
+branch 133 never executed
+    $$$$$:   96-block 66
+call   134 never executed
+    $$$$$:   96-block 67
+    $$$$$:   96-block 68
+branch 135 never executed (fallthrough)
+branch 136 never executed
+    $$$$$:   96-block 69
+call   137 never executed
+    $$$$$:   96-block 70
+    $$$$$:   96-block 71
+branch 138 never executed (fallthrough)
+branch 139 never executed
+    $$$$$:   96-block 72
+call   140 never executed
+    $$$$$:   96-block 73
+    $$$$$:   96-block 74
+branch 141 never executed (fallthrough)
+branch 142 never executed
+    $$$$$:   96-block 75
+call   143 never executed
+    $$$$$:   96-block 76
+    $$$$$:   96-block 77
+branch 144 never executed (fallthrough)
+branch 145 never executed
+    $$$$$:   96-block 78
+call   146 never executed
+    $$$$$:   96-block 79
+    $$$$$:   96-block 80
+branch 147 never executed (fallthrough)
+branch 148 never executed
+    $$$$$:   96-block 81
+call   149 never executed
+    $$$$$:   96-block 82
+        1:   97:					Film temp = result[i];
+        1:   97-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   98:					result[i] = result[j];
+        1:   98-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0 (throw)
+        1:   99:					result[j] = temp;
+        1:   99-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  100:				}
+        1:  100-block  0
+call    0 returned 1
+    $$$$$:  100-block  1
+call    1 never executed
+        -:  101:			}
+        -:  102:		}
+        -:  103:	}
+        3:  104:	return result;
+        3:  104-block  0
+        3:  104-block  1
+    =====:  105:}
+    $$$$$:  105-block  0
+call    0 never executed
+        -:  106:
+function _Z11testServicev called 1 returned 100% blocks executed 53%
+        1:  107:void testService() {
+        1:  108:	const FilmRepo repo;
+        1:  108-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  109:	constexpr Validation validator;
+        1:  110:	Service service(repo, validator);
+        1:  110-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  110-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  110-block  2
+call    6 returned 1
+    $$$$$:  110-block  3
+call    7 never executed
+    $$$$$:  110-block  4
+        5:  111:	service.addFilm("Film1", "Type1", "Manufacturer1", 10);
+        1:  111-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  111-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  111-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  111-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  111-block  4
+call   12 returned 1
+        1:  111-block  5
+call   13 returned 1
+        1:  111-block  6
+call   14 returned 1
+    $$$$$:  111-block  7
+call   15 never executed
+    $$$$$:  111-block  8
+    $$$$$:  111-block  9
+    $$$$$:  111-block 10
+call   16 never executed
+    $$$$$:  111-block 11
+    $$$$$:  111-block 12
+    $$$$$:  111-block 13
+call   17 never executed
+    $$$$$:  111-block 14
+    $$$$$:  111-block 15
+        1:  112:	auto products = service.getAll();
+        1:  112-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  113:	assert(products.size() == 1);
+        1:  113-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  113-block  1
+call    3 never executed
+       1*:  114:	assert(products[0].getTitle() == "Film1");
+        1:  114-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  114-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  114-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  114-block  3
+call    9 never executed
+        1:  114-block  4
+call   10 returned 1
+    $$$$$:  114-block  5
+call   11 never executed
+    $$$$$:  114-block  6
+       1*:  115:	assert(products[0].getGenre() == "Type1");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  115-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  115-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  115-block  2
+call    9 never executed
+        1:  115-block  3
+call   10 returned 1
+    $$$$$:  115-block  4
+call   11 never executed
+    $$$$$:  115-block  5
+       1*:  116:	assert(products[0].getActor() == "Manufacturer1");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  116-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  116-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  116-block  2
+call    9 never executed
+        1:  116-block  3
+call   10 returned 1
+    $$$$$:  116-block  4
+call   11 never executed
+    $$$$$:  116-block  5
+       1*:  117:	assert(products[0].getYear() == 10.0);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  117-block  0
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  117-block  1
+call    6 never executed
+        1:  118:	service.removeFilm("Film1");
+        1:  118-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  118-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  118-block  2
+call    6 returned 1
+    $$$$$:  118-block  3
+call    7 never executed
+    $$$$$:  118-block  4
+    $$$$$:  118-block  5
+        1:  119:	products = service.getAll();
+        1:  119-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  119-block  1
+call    3 returned 1
+call    4 returned 1
+    $$$$$:  119-block  2
+       1*:  120:	assert(products.size() == 0);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  120-block  0
+call    3 never executed
+        6:  121:	service.addFilm("Film1", "Type1", "Manufacturer1", 10);
+        1:  121-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  121-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  121-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  121-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  121-block  4
+call   12 returned 1
+        1:  121-block  5
+call   13 returned 1
+        1:  121-block  6
+call   14 returned 1
+        1:  121-block  7
+    $$$$$:  121-block  8
+call   15 never executed
+    $$$$$:  121-block  9
+    $$$$$:  121-block 10
+    $$$$$:  121-block 11
+call   16 never executed
+    $$$$$:  121-block 12
+    $$$$$:  121-block 13
+    $$$$$:  121-block 14
+call   17 never executed
+    $$$$$:  121-block 15
+    $$$$$:  121-block 16
+        7:  122:	service.updateFilm("Film1", Film("Film2", "Type2", "Manufacturer2", 20));
+        1:  122-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  122-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  122-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  122-block  3
+call    9 returned 1
+        1:  122-block  4
+call   10 returned 1
+branch 11 taken 1 (fallthrough)
+branch 12 taken 0 (throw)
+        1:  122-block  5
+call   13 returned 1
+branch 14 taken 1 (fallthrough)
+branch 15 taken 0 (throw)
+        1:  122-block  6
+call   16 returned 1
+        1:  122-block  7
+call   17 returned 1
+call   18 returned 1
+        1:  122-block  8
+call   19 returned 1
+        1:  122-block  9
+call   20 returned 1
+    $$$$$:  122-block 10
+call   21 never executed
+    $$$$$:  122-block 11
+    $$$$$:  122-block 12
+    $$$$$:  122-block 13
+call   22 never executed
+    $$$$$:  122-block 14
+call   23 never executed
+    $$$$$:  122-block 15
+    $$$$$:  122-block 16
+    $$$$$:  122-block 17
+call   24 never executed
+    $$$$$:  122-block 18
+    $$$$$:  122-block 19
+    $$$$$:  122-block 20
+call   25 never executed
+    $$$$$:  122-block 21
+    $$$$$:  122-block 22
+    $$$$$:  122-block 23
+        1:  123:	products = service.getAll();
+        1:  123-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  123-block  1
+call    3 returned 1
+call    4 returned 1
+    $$$$$:  123-block  2
+       1*:  124:	assert(products.size() == 1);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  124-block  0
+call    3 never executed
+       1*:  125:	assert(products[0].getTitle() == "Film2");
+        1:  125-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  125-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  125-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  125-block  3
+call    9 never executed
+        1:  125-block  4
+call   10 returned 1
+    $$$$$:  125-block  5
+call   11 never executed
+    $$$$$:  125-block  6
+       1*:  126:	assert(products[0].getGenre() == "Type2");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  126-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  126-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  126-block  2
+call    9 never executed
+        1:  126-block  3
+call   10 returned 1
+    $$$$$:  126-block  4
+call   11 never executed
+    $$$$$:  126-block  5
+       1*:  127:	assert(products[0].getActor() == "Manufacturer2");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  127-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  127-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  127-block  2
+call    9 never executed
+        1:  127-block  3
+call   10 returned 1
+    $$$$$:  127-block  4
+call   11 never executed
+    $$$$$:  127-block  5
+       1*:  128:	assert(products[0].getYear() == 20.0);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  128-block  0
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  128-block  1
+call    6 never executed
+       2*:  129:	assert(service.searchFilm("Film2") == 0);
+        1:  129-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  129-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  129-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:  129-block  3
+call    8 never executed
+        1:  129-block  4
+call    9 returned 1
+        1:  129-block  5
+    $$$$$:  129-block  6
+call   10 never executed
+    $$$$$:  129-block  7
+    $$$$$:  129-block  8
+        -:  130:	try {
+       6*:  131:		service.addFilm("Film2", "Type2", "Manufacturer2", -20);
+        1:  131-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  131-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  131-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  131-block  3
+call    9 returned 1
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1 (throw)
+    %%%%%:  131-block  4
+call   12 never executed
+    %%%%%:  131-block  5
+call   13 never executed
+    %%%%%:  131-block  6
+call   14 never executed
+    %%%%%:  131-block  7
+        1:  131-block  8
+call   15 returned 1
+        1:  131-block  9
+        1:  131-block 10
+        1:  131-block 11
+call   16 returned 1
+        1:  131-block 12
+        1:  131-block 13
+        1:  131-block 14
+call   17 returned 1
+        1:  131-block 15
+        1:  131-block 16
+        1:  132:	} catch (ValidationException &e) {
+        1:  132-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  132-block  1
+call    2 returned 1
+        1:  133:		assert(e.getMessage() == "Year must be positive");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  133-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  133-block  1
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    $$$$$:  133-block  2
+call    8 never executed
+        1:  133-block  3
+call    9 returned 1
+    $$$$$:  133-block  4
+call   10 never executed
+    $$$$$:  133-block  5
+        1:  134:	}
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+    $$$$$:  134-block  0
+call    3 never executed
+        2:  135:	service.removeFilm("Film2");
+        1:  135-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  135-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  135-block  2
+call    6 returned 1
+        1:  135-block  3
+    $$$$$:  135-block  4
+call    7 never executed
+    $$$$$:  135-block  5
+    $$$$$:  135-block  6
+        6:  136:	service.addFilm("Film2", "Type2", "Manufacturer2", 20);
+        1:  136-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  136-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  136-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  136-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  136-block  4
+call   12 returned 1
+        1:  136-block  5
+call   13 returned 1
+        1:  136-block  6
+call   14 returned 1
+        1:  136-block  7
+    $$$$$:  136-block  8
+call   15 never executed
+    $$$$$:  136-block  9
+    $$$$$:  136-block 10
+    $$$$$:  136-block 11
+call   16 never executed
+    $$$$$:  136-block 12
+    $$$$$:  136-block 13
+    $$$$$:  136-block 14
+call   17 never executed
+    $$$$$:  136-block 15
+    $$$$$:  136-block 16
+        6:  137:	service.addFilm("Film1", "Type1", "Manufacturer1", 10);
+        1:  137-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  137-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  137-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  137-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  137-block  4
+call   12 returned 1
+        1:  137-block  5
+call   13 returned 1
+        1:  137-block  6
+call   14 returned 1
+        1:  137-block  7
+    $$$$$:  137-block  8
+call   15 never executed
+    $$$$$:  137-block  9
+    $$$$$:  137-block 10
+    $$$$$:  137-block 11
+call   16 never executed
+    $$$$$:  137-block 12
+    $$$$$:  137-block 13
+    $$$$$:  137-block 14
+call   17 never executed
+    $$$$$:  137-block 15
+    $$$$$:  137-block 16
+        6:  138:	service.addFilm("Film3", "Type2", "Manufacturer1", 10);
+        1:  138-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  138-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  138-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  138-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  138-block  4
+call   12 returned 1
+        1:  138-block  5
+call   13 returned 1
+        1:  138-block  6
+call   14 returned 1
+        1:  138-block  7
+    $$$$$:  138-block  8
+call   15 never executed
+    $$$$$:  138-block  9
+    $$$$$:  138-block 10
+    $$$$$:  138-block 11
+call   16 never executed
+    $$$$$:  138-block 12
+    $$$$$:  138-block 13
+    $$$$$:  138-block 14
+call   17 never executed
+    $$$$$:  138-block 15
+    $$$$$:  138-block 16
+        3:  139:	VectorDinamic<Film> filtered_products = service.filterFilms("Manufacturer", "Manufacturer1");
+        1:  139-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  139-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  139-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  139-block  3
+call    9 returned 1
+        1:  139-block  4
+call   10 returned 1
+    $$$$$:  139-block  5
+call   11 never executed
+    $$$$$:  139-block  6
+    $$$$$:  139-block  7
+    $$$$$:  139-block  8
+call   12 never executed
+    $$$$$:  139-block  9
+    $$$$$:  139-block 10
+       1*:  140:	assert(filtered_products.size() == 2);
+        1:  140-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  140-block  1
+call    3 never executed
+       1*:  141:	assert(filtered_products[0].getTitle() == "Film1");
+        1:  141-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  141-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  141-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  141-block  3
+call    9 never executed
+        1:  141-block  4
+call   10 returned 1
+    $$$$$:  141-block  5
+call   11 never executed
+    $$$$$:  141-block  6
+       1*:  142:	assert(filtered_products[1].getTitle() == "Film3");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  142-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  142-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  142-block  2
+call    9 never executed
+        1:  142-block  3
+call   10 returned 1
+    $$$$$:  142-block  4
+call   11 never executed
+    $$$$$:  142-block  5
+        3:  143:	filtered_products = service.filterFilms("Name", "Film2");
+        1:  143-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  143-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  143-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  143-block  3
+call    9 returned 1
+call   10 returned 1
+call   11 returned 1
+        1:  143-block  4
+call   12 returned 1
+    $$$$$:  143-block  5
+call   13 never executed
+    $$$$$:  143-block  6
+    $$$$$:  143-block  7
+    $$$$$:  143-block  8
+call   14 never executed
+    $$$$$:  143-block  9
+    $$$$$:  143-block 10
+    $$$$$:  143-block 11
+       1*:  144:	assert(filtered_products.size() == 1);
+        1:  144-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  144-block  1
+call    3 never executed
+       1*:  145:	assert(filtered_products[0].getTitle() == "Film2");
+        1:  145-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  145-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  145-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  145-block  3
+call    9 never executed
+        1:  145-block  4
+call   10 returned 1
+    $$$$$:  145-block  5
+call   11 never executed
+    $$$$$:  145-block  6
+        3:  146:	filtered_products = service.filterFilms("Year", "10");
+        1:  146-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  146-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  146-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  146-block  3
+call    9 returned 1
+call   10 returned 1
+call   11 returned 1
+        1:  146-block  4
+call   12 returned 1
+    $$$$$:  146-block  5
+call   13 never executed
+    $$$$$:  146-block  6
+    $$$$$:  146-block  7
+    $$$$$:  146-block  8
+call   14 never executed
+    $$$$$:  146-block  9
+    $$$$$:  146-block 10
+    $$$$$:  146-block 11
+       1*:  147:	assert(filtered_products.size() == 2);
+        1:  147-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  147-block  1
+call    3 never executed
+       1*:  148:	assert(filtered_products[0].getTitle() == "Film1");
+        1:  148-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  148-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  148-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  148-block  3
+call    9 never executed
+        1:  148-block  4
+call   10 returned 1
+    $$$$$:  148-block  5
+call   11 never executed
+    $$$$$:  148-block  6
+       1*:  149:	assert(filtered_products[1].getTitle() == "Film3");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  149-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  149-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  149-block  2
+call    9 never executed
+        1:  149-block  3
+call   10 returned 1
+    $$$$$:  149-block  4
+call   11 never executed
+    $$$$$:  149-block  5
+        1:  150:	VectorDinamic<Film> sorted_products = service.sortFilms("Name", 1);
+        1:  150-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  150-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  150-block  2
+call    6 returned 1
+    $$$$$:  150-block  3
+call    7 never executed
+    $$$$$:  150-block  4
+    $$$$$:  150-block  5
+       1*:  151:	assert(sorted_products.size() == 3);
+        1:  151-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  151-block  1
+call    3 never executed
+       1*:  152:	assert(sorted_products[0].getTitle() == "Film1");
+        1:  152-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  152-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  152-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  152-block  3
+call    9 never executed
+        1:  152-block  4
+call   10 returned 1
+    $$$$$:  152-block  5
+call   11 never executed
+    $$$$$:  152-block  6
+       1*:  153:	assert(sorted_products[1].getTitle() == "Film2");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  153-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  153-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  153-block  2
+call    9 never executed
+        1:  153-block  3
+call   10 returned 1
+    $$$$$:  153-block  4
+call   11 never executed
+    $$$$$:  153-block  5
+       1*:  154:	assert(sorted_products[2].getTitle() == "Film3");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  154-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  154-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  154-block  2
+call    9 never executed
+        1:  154-block  3
+call   10 returned 1
+    $$$$$:  154-block  4
+call   11 never executed
+    $$$$$:  154-block  5
+        6:  155:	service.addFilm("Film4", "Type1", "Manufacturer2", 5);
+        1:  155-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  155-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  155-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  155-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  155-block  4
+call   12 returned 1
+        1:  155-block  5
+call   13 returned 1
+        1:  155-block  6
+call   14 returned 1
+        1:  155-block  7
+    $$$$$:  155-block  8
+call   15 never executed
+    $$$$$:  155-block  9
+    $$$$$:  155-block 10
+    $$$$$:  155-block 11
+call   16 never executed
+    $$$$$:  155-block 12
+    $$$$$:  155-block 13
+    $$$$$:  155-block 14
+call   17 never executed
+    $$$$$:  155-block 15
+    $$$$$:  155-block 16
+        1:  156:	sorted_products = service.sortFilms("Year", 1);
+        1:  156-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  156-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  156-block  2
+call    6 returned 1
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  156-block  3
+call    9 never executed
+    $$$$$:  156-block  4
+    $$$$$:  156-block  5
+    $$$$$:  156-block  6
+       1*:  157:	assert(sorted_products.size() == 4);
+        1:  157-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  157-block  1
+call    3 never executed
+       1*:  158:	assert(sorted_products[0].getTitle() == "Film4");
+        1:  158-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  158-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  158-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  158-block  3
+call    9 never executed
+        1:  158-block  4
+call   10 returned 1
+    $$$$$:  158-block  5
+call   11 never executed
+    $$$$$:  158-block  6
+       1*:  159:	assert(sorted_products[1].getTitle() == "Film3");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  159-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  159-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  159-block  2
+call    9 never executed
+        1:  159-block  3
+call   10 returned 1
+    $$$$$:  159-block  4
+call   11 never executed
+    $$$$$:  159-block  5
+       1*:  160:	assert(sorted_products[2].getTitle() == "Film1");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  160-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  160-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  160-block  2
+call    9 never executed
+        1:  160-block  3
+call   10 returned 1
+    $$$$$:  160-block  4
+call   11 never executed
+    $$$$$:  160-block  5
+       1*:  161:	assert(sorted_products[3].getTitle() == "Film2");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  161-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  161-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  161-block  2
+call    9 never executed
+        1:  161-block  3
+call   10 returned 1
+    $$$$$:  161-block  4
+call   11 never executed
+    $$$$$:  161-block  5
+        2:  162:	service.removeFilm("Film4");
+        1:  162-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  162-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  162-block  2
+call    6 returned 1
+        1:  162-block  3
+    $$$$$:  162-block  4
+call    7 never executed
+    $$$$$:  162-block  5
+    $$$$$:  162-block  6
+        1:  163:	sorted_products = service.sortFilms("Name + Type", 1);
+        1:  163-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  163-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  163-block  2
+call    6 returned 1
+call    7 returned 1
+call    8 returned 1
+    $$$$$:  163-block  3
+call    9 never executed
+    $$$$$:  163-block  4
+    $$$$$:  163-block  5
+    $$$$$:  163-block  6
+       1*:  164:	assert(sorted_products.size() == 3);
+        1:  164-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  164-block  1
+call    3 never executed
+       1*:  165:	assert(sorted_products[0].getTitle() == "Film1");
+        1:  165-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  165-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  165-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  165-block  3
+call    9 never executed
+        1:  165-block  4
+call   10 returned 1
+    $$$$$:  165-block  5
+call   11 never executed
+    $$$$$:  165-block  6
+       1*:  166:	assert(sorted_products[1].getTitle() == "Film2");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  166-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  166-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  166-block  2
+call    9 never executed
+        1:  166-block  3
+call   10 returned 1
+    $$$$$:  166-block  4
+call   11 never executed
+    $$$$$:  166-block  5
+       1*:  167:	assert(sorted_products[2].getTitle() == "Film3");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  167-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  167-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  167-block  2
+call    9 never executed
+        1:  167-block  3
+call   10 returned 1
+    $$$$$:  167-block  4
+call   11 never executed
+    $$$$$:  167-block  5
+        1:  168:}
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+    $$$$$:  168-block  0
+call    5 never executed
+    $$$$$:  168-block  1
+call    6 never executed
+    $$$$$:  168-block  2
+call    7 never executed
+    $$$$$:  168-block  3
+call    8 never executed
+    $$$$$:  168-block  4
+call    9 never executed

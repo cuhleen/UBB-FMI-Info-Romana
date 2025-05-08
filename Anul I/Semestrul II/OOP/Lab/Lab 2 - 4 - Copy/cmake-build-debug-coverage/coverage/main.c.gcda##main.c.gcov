@@ -1,0 +1,19 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 2 - 4 - Copy/main.c
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 2 - 4 - Copy/cmake-build-debug-coverage/CMakeFiles/5_3_13.dir/main.c.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 2 - 4 - Copy/cmake-build-debug-coverage/CMakeFiles/5_3_13.dir/main.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "Tests/teste.h"
+        -:    2:#include "UI/ui.h"
+        -:    3:
+function main called 1 returned 100% blocks executed 100%
+        1:    4:int main()
+        -:    5:{
+        -:    6:
+        1:    7:    ruleazaToateTestele();
+        1:    7-block  0
+call    0 returned 1
+        1:    8:    run();
+call    0 returned 1
+        -:    9:
+        1:   10:    return 0;
+        -:   11:}

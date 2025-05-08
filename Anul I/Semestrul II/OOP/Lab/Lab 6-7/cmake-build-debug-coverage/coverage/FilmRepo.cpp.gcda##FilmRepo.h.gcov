@@ -1,0 +1,37 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/FilmRepo.h
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/cmake-build-debug-coverage/CMakeFiles/Lab6.dir/FilmRepo.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/cmake-build-debug-coverage/CMakeFiles/Lab6.dir/FilmRepo.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef FILM_REPO_H
+        -:    2:#define FILM_REPO_H
+        -:    3:
+        -:    4:#include <utility>
+        -:    5:#include "TemplateDynamicVector.h"
+        -:    6:#include "Film.h"
+        -:    7:
+        -:    8:class RepoException {
+        -:    9:    string message;
+        -:   10:public:
+function _ZN13RepoExceptionC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 3 returned 100% blocks executed 100%
+        3:   11:    explicit RepoException(string message) : message(std::move(message)) {}
+        3:   11-block  0
+call    0 returned 3
+call    1 returned 3
+        -:   12:    [[nodiscard]] string getMessage() const;
+        -:   13:};
+        -:   14:
+        -:   15:class FilmRepo {
+        -:   16:private:
+        -:   17:    VectorDinamic<Film> products;
+        -:   18:public:
+        -:   19:    void addFilm(const Film& p);
+        -:   20:    void removeFilm(const string& name);
+        -:   21:    void updateFilm(const string& name, const Film& newFilm);
+        -:   22:    [[nodiscard]] int searchFilm(const string& name) const;
+        -:   23:    [[nodiscard]] VectorDinamic<Film> getAll() const;
+        -:   24:};
+        -:   25:
+        -:   26:void testRepo();
+        -:   27:
+        -:   28:
+        -:   29:#endif

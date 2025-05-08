@@ -1,0 +1,51 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9 - undo - fisier/Film.cpp
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9 - undo - fisier/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/Film.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9 - undo - fisier/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/Film.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "Film.h"
+        -:    2:
+function _ZNK4Film13getAnAparitieEv called 131 returned 100% blocks executed 100%
+      131:    3:int Film::getAnAparitie() const {
+      131:    4:	return anAparitie;
+      131:    4-block  0
+        -:    5:}
+        -:    6:
+function _ZNK4Film12getTitluFilmB5cxx11Ev called 342 returned 100% blocks executed 100%
+      342:    7:string Film::getTitluFilm() const {
+      342:    8:	return titluFilm;
+      342:    8-block  0
+call    0 returned 342
+        -:    9:}
+        -:   10:
+function _ZNK4Film10getGenFilmB5cxx11Ev called 86 returned 100% blocks executed 100%
+       86:   11:string Film::getGenFilm() const {
+       86:   12:	return genFilm;
+       86:   12-block  0
+call    0 returned 86
+        -:   13:}
+        -:   14:
+function _ZNK4Film17getActorPrincipalB5cxx11Ev called 101 returned 100% blocks executed 100%
+      101:   15:string Film::getActorPrincipal() const {
+      101:   16:	return actorPrincipal;
+      101:   16-block  0
+call    0 returned 101
+        -:   17:}
+        -:   18:
+function _ZN4Film10setGenFilmERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 4 returned 100% blocks executed 100%
+        4:   19:void Film::setGenFilm(const string& genFilmNou) {
+        4:   20:	this->genFilm = genFilmNou;
+        4:   20-block  0
+call    0 returned 4
+        4:   21:}
+        -:   22:
+function _ZN4Film13setAnAparitieEi called 4 returned 100% blocks executed 100%
+        4:   23:void Film::setAnAparitie(const int anAparitieNou) {
+        4:   24:	this->anAparitie = anAparitieNou;
+        4:   25:}
+        -:   26:
+function _ZN4Film17setActorPrincipalERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 4 returned 100% blocks executed 100%
+        4:   27:void Film::setActorPrincipal(const string& actorPrincipalNou) {
+        4:   28:	this->actorPrincipal = actorPrincipalNou;
+        4:   28-block  0
+call    0 returned 4
+        4:   29:}

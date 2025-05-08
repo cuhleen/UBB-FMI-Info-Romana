@@ -1,0 +1,408 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 2 - 4 - Copy/Service/service.c
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 2 - 4 - Copy/cmake-build-debug-coverage/CMakeFiles/5_3_13.dir/Service/service.c.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 2 - 4 - Copy/cmake-build-debug-coverage/CMakeFiles/5_3_13.dir/Service/service.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "service.h"
+        -:    2:
+        -:    3:#include <stdio.h>
+        -:    4:#include <stdlib.h>
+        -:    5:#include <string.h>
+        -:    6:
+function creeazaFarmacie called 10 returned 100% blocks executed 100%
+       10:    7:Farmacie creeazaFarmacie() {
+        -:    8:	Farmacie farmacie;
+       10:    9:	farmacie.Medicamente = creeazaListaGoala(distrugeMedicament);
+       10:    9-block  0
+call    0 returned 10
+       10:   10:	farmacie.undoStack = creeazaListaGoala(distrugeLista);
+call    0 returned 10
+       10:   11:	return farmacie;
+        -:   12:}
+        -:   13:
+function distrugeFarmacie called 10 returned 100% blocks executed 100%
+       10:   14:void distrugeFarmacie(Farmacie* farmacie) {
+       10:   15:	distrugeLista(farmacie->Medicamente);
+       10:   15-block  0
+call    0 returned 10
+       10:   16:	distrugeLista(farmacie->undoStack);
+call    0 returned 10
+       10:   17:}
+        -:   18:
+function adaugaMedicamentInFarmacie called 32 returned 100% blocks executed 82%
+       32:   19:int adaugaMedicamentInFarmacie(Farmacie* farmacie, int id, int concentratie, int cantitate, char* nume) {
+       32:   20:	Medicament* medicament = creeazaMedicament(id, concentratie, cantitate, nume);
+       32:   20-block  0
+call    0 returned 32
+       32:   21:	Lista* undoLista = copiazaLista(farmacie->Medicamente, copiazaMedicament);
+call    0 returned 32
+       32:   22:	int erori = valideazaMedicament(medicament);
+call    0 returned 32
+       32:   23:	if (erori != 0) {
+branch  0 taken 0 (fallthrough)
+branch  1 taken 32
+    #####:   24:		distrugeMedicament(medicament);
+    %%%%%:   24-block  0
+call    0 never executed
+    #####:   25:		distrugeLista(undoLista);
+call    0 never executed
+    #####:   26:		return erori;
+        -:   27:	}
+       96:   28:	for (int i = 0; i < farmacie->Medicamente->dimensiune; i++)
+       32:   28-block  0
+       64:   28-block  1
+       96:   28-block  2
+branch  0 taken 65
+branch  1 taken 31 (fallthrough)
+        -:   29:	{
+       65:   30:		Medicament* medExistent = farmacie->Medicamente->elemente[i];
+       65:   31:		if (medicament->id == medExistent->id)
+       65:   31-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 64
+        -:   32:		{
+        1:   33:			medExistent->cantitate += medicament->cantitate;
+        1:   34:			distrugeMedicament(medicament);
+        1:   34-block  0
+call    0 returned 1
+        1:   35:			return 0;
+        -:   36:		}
+        -:   37:	}
+        -:   38:
+       31:   39:	adaugaElementInLista(farmacie->Medicamente, medicament);
+       31:   39-block  0
+call    0 returned 31
+       31:   40:	adaugaElementInLista(farmacie->undoStack, undoLista);
+call    0 returned 31
+       31:   41:	return 0;
+        -:   42:}
+        -:   43:
+function modificaMedicamentInFarmacie called 2 returned 100% blocks executed 100%
+        2:   44:int modificaMedicamentInFarmacie(Farmacie* farmacie, int id, int concentratie, int cantitate, char* nume) {
+        -:   45:
+        3:   46:	for (int i = 0; i < farmacie->Medicamente->dimensiune; i++) {
+        2:   46-block  0
+        1:   46-block  1
+        3:   46-block  2
+branch  0 taken 2
+branch  1 taken 1 (fallthrough)
+        2:   47:		Medicament* medExistent = farmacie->Medicamente->elemente[i];
+        2:   48:		if (medExistent->id == id) {
+        2:   48-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:   49:			Medicament* med = creeazaMedicament(id, concentratie, cantitate, nume);
+        1:   49-block  0
+call    0 returned 1
+        1:   50:			printf("Medicamentul nou oau: %d %d %d %s", med->id, med->cantitate, med->cantitate, med->nume);
+call    0 returned 1
+        1:   51:			Lista* copy = copiazaLista(farmacie->Medicamente, copiazaMedicament);
+call    0 returned 1
+        1:   52:			adaugaElementInLista(farmacie->undoStack, copy);
+call    0 returned 1
+        1:   53:			modificaElementDinLista(farmacie->Medicamente, med);
+call    0 returned 1
+        1:   54:			return 0;
+        -:   55:		}
+        -:   56:
+        -:   57:	}
+        -:   58:
+        1:   59:	return 1;
+        1:   59-block  0
+        -:   60:
+        -:   61:	// if (cautaDupaId(farmacie->Medicamente, id) == 11) {
+        -:   62:	// 	return 1;
+        -:   63:	// }
+        -:   64:	// Medicament* medicamentModificat = creeazaMedicament(id, concentratie, cantitate, nume);
+        -:   65:	// int erori = valideazaMedicament(medicamentModificat);
+        -:   66:	// if (erori != 0) {
+        -:   67:	// 	distrugeMedicament(medicamentModificat);
+        -:   68:	// 	return erori;
+        -:   69:	// }
+        -:   70:	// Lista* copy = copiazaLista(farmacie->Medicamente, copiazaMedicament);
+        -:   71:	// adaugaElementInLista(farmacie->undoStack, copy);
+        -:   72:	// modificaElementDinLista(farmacie->Medicamente, medicamentModificat);
+        -:   73:	// return 0;
+        -:   74:}
+        -:   75:
+function stergeMedicamentDinFarmacie called 1 returned 100% blocks executed 100%
+        1:   76:int stergeMedicamentDinFarmacie(Farmacie* farmacie, int id) {
+        1:   77:	int validare = stergeElementDinLista(farmacie->Medicamente, id);
+        1:   77-block  0
+call    0 returned 1
+        1:   78:	return validare;
+        -:   79:}
+        -:   80:
+function undo called 2 returned 100% blocks executed 100%
+        2:   81:int undo(Farmacie* farmacie)
+        -:   82:{
+        2:   83:	if (farmacie->undoStack->dimensiune == 0)
+        2:   83-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:   84:		return 1;
+        1:   84-block  0
+        -:   85:
+        1:   86:	Lista* listaNoua = stergeUltimulElementDinLista(farmacie->undoStack);
+        1:   86-block  0
+call    0 returned 1
+        1:   87:	distrugeLista(farmacie->Medicamente);
+call    0 returned 1
+        1:   88:	farmacie->Medicamente = listaNoua;
+        -:   89:
+        1:   90:	return 0;
+        -:   91:}
+        -:   92:
+function filtreazaDupaConcentratie called 1 returned 100% blocks executed 100%
+        1:   93:Lista* filtreazaDupaConcentratie(Farmacie* farmacie, int concentratie) {
+        1:   94:	Lista* cheltuieliFiltrate = creeazaListaGoala(distrugeMedicament);
+        1:   94-block  0
+call    0 returned 1
+        4:   95:	for (int i = 0; i < farmacie->Medicamente->dimensiune; i++) {
+        3:   95-block  0
+        4:   95-block  1
+branch  0 taken 3
+branch  1 taken 1 (fallthrough)
+        3:   96:		Medicament* medicament = getElement(farmacie->Medicamente, i);
+        3:   96-block  0
+call    0 returned 3
+        3:   97:		if (medicament->concentratie < concentratie) {
+branch  0 taken 2 (fallthrough)
+branch  1 taken 1
+        2:   98:			adaugaElementInLista(cheltuieliFiltrate, copiazaMedicament(medicament));
+        2:   98-block  0
+call    0 returned 2
+call    1 returned 2
+        -:   99:		}
+        -:  100:	}
+        1:  101:	return cheltuieliFiltrate;
+        1:  101-block  0
+        -:  102:}
+        -:  103:
+function filtreazaDupaCantitate called 0 returned 0% blocks executed 0%
+    #####:  104:Lista* filtreazaDupaCantitate(Farmacie* farmacie, int cantitate) {
+    #####:  105:	Lista* cheltuieliFiltrate = creeazaListaGoala(distrugeMedicament);
+    %%%%%:  105-block  0
+call    0 never executed
+    #####:  106:	for (int i = 0; i < farmacie->Medicamente->dimensiune; i++) {
+    %%%%%:  106-block  0
+    %%%%%:  106-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:  107:		Medicament* medicament = getElement(farmacie->Medicamente, i);
+    %%%%%:  107-block  0
+call    0 never executed
+    #####:  108:		if (medicament->cantitate < cantitate) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  109:			adaugaElementInLista(cheltuieliFiltrate, copiazaMedicament(medicament));
+    %%%%%:  109-block  0
+call    0 never executed
+call    1 never executed
+        -:  110:		}
+        -:  111:	}
+    #####:  112:	return cheltuieliFiltrate;
+    %%%%%:  112-block  0
+        -:  113:}
+        -:  114:
+function filtreazaDupaNume called 0 returned 0% blocks executed 0%
+    #####:  115:Lista* filtreazaDupaNume(Farmacie* farmacie, char* nume) {
+    #####:  116:	if (nume == NULL || strlen(nume) == 0) {
+    %%%%%:  116-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    %%%%%:  116-block  1
+branch  2 never executed (fallthrough)
+branch  3 never executed
+    #####:  117:		return copiazaLista(farmacie->Medicamente, copiazaMedicament);
+    %%%%%:  117-block  0
+call    0 never executed
+        -:  118:	}
+    #####:  119:	Lista* cheltuieliFiltrate = creeazaListaGoala(distrugeMedicament);
+    %%%%%:  119-block  0
+call    0 never executed
+    #####:  120:	for (int i = 0; i < farmacie->Medicamente->dimensiune; i++) {
+    %%%%%:  120-block  0
+    %%%%%:  120-block  1
+branch  0 never executed
+branch  1 never executed (fallthrough)
+    #####:  121:		Medicament* medicament = getElement(farmacie->Medicamente, i);
+    %%%%%:  121-block  0
+call    0 never executed
+    #####:  122:		if (medicament->nume[0] == nume[0]) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:  123:			adaugaElementInLista(cheltuieliFiltrate, copiazaMedicament(medicament));
+    %%%%%:  123-block  0
+call    0 never executed
+call    1 never executed
+        -:  124:		}
+        -:  125:	}
+    #####:  126:	return cheltuieliFiltrate;
+    %%%%%:  126-block  0
+        -:  127:}
+        -:  128:
+function sorteaza called 8 returned 100% blocks executed 100%
+        8:  129:void sorteaza(Lista* listaDeSortat, FunctieComparare functieDeComparare) {
+       56:  130:	for (int i = 0; i < size(listaDeSortat); i++)
+        8:  130-block  0
+       48:  130-block  1
+       56:  130-block  2
+call    0 returned 56
+branch  1 taken 48
+branch  2 taken 8 (fallthrough)
+      168:  131:		for (int j = i + 1; j < size(listaDeSortat); j++) {
+       48:  131-block  0
+      120:  131-block  1
+      168:  131-block  2
+call    0 returned 168
+branch  1 taken 120
+branch  2 taken 48 (fallthrough)
+      120:  132:			Medicament* medicament1 = getElement(listaDeSortat, i);
+      120:  132-block  0
+call    0 returned 120
+      120:  133:			Medicament* medicament2 = getElement(listaDeSortat, j);
+call    0 returned 120
+      120:  134:			if (functieDeComparare(medicament1, medicament2) > 0) {
+call    0 returned 120
+branch  1 taken 44 (fallthrough)
+branch  2 taken 76
+       44:  135:				setElement(listaDeSortat, i, medicament2);
+       44:  135-block  0
+call    0 returned 44
+       44:  136:				setElement(listaDeSortat, j, medicament1);
+call    0 returned 44
+        -:  137:			}
+        -:  138:		}
+        8:  139:}
+        -:  140:
+function comparareDupaIdCrescator called 15 returned 100% blocks executed 100%
+       15:  141:int comparareDupaIdCrescator(Medicament* medicament1, Medicament* medicament2) {
+       15:  142:	return (medicament1->id > medicament2->id);
+       15:  142-block  0
+        -:  143:}
+        -:  144:
+function comparareDupaIdDescrescator called 15 returned 100% blocks executed 100%
+       15:  145:int comparareDupaIdDescrescator(Medicament* medicament1, Medicament* medicament2) {
+       15:  146:	return (medicament1->id < medicament2->id);
+       15:  146-block  0
+        -:  147:}
+        -:  148:
+function sorteazaDupaId called 2 returned 100% blocks executed 100%
+        2:  149:Lista* sorteazaDupaId(Farmacie* farmacie, int ordineDeComparare) {
+        2:  150:	Lista* listaDeSortat = copiazaLista(farmacie->Medicamente, copiazaMedicament);
+        2:  150-block  0
+call    0 returned 2
+        2:  151:	if (ordineDeComparare == 0) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  152:		sorteaza(listaDeSortat, comparareDupaIdCrescator);
+        1:  152-block  0
+call    0 returned 1
+        -:  153:	}
+        -:  154:	else {
+        1:  155:		sorteaza(listaDeSortat, comparareDupaIdDescrescator);
+        1:  155-block  0
+call    0 returned 1
+        -:  156:	}
+        2:  157:	return listaDeSortat;
+        2:  157-block  0
+        -:  158:}
+        -:  159:
+function comparareDupaConcentratieCrescator called 15 returned 100% blocks executed 100%
+       15:  160:int comparareDupaConcentratieCrescator(Medicament* medicament1, Medicament* medicament2) {
+       15:  161:	return (medicament1->concentratie > medicament2->concentratie);
+       15:  161-block  0
+        -:  162:}
+        -:  163:
+function comparareDupaConcentratieDescrescator called 15 returned 100% blocks executed 100%
+       15:  164:int comparareDupaConcentratieDescrescator(Medicament* medicament1, Medicament* medicament2) {
+       15:  165:	return (medicament1->concentratie < medicament2->concentratie);
+       15:  165-block  0
+        -:  166:}
+        -:  167:
+function sorteazaDupaConcentratie called 2 returned 100% blocks executed 100%
+        2:  168:Lista* sorteazaDupaConcentratie(Farmacie* farmacie, int ordineDeComparare) {
+        2:  169:	Lista* listaDeSortat = copiazaLista(farmacie->Medicamente, copiazaMedicament);
+        2:  169-block  0
+call    0 returned 2
+        2:  170:	if (ordineDeComparare == 0) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  171:		sorteaza(listaDeSortat, comparareDupaConcentratieCrescator);
+        1:  171-block  0
+call    0 returned 1
+        -:  172:	}
+        -:  173:	else {
+        1:  174:		sorteaza(listaDeSortat, comparareDupaConcentratieDescrescator);
+        1:  174-block  0
+call    0 returned 1
+        -:  175:	}
+        2:  176:	return listaDeSortat;
+        2:  176-block  0
+        -:  177:}
+        -:  178:
+function comparareDupaCantitateCrescator called 15 returned 100% blocks executed 100%
+       15:  179:int comparareDupaCantitateCrescator(Medicament* medicament1, Medicament* medicament2) {
+       15:  180:	return (medicament1->cantitate > medicament2->cantitate);
+       15:  180-block  0
+        -:  181:}
+        -:  182:
+function comparareDupaCantitateDescrescator called 15 returned 100% blocks executed 100%
+       15:  183:int comparareDupaCantitateDescrescator(Medicament* medicament1, Medicament* medicament2) {
+       15:  184:	return (medicament1->cantitate < medicament2->cantitate);
+       15:  184-block  0
+        -:  185:}
+        -:  186:
+function sorteazaDupaCantitate called 2 returned 100% blocks executed 100%
+        2:  187:Lista* sorteazaDupaCantitate(Farmacie* farmacie, int ordineDeComparare) {
+        2:  188:	Lista* listaDeSortat = copiazaLista(farmacie->Medicamente, copiazaMedicament);
+        2:  188-block  0
+call    0 returned 2
+        2:  189:	if (ordineDeComparare == 0) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  190:		sorteaza(listaDeSortat, comparareDupaCantitateCrescator);
+        1:  190-block  0
+call    0 returned 1
+        -:  191:	}
+        -:  192:	else {
+        1:  193:		sorteaza(listaDeSortat, comparareDupaCantitateDescrescator);
+        1:  193-block  0
+call    0 returned 1
+        -:  194:	}
+        2:  195:	return listaDeSortat;
+        2:  195-block  0
+        -:  196:}
+        -:  197:
+function comparareDupaNumeCrescator called 15 returned 100% blocks executed 100%
+       15:  198:int comparareDupaNumeCrescator(Medicament* medicament1, Medicament* medicament2) {
+       15:  199:	return strcmp(medicament1->nume, medicament2->nume);
+       15:  199-block  0
+        -:  200:}
+        -:  201:
+function comparareDupaNumeDescrescator called 15 returned 100% blocks executed 100%
+       15:  202:int comparareDupaNumeDescrescator(Medicament* medicament1, Medicament* medicament2) {
+       15:  203:	return strcmp(medicament2->nume, medicament1->nume);
+       15:  203-block  0
+        -:  204:}
+        -:  205:
+function sorteazaDupaNume called 2 returned 100% blocks executed 100%
+        2:  206:Lista* sorteazaDupaNume(Farmacie* farmacie, int ordineDeComparare) {
+        2:  207:	Lista* listaDeSortat = copiazaLista(farmacie->Medicamente, copiazaMedicament);
+        2:  207-block  0
+call    0 returned 2
+        2:  208:	if (ordineDeComparare == 0) {
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  209:		sorteaza(listaDeSortat, comparareDupaNumeCrescator);
+        1:  209-block  0
+call    0 returned 1
+        -:  210:	}
+        -:  211:	else {
+        1:  212:		sorteaza(listaDeSortat, comparareDupaNumeDescrescator);
+        1:  212-block  0
+call    0 returned 1
+        -:  213:	}
+        2:  214:	return listaDeSortat;
+        2:  214-block  0
+        -:  215:}

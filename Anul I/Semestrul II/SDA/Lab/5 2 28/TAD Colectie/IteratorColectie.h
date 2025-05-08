@@ -14,8 +14,11 @@ private:
 
     //contine o referinta catre containerul pe care il itereaza
 	const Colectie& col;
-	/* aici e reprezentarea pecifica a iteratorului*/
+	/* aici e reprezentarea specifica a iteratorului*/
 
+	//indexul elementului curent
+	int curent;
+	int frecventaCurent;
 
 public:
 

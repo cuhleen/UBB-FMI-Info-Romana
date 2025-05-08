@@ -1,0 +1,178 @@
+        -:    0:Source:/mnt/c/Users/Tudor Macri/Downloads/SDA4/Proiect C++/MD.cpp
+        -:    0:Graph:/mnt/c/Users/Tudor Macri/Downloads/SDA4/cmake-build-debug-coverage/CMakeFiles/SDA4.dir/Proiect_C++/MD.cpp.gcno
+        -:    0:Data:/mnt/c/Users/Tudor Macri/Downloads/SDA4/cmake-build-debug-coverage/CMakeFiles/SDA4.dir/Proiect_C++/MD.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "MD.h"
+        -:    2:#include "IteratorMD.h"
+        -:    3:#include <exception>
+        -:    4:#include <iostream>
+        -:    5:
+        -:    6:using namespace std;
+        -:    7:
+        -:    8:
+function _ZN2MDC2Ev called 9 returned 100% blocks executed 80%
+        9:    9:MD::MD() {
+        9:   10:	capacity = 10;
+      99*:   11:	nodes = new Node[capacity];
+        9:   11-block  0
+branch  0 taken 9 (fallthrough)
+branch  1 taken 0
+        9:   11-block  1
+    %%%%%:   11-block  2
+call    2 never executed
+        9:   11-block  3
+call    3 returned 9
+       90:   11-block  4
+call    4 returned 90
+branch  5 taken 90 (fallthrough)
+branch  6 taken 0 (throw)
+       90:   11-block  5
+       99:   11-block  6
+branch  7 taken 90
+branch  8 taken 9 (fallthrough)
+    $$$$$:   11-block  7
+branch  9 never executed
+branch 10 never executed
+    $$$$$:   11-block  8
+call   11 never executed
+       99:   12:	for (int i = 0; i < capacity; i++) {
+        9:   12-block  0
+       99:   12-block  1
+branch  0 taken 90
+branch  1 taken 9 (fallthrough)
+       90:   13:		nodes[i].next = i + 1;
+       90:   13-block  0
+        -:   14:	}
+        9:   15:	nodes[capacity - 1].next = -1;
+        9:   16:	head = -1;
+        9:   17:	firstFree = 0;
+        9:   18:	size = 0;
+        9:   19:}
+        9:   19-block  0
+        -:   20:
+        -:   21:
+function _ZN2MD6adaugaEii called 198935 returned 100% blocks executed 100%
+   198935:   22:void MD::adauga(TCheie c, TValoare v) {
+   198935:   23:	int index = allocate();
+   198935:   23-block  0
+call    0 returned 198935
+   198935:   24:	nodes[index].element = make_pair(c, v);
+call    0 returned 198935
+branch  1 taken 198935 (fallthrough)
+branch  2 taken 0 (throw)
+   198935:   24-block  0
+call    3 returned 198935
+   198935:   25:	nodes[index].next = head;
+   198935:   26:	head = index;
+   198935:   27:	size++;
+   198935:   28:}
+        -:   29:
+        -:   30:
+function _ZN2MD6stergeEii called 3798 returned 100% blocks executed 100%
+     3798:   31:bool MD::sterge(TCheie c, TValoare v) {
+     3798:   32:	int current = head;
+     3798:   33:	int prev = -1;
+  1058025:   34:	while (current != -1) {
+     3798:   34-block  0
+  1058025:   34-block  1
+branch  0 taken 1056085
+branch  1 taken 1940 (fallthrough)
+  1056085:   35:		if (nodes[current].element.first == c && nodes[current].element.second == v) {
+  1056085:   35-block  0
+branch  0 taken 10783 (fallthrough)
+branch  1 taken 1045302
+    10783:   35-block  1
+branch  2 taken 1858 (fallthrough)
+branch  3 taken 8925
+     1858:   36:			if (prev == -1) {
+     1858:   36-block  0
+branch  0 taken 105 (fallthrough)
+branch  1 taken 1753
+      105:   37:				head = nodes[current].next;
+      105:   37-block  0
+        -:   38:			}
+        -:   39:			else {
+     1753:   40:				nodes[prev].next = nodes[current].next;
+     1753:   40-block  0
+        -:   41:			}
+     1858:   42:			deallocate(current);
+     1858:   42-block  0
+call    0 returned 1858
+     1858:   43:			size--;
+     1858:   44:			return true;
+        -:   45:		}
+  1054227:   46:		prev = current;
+  1054227:   47:		current = nodes[current].next;
+  1054227:   47-block  0
+        -:   48:	}
+     1940:   49:	return false;
+     1940:   49-block  0
+        -:   50:}
+        -:   51:
+        -:   52:
+function _ZNK2MD5cautaEi called 179201 returned 100% blocks executed 90%
+   179201:   53:vector<TValoare> MD::cauta(TCheie c) const {
+   179201:   54:	vector<TValoare> values;
+   179201:   54-block  0
+call    0 returned 179201
+   179201:   55:	int current = head;
+30885173059:   56:	while (current != -1) {
+30885173059:   56-block  0
+branch  0 taken 30884993858
+branch  1 taken 179201 (fallthrough)
+30884993858:   57:		if (nodes[current].element.first == c) {
+30884993858:   57-block  0
+branch  0 taken 701123 (fallthrough)
+branch  1 taken 30884292735
+   701123:   58:			values.push_back(nodes[current].element.second);
+   701123:   58-block  0
+call    0 returned 701123
+branch  1 taken 701123 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   59:		}
+30884993858:   60:		current = nodes[current].next;
+30884993858:   60-block  0
+        -:   61:	}
+   179201:   62:	return values;
+   179201:   62-block  0
+   179201:   62-block  1
+    =====:   63:}
+    $$$$$:   63-block  0
+call    0 never executed
+        -:   64:
+        -:   65:
+function _ZNK2MD3dimEv called 175758 returned 100% blocks executed 100%
+   175758:   66:int MD::dim() const {
+   175758:   67:	return size;
+   175758:   67-block  0
+        -:   68:}
+        -:   69:
+        -:   70:
+function _ZNK2MD3vidEv called 5 returned 100% blocks executed 100%
+        5:   71:bool MD::vid() const {
+        5:   72:	return size == 0;
+        5:   72-block  0
+        -:   73:}
+        -:   74:
+function _ZNK2MD8iteratorEv called 9 returned 100% blocks executed 100%
+        9:   75:IteratorMD MD::iterator() const {
+        9:   76:	return IteratorMD(*this);
+        9:   76-block  0
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+        9:   76-block  1
+        9:   76-block  2
+        -:   77:}
+        -:   78:
+        -:   79:
+function _ZN2MDD2Ev called 9 returned 100% blocks executed 100%
+        9:   80:MD::~MD() {
+        9:   81:	delete[] nodes;
+        9:   81-block  0
+branch  0 taken 9 (fallthrough)
+branch  1 taken 0
+        9:   81-block  1
+call    2 returned 9
+        9:   82:}
+        -:   83:

@@ -1,0 +1,3387 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6 - 7/Tests/tests.cpp
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6 - 7/cmake-build-debug-coverage/CMakeFiles/Lab_6___7.dir/Tests/tests.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6 - 7/cmake-build-debug-coverage/CMakeFiles/Lab_6___7.dir/Tests/tests.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "tests.h"
+        -:    2:
+function _Z14testRepoAdaugav called 1 returned 100% blocks executed 57%
+        1:    3:void testRepoAdauga() {
+        1:    4:	Repo repository;
+        1:    4-block  0
+        5:    5:	Film film{ "John Wick: Chapter 4", "Actiune", 2023, "Keanu Reeves" };
+        1:    5-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:    5-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:    5-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:    5-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:    5-block  4
+call   12 returned 1
+        1:    5-block  5
+call   13 returned 1
+        1:    5-block  6
+call   14 returned 1
+    $$$$$:    5-block  7
+call   15 never executed
+    $$$$$:    5-block  8
+    $$$$$:    5-block  9
+    $$$$$:    5-block 10
+call   16 never executed
+    $$$$$:    5-block 11
+    $$$$$:    5-block 12
+    $$$$$:    5-block 13
+call   17 never executed
+    $$$$$:    5-block 14
+    $$$$$:    5-block 15
+        1:    6:	repository.adaugaFilm(film);
+        1:    6-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:    7:	assert(repository.getAll().size() == 1);
+        1:    7-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:    7-block  1
+call    4 never executed
+        -:    8:
+        -:    9:	try {
+        1:   10:		repository.adaugaFilm(film);
+        1:   10-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+    #####:   11:		assert(false);
+    %%%%%:   11-block  0
+call    0 never executed
+        -:   12:	}
+        1:   13:	catch (const ExceptieRepo&) {
+        1:   13-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   13-block  1
+call    2 returned 1
+        -:   14:		assert(true);
+        1:   15:	}
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   16:
+        -:   17:	try {
+        2:   18:		repository.cautaFilm("La La Land");
+        1:   18-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   18-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1 (throw)
+    $$$$$:   18-block  2
+call    6 never executed
+        1:   18-block  3
+call    7 returned 1
+        1:   18-block  4
+        1:   18-block  5
+    =====:   19:		assert(false);
+    $$$$$:   19-block  0
+call    0 never executed
+        -:   20:	}
+        1:   21:	catch (const ExceptieRepo& eroare) {
+        1:   21-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   21-block  1
+call    2 returned 1
+        1:   22:		std::stringstream os;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   23:		os << eroare;
+        1:   23-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   24:		assert(os.str().find("adaugat") >= 0);
+        1:   24-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   24-block  1
+call    3 returned 1
+call    4 returned 1
+    $$$$$:   24-block  2
+        1:   25:	}
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   25-block  0
+call    4 never executed
+    $$$$$:   25-block  1
+call    5 never executed
+        1:   26:}
+        1:   26-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:   26-block  1
+call    2 never executed
+    $$$$$:   26-block  2
+call    3 never executed
+        -:   27:
+function _Z14testRepoStergev called 1 returned 100% blocks executed 49%
+        1:   28:void testRepoSterge() {
+        1:   29:	Repo repository;
+        1:   29-block  0
+        5:   30:	Film film1{ "John Wick: Chapter 4", "Actiune", 2023, "Keanu Reeves" };
+        1:   30-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   30-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   30-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   30-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   30-block  4
+call   12 returned 1
+        1:   30-block  5
+call   13 returned 1
+        1:   30-block  6
+call   14 returned 1
+    $$$$$:   30-block  7
+call   15 never executed
+    $$$$$:   30-block  8
+    $$$$$:   30-block  9
+    $$$$$:   30-block 10
+call   16 never executed
+    $$$$$:   30-block 11
+    $$$$$:   30-block 12
+    $$$$$:   30-block 13
+call   17 never executed
+    $$$$$:   30-block 14
+    $$$$$:   30-block 15
+        1:   31:	repository.adaugaFilm(film1);
+        1:   31-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   32:	Film film2{ "The Imitation Game", "Historic Drama", 2014, "Benedict Cumberbatch" };
+        1:   32-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   32-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   32-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   32-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   32-block  4
+call   12 returned 1
+        1:   32-block  5
+call   13 returned 1
+        1:   32-block  6
+call   14 returned 1
+    $$$$$:   32-block  7
+call   15 never executed
+    $$$$$:   32-block  8
+    $$$$$:   32-block  9
+    $$$$$:   32-block 10
+call   16 never executed
+    $$$$$:   32-block 11
+    $$$$$:   32-block 12
+    $$$$$:   32-block 13
+call   17 never executed
+    $$$$$:   32-block 14
+    $$$$$:   32-block 15
+        1:   33:	repository.adaugaFilm(film2);
+        1:   33-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   34:	Film film3{ "Titanic", "Epic Romance", 1997, "Leonardo DiCaprio" };
+        1:   34-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   34-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   34-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   34-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   34-block  4
+call   12 returned 1
+        1:   34-block  5
+call   13 returned 1
+        1:   34-block  6
+call   14 returned 1
+    $$$$$:   34-block  7
+call   15 never executed
+    $$$$$:   34-block  8
+    $$$$$:   34-block  9
+    $$$$$:   34-block 10
+call   16 never executed
+    $$$$$:   34-block 11
+    $$$$$:   34-block 12
+    $$$$$:   34-block 13
+call   17 never executed
+    $$$$$:   34-block 14
+    $$$$$:   34-block 15
+        1:   35:	repository.adaugaFilm(film3);
+        1:   35-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   36:	Film film4{ "Avatar 2", "Science-Fiction", 2022, "Sam Worthington" };
+        1:   36-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   36-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   36-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   36-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   36-block  4
+call   12 returned 1
+        1:   36-block  5
+call   13 returned 1
+        1:   36-block  6
+call   14 returned 1
+    $$$$$:   36-block  7
+call   15 never executed
+    $$$$$:   36-block  8
+    $$$$$:   36-block  9
+    $$$$$:   36-block 10
+call   16 never executed
+    $$$$$:   36-block 11
+    $$$$$:   36-block 12
+    $$$$$:   36-block 13
+call   17 never executed
+    $$$$$:   36-block 14
+    $$$$$:   36-block 15
+        1:   37:	repository.adaugaFilm(film4);
+        1:   37-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   38:	Film film5{ "The Revenant", "American Action Drama", 2016, "Leonardo DiCaprio" };
+        1:   38-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   38-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   38-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   38-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   38-block  4
+call   12 returned 1
+        1:   38-block  5
+call   13 returned 1
+        1:   38-block  6
+call   14 returned 1
+    $$$$$:   38-block  7
+call   15 never executed
+    $$$$$:   38-block  8
+    $$$$$:   38-block  9
+    $$$$$:   38-block 10
+call   16 never executed
+    $$$$$:   38-block 11
+    $$$$$:   38-block 12
+    $$$$$:   38-block 13
+call   17 never executed
+    $$$$$:   38-block 14
+    $$$$$:   38-block 15
+        1:   39:	repository.adaugaFilm(film5);
+        1:   39-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   40:	assert(repository.getAll().size() == 5);
+        1:   40-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:   40-block  1
+call    4 never executed
+        1:   41:	repository.stergeFilm(2);
+        1:   41-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   42:	assert(repository.getAll().size() == 4);
+        1:   42-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:   42-block  1
+call    4 never executed
+        1:   43:	repository.stergeFilm(3);
+        1:   43-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   44:}
+        1:   44-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+    $$$$$:   44-block  1
+call    6 never executed
+    $$$$$:   44-block  2
+call    7 never executed
+    $$$$$:   44-block  3
+call    8 never executed
+    $$$$$:   44-block  4
+call    9 never executed
+    $$$$$:   44-block  5
+call   10 never executed
+    $$$$$:   44-block  6
+call   11 never executed
+        -:   45:
+function _Z16testRepoModificav called 1 returned 100% blocks executed 50%
+        1:   46:void testRepoModifica() {
+        1:   47:	Repo repository;
+        1:   47-block  0
+        5:   48:	Film film1{ "John Wick: Chapter 4", "Actiune", 2023, "Keanu Reeves" };
+        1:   48-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   48-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   48-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   48-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   48-block  4
+call   12 returned 1
+        1:   48-block  5
+call   13 returned 1
+        1:   48-block  6
+call   14 returned 1
+    $$$$$:   48-block  7
+call   15 never executed
+    $$$$$:   48-block  8
+    $$$$$:   48-block  9
+    $$$$$:   48-block 10
+call   16 never executed
+    $$$$$:   48-block 11
+    $$$$$:   48-block 12
+    $$$$$:   48-block 13
+call   17 never executed
+    $$$$$:   48-block 14
+    $$$$$:   48-block 15
+        1:   49:	repository.adaugaFilm(film1);
+        1:   49-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   50:	Film film2{ "The Imitation Game", "Historic Drama", 2014, "Benedict Cumberbatch" };
+        1:   50-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   50-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   50-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   50-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   50-block  4
+call   12 returned 1
+        1:   50-block  5
+call   13 returned 1
+        1:   50-block  6
+call   14 returned 1
+    $$$$$:   50-block  7
+call   15 never executed
+    $$$$$:   50-block  8
+    $$$$$:   50-block  9
+    $$$$$:   50-block 10
+call   16 never executed
+    $$$$$:   50-block 11
+    $$$$$:   50-block 12
+    $$$$$:   50-block 13
+call   17 never executed
+    $$$$$:   50-block 14
+    $$$$$:   50-block 15
+        1:   51:	repository.adaugaFilm(film2);
+        1:   51-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   52:	Film film3{ "Titanic", "Epic Romance", 1997, "Leonardo DiCaprio" };
+        1:   52-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   52-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   52-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   52-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   52-block  4
+call   12 returned 1
+        1:   52-block  5
+call   13 returned 1
+        1:   52-block  6
+call   14 returned 1
+    $$$$$:   52-block  7
+call   15 never executed
+    $$$$$:   52-block  8
+    $$$$$:   52-block  9
+    $$$$$:   52-block 10
+call   16 never executed
+    $$$$$:   52-block 11
+    $$$$$:   52-block 12
+    $$$$$:   52-block 13
+call   17 never executed
+    $$$$$:   52-block 14
+    $$$$$:   52-block 15
+        1:   53:	repository.adaugaFilm(film3);
+        1:   53-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   54:	assert(repository.getAll().size() == 3);
+        1:   54-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:   54-block  1
+call    4 never executed
+        5:   55:	Film filmModificat{ "Titanic", "Romance", 2010, "Leonardo DiCaprio" };
+        1:   55-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   55-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   55-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   55-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   55-block  4
+call   12 returned 1
+        1:   55-block  5
+call   13 returned 1
+        1:   55-block  6
+call   14 returned 1
+    $$$$$:   55-block  7
+call   15 never executed
+    $$$$$:   55-block  8
+    $$$$$:   55-block  9
+    $$$$$:   55-block 10
+call   16 never executed
+    $$$$$:   55-block 11
+    $$$$$:   55-block 12
+    $$$$$:   55-block 13
+call   17 never executed
+    $$$$$:   55-block 14
+    $$$$$:   55-block 15
+        1:   56:	repository.modificaFilm(filmModificat, 2);
+        1:   56-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   56-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   56-block  2
+call    6 returned 1
+    $$$$$:   56-block  3
+call    7 never executed
+    $$$$$:   56-block  4
+       1*:   57:	assert(repository.getAll().size() == 3);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 0 (fallthrough)
+branch  3 taken 1
+    %%%%%:   57-block  0
+call    4 never executed
+       1*:   58:	assert(filmModificat.getGenFilm() == "Romance");
+        1:   58-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   58-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   58-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:   58-block  3
+call    8 never executed
+        1:   58-block  4
+call    9 returned 1
+    $$$$$:   58-block  5
+call   10 never executed
+    $$$$$:   58-block  6
+        5:   59:	Film filmModificat1{ "Titanicum", "Romance", 2010, "Leonardo DiCaprio" };
+        1:   59-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   59-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   59-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   59-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   59-block  4
+call   12 returned 1
+        1:   59-block  5
+call   13 returned 1
+        1:   59-block  6
+call   14 returned 1
+    $$$$$:   59-block  7
+call   15 never executed
+    $$$$$:   59-block  8
+    $$$$$:   59-block  9
+    $$$$$:   59-block 10
+call   16 never executed
+    $$$$$:   59-block 11
+    $$$$$:   59-block 12
+    $$$$$:   59-block 13
+call   17 never executed
+    $$$$$:   59-block 14
+    $$$$$:   59-block 15
+        -:   60:	try {
+       2*:   61:		repository.modificaFilm(filmModificat1, 2);
+        1:   61-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   61-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1 (throw)
+    %%%%%:   61-block  2
+call    6 never executed
+        1:   61-block  3
+call    7 returned 1
+        1:   61-block  4
+    #####:   62:		assert(false);
+call    0 never executed
+        -:   63:	}
+        1:   64:	catch (ExceptieRepo&) {
+        1:   64-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   64-block  1
+call    2 returned 1
+        -:   65:		assert(true);
+        1:   66:	}
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   67:}
+        1:   67-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+    $$$$$:   67-block  1
+call    6 never executed
+    $$$$$:   67-block  2
+call    7 never executed
+    $$$$$:   67-block  3
+call    8 never executed
+    $$$$$:   67-block  4
+call    9 never executed
+    $$$$$:   67-block  5
+call   10 never executed
+    $$$$$:   67-block  6
+call   11 never executed
+        -:   68:
+function _Z13testRepoCautav called 1 returned 100% blocks executed 56%
+        1:   69:void testRepoCauta() {
+        1:   70:	Repo repository;
+        1:   70-block  0
+        5:   71:	Film film{ "John Wick: Chapter 4", "Actiune", 2023, "Keanu Reeves" };
+        1:   71-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   71-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   71-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   71-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   71-block  4
+call   12 returned 1
+        1:   71-block  5
+call   13 returned 1
+        1:   71-block  6
+call   14 returned 1
+    $$$$$:   71-block  7
+call   15 never executed
+    $$$$$:   71-block  8
+    $$$$$:   71-block  9
+    $$$$$:   71-block 10
+call   16 never executed
+    $$$$$:   71-block 11
+    $$$$$:   71-block 12
+    $$$$$:   71-block 13
+call   17 never executed
+    $$$$$:   71-block 14
+    $$$$$:   71-block 15
+        1:   72:	repository.adaugaFilm(film);
+        1:   72-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   73:	auto filmCautat = repository.cautaFilm("John Wick: Chapter 4");
+        1:   73-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   73-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   73-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   73-block  3
+call    9 returned 1
+    $$$$$:   73-block  4
+call   10 never executed
+    $$$$$:   73-block  5
+    $$$$$:   73-block  6
+       1*:   74:	assert(filmCautat.getTitluFilm() == film.getTitluFilm());
+        1:   74-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   74-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   74-block  2
+call    6 returned 1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:   74-block  3
+call    9 never executed
+        1:   74-block  4
+call   10 returned 1
+call   11 returned 1
+    $$$$$:   74-block  5
+    $$$$$:   74-block  6
+call   12 never executed
+    $$$$$:   74-block  7
+       1*:   75:	assert(filmCautat.getGenFilm() == film.getGenFilm());
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   75-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   75-block  1
+call    6 returned 1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:   75-block  2
+call    9 never executed
+        1:   75-block  3
+call   10 returned 1
+call   11 returned 1
+    $$$$$:   75-block  4
+    $$$$$:   75-block  5
+call   12 never executed
+    $$$$$:   75-block  6
+       1*:   76:	assert(filmCautat.getAnAparitie() == film.getAnAparitie());
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   76-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   76-block  1
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:   76-block  2
+call    8 never executed
+       1*:   77:	assert(filmCautat.getActorPrincipal() == film.getActorPrincipal());
+        1:   77-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   77-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   77-block  2
+call    6 returned 1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:   77-block  3
+call    9 never executed
+        1:   77-block  4
+call   10 returned 1
+call   11 returned 1
+    $$$$$:   77-block  5
+    $$$$$:   77-block  6
+call   12 never executed
+    $$$$$:   77-block  7
+        -:   78:
+        -:   79:	try {
+       2*:   80:		repository.cautaFilm("La La Land");
+        1:   80-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   80-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1 (throw)
+    %%%%%:   80-block  2
+call    6 never executed
+        1:   80-block  3
+call    7 returned 1
+        1:   80-block  4
+        1:   80-block  5
+    #####:   81:		assert(false);
+    %%%%%:   81-block  0
+call    0 never executed
+        -:   82:	}
+        1:   83:	catch (ExceptieRepo&){
+        1:   83-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   83-block  1
+call    2 returned 1
+        -:   84:		assert(true);
+        1:   85:	}
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   86:}
+        1:   86-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+    $$$$$:   86-block  1
+call    3 never executed
+    $$$$$:   86-block  2
+call    4 never executed
+    $$$$$:   86-block  3
+call    5 never executed
+        -:   87:
+function _Z29testRepoCautaPozitieDupaTitluv called 1 returned 100% blocks executed 51%
+        1:   88:void testRepoCautaPozitieDupaTitlu() {
+        1:   89:	Repo repository;
+        1:   89-block  0
+        5:   90:	Film film1{ "John Wick: Chapter 4", "Actiune", 2023, "Keanu Reeves" };
+        1:   90-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   90-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   90-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   90-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   90-block  4
+call   12 returned 1
+        1:   90-block  5
+call   13 returned 1
+        1:   90-block  6
+call   14 returned 1
+    $$$$$:   90-block  7
+call   15 never executed
+    $$$$$:   90-block  8
+    $$$$$:   90-block  9
+    $$$$$:   90-block 10
+call   16 never executed
+    $$$$$:   90-block 11
+    $$$$$:   90-block 12
+    $$$$$:   90-block 13
+call   17 never executed
+    $$$$$:   90-block 14
+    $$$$$:   90-block 15
+        1:   91:	repository.adaugaFilm(film1);
+        1:   91-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   92:	Film film2{ "The Imitation Game", "Historic Drama", 2014, "Benedict Cumberbatch" };
+        1:   92-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   92-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   92-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   92-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   92-block  4
+call   12 returned 1
+        1:   92-block  5
+call   13 returned 1
+        1:   92-block  6
+call   14 returned 1
+    $$$$$:   92-block  7
+call   15 never executed
+    $$$$$:   92-block  8
+    $$$$$:   92-block  9
+    $$$$$:   92-block 10
+call   16 never executed
+    $$$$$:   92-block 11
+    $$$$$:   92-block 12
+    $$$$$:   92-block 13
+call   17 never executed
+    $$$$$:   92-block 14
+    $$$$$:   92-block 15
+        1:   93:	repository.adaugaFilm(film2);
+        1:   93-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   94:	Film film3{ "Titanic", "Epic Romance", 1997, "Leonardo DiCaprio" };
+        1:   94-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   94-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   94-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   94-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   94-block  4
+call   12 returned 1
+        1:   94-block  5
+call   13 returned 1
+        1:   94-block  6
+call   14 returned 1
+    $$$$$:   94-block  7
+call   15 never executed
+    $$$$$:   94-block  8
+    $$$$$:   94-block  9
+    $$$$$:   94-block 10
+call   16 never executed
+    $$$$$:   94-block 11
+    $$$$$:   94-block 12
+    $$$$$:   94-block 13
+call   17 never executed
+    $$$$$:   94-block 14
+    $$$$$:   94-block 15
+        1:   95:	repository.adaugaFilm(film3);
+        1:   95-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   96:	const int pozitieGasita = repository.cautaPozitieDupaTitlu("The Imitation Game");
+        1:   96-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   96-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   96-block  2
+call    6 returned 1
+    $$$$$:   96-block  3
+call    7 never executed
+    $$$$$:   96-block  4
+    $$$$$:   96-block  5
+       1*:   97:	assert(pozitieGasita == 1);
+        1:   97-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   97-block  1
+call    2 never executed
+        -:   98:	try {
+       2*:   99:		repository.cautaPozitieDupaTitlu("La La Land");
+        1:   99-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   99-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1 (throw)
+    %%%%%:   99-block  2
+call    6 never executed
+        1:   99-block  3
+call    7 returned 1
+        1:   99-block  4
+        1:   99-block  5
+    #####:  100:		assert(false);
+    %%%%%:  100-block  0
+call    0 never executed
+        -:  101:	}
+        1:  102:	catch (ExceptieRepo&) {
+        1:  102-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  102-block  1
+call    2 returned 1
+        -:  103:		assert(true);
+        1:  104:	}
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  105:}
+        1:  105-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+    $$$$$:  105-block  1
+call    4 never executed
+    $$$$$:  105-block  2
+call    5 never executed
+    $$$$$:  105-block  3
+call    6 never executed
+    $$$$$:  105-block  4
+call    7 never executed
+        -:  106:
+function _Z21ruleazaTesteValidatorv called 1 returned 100% blocks executed 49%
+        1:  107:void ruleazaTesteValidator() {
+        1:  107-block  0
+        -:  108:	Validator validator;
+        5:  109:	Film filmValid{ "John Wick: Chapter 4", "Actiune", 2023, "Keanu Reeves" };
+        1:  109-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  109-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  109-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  109-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  109-block  4
+call   12 returned 1
+        1:  109-block  5
+call   13 returned 1
+        1:  109-block  6
+call   14 returned 1
+    $$$$$:  109-block  7
+call   15 never executed
+    $$$$$:  109-block  8
+    $$$$$:  109-block  9
+    $$$$$:  109-block 10
+call   16 never executed
+    $$$$$:  109-block 11
+    $$$$$:  109-block 12
+    $$$$$:  109-block 13
+call   17 never executed
+    $$$$$:  109-block 14
+    $$$$$:  109-block 15
+        1:  110:	validator.valideaza(filmValid);
+        1:  110-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        5:  111:	Film filmInvalid{"", "", -1, ""};
+        1:  111-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  111-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  111-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  111-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  111-block  4
+call   12 returned 1
+        1:  111-block  5
+call   13 returned 1
+        1:  111-block  6
+call   14 returned 1
+    $$$$$:  111-block  7
+call   15 never executed
+    $$$$$:  111-block  8
+    $$$$$:  111-block  9
+    $$$$$:  111-block 10
+call   16 never executed
+    $$$$$:  111-block 11
+    $$$$$:  111-block 12
+    $$$$$:  111-block 13
+call   17 never executed
+    $$$$$:  111-block 14
+    $$$$$:  111-block 15
+        -:  112:	try {
+        1:  113:		validator.valideaza(filmInvalid);
+        1:  113-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+    #####:  114:		assert(false);
+    %%%%%:  114-block  0
+call    0 never executed
+        -:  115:	}
+        1:  116:	catch (const ExceptieValidare& exceptie) {
+        1:  116-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  116-block  1
+call    2 returned 1
+        1:  117:		std::stringstream sout;
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  118:		sout << exceptie;
+        1:  118-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  119:		assert(sout.str().find("invalid") >= 0);
+        1:  119-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  119-block  1
+call    3 returned 1
+call    4 returned 1
+    $$$$$:  119-block  2
+        1:  120:	}
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:  120-block  0
+call    4 never executed
+    $$$$$:  120-block  1
+call    5 never executed
+        1:  121:}
+        1:  121-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  121-block  1
+call    2 never executed
+    $$$$$:  121-block  2
+call    3 never executed
+        -:  122:
+function _Z17testServiceAdaugav called 1 returned 100% blocks executed 69%
+        1:  123:void testServiceAdauga() {
+        1:  124:	Repo repository;
+        -:  125:	Validator validator;
+        1:  126:	Service service{ repository, validator };
+        1:  126-block  0
+call    0 returned 1
+        5:  127:	service.adaugaFilm("John Wick: Chapter 4", "Actiune", 2023, "Keanu Reeves");
+        1:  127-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  127-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  127-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  127-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  127-block  4
+call   12 returned 1
+        1:  127-block  5
+call   13 returned 1
+        1:  127-block  6
+call   14 returned 1
+    $$$$$:  127-block  7
+call   15 never executed
+    $$$$$:  127-block  8
+    $$$$$:  127-block  9
+    $$$$$:  127-block 10
+call   16 never executed
+    $$$$$:  127-block 11
+    $$$$$:  127-block 12
+    $$$$$:  127-block 13
+call   17 never executed
+    $$$$$:  127-block 14
+    $$$$$:  127-block 15
+       1*:  128:	assert(service.getAll().size() == 1);
+        1:  128-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  128-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  128-block  2
+call    6 never executed
+        -:  129:	
+        -:  130:	try {
+       6*:  131:		service.adaugaFilm("", "", -1, "");
+        1:  131-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  131-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  131-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  131-block  3
+call    9 returned 1
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1 (throw)
+    %%%%%:  131-block  4
+call   12 never executed
+    %%%%%:  131-block  5
+call   13 never executed
+    %%%%%:  131-block  6
+call   14 never executed
+        1:  131-block  7
+call   15 returned 1
+        1:  131-block  8
+        1:  131-block  9
+        1:  131-block 10
+call   16 returned 1
+        1:  131-block 11
+        1:  131-block 12
+        1:  131-block 13
+call   17 returned 1
+        1:  131-block 14
+        1:  131-block 15
+    #####:  132:		assert(false);
+    %%%%%:  132-block  0
+call    0 never executed
+        -:  133:	}
+        1:  134:	catch (ExceptieValidare&) {
+        1:  134-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  134-block  1
+call    2 returned 1
+        -:  135:		assert(true);
+        1:  136:	}
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  137:
+        -:  138:	try {
+        6:  139:		service.adaugaFilm("John Wick: Chapter 4", "Aventura", -1, "Benedict Cumberbatch");
+        1:  139-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  139-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  139-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  139-block  3
+call    9 returned 1
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1 (throw)
+    $$$$$:  139-block  4
+call   12 never executed
+    $$$$$:  139-block  5
+call   13 never executed
+    $$$$$:  139-block  6
+call   14 never executed
+        1:  139-block  7
+call   15 returned 1
+        1:  139-block  8
+        1:  139-block  9
+        1:  139-block 10
+call   16 returned 1
+        1:  139-block 11
+        1:  139-block 12
+        1:  139-block 13
+call   17 returned 1
+        1:  139-block 14
+        1:  139-block 15
+    =====:  140:		assert(false);
+    $$$$$:  140-block  0
+call    0 never executed
+        -:  141:	}
+        1:  142:	catch (ExceptieValidare&) {
+        1:  142-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  142-block  1
+call    2 returned 1
+        -:  143:		assert(true);
+        1:  144:	}
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  145:}
+        1:  145-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  145-block  1
+call    2 never executed
+    $$$$$:  145-block  2
+call    3 never executed
+        -:  146:
+function _Z17testServiceStergev called 1 returned 100% blocks executed 51%
+        1:  147:void testServiceSterge() {
+        1:  148:	Repo repository;
+        -:  149:	Validator validator;
+        1:  150:	Service service{ repository, validator };
+        1:  150-block  0
+call    0 returned 1
+        6:  151:	service.adaugaFilm("John Wick: Chapter 4", "Actiune", 2023, "Keanu Reeves");
+        1:  151-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  151-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  151-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  151-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  151-block  4
+call   12 returned 1
+        1:  151-block  5
+call   13 returned 1
+        1:  151-block  6
+call   14 returned 1
+        1:  151-block  7
+    $$$$$:  151-block  8
+call   15 never executed
+    $$$$$:  151-block  9
+    $$$$$:  151-block 10
+    $$$$$:  151-block 11
+call   16 never executed
+    $$$$$:  151-block 12
+    $$$$$:  151-block 13
+    $$$$$:  151-block 14
+call   17 never executed
+    $$$$$:  151-block 15
+    $$$$$:  151-block 16
+        6:  152:	service.adaugaFilm("The Imitation Game", "Historic Drama", 2014, "Benedict Cumberbatch");
+        1:  152-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  152-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  152-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  152-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  152-block  4
+call   12 returned 1
+        1:  152-block  5
+call   13 returned 1
+        1:  152-block  6
+call   14 returned 1
+        1:  152-block  7
+    $$$$$:  152-block  8
+call   15 never executed
+    $$$$$:  152-block  9
+    $$$$$:  152-block 10
+    $$$$$:  152-block 11
+call   16 never executed
+    $$$$$:  152-block 12
+    $$$$$:  152-block 13
+    $$$$$:  152-block 14
+call   17 never executed
+    $$$$$:  152-block 15
+    $$$$$:  152-block 16
+        6:  153:	service.adaugaFilm("Titanic", "Epic Romance", 1997, "Leonardo DiCaprio");
+        1:  153-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  153-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  153-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  153-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  153-block  4
+call   12 returned 1
+        1:  153-block  5
+call   13 returned 1
+        1:  153-block  6
+call   14 returned 1
+        1:  153-block  7
+    $$$$$:  153-block  8
+call   15 never executed
+    $$$$$:  153-block  9
+    $$$$$:  153-block 10
+    $$$$$:  153-block 11
+call   16 never executed
+    $$$$$:  153-block 12
+    $$$$$:  153-block 13
+    $$$$$:  153-block 14
+call   17 never executed
+    $$$$$:  153-block 15
+    $$$$$:  153-block 16
+        6:  154:	service.adaugaFilm("Avatar 2", "Science-Fiction", 2022, "Sam Worthington");
+        1:  154-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  154-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  154-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  154-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  154-block  4
+call   12 returned 1
+        1:  154-block  5
+call   13 returned 1
+        1:  154-block  6
+call   14 returned 1
+        1:  154-block  7
+    $$$$$:  154-block  8
+call   15 never executed
+    $$$$$:  154-block  9
+    $$$$$:  154-block 10
+    $$$$$:  154-block 11
+call   16 never executed
+    $$$$$:  154-block 12
+    $$$$$:  154-block 13
+    $$$$$:  154-block 14
+call   17 never executed
+    $$$$$:  154-block 15
+    $$$$$:  154-block 16
+        5:  155:	service.adaugaFilm("The Revenant", "American Action Drama", 2016, "Leonardo DiCaprio");
+        1:  155-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  155-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  155-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  155-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  155-block  4
+call   12 returned 1
+        1:  155-block  5
+call   13 returned 1
+        1:  155-block  6
+call   14 returned 1
+    $$$$$:  155-block  7
+call   15 never executed
+    $$$$$:  155-block  8
+    $$$$$:  155-block  9
+    $$$$$:  155-block 10
+call   16 never executed
+    $$$$$:  155-block 11
+    $$$$$:  155-block 12
+    $$$$$:  155-block 13
+call   17 never executed
+    $$$$$:  155-block 14
+    $$$$$:  155-block 15
+       1*:  156:	assert(service.getAll().size() == 5);
+        1:  156-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  156-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  156-block  2
+call    6 never executed
+        1:  157:	service.stergeFilm("Titanic");
+        1:  157-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  157-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  157-block  2
+call    6 returned 1
+    $$$$$:  157-block  3
+call    7 never executed
+    $$$$$:  157-block  4
+    $$$$$:  157-block  5
+       1*:  158:	assert(service.getAll().size() == 4);
+        1:  158-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  158-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  158-block  2
+call    6 never executed
+        -:  159:
+        -:  160:	try {
+       2*:  161:		service.stergeFilm("La La Land");
+        1:  161-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  161-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1 (throw)
+    %%%%%:  161-block  2
+call    6 never executed
+        1:  161-block  3
+call    7 returned 1
+        1:  161-block  4
+        1:  161-block  5
+    #####:  162:		assert(false);
+    %%%%%:  162-block  0
+call    0 never executed
+        -:  163:	}
+        1:  164:	catch (ExceptieRepo&) {
+        1:  164-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  164-block  1
+call    2 returned 1
+        -:  165:		assert(true);
+        1:  166:	}
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  167:}
+        1:  167-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  167-block  1
+call    2 never executed
+    $$$$$:  167-block  2
+call    3 never executed
+        -:  168:
+function _Z19testServiceModificav called 1 returned 100% blocks executed 49%
+        1:  169:void testServiceModifica() {
+        1:  170:	Repo repository;
+        -:  171:	Validator validator;
+        1:  172:	Service service{ repository, validator };
+        1:  172-block  0
+call    0 returned 1
+        6:  173:	service.adaugaFilm("John Wick: Chapter 4", "Actiune", 2023, "Keanu Reeves");
+        1:  173-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  173-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  173-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  173-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  173-block  4
+call   12 returned 1
+        1:  173-block  5
+call   13 returned 1
+        1:  173-block  6
+call   14 returned 1
+        1:  173-block  7
+    $$$$$:  173-block  8
+call   15 never executed
+    $$$$$:  173-block  9
+    $$$$$:  173-block 10
+    $$$$$:  173-block 11
+call   16 never executed
+    $$$$$:  173-block 12
+    $$$$$:  173-block 13
+    $$$$$:  173-block 14
+call   17 never executed
+    $$$$$:  173-block 15
+    $$$$$:  173-block 16
+        6:  174:	service.adaugaFilm("The Imitation Game", "Historic Drama", 2014, "Benedict Cumberbatch");
+        1:  174-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  174-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  174-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  174-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  174-block  4
+call   12 returned 1
+        1:  174-block  5
+call   13 returned 1
+        1:  174-block  6
+call   14 returned 1
+        1:  174-block  7
+    $$$$$:  174-block  8
+call   15 never executed
+    $$$$$:  174-block  9
+    $$$$$:  174-block 10
+    $$$$$:  174-block 11
+call   16 never executed
+    $$$$$:  174-block 12
+    $$$$$:  174-block 13
+    $$$$$:  174-block 14
+call   17 never executed
+    $$$$$:  174-block 15
+    $$$$$:  174-block 16
+        5:  175:	service.adaugaFilm("The Revenant", "American Action Drama", 2016, "Leonardo DiCaprio");
+        1:  175-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  175-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  175-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  175-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  175-block  4
+call   12 returned 1
+        1:  175-block  5
+call   13 returned 1
+        1:  175-block  6
+call   14 returned 1
+    $$$$$:  175-block  7
+call   15 never executed
+    $$$$$:  175-block  8
+    $$$$$:  175-block  9
+    $$$$$:  175-block 10
+call   16 never executed
+    $$$$$:  175-block 11
+    $$$$$:  175-block 12
+    $$$$$:  175-block 13
+call   17 never executed
+    $$$$$:  175-block 14
+    $$$$$:  175-block 15
+       1*:  176:	assert(service.getAll().size() == 3);
+        1:  176-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  176-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  176-block  2
+call    6 never executed
+        5:  177:	service.modificaFilm("The Imitation Game", "Drama", 2007, "Arnold Scwarzenegger");
+        1:  177-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  177-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  177-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  177-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  177-block  4
+call   12 returned 1
+        1:  177-block  5
+call   13 returned 1
+        1:  177-block  6
+call   14 returned 1
+    $$$$$:  177-block  7
+call   15 never executed
+    $$$$$:  177-block  8
+    $$$$$:  177-block  9
+    $$$$$:  177-block 10
+call   16 never executed
+    $$$$$:  177-block 11
+    $$$$$:  177-block 12
+    $$$$$:  177-block 13
+call   17 never executed
+    $$$$$:  177-block 14
+    $$$$$:  177-block 15
+       1*:  178:	assert(service.getAll().size() == 3);
+        1:  178-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  178-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  178-block  2
+call    6 never executed
+        1:  179:}
+        1:  179-block  0
+call    0 returned 1
+call    1 returned 1
+    $$$$$:  179-block  1
+call    2 never executed
+    $$$$$:  179-block  2
+call    3 never executed
+        -:  180:
+function _Z16testServiceCautav called 1 returned 100% blocks executed 52%
+        1:  181:void testServiceCauta() {
+        1:  182:	Repo repository;
+        -:  183:	Validator validator;
+        1:  184:	Service service{ repository, validator };
+        1:  184-block  0
+call    0 returned 1
+        6:  185:	service.adaugaFilm("John Wick: Chapter 4", "Actiune", 2023, "Keanu Reeves");
+        1:  185-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  185-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  185-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  185-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  185-block  4
+call   12 returned 1
+        1:  185-block  5
+call   13 returned 1
+        1:  185-block  6
+call   14 returned 1
+        1:  185-block  7
+    $$$$$:  185-block  8
+call   15 never executed
+    $$$$$:  185-block  9
+    $$$$$:  185-block 10
+    $$$$$:  185-block 11
+call   16 never executed
+    $$$$$:  185-block 12
+    $$$$$:  185-block 13
+    $$$$$:  185-block 14
+call   17 never executed
+    $$$$$:  185-block 15
+    $$$$$:  185-block 16
+        6:  186:	service.adaugaFilm("The Imitation Game", "Historic Drama", 2014, "Benedict Cumberbatch");
+        1:  186-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  186-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  186-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  186-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  186-block  4
+call   12 returned 1
+        1:  186-block  5
+call   13 returned 1
+        1:  186-block  6
+call   14 returned 1
+        1:  186-block  7
+    $$$$$:  186-block  8
+call   15 never executed
+    $$$$$:  186-block  9
+    $$$$$:  186-block 10
+    $$$$$:  186-block 11
+call   16 never executed
+    $$$$$:  186-block 12
+    $$$$$:  186-block 13
+    $$$$$:  186-block 14
+call   17 never executed
+    $$$$$:  186-block 15
+    $$$$$:  186-block 16
+        5:  187:	service.adaugaFilm("The Revenant", "American Action Drama", 2016, "Leonardo DiCaprio");
+        1:  187-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  187-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  187-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  187-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  187-block  4
+call   12 returned 1
+        1:  187-block  5
+call   13 returned 1
+        1:  187-block  6
+call   14 returned 1
+    $$$$$:  187-block  7
+call   15 never executed
+    $$$$$:  187-block  8
+    $$$$$:  187-block  9
+    $$$$$:  187-block 10
+call   16 never executed
+    $$$$$:  187-block 11
+    $$$$$:  187-block 12
+    $$$$$:  187-block 13
+call   17 never executed
+    $$$$$:  187-block 14
+    $$$$$:  187-block 15
+       1*:  188:	assert(service.getAll().size() == 3);
+        1:  188-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  188-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  188-block  2
+call    6 never executed
+        1:  189:	Film film = service.cautaFilm("The Imitation Game");
+        1:  189-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  189-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  189-block  2
+call    6 returned 1
+    $$$$$:  189-block  3
+call    7 never executed
+    $$$$$:  189-block  4
+    $$$$$:  189-block  5
+       1*:  190:	assert(film.getTitluFilm() == "The Imitation Game");
+        1:  190-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  190-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  190-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:  190-block  3
+call    8 never executed
+        1:  190-block  4
+call    9 returned 1
+    $$$$$:  190-block  5
+call   10 never executed
+    $$$$$:  190-block  6
+       1*:  191:	assert(film.getGenFilm() == "Historic Drama");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  191-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  191-block  1
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:  191-block  2
+call    8 never executed
+        1:  191-block  3
+call    9 returned 1
+    $$$$$:  191-block  4
+call   10 never executed
+    $$$$$:  191-block  5
+       1*:  192:	assert(film.getAnAparitie() == 2014);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  192-block  0
+branch  3 taken 0 (fallthrough)
+branch  4 taken 1
+    %%%%%:  192-block  1
+call    5 never executed
+       1*:  193:	assert(film.getActorPrincipal() == "Benedict Cumberbatch");
+        1:  193-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  193-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  193-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:  193-block  3
+call    8 never executed
+        1:  193-block  4
+call    9 returned 1
+    $$$$$:  193-block  5
+call   10 never executed
+    $$$$$:  193-block  6
+        -:  194:
+        -:  195:	try {
+       2*:  196:		service.cautaFilm("Avatar");
+        1:  196-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  196-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1 (throw)
+    %%%%%:  196-block  2
+call    6 never executed
+call    7 never executed
+        1:  196-block  3
+call    8 returned 1
+        1:  196-block  4
+        1:  196-block  5
+        1:  196-block  6
+    #####:  197:		assert(false);
+    %%%%%:  197-block  0
+call    0 never executed
+        -:  198:	}
+        1:  199:	catch (ExceptieRepo&) {
+        1:  199-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:  199-block  1
+call    2 returned 1
+        -:  200:		assert(true);
+        1:  201:	}
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  202:}
+        1:  202-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+    $$$$$:  202-block  1
+call    3 never executed
+    $$$$$:  202-block  2
+call    4 never executed
+    $$$$$:  202-block  3
+call    5 never executed
+        -:  203:
+function _Z41testServiceFiltreazaDupaGenDupaAnAparitiev called 1 returned 100% blocks executed 50%
+        1:  204:void testServiceFiltreazaDupaGenDupaAnAparitie() {
+        1:  205:	Repo repository;
+        -:  206:	Validator validator;
+        1:  207:	Service service{ repository, validator };
+        1:  207-block  0
+call    0 returned 1
+        6:  208:	service.adaugaFilm("John Wick: Chapter 4", "Actiune", 2020, "Keanu Reeves");
+        1:  208-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  208-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  208-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  208-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  208-block  4
+call   12 returned 1
+        1:  208-block  5
+call   13 returned 1
+        1:  208-block  6
+call   14 returned 1
+        1:  208-block  7
+    $$$$$:  208-block  8
+call   15 never executed
+    $$$$$:  208-block  9
+    $$$$$:  208-block 10
+    $$$$$:  208-block 11
+call   16 never executed
+    $$$$$:  208-block 12
+    $$$$$:  208-block 13
+    $$$$$:  208-block 14
+call   17 never executed
+    $$$$$:  208-block 15
+    $$$$$:  208-block 16
+        6:  209:	service.adaugaFilm("The Imitation Game", "Drama", 2021, "Benedict Cumberbatch");
+        1:  209-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  209-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  209-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  209-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  209-block  4
+call   12 returned 1
+        1:  209-block  5
+call   13 returned 1
+        1:  209-block  6
+call   14 returned 1
+        1:  209-block  7
+    $$$$$:  209-block  8
+call   15 never executed
+    $$$$$:  209-block  9
+    $$$$$:  209-block 10
+    $$$$$:  209-block 11
+call   16 never executed
+    $$$$$:  209-block 12
+    $$$$$:  209-block 13
+    $$$$$:  209-block 14
+call   17 never executed
+    $$$$$:  209-block 15
+    $$$$$:  209-block 16
+        6:  210:	service.adaugaFilm("Titanic", "Romance", 2020, "Leonardo DiCaprio");
+        1:  210-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  210-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  210-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  210-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  210-block  4
+call   12 returned 1
+        1:  210-block  5
+call   13 returned 1
+        1:  210-block  6
+call   14 returned 1
+        1:  210-block  7
+    $$$$$:  210-block  8
+call   15 never executed
+    $$$$$:  210-block  9
+    $$$$$:  210-block 10
+    $$$$$:  210-block 11
+call   16 never executed
+    $$$$$:  210-block 12
+    $$$$$:  210-block 13
+    $$$$$:  210-block 14
+call   17 never executed
+    $$$$$:  210-block 15
+    $$$$$:  210-block 16
+        6:  211:	service.adaugaFilm("Avatar 2", "Actiune", 2020, "Sam Worthington");
+        1:  211-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  211-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  211-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  211-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  211-block  4
+call   12 returned 1
+        1:  211-block  5
+call   13 returned 1
+        1:  211-block  6
+call   14 returned 1
+        1:  211-block  7
+    $$$$$:  211-block  8
+call   15 never executed
+    $$$$$:  211-block  9
+    $$$$$:  211-block 10
+    $$$$$:  211-block 11
+call   16 never executed
+    $$$$$:  211-block 12
+    $$$$$:  211-block 13
+    $$$$$:  211-block 14
+call   17 never executed
+    $$$$$:  211-block 15
+    $$$$$:  211-block 16
+        5:  212:	service.adaugaFilm("The Revenant", "Drama", 2022, "Leonardo DiCaprio");
+        1:  212-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  212-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  212-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  212-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  212-block  4
+call   12 returned 1
+        1:  212-block  5
+call   13 returned 1
+        1:  212-block  6
+call   14 returned 1
+    $$$$$:  212-block  7
+call   15 never executed
+    $$$$$:  212-block  8
+    $$$$$:  212-block  9
+    $$$$$:  212-block 10
+call   16 never executed
+    $$$$$:  212-block 11
+    $$$$$:  212-block 12
+    $$$$$:  212-block 13
+call   17 never executed
+    $$$$$:  212-block 14
+    $$$$$:  212-block 15
+       1*:  213:	assert(service.getAll().size() == 5);
+        1:  213-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  213-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  213-block  2
+call    6 never executed
+        -:  214:
+        1:  215:	vector<Film> filmeFiltrateDupaGen = service.filtreazaDupaGen("Drama");
+        1:  215-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  215-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  215-block  2
+call    6 returned 1
+    $$$$$:  215-block  3
+call    7 never executed
+    $$$$$:  215-block  4
+    $$$$$:  215-block  5
+       1*:  216:	assert(filmeFiltrateDupaGen.size() == 2);
+        1:  216-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  216-block  1
+call    3 never executed
+       1*:  217:	assert(filmeFiltrateDupaGen[0].getTitluFilm() == "The Imitation Game");
+        1:  217-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  217-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  217-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  217-block  3
+call    9 never executed
+        1:  217-block  4
+call   10 returned 1
+    $$$$$:  217-block  5
+call   11 never executed
+    $$$$$:  217-block  6
+       1*:  218:	assert(filmeFiltrateDupaGen[1].getTitluFilm() == "The Revenant");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  218-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  218-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  218-block  2
+call    9 never executed
+        1:  218-block  3
+call   10 returned 1
+    $$$$$:  218-block  4
+call   11 never executed
+    $$$$$:  218-block  5
+        -:  219:
+        1:  220:	vector<Film> filmeFiltrateDupaAnAparitie = service.filtreazaDupaAnAparitie(2020);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  221:	assert(filmeFiltrateDupaAnAparitie.size() == 3);
+        1:  221-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  221-block  1
+call    3 never executed
+       1*:  222:	assert(filmeFiltrateDupaAnAparitie[0].getTitluFilm() == "John Wick: Chapter 4");
+        1:  222-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  222-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  222-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  222-block  3
+call    9 never executed
+        1:  222-block  4
+call   10 returned 1
+    $$$$$:  222-block  5
+call   11 never executed
+    $$$$$:  222-block  6
+       1*:  223:	assert(filmeFiltrateDupaAnAparitie[1].getTitluFilm() == "Titanic");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  223-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  223-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  223-block  2
+call    9 never executed
+        1:  223-block  3
+call   10 returned 1
+    $$$$$:  223-block  4
+call   11 never executed
+    $$$$$:  223-block  5
+       1*:  224:	assert(filmeFiltrateDupaAnAparitie[2].getTitluFilm() == "Avatar 2");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  224-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  224-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  224-block  2
+call    9 never executed
+        1:  224-block  3
+call   10 returned 1
+    $$$$$:  224-block  4
+call   11 never executed
+    $$$$$:  224-block  5
+        1:  225:}
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+    $$$$$:  225-block  0
+call    4 never executed
+    $$$$$:  225-block  1
+call    5 never executed
+    $$$$$:  225-block  2
+call    6 never executed
+    $$$$$:  225-block  3
+call    7 never executed
+        -:  226:
+function _Z18testServiceSortariv called 1 returned 100% blocks executed 54%
+        1:  227:void testServiceSortari() {
+        1:  228:	Repo repository;
+        -:  229:	Validator validator;
+        1:  230:	Service service{ repository, validator };
+        1:  230-block  0
+call    0 returned 1
+        6:  231:	service.adaugaFilm("John Wick: Chapter 4", "Actiune", 2020, "Keanu Reeves");
+        1:  231-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  231-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  231-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  231-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  231-block  4
+call   12 returned 1
+        1:  231-block  5
+call   13 returned 1
+        1:  231-block  6
+call   14 returned 1
+        1:  231-block  7
+    $$$$$:  231-block  8
+call   15 never executed
+    $$$$$:  231-block  9
+    $$$$$:  231-block 10
+    $$$$$:  231-block 11
+call   16 never executed
+    $$$$$:  231-block 12
+    $$$$$:  231-block 13
+    $$$$$:  231-block 14
+call   17 never executed
+    $$$$$:  231-block 15
+    $$$$$:  231-block 16
+        6:  232:	service.adaugaFilm("The Imitation Game", "Drama", 2021, "Benedict Cumberbatch");
+        1:  232-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  232-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  232-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  232-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  232-block  4
+call   12 returned 1
+        1:  232-block  5
+call   13 returned 1
+        1:  232-block  6
+call   14 returned 1
+        1:  232-block  7
+    $$$$$:  232-block  8
+call   15 never executed
+    $$$$$:  232-block  9
+    $$$$$:  232-block 10
+    $$$$$:  232-block 11
+call   16 never executed
+    $$$$$:  232-block 12
+    $$$$$:  232-block 13
+    $$$$$:  232-block 14
+call   17 never executed
+    $$$$$:  232-block 15
+    $$$$$:  232-block 16
+        6:  233:	service.adaugaFilm("Titanic", "Romance", 2020, "Leonardo DiCaprio");
+        1:  233-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  233-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  233-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  233-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  233-block  4
+call   12 returned 1
+        1:  233-block  5
+call   13 returned 1
+        1:  233-block  6
+call   14 returned 1
+        1:  233-block  7
+    $$$$$:  233-block  8
+call   15 never executed
+    $$$$$:  233-block  9
+    $$$$$:  233-block 10
+    $$$$$:  233-block 11
+call   16 never executed
+    $$$$$:  233-block 12
+    $$$$$:  233-block 13
+    $$$$$:  233-block 14
+call   17 never executed
+    $$$$$:  233-block 15
+    $$$$$:  233-block 16
+        6:  234:	service.adaugaFilm("Avatar 2", "Actiune", 2020, "Sam Worthington");
+        1:  234-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  234-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  234-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  234-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  234-block  4
+call   12 returned 1
+        1:  234-block  5
+call   13 returned 1
+        1:  234-block  6
+call   14 returned 1
+        1:  234-block  7
+    $$$$$:  234-block  8
+call   15 never executed
+    $$$$$:  234-block  9
+    $$$$$:  234-block 10
+    $$$$$:  234-block 11
+call   16 never executed
+    $$$$$:  234-block 12
+    $$$$$:  234-block 13
+    $$$$$:  234-block 14
+call   17 never executed
+    $$$$$:  234-block 15
+    $$$$$:  234-block 16
+        5:  235:	service.adaugaFilm("The Revenant", "Drama", 2022, "Leonardo DiCaprio");
+        1:  235-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  235-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:  235-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:  235-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:  235-block  4
+call   12 returned 1
+        1:  235-block  5
+call   13 returned 1
+        1:  235-block  6
+call   14 returned 1
+    $$$$$:  235-block  7
+call   15 never executed
+    $$$$$:  235-block  8
+    $$$$$:  235-block  9
+    $$$$$:  235-block 10
+call   16 never executed
+    $$$$$:  235-block 11
+    $$$$$:  235-block 12
+    $$$$$:  235-block 13
+call   17 never executed
+    $$$$$:  235-block 14
+    $$$$$:  235-block 15
+       1*:  236:	assert(service.getAll().size() == 5);
+        1:  236-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:  236-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  236-block  2
+call    6 never executed
+        -:  237:
+        1:  238:	vector<Film> filmeFiltrateDupaTitluCrescator = service.sorteaza(1, 1);
+        1:  238-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  239:	assert(filmeFiltrateDupaTitluCrescator[0].getTitluFilm() == "Avatar 2");
+        1:  239-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  239-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  239-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  239-block  3
+call    9 never executed
+        1:  239-block  4
+call   10 returned 1
+    $$$$$:  239-block  5
+call   11 never executed
+    $$$$$:  239-block  6
+       1*:  240:	assert(filmeFiltrateDupaTitluCrescator[1].getTitluFilm() == "John Wick: Chapter 4");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  240-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  240-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  240-block  2
+call    9 never executed
+        1:  240-block  3
+call   10 returned 1
+    $$$$$:  240-block  4
+call   11 never executed
+    $$$$$:  240-block  5
+       1*:  241:	assert(filmeFiltrateDupaTitluCrescator[2].getTitluFilm() == "The Imitation Game");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  241-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  241-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  241-block  2
+call    9 never executed
+        1:  241-block  3
+call   10 returned 1
+    $$$$$:  241-block  4
+call   11 never executed
+    $$$$$:  241-block  5
+       1*:  242:	assert(filmeFiltrateDupaTitluCrescator[3].getTitluFilm() == "The Revenant");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  242-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  242-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  242-block  2
+call    9 never executed
+        1:  242-block  3
+call   10 returned 1
+    $$$$$:  242-block  4
+call   11 never executed
+    $$$$$:  242-block  5
+       1*:  243:	assert(filmeFiltrateDupaTitluCrescator[4].getTitluFilm() == "Titanic");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  243-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  243-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  243-block  2
+call    9 never executed
+        1:  243-block  3
+call   10 returned 1
+    $$$$$:  243-block  4
+call   11 never executed
+    $$$$$:  243-block  5
+        -:  244:
+        1:  245:	vector<Film> filmeFiltrateDupaTitluDescrescator = service.sorteaza(1, 2);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  246:	assert(filmeFiltrateDupaTitluDescrescator[4].getTitluFilm() == "Avatar 2");
+        1:  246-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  246-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  246-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  246-block  3
+call    9 never executed
+        1:  246-block  4
+call   10 returned 1
+    $$$$$:  246-block  5
+call   11 never executed
+    $$$$$:  246-block  6
+       1*:  247:	assert(filmeFiltrateDupaTitluDescrescator[3].getTitluFilm() == "John Wick: Chapter 4");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  247-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  247-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  247-block  2
+call    9 never executed
+        1:  247-block  3
+call   10 returned 1
+    $$$$$:  247-block  4
+call   11 never executed
+    $$$$$:  247-block  5
+       1*:  248:	assert(filmeFiltrateDupaTitluDescrescator[2].getTitluFilm() == "The Imitation Game");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  248-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  248-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  248-block  2
+call    9 never executed
+        1:  248-block  3
+call   10 returned 1
+    $$$$$:  248-block  4
+call   11 never executed
+    $$$$$:  248-block  5
+       1*:  249:	assert(filmeFiltrateDupaTitluDescrescator[1].getTitluFilm() == "The Revenant");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  249-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  249-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  249-block  2
+call    9 never executed
+        1:  249-block  3
+call   10 returned 1
+    $$$$$:  249-block  4
+call   11 never executed
+    $$$$$:  249-block  5
+       1*:  250:	assert(filmeFiltrateDupaTitluDescrescator[0].getTitluFilm() == "Titanic");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  250-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  250-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  250-block  2
+call    9 never executed
+        1:  250-block  3
+call   10 returned 1
+    $$$$$:  250-block  4
+call   11 never executed
+    $$$$$:  250-block  5
+        -:  251:
+        1:  252:	vector<Film> filmeFiltrateDupaActorCrescator = service.sorteaza(2, 1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  253:	assert(filmeFiltrateDupaActorCrescator[0].getActorPrincipal() == "Benedict Cumberbatch");
+        1:  253-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  253-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  253-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  253-block  3
+call    9 never executed
+        1:  253-block  4
+call   10 returned 1
+    $$$$$:  253-block  5
+call   11 never executed
+    $$$$$:  253-block  6
+       1*:  254:	assert(filmeFiltrateDupaActorCrescator[1].getActorPrincipal() == "Keanu Reeves");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  254-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  254-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  254-block  2
+call    9 never executed
+        1:  254-block  3
+call   10 returned 1
+    $$$$$:  254-block  4
+call   11 never executed
+    $$$$$:  254-block  5
+       1*:  255:	assert(filmeFiltrateDupaActorCrescator[2].getActorPrincipal() == "Leonardo DiCaprio");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  255-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  255-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  255-block  2
+call    9 never executed
+        1:  255-block  3
+call   10 returned 1
+    $$$$$:  255-block  4
+call   11 never executed
+    $$$$$:  255-block  5
+       1*:  256:	assert(filmeFiltrateDupaActorCrescator[3].getActorPrincipal() == "Leonardo DiCaprio");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  256-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  256-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  256-block  2
+call    9 never executed
+        1:  256-block  3
+call   10 returned 1
+    $$$$$:  256-block  4
+call   11 never executed
+    $$$$$:  256-block  5
+       1*:  257:	assert(filmeFiltrateDupaActorCrescator[4].getActorPrincipal() == "Sam Worthington");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  257-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  257-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  257-block  2
+call    9 never executed
+        1:  257-block  3
+call   10 returned 1
+    $$$$$:  257-block  4
+call   11 never executed
+    $$$$$:  257-block  5
+        -:  258:
+        1:  259:	vector<Film> filmeFiltrateDupaActorDescrescator = service.sorteaza(2, 2);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  260:	assert(filmeFiltrateDupaActorDescrescator[4].getActorPrincipal() == "Benedict Cumberbatch");
+        1:  260-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  260-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  260-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  260-block  3
+call    9 never executed
+        1:  260-block  4
+call   10 returned 1
+    $$$$$:  260-block  5
+call   11 never executed
+    $$$$$:  260-block  6
+       1*:  261:	assert(filmeFiltrateDupaActorDescrescator[3].getActorPrincipal() == "Keanu Reeves");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  261-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  261-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  261-block  2
+call    9 never executed
+        1:  261-block  3
+call   10 returned 1
+    $$$$$:  261-block  4
+call   11 never executed
+    $$$$$:  261-block  5
+       1*:  262:	assert(filmeFiltrateDupaActorDescrescator[2].getActorPrincipal() == "Leonardo DiCaprio");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  262-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  262-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  262-block  2
+call    9 never executed
+        1:  262-block  3
+call   10 returned 1
+    $$$$$:  262-block  4
+call   11 never executed
+    $$$$$:  262-block  5
+       1*:  263:	assert(filmeFiltrateDupaActorDescrescator[1].getActorPrincipal() == "Leonardo DiCaprio");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  263-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  263-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  263-block  2
+call    9 never executed
+        1:  263-block  3
+call   10 returned 1
+    $$$$$:  263-block  4
+call   11 never executed
+    $$$$$:  263-block  5
+       1*:  264:	assert(filmeFiltrateDupaActorDescrescator[0].getActorPrincipal() == "Sam Worthington");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  264-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  264-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  264-block  2
+call    9 never executed
+        1:  264-block  3
+call   10 returned 1
+    $$$$$:  264-block  4
+call   11 never executed
+    $$$$$:  264-block  5
+        -:  265:
+        1:  266:	vector<Film> filmeFiltrateDupaAnSiGenCrescator = service.sorteaza(3, 1);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  267:	assert(filmeFiltrateDupaAnSiGenCrescator[0].getGenFilm() == "Actiune");
+        1:  267-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  267-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  267-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  267-block  3
+call    9 never executed
+        1:  267-block  4
+call   10 returned 1
+    $$$$$:  267-block  5
+call   11 never executed
+    $$$$$:  267-block  6
+       1*:  268:	assert(filmeFiltrateDupaAnSiGenCrescator[1].getGenFilm() == "Actiune");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  268-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  268-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  268-block  2
+call    9 never executed
+        1:  268-block  3
+call   10 returned 1
+    $$$$$:  268-block  4
+call   11 never executed
+    $$$$$:  268-block  5
+       1*:  269:	assert(filmeFiltrateDupaAnSiGenCrescator[2].getGenFilm() == "Romance");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  269-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  269-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  269-block  2
+call    9 never executed
+        1:  269-block  3
+call   10 returned 1
+    $$$$$:  269-block  4
+call   11 never executed
+    $$$$$:  269-block  5
+       1*:  270:	assert(filmeFiltrateDupaAnSiGenCrescator[3].getGenFilm() == "Drama");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  270-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  270-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  270-block  2
+call    9 never executed
+        1:  270-block  3
+call   10 returned 1
+    $$$$$:  270-block  4
+call   11 never executed
+    $$$$$:  270-block  5
+       1*:  271:	assert(filmeFiltrateDupaAnSiGenCrescator[4].getGenFilm() == "Drama");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  271-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  271-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  271-block  2
+call    9 never executed
+        1:  271-block  3
+call   10 returned 1
+    $$$$$:  271-block  4
+call   11 never executed
+    $$$$$:  271-block  5
+        -:  272:
+        1:  273:	vector<Film> filmeFiltrateDupaAnSiGenDescrescator = service.sorteaza(3, 2);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:  274:	assert(filmeFiltrateDupaAnSiGenDescrescator[4].getGenFilm() == "Actiune");
+        1:  274-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  274-block  1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  274-block  2
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  274-block  3
+call    9 never executed
+        1:  274-block  4
+call   10 returned 1
+    $$$$$:  274-block  5
+call   11 never executed
+    $$$$$:  274-block  6
+       1*:  275:	assert(filmeFiltrateDupaAnSiGenDescrescator[3].getGenFilm() == "Actiune");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  275-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  275-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  275-block  2
+call    9 never executed
+        1:  275-block  3
+call   10 returned 1
+    $$$$$:  275-block  4
+call   11 never executed
+    $$$$$:  275-block  5
+       1*:  276:	assert(filmeFiltrateDupaAnSiGenDescrescator[2].getGenFilm() == "Romance");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  276-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  276-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  276-block  2
+call    9 never executed
+        1:  276-block  3
+call   10 returned 1
+    $$$$$:  276-block  4
+call   11 never executed
+    $$$$$:  276-block  5
+       1*:  277:	assert(filmeFiltrateDupaAnSiGenDescrescator[1].getGenFilm() == "Drama");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  277-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  277-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  277-block  2
+call    9 never executed
+        1:  277-block  3
+call   10 returned 1
+    $$$$$:  277-block  4
+call   11 never executed
+    $$$$$:  277-block  5
+       1*:  278:	assert(filmeFiltrateDupaAnSiGenDescrescator[0].getGenFilm() == "Drama");
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  278-block  0
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:  278-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:  278-block  2
+call    9 never executed
+        1:  278-block  3
+call   10 returned 1
+    $$$$$:  278-block  4
+call   11 never executed
+    $$$$$:  278-block  5
+        -:  279:
+       1*:  280:	assert(filmeFiltrateDupaAnSiGenCrescator[0].getAnAparitie() == 2020);
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  280-block  0
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  280-block  1
+call    6 never executed
+       1*:  281:	assert(filmeFiltrateDupaAnSiGenCrescator[1].getAnAparitie() == 2020);
+        1:  281-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  281-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  281-block  2
+call    6 never executed
+       1*:  282:	assert(filmeFiltrateDupaAnSiGenCrescator[2].getAnAparitie() == 2020);
+        1:  282-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  282-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  282-block  2
+call    6 never executed
+       1*:  283:	assert(filmeFiltrateDupaAnSiGenCrescator[3].getAnAparitie() == 2021);
+        1:  283-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  283-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  283-block  2
+call    6 never executed
+       1*:  284:	assert(filmeFiltrateDupaAnSiGenCrescator[4].getAnAparitie() == 2022);
+        1:  284-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  284-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  284-block  2
+call    6 never executed
+        -:  285:
+       1*:  286:	assert(filmeFiltrateDupaAnSiGenDescrescator[4].getAnAparitie() == 2020);
+        1:  286-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  286-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  286-block  2
+call    6 never executed
+       1*:  287:	assert(filmeFiltrateDupaAnSiGenDescrescator[3].getAnAparitie() == 2020);
+        1:  287-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  287-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  287-block  2
+call    6 never executed
+       1*:  288:	assert(filmeFiltrateDupaAnSiGenDescrescator[2].getAnAparitie() == 2020);
+        1:  288-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  288-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  288-block  2
+call    6 never executed
+       1*:  289:	assert(filmeFiltrateDupaAnSiGenDescrescator[1].getAnAparitie() == 2021);
+        1:  289-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  289-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  289-block  2
+call    6 never executed
+       1*:  290:	assert(filmeFiltrateDupaAnSiGenDescrescator[0].getAnAparitie() == 2022);
+        1:  290-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:  290-block  1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:  290-block  2
+call    6 never executed
+        1:  291:}
+        1:  291-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+call    5 returned 1
+call    6 returned 1
+call    7 returned 1
+    $$$$$:  291-block  1
+call    8 never executed
+    $$$$$:  291-block  2
+call    9 never executed
+    $$$$$:  291-block  3
+call   10 never executed
+    $$$$$:  291-block  4
+call   11 never executed
+    $$$$$:  291-block  5
+call   12 never executed
+    $$$$$:  291-block  6
+call   13 never executed
+    $$$$$:  291-block  7
+call   14 never executed
+    $$$$$:  291-block  8
+call   15 never executed
+        -:  292:
+function _Z16ruleazaTesteRepov called 1 returned 100% blocks executed 100%
+        1:  293:void ruleazaTesteRepo() {
+        1:  294:	testRepoAdauga();
+        1:  294-block  0
+call    0 returned 1
+        1:  295:	testRepoSterge();
+call    0 returned 1
+        1:  296:	testRepoModifica();
+call    0 returned 1
+        1:  297:	testRepoCauta();
+call    0 returned 1
+        1:  298:	testRepoCautaPozitieDupaTitlu();
+call    0 returned 1
+        1:  299:	std::cout<<"Testele repo au rulat cu succes!\n";
+call    0 returned 1
+        1:  300:}
+        -:  301:
+function _Z19ruleazaTesteServicev called 1 returned 100% blocks executed 100%
+        1:  302:void ruleazaTesteService() {
+        1:  303:	testServiceAdauga();
+        1:  303-block  0
+call    0 returned 1
+        1:  304:	testServiceSterge();
+call    0 returned 1
+        1:  305:	testServiceModifica();
+call    0 returned 1
+        1:  306:	testServiceCauta();
+call    0 returned 1
+        1:  307:	testServiceFiltreazaDupaGenDupaAnAparitie();
+call    0 returned 1
+        1:  308:	testServiceSortari();
+call    0 returned 1
+        1:  309:	std::cout<<"Testele service au rulat cu succes!\n";
+call    0 returned 1
+        1:  310:}
+        -:  311:
+function _Z19ruleazaToateTestelev called 1 returned 100% blocks executed 100%
+        1:  312:void ruleazaToateTestele() {
+        1:  313:	ruleazaTesteRepo();
+        1:  313-block  0
+call    0 returned 1
+        1:  314:	ruleazaTesteValidator();
+call    0 returned 1
+        1:  315:	ruleazaTesteService();
+call    0 returned 1
+        1:  316:	std::cout<<"Toate testele au rulat cu succes!\n";
+call    0 returned 1
+        1:  317:}

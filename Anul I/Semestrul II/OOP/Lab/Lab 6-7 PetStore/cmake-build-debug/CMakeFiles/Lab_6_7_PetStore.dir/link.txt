@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wall -Wextra -g CMakeFiles/Lab_6_7_PetStore.dir/main.cpp.o CMakeFiles/Lab_6_7_PetStore.dir/Pet.cpp.o CMakeFiles/Lab_6_7_PetStore.dir/VectDinNewDelete.cpp.o CMakeFiles/Lab_6_7_PetStore.dir/VectDinSmartPointer.cpp.o -o Lab_6_7_PetStore 

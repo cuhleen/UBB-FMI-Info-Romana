@@ -1,0 +1,611 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/Interface.cpp
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/cmake-build-debug-coverage/CMakeFiles/Lab6.dir/Interface.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/cmake-build-debug-coverage/CMakeFiles/Lab6.dir/Interface.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "Interface.h"
+        -:    2:#include <iostream>
+        -:    3:using std::cin;
+        -:    4:using std::cout;
+        -:    5:using std::getline;
+        -:    6:
+function _ZN9Interface3RunEv called 1 returned 100% blocks executed 6%
+        1:    7:void Interface::Run() {
+        1:    7-block  0
+        -:    8:    while (true) {
+        1:    9:        int command = 0;
+        1:   10:        cout<<"\n\n        Cinema\n";
+        1:   10-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   11:        cout << "1. Add film\n";
+        1:   11-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   12:        cout << "2. Show all films\n";
+        1:   12-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   13:        cout << "3. Search film\n";
+        1:   13-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   14:        cout << "4. Delete film\n";
+        1:   14-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   15:        cout << "5. Update film\n";
+        1:   15-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   16:        cout << "0. Exit\n";
+        1:   16-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   17:        cout << "Insert command: ";
+        1:   17-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   18:        cin >> command;
+        1:   18-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   19:        cin.ignore();
+        1:   19-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   20:        if (command == 0) {
+        1:   20-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:   21:            break;
+        -:   22:        }
+    #####:   23:        if (command == 1) {
+    %%%%%:   23-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   24:            string name, genre, actor;
+    %%%%%:   24-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   25:            int year;
+    #####:   26:            cout << "Title: ";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   27:            getline(cin, name);
+    %%%%%:   27-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   28:            cout << "Genre: ";
+    %%%%%:   28-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   29:            getline(cin, genre);
+    %%%%%:   29-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   30:            cout << "Actor: ";
+    %%%%%:   30-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   31:            getline(cin, actor);
+    %%%%%:   31-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   32:            cout << "Year: ";
+    %%%%%:   32-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   33:            cin >> year;
+    %%%%%:   33-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:   34:            try {
+    #####:   35:                service.addFilm(name, genre, actor, year);
+    %%%%%:   35-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:   36:            }
+    =====:   37:            catch (RepoException &e) {
+    $$$$$:   37-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   37-block  1
+call    3 never executed
+    =====:   38:                cout << e.getMessage() << "\n";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:   38-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    $$$$$:   38-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    $$$$$:   38-block  2
+call    9 never executed
+    $$$$$:   38-block  3
+call   10 never executed
+    $$$$$:   38-block  4
+    =====:   39:            }
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:   39-block  0
+call    3 never executed
+    =====:   40:            catch (ValidationException &e) {
+    $$$$$:   40-block  0
+call    0 never executed
+    =====:   41:                cout << e.getMessage() << "\n";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:   41-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    $$$$$:   41-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    $$$$$:   41-block  2
+call    9 never executed
+    $$$$$:   41-block  3
+call   10 never executed
+    $$$$$:   41-block  4
+    =====:   42:            }
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:   42-block  0
+call    3 never executed
+    #####:   43:        }
+    %%%%%:   43-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    $$$$$:   43-block  1
+call    3 never executed
+    $$$$$:   43-block  2
+call    4 never executed
+    $$$$$:   43-block  3
+call    5 never executed
+    #####:   44:        else if (command == 2) {
+    %%%%%:   44-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   45:            auto films = service.getAll();
+    %%%%%:   45-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   46:            for (const auto& film : films) {
+    %%%%%:   46-block  0
+call    0 never executed
+call    1 never executed
+    %%%%%:   46-block  1
+call    2 never executed
+    %%%%%:   46-block  2
+call    3 never executed
+branch  4 never executed
+branch  5 never executed (fallthrough)
+    #####:   47:                cout << film.getTitle() << " - " << film.getGenre() << " - " << film.getActor() << " - " << film.getYear() << "\n";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   47-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   47-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:   47-block  2
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:   47-block  3
+call   12 never executed
+branch 13 never executed (fallthrough)
+branch 14 never executed (throw)
+    %%%%%:   47-block  4
+call   15 never executed
+branch 16 never executed (fallthrough)
+branch 17 never executed (throw)
+    %%%%%:   47-block  5
+call   18 never executed
+branch 19 never executed (fallthrough)
+branch 20 never executed (throw)
+    %%%%%:   47-block  6
+call   21 never executed
+branch 22 never executed (fallthrough)
+branch 23 never executed (throw)
+    %%%%%:   47-block  7
+call   24 never executed
+branch 25 never executed (fallthrough)
+branch 26 never executed (throw)
+    %%%%%:   47-block  8
+call   27 never executed
+branch 28 never executed (fallthrough)
+branch 29 never executed (throw)
+    %%%%%:   47-block  9
+call   30 never executed
+branch 31 never executed (fallthrough)
+branch 32 never executed (throw)
+    %%%%%:   47-block 10
+call   33 never executed
+branch 34 never executed (fallthrough)
+branch 35 never executed (throw)
+    %%%%%:   47-block 11
+call   36 never executed
+call   37 never executed
+call   38 never executed
+call   39 never executed
+    $$$$$:   47-block 12
+call   40 never executed
+    $$$$$:   47-block 13
+    $$$$$:   47-block 14
+call   41 never executed
+    $$$$$:   47-block 15
+    $$$$$:   47-block 16
+call   42 never executed
+    $$$$$:   47-block 17
+        -:   48:            }
+    #####:   49:        }
+    %%%%%:   49-block  0
+call    0 never executed
+    $$$$$:   49-block  1
+call    1 never executed
+    #####:   50:        else if (command == 3) {
+    %%%%%:   50-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   51:            string name;
+    %%%%%:   51-block  0
+call    0 never executed
+    #####:   52:            cout << "Title: ";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   53:            getline(cin, name);
+    %%%%%:   53-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   54:            int position = service.searchFilm(name);
+    %%%%%:   54-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   55:            if (position != -1) {
+    %%%%%:   55-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   56:                auto films = service.getAll();
+    %%%%%:   56-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   57:                cout<< films[position].getTitle() << " - " << films[position].getGenre() << " - " << films[position].getActor() << " - " << films[position].getYear() << " se află la pozitia " << position << "\n";
+    %%%%%:   57-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    %%%%%:   57-block  1
+call    4 never executed
+branch  5 never executed (fallthrough)
+branch  6 never executed (throw)
+    %%%%%:   57-block  2
+call    7 never executed
+branch  8 never executed (fallthrough)
+branch  9 never executed (throw)
+    %%%%%:   57-block  3
+call   10 never executed
+call   11 never executed
+branch 12 never executed (fallthrough)
+branch 13 never executed (throw)
+    %%%%%:   57-block  4
+call   14 never executed
+branch 15 never executed (fallthrough)
+branch 16 never executed (throw)
+    %%%%%:   57-block  5
+call   17 never executed
+branch 18 never executed (fallthrough)
+branch 19 never executed (throw)
+    %%%%%:   57-block  6
+call   20 never executed
+call   21 never executed
+branch 22 never executed (fallthrough)
+branch 23 never executed (throw)
+    %%%%%:   57-block  7
+call   24 never executed
+branch 25 never executed (fallthrough)
+branch 26 never executed (throw)
+    %%%%%:   57-block  8
+call   27 never executed
+branch 28 never executed (fallthrough)
+branch 29 never executed (throw)
+    %%%%%:   57-block  9
+call   30 never executed
+call   31 never executed
+branch 32 never executed (fallthrough)
+branch 33 never executed (throw)
+    %%%%%:   57-block 10
+call   34 never executed
+branch 35 never executed (fallthrough)
+branch 36 never executed (throw)
+    %%%%%:   57-block 11
+call   37 never executed
+branch 38 never executed (fallthrough)
+branch 39 never executed (throw)
+    %%%%%:   57-block 12
+call   40 never executed
+branch 41 never executed (fallthrough)
+branch 42 never executed (throw)
+    %%%%%:   57-block 13
+call   43 never executed
+branch 44 never executed (fallthrough)
+branch 45 never executed (throw)
+    %%%%%:   57-block 14
+call   46 never executed
+call   47 never executed
+call   48 never executed
+    $$$$$:   57-block 15
+call   49 never executed
+    $$$$$:   57-block 16
+    $$$$$:   57-block 17
+call   50 never executed
+    $$$$$:   57-block 18
+    $$$$$:   57-block 19
+call   51 never executed
+    $$$$$:   57-block 20
+    #####:   58:            }
+call    0 never executed
+    $$$$$:   58-block  0
+call    1 never executed
+        -:   59:            else {
+    #####:   60:                cout << "The film was not found\n";
+    %%%%%:   60-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:   61:            }
+    #####:   62:        }
+    %%%%%:   62-block  0
+call    0 never executed
+    $$$$$:   62-block  1
+call    1 never executed
+    #####:   63:        else if (command == 4) {
+    %%%%%:   63-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   64:            string name;
+    %%%%%:   64-block  0
+call    0 never executed
+    #####:   65:            cout << "Title: ";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   66:            getline(cin, name);
+    %%%%%:   66-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:   67:            try {
+    #####:   68:                service.removeFilm(name);
+    %%%%%:   68-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   69:                cout << "The film has been deleted\n";
+    %%%%%:   69-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:   70:            }
+    =====:   71:            catch (RepoException &e) {
+    $$$$$:   71-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    $$$$$:   71-block  1
+call    2 never executed
+    =====:   72:                cout << e.getMessage() << "\n";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:   72-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    $$$$$:   72-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    $$$$$:   72-block  2
+call    9 never executed
+    $$$$$:   72-block  3
+call   10 never executed
+    $$$$$:   72-block  4
+    =====:   73:            }
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:   73-block  0
+call    3 never executed
+    #####:   74:        }
+    %%%%%:   74-block  0
+call    0 never executed
+    $$$$$:   74-block  1
+call    1 never executed
+    #####:   75:        else if (command == 5) {
+    %%%%%:   75-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   76:            string name;
+    %%%%%:   76-block  0
+call    0 never executed
+    #####:   77:            cout << "Title: ";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   78:            getline(cin, name);
+    %%%%%:   78-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   79:            string newName, newType, newManufacturer;
+    %%%%%:   79-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   80:            int newPrice;
+    #####:   81:            cout << "New title: ";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   82:            getline(cin, newName);
+    %%%%%:   82-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   83:            cout << "New genre: ";
+    %%%%%:   83-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   84:            getline(cin, newType);
+    %%%%%:   84-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   85:            cout << "New actor: ";
+    %%%%%:   85-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   86:            getline(cin, newManufacturer);
+    %%%%%:   86-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   87:            cout << "New year: ";
+    %%%%%:   87-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   88:            cin >> newPrice;
+    %%%%%:   88-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:   89:            try {
+    #####:   90:                Film newProduct(newName, newType, newManufacturer, newPrice);
+    %%%%%:   90-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:   90-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:   90-block  2
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:   90-block  3
+call    9 never executed
+call   10 never executed
+call   11 never executed
+call   12 never executed
+    $$$$$:   90-block  4
+    $$$$$:   90-block  5
+call   13 never executed
+    $$$$$:   90-block  6
+    $$$$$:   90-block  7
+call   14 never executed
+    $$$$$:   90-block  8
+    #####:   91:                service.updateFilm(name, newProduct);
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   92:                cout << "The film has been updated\n";
+    %%%%%:   92-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   93:            }
+    %%%%%:   93-block  0
+call    0 never executed
+    $$$$$:   93-block  1
+call    1 never executed
+    =====:   94:            catch (RepoException &e) {
+    $$$$$:   94-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    $$$$$:   94-block  1
+call    2 never executed
+    =====:   95:                cout << e.getMessage() << "\n";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:   95-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    $$$$$:   95-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    $$$$$:   95-block  2
+call    9 never executed
+    $$$$$:   95-block  3
+call   10 never executed
+    $$$$$:   95-block  4
+    =====:   96:            }
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    $$$$$:   96-block  0
+call    3 never executed
+    #####:   97:        }
+    %%%%%:   97-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+    $$$$$:   97-block  1
+call    4 never executed
+    $$$$$:   97-block  2
+call    5 never executed
+    $$$$$:   97-block  3
+call    6 never executed
+    $$$$$:   97-block  4
+call    7 never executed
+    #####:   98:    }
+    %%%%%:   98-block  0
+        1:   99:}
+        1:   99-block  0

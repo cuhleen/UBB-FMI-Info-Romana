@@ -1,0 +1,32 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/Film.cpp
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/cmake-build-debug-coverage/CMakeFiles/Lab6.dir/Film.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/cmake-build-debug-coverage/CMakeFiles/Lab6.dir/Film.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "Film.h"
+        -:    2:
+function _ZNK4Film8getTitleB5cxx11Ev called 94 returned 100% blocks executed 100%
+       94:    3:string Film::getTitle() const {
+       94:    4:    return title;
+       94:    4-block  0
+call    0 returned 94
+        -:    5:}
+        -:    6:
+function _ZNK4Film8getGenreB5cxx11Ev called 16 returned 100% blocks executed 100%
+       16:    7:string Film::getGenre() const {
+       16:    8:    return genre;
+       16:    8-block  0
+call    0 returned 16
+        -:    9:}
+        -:   10:
+function _ZNK4Film8getActorB5cxx11Ev called 16 returned 100% blocks executed 100%
+       16:   11:string Film::getActor() const {
+       16:   12:    return actor;
+       16:   12-block  0
+call    0 returned 16
+        -:   13:}
+        -:   14:
+function _ZNK4Film7getYearEv called 31 returned 100% blocks executed 100%
+       31:   15:int Film::getYear() const {
+       31:   16:    return year;
+       31:   16-block  0
+        -:   17:}

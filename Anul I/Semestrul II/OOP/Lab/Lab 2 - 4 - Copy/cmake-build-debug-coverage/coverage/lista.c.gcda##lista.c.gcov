@@ -1,0 +1,237 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 2 - 4 - Copy/Repo/lista.c
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 2 - 4 - Copy/cmake-build-debug-coverage/CMakeFiles/5_3_13.dir/Repo/lista.c.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 2 - 4 - Copy/cmake-build-debug-coverage/CMakeFiles/5_3_13.dir/Repo/lista.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "lista.h"
+        -:    2:
+        -:    3:#include <stdlib.h>
+        -:    4:
+function creeazaListaGoala called 71 returned 100% blocks executed 100%
+       71:    5:Lista *creeazaListaGoala(DestroyFunction destroyFct) {
+       71:    6:	Lista *lista = (Lista*)malloc(sizeof(Lista));
+       71:    7:	lista->dimensiune = 0;
+       71:    8:	lista->capacitate = 2;
+       71:    9:	lista->elemente = (TipElement*)malloc(sizeof(TipElement) * lista->capacitate);
+        -:   10:
+       71:   11:	lista->destroyFct = destroyFct;
+        -:   12:
+       71:   13:	return lista;
+       71:   13-block  0
+        -:   14:}
+        -:   15:
+function distrugeLista called 70 returned 100% blocks executed 100%
+       70:   16:void distrugeLista(Lista* lista) {
+      261:   17:	for (int i = 0; i < lista->dimensiune; i++) {
+       70:   17-block  0
+      261:   17-block  1
+branch  0 taken 191
+branch  1 taken 70 (fallthrough)
+      191:   18:		lista->destroyFct(lista->elemente[i]);
+      191:   18-block  0
+call    0 returned 191
+        -:   19:	}
+       70:   20:	free(lista->elemente);
+       70:   21:	free(lista);
+       70:   22:}
+        -:   23:
+function getElement called 400 returned 100% blocks executed 100%
+      400:   24:TipElement getElement(Lista* lista, int pos)
+        -:   25:{
+      400:   26:	return lista->elemente[pos];
+      400:   26-block  0
+        -:   27:}
+        -:   28:
+function setElement called 91 returned 100% blocks executed 100%
+       91:   29:TipElement setElement(Lista* lista, int pos, TipElement medicament)
+        -:   30:{
+       91:   31:	TipElement medicamentNou =lista->elemente[pos];
+       91:   32:	lista->elemente[pos] = medicament;
+       91:   33:	return medicamentNou;
+       91:   33-block  0
+        -:   34:}
+        -:   35:
+function size called 229 returned 100% blocks executed 100%
+      229:   36:int size(Lista* lista) {
+      229:   37:	return lista->dimensiune;
+      229:   37-block  0
+        -:   38:}
+        -:   39:
+function adaugaElementInLista called 196 returned 100% blocks executed 100%
+      196:   40:void adaugaElementInLista(Lista* lista, TipElement element) {
+      196:   41:	int esteOK = asiguraCapacitate(lista);
+      196:   41-block  0
+call    0 returned 196
+      196:   42:	if (esteOK == 0) {
+branch  0 taken 196 (fallthrough)
+branch  1 taken 0
+      552:   43:		for (int i = 0; i < lista->dimensiune; i++)
+      196:   43-block  0
+      356:   43-block  1
+      552:   43-block  2
+branch  0 taken 357
+branch  1 taken 195 (fallthrough)
+        -:   44:		{
+      357:   45:			Medicament* medExistent = lista->elemente[i];
+      357:   46:			Medicament* medNou = element;
+      357:   47:			if (medExistent->id == medNou->id)
+      357:   47-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 356
+        -:   48:			{
+        -:   49:
+        1:   50:				return;
+        1:   50-block  0
+        -:   51:			}
+        -:   52:		}
+      195:   53:		lista->elemente[lista->dimensiune] = element;
+      195:   54:		lista->dimensiune++;
+      195:   54-block  0
+        -:   55:	}
+        -:   56:}
+        -:   57:
+function asiguraCapacitate called 196 returned 100% blocks executed 91%
+      196:   58:int asiguraCapacitate(Lista* lista) {
+      196:   59:	if (lista->dimensiune < lista->capacitate) {
+      196:   59-block  0
+branch  0 taken 144 (fallthrough)
+branch  1 taken 52
+      144:   60:		return 0;
+      144:   60-block  0
+        -:   61:	}
+       52:   62:	int nouaCapacitate = lista->capacitate * 2;
+       52:   63:	TipElement* elemente = malloc(sizeof(TipElement) * nouaCapacitate);
+       52:   64:	if (elemente == NULL) {
+       52:   64-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 52
+    #####:   65:		return 1;
+    %%%%%:   65-block  0
+        -:   66:	}
+      344:   67:	for (int i = 0; i < nouaCapacitate; i++) {
+       52:   67-block  0
+      292:   67-block  1
+      344:   67-block  2
+branch  0 taken 292
+branch  1 taken 52 (fallthrough)
+      292:   68:		if (i < lista->dimensiune)
+      292:   68-block  0
+branch  0 taken 146 (fallthrough)
+branch  1 taken 146
+      146:   69:			elemente[i] = lista->elemente[i];
+      146:   69-block  0
+        -:   70:	}
+       52:   71:	free(lista->elemente);
+       52:   72:	lista->elemente = elemente;
+       52:   73:	lista->capacitate = nouaCapacitate;
+       52:   74:	return 0;
+       52:   74-block  0
+        -:   75:}
+        -:   76:
+function modificaElementDinLista called 3 returned 100% blocks executed 100%
+        3:   77:int modificaElementDinLista(Lista* lista, TipElement medicamentModificat) {
+       14:   78:	for (int i = 0; i < lista->dimensiune; i++) {
+        3:   78-block  0
+       11:   78-block  1
+       14:   78-block  2
+branch  0 taken 13
+branch  1 taken 1 (fallthrough)
+       13:   79:		Medicament* medicamentCurent = getElement(lista, i);
+       13:   79-block  0
+call    0 returned 13
+       13:   80:		Medicament* medModif = medicamentModificat;
+       13:   81:		if (medicamentCurent->id == medModif->id) {
+branch  0 taken 2 (fallthrough)
+branch  1 taken 11
+        2:   82:			distrugeMedicament(setElement(lista, i, medicamentModificat));
+        2:   82-block  0
+call    0 returned 2
+call    1 returned 2
+        2:   83:			return 0;
+        -:   84:		}
+        -:   85:	}
+        1:   86:	return 1;
+        1:   86-block  0
+        -:   87:}
+        -:   88:
+function stergeElementDinLista called 3 returned 100% blocks executed 100%
+        3:   89:int stergeElementDinLista(Lista* lista, int id) {
+       13:   90:	for (int i = 0; i < lista->dimensiune; i++) {
+        3:   90-block  0
+       10:   90-block  1
+       13:   90-block  2
+branch  0 taken 12
+branch  1 taken 1 (fallthrough)
+       12:   91:		Medicament* medicament = getElement(lista, i);
+       12:   91-block  0
+call    0 returned 12
+       12:   92:		if (medicament->id == id) {
+branch  0 taken 2 (fallthrough)
+branch  1 taken 10
+        2:   93:			distrugeMedicament(medicament);
+        2:   93-block  0
+call    0 returned 2
+        7:   94:			for (int j = i; j <= lista->dimensiune; j++) {
+        7:   94-block  0
+branch  0 taken 5
+branch  1 taken 2 (fallthrough)
+        5:   95:				lista->elemente[j] = lista->elemente[j + 1];
+        5:   95-block  0
+        -:   96:			}
+        2:   97:			lista->dimensiune--;
+        2:   98:			return 0;
+        2:   98-block  0
+        -:   99:		}
+        -:  100:	}
+        1:  101:	return 1;
+        1:  101-block  0
+        -:  102:}
+        -:  103:
+function stergeUltimulElementDinLista called 1 returned 100% blocks executed 100%
+        1:  104:TipElement stergeUltimulElementDinLista(Lista* lista)
+        -:  105:{
+        1:  106:	TipElement elementDeSters =lista->elemente[lista->dimensiune - 1];
+        1:  107:	lista->dimensiune -= 1;
+        1:  108:	return elementDeSters;
+        1:  108-block  0
+        -:  109:}
+        -:  110:
+function cautaDupaId called 2 returned 100% blocks executed 100%
+        2:  111:int cautaDupaId(Lista* lista, int id) {
+       13:  112:	for (int i = 0; i < lista->dimensiune; i++) {
+        2:  112-block  0
+       11:  112-block  1
+       13:  112-block  2
+branch  0 taken 12
+branch  1 taken 1 (fallthrough)
+       12:  113:		Medicament* medicament = getElement(lista, i);
+       12:  113-block  0
+call    0 returned 12
+       12:  114:		if (medicament->id == id)
+branch  0 taken 1 (fallthrough)
+branch  1 taken 11
+        1:  115:			return 10;
+        1:  115-block  0
+        -:  116:	}
+        1:  117:	return 11;
+        1:  117-block  0
+        -:  118:}
+        -:  119:
+function copiazaLista called 43 returned 100% blocks executed 100%
+       43:  120:Lista* copiazaLista(Lista* lista, CopyFunction copyFct) {
+       43:  121:	Lista* listaCopiata = creeazaListaGoala(lista->destroyFct);
+       43:  121-block  0
+call    0 returned 43
+      159:  122:	for (int i = 0; i < lista->dimensiune; i++) {
+      159:  122-block  0
+branch  0 taken 116
+branch  1 taken 43 (fallthrough)
+      116:  123:		TipElement medicament = getElement(lista, i);
+      116:  123-block  0
+call    0 returned 116
+      116:  124:		adaugaElementInLista(listaCopiata, copyFct(medicament));
+call    0 returned 116
+call    1 returned 116
+        -:  125:	}
+       43:  126:	return listaCopiata;
+       43:  126-block  0
+        -:  127:}

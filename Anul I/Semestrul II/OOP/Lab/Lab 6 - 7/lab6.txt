@@ -1,0 +1,1 @@
+fara pointeri, cu clase in C++ si namespace std cu <vector>, pb 2

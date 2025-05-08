@@ -10,13 +10,24 @@ class Colectie
 	friend class IteratorColectie;
 
 private:
-	/* aici e reprezentarea */
+	int capacitate;
+	int dimensiune;
+	int dimensiuneIndividuala;
+	TElem* elemente;
+	int* frecventa;
+
+	//mărire capacitate
+	void redimensionare();
+
 public:
 		//constructorul implicit
 		Colectie();
 
 		//adauga un element in colectie
 		void adauga(TElem e);
+
+		//adauga mai multe elemente de aceeasi valoare
+		void adaugaAparitiiMultiple(int nr, TElem e);
 
 		//sterge o aparitie a unui element din colectie
 		//returneaza adevarat daca s-a putut sterge
@@ -28,9 +39,11 @@ public:
 		//returneaza numar de aparitii ale unui element in colectie
 		int nrAparitii(TElem elem) const;
 
-
 		//intoarce numarul de elemente din colectie;
 		int dim() const;
+
+		//intoarce numarul de elemente individuale din colectie;
+		int dimIndiv() const;
 
 		//verifica daca colectia e vida;
 		bool vida() const;

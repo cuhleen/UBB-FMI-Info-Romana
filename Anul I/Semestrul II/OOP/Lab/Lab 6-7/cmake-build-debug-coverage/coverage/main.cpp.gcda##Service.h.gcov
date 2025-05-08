@@ -1,0 +1,34 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/Service.h
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/cmake-build-debug-coverage/CMakeFiles/Lab6.dir/main.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/cmake-build-debug-coverage/CMakeFiles/Lab6.dir/main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef SERVICE_H
+        -:    2:#define SERVICE_H
+        -:    3:#include <utility>
+        -:    4:
+        -:    5:#include "FilmRepo.h"
+        -:    6:#include "Validation.h"
+        -:    7:
+        -:    8:class Service {
+        -:    9:private:
+        -:   10:    FilmRepo filmRepo;
+        -:   11:    Validation validator;
+        -:   12:public:
+function _ZN7ServiceC2E8FilmRepo10Validation called 2 returned 100% blocks executed 100%
+        2:   13:    Service(FilmRepo filmRepo, Validation validator) : filmRepo(std::move(filmRepo)), validator(validator) {
+        2:   13-block  0
+call    0 returned 2
+call    1 returned 2
+        2:   14:    }
+        -:   15:    void addFilm(const string& name, const string& type, const string& manufacturer, int price);
+        -:   16:    void removeFilm(const string& name);
+        -:   17:    void updateFilm(const string& name, const Film& newProduct);
+        -:   18:    [[nodiscard]] int searchFilm(const string& name) const;
+        -:   19:    [[nodiscard]] VectorDinamic<Film> getAll() const;
+        -:   20:    [[nodiscard]] VectorDinamic<Film> filterFilms(const string& choice, const string& filter) const;
+        -:   21:    [[nodiscard]] VectorDinamic<Film> sortFilms(const string& choice, int order) const;
+        -:   22:};
+        -:   23:
+        -:   24:void testService();
+        -:   25:
+        -:   26:#endif //SERVICE_H

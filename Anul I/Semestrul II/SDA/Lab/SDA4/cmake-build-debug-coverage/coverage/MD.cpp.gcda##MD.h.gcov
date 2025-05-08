@@ -1,0 +1,140 @@
+        -:    0:Source:/mnt/c/Users/Tudor Macri/Downloads/SDA4/Proiect C++/MD.h
+        -:    0:Graph:/mnt/c/Users/Tudor Macri/Downloads/SDA4/cmake-build-debug-coverage/CMakeFiles/SDA4.dir/Proiect_C++/MD.cpp.gcno
+        -:    0:Data:/mnt/c/Users/Tudor Macri/Downloads/SDA4/cmake-build-debug-coverage/CMakeFiles/SDA4.dir/Proiect_C++/MD.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include<vector>
+        -:    3:#include<utility>
+        -:    4:
+        -:    5:using namespace std;
+        -:    6:
+        -:    7:typedef int TCheie;
+        -:    8:typedef int TValoare;
+        -:    9:
+        -:   10:typedef std::pair<TCheie, TValoare> TElem;
+        -:   11:
+        -:   12:class IteratorMD;
+        -:   13:
+        -:   14:class MD
+        -:   15:{
+        -:   16:	friend class IteratorMD;
+        -:   17:
+        -:   18:private:
+        -:   19:	struct Node {
+        -:   20:		TElem element;
+        -:   21:		int next;
+        -:   22:	};
+        -:   23:
+        -:   24:	Node *nodes;
+        -:   25:	int capacity;
+        -:   26:	int head;
+        -:   27:	int firstFree;
+        -:   28:	int size;
+        -:   29:
+function _ZN2MD6resizeEv called 52 returned 100% blocks executed 86%
+       52:   30:	void resize() {
+       52:   31:		int newCapacity = 2 * capacity;
+  701832*:   32:		Node* newNodes = new Node[newCapacity];
+       52:   32-block  0
+branch  0 taken 52 (fallthrough)
+branch  1 taken 0
+       52:   32-block  1
+    %%%%%:   32-block  2
+call    2 never executed
+       52:   32-block  3
+call    3 returned 52
+   701780:   32-block  4
+call    4 returned 701780
+branch  5 taken 701780 (fallthrough)
+branch  6 taken 0 (throw)
+   701780:   32-block  5
+   701832:   32-block  6
+branch  7 taken 701780
+branch  8 taken 52 (fallthrough)
+    $$$$$:   32-block  7
+branch  9 never executed
+branch 10 never executed
+    $$$$$:   32-block  8
+call   11 never executed
+   350942:   33:		for (int i = 0; i < capacity; ++i) {
+       52:   33-block  0
+   350942:   33-block  1
+branch  0 taken 350890
+branch  1 taken 52 (fallthrough)
+   350890:   34:			newNodes[i] = nodes[i];
+   350890:   34-block  0
+call    0 returned 350890
+        -:   35:		}
+   350942:   36:		for (int i = capacity; i < newCapacity; ++i) {
+       52:   36-block  0
+   350942:   36-block  1
+branch  0 taken 350890
+branch  1 taken 52 (fallthrough)
+   350890:   37:			newNodes[i].next = i + 1;
+   350890:   37-block  0
+        -:   38:		}
+       52:   39:		newNodes[newCapacity - 1].next = -1;
+       52:   40:		firstFree = capacity;
+       52:   41:		capacity = newCapacity;
+       52:   42:		delete[] nodes;
+       52:   42-block  0
+branch  0 taken 52 (fallthrough)
+branch  1 taken 0
+       52:   42-block  1
+call    2 returned 52
+       52:   43:		nodes = newNodes;
+       52:   44:	}
+       52:   44-block  0
+        -:   45:
+function _ZN2MD8allocateEv called 198935 returned 100% blocks executed 100%
+   198935:   46:	int allocate() {
+   198935:   47:		if (firstFree == -1) {
+   198935:   47-block  0
+branch  0 taken 52 (fallthrough)
+branch  1 taken 198883
+       52:   48:			resize();
+       52:   48-block  0
+call    0 returned 52
+        -:   49:		}
+   198935:   50:		int newIndex = firstFree;
+   198935:   51:		firstFree = nodes[newIndex].next;
+   198935:   52:		return newIndex;
+   198935:   52-block  0
+        -:   53:	}
+        -:   54:
+function _ZN2MD10deallocateEi called 1858 returned 100% blocks executed 100%
+     1858:   55:	void deallocate(int index) {
+     1858:   56:		nodes[index].next = firstFree;
+     1858:   57:		firstFree = index;
+     1858:   58:	}
+        -:   59:
+        -:   60:public:
+        -:   61:	// constructorul implicit al MultiDictionarului
+        -:   62:	MD();
+        -:   63:
+        -:   64:	// adauga o pereche (cheie, valoare) in MD	
+        -:   65:	void adauga(TCheie c, TValoare v);
+        -:   66:
+        -:   67:	//cauta o cheie si returneaza vectorul de valori asociate
+        -:   68:	vector<TValoare> cauta(TCheie c) const;
+        -:   69:
+        -:   70:	//sterge o cheie si o valoare 
+        -:   71:	//returneaza adevarat daca s-a gasit cheia si valoarea de sters
+        -:   72:	bool sterge(TCheie c, TValoare v);
+        -:   73:
+        -:   74:	//returneaza numarul de perechi (cheie, valoare) din MD 
+        -:   75:	int dim() const;
+        -:   76:
+        -:   77:	//verifica daca MultiDictionarul e vid 
+        -:   78:	bool vid() const;
+        -:   79:
+        -:   80:	// se returneaza iterator pe MD
+        -:   81:	IteratorMD iterator() const;
+        -:   82:
+        -:   83:	// destructorul MultiDictionarului	
+        -:   84:	~MD();
+        -:   85:
+        -:   86:
+        -:   87:
+        -:   88:};
+        -:   89:

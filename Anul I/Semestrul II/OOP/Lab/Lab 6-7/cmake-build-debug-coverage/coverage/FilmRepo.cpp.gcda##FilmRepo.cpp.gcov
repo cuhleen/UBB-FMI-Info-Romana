@@ -1,0 +1,776 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/FilmRepo.cpp
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/cmake-build-debug-coverage/CMakeFiles/Lab6.dir/FilmRepo.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/cmake-build-debug-coverage/CMakeFiles/Lab6.dir/FilmRepo.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "FilmRepo.h"
+        -:    2:
+        -:    3:#include <cassert>
+        -:    4:
+function _ZNK13RepoException10getMessageB5cxx11Ev called 3 returned 100% blocks executed 100%
+        3:    5:string RepoException::getMessage() const {
+        3:    6:    return message;
+        3:    6-block  0
+call    0 returned 3
+        -:    7:}
+        -:    8:
+function _ZN8FilmRepo7addFilmERK4Film called 9 returned 89% blocks executed 62%
+        9:    9:void FilmRepo::addFilm(const Film& p) {
+       16:   10:    for (const Film& prod : products) {
+        9:   10-block  0
+call    0 returned 9
+call    1 returned 9
+        8:   10-block  1
+call    2 returned 8
+        7:   10-block  2
+call    3 returned 7
+       16:   10-block  3
+call    4 returned 16
+branch  5 taken 8
+branch  6 taken 8 (fallthrough)
+        8:   11:        if (prod.getTitle() == p.getTitle() && prod.getGenre() == p.getGenre()) {
+call    0 returned 8
+branch  1 taken 8 (fallthrough)
+branch  2 taken 0 (throw)
+        8:   11-block  0
+call    3 returned 8
+branch  4 taken 8 (fallthrough)
+branch  5 taken 0 (throw)
+        8:   11-block  1
+call    6 returned 8
+branch  7 taken 1 (fallthrough)
+branch  8 taken 7
+        1:   11-block  2
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   11-block  3
+call   12 returned 1
+branch 13 taken 1 (fallthrough)
+branch 14 taken 0 (throw)
+        1:   11-block  4
+call   15 returned 1
+branch 16 taken 1 (fallthrough)
+branch 17 taken 0
+        1:   11-block  5
+        7:   11-block  6
+        8:   11-block  7
+branch 18 taken 1 (fallthrough)
+branch 19 taken 7
+        1:   11-block  8
+call   20 returned 1
+        8:   11-block  9
+branch 21 taken 1 (fallthrough)
+branch 22 taken 7
+        1:   11-block 10
+call   23 returned 1
+        8:   11-block 11
+branch 24 taken 8 (fallthrough)
+branch 25 taken 0
+        8:   11-block 12
+call   26 returned 8
+        8:   11-block 13
+branch 27 taken 8 (fallthrough)
+branch 28 taken 0
+        8:   11-block 14
+call   29 returned 8
+        8:   11-block 15
+branch 30 taken 1 (fallthrough)
+branch 31 taken 7
+    $$$$$:   11-block 16
+branch 32 never executed (fallthrough)
+branch 33 never executed
+    $$$$$:   11-block 17
+call   34 never executed
+    $$$$$:   11-block 18
+    $$$$$:   11-block 19
+branch 35 never executed (fallthrough)
+branch 36 never executed
+    $$$$$:   11-block 20
+call   37 never executed
+    $$$$$:   11-block 21
+    $$$$$:   11-block 22
+branch 38 never executed (fallthrough)
+branch 39 never executed
+    $$$$$:   11-block 23
+call   40 never executed
+    $$$$$:   11-block 24
+    $$$$$:   11-block 25
+branch 41 never executed (fallthrough)
+branch 42 never executed
+    $$$$$:   11-block 26
+call   43 never executed
+    $$$$$:   11-block 27
+        3:   12:            throw RepoException("Film already exists");
+        1:   12-block  0
+call    0 returned 1
+        1:   12-block  1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   12-block  2
+call    4 returned 1
+call    5 returned 1
+        1:   12-block  3
+call    6 returned 1
+    $$$$$:   12-block  4
+    $$$$$:   12-block  5
+    $$$$$:   12-block  6
+call    7 never executed
+        -:   13:        }
+        -:   14:    }
+        8:   15:    products.push_back(p);
+        8:   15-block  0
+call    0 returned 8
+        8:   16:}
+        -:   17:
+function _ZN8FilmRepo10removeFilmERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 5 returned 80% blocks executed 82%
+        5:   18:void FilmRepo::removeFilm(const string& name) {
+        5:   19:    int poz = -1, size = products.size();
+        5:   19-block  0
+call    0 returned 5
+       10:   20:    for (int i = 0; i < size; ++i) {
+        5:   20-block  0
+       10:   20-block  1
+branch  0 taken 9
+branch  1 taken 1 (fallthrough)
+        9:   21:        if (products[i].getTitle() == name) {
+        9:   21-block  0
+call    0 returned 9
+call    1 returned 9
+branch  2 taken 9 (fallthrough)
+branch  3 taken 0 (throw)
+        9:   21-block  1
+call    4 returned 9
+call    5 returned 9
+branch  6 taken 4 (fallthrough)
+branch  7 taken 5
+    $$$$$:   21-block  2
+call    8 never executed
+        4:   22:            poz = i;
+        4:   23:            break;
+        4:   23-block  0
+        -:   24:        }
+        -:   25:    }
+        5:   26:    if (poz == -1) {
+        5:   26-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 4
+        3:   27:        throw RepoException("Film not found");
+        1:   27-block  0
+call    0 returned 1
+        1:   27-block  1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   27-block  2
+call    4 returned 1
+call    5 returned 1
+        1:   27-block  3
+call    6 returned 0
+    $$$$$:   27-block  4
+    $$$$$:   27-block  5
+    $$$$$:   27-block  6
+call    7 never executed
+        -:   28:    } else {
+        9:   29:        for (int j = poz; j < size; ++j) {
+        4:   29-block  0
+        9:   29-block  1
+branch  0 taken 5
+branch  1 taken 4 (fallthrough)
+        5:   30:            products[j] = products[j + 1];
+        5:   30-block  0
+call    0 returned 5
+call    1 returned 5
+call    2 returned 5
+        -:   31:        }
+        4:   32:        products.pop_back();
+        4:   32-block  0
+call    0 returned 4
+        -:   33:    }
+        4:   34:}
+        -:   35:
+function _ZN8FilmRepo10updateFilmERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEERK4Film called 3 returned 67% blocks executed 76%
+        3:   36:void FilmRepo::updateFilm(const string& name, const Film& newFilm) {
+        4:   37:    for (auto & product : products) {
+        3:   37-block  0
+call    0 returned 3
+call    1 returned 3
+        3:   37-block  1
+call    2 returned 3
+        1:   37-block  2
+call    3 returned 1
+        4:   37-block  3
+call    4 returned 4
+branch  5 taken 3
+branch  6 taken 1 (fallthrough)
+        3:   38:        if (product.getTitle() == name) {
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:   38-block  0
+call    3 returned 3
+call    4 returned 3
+branch  5 taken 2 (fallthrough)
+branch  6 taken 1
+    $$$$$:   38-block  1
+        2:   39:            product = newFilm;
+        2:   39-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   40:            return;
+        2:   40-block  0
+        2:   40-block  1
+        -:   41:        }
+        -:   42:    }
+        3:   43:    throw RepoException("Film not found");
+        1:   43-block  0
+call    0 returned 1
+        1:   43-block  1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   43-block  2
+call    4 returned 1
+call    5 returned 1
+        1:   43-block  3
+call    6 returned 0
+    $$$$$:   43-block  4
+    $$$$$:   43-block  5
+    $$$$$:   43-block  6
+call    7 never executed
+        -:   44:}
+        -:   45:
+function _ZNK8FilmRepo10searchFilmERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 4 returned 100% blocks executed 100%
+        4:   46:int FilmRepo::searchFilm(const string& name) const {
+        6:   47:    for (int i = 0; i < products.size(); ++i) {
+        4:   47-block  0
+        2:   47-block  1
+        6:   47-block  2
+call    0 returned 6
+branch  1 taken 5
+branch  2 taken 1 (fallthrough)
+        5:   48:        if (products.get(i).getTitle() == name) {
+        5:   48-block  0
+call    0 returned 5
+call    1 returned 5
+branch  2 taken 5 (fallthrough)
+branch  3 taken 0 (throw)
+        5:   48-block  1
+call    4 returned 5
+call    5 returned 5
+branch  6 taken 3 (fallthrough)
+branch  7 taken 2
+        3:   49:            return i;
+        3:   49-block  0
+        -:   50:        }
+        -:   51:    }
+        1:   52:    return -1;
+        1:   52-block  0
+        -:   53:}
+        -:   54:
+function _ZNK8FilmRepo6getAllEv called 60 returned 100% blocks executed 100%
+       60:   55:VectorDinamic<Film> FilmRepo::getAll() const {
+       60:   56:    return products;
+       60:   56-block  0
+call    0 returned 60
+        -:   57:}
+        -:   58:
+function _Z8testRepov called 1 returned 100% blocks executed 54%
+        1:   59:void testRepo() {
+        1:   60:    FilmRepo repo;
+        1:   60-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   61:    const Film p1("Film1", "Type1", "Manufacturer1", 10);
+        1:   61-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   61-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   61-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   61-block  3
+call    9 returned 1
+call   10 returned 1
+        1:   61-block  4
+call   11 returned 1
+        1:   61-block  5
+call   12 returned 1
+    $$$$$:   61-block  6
+    $$$$$:   61-block  7
+    $$$$$:   61-block  8
+call   13 never executed
+    $$$$$:   61-block  9
+    $$$$$:   61-block 10
+    $$$$$:   61-block 11
+call   14 never executed
+    $$$$$:   61-block 12
+    $$$$$:   61-block 13
+        1:   62:    repo.addFilm(p1);
+        1:   62-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   63:    const auto products = repo.getAll();
+        1:   63-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   64:    assert(products.size() == 1);
+        1:   64-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:   64-block  1
+call    3 never executed
+        -:   65:    try {
+        1:   66:        repo.addFilm(p1);
+        1:   66-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+        -:   67:    }
+        1:   68:    catch (RepoException &e) {
+        1:   68-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   68-block  1
+call    2 returned 1
+        1:   69:        assert(e.getMessage() == "Film already exists");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   69-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   69-block  1
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    $$$$$:   69-block  2
+call    8 never executed
+        1:   69-block  3
+call    9 returned 1
+    $$$$$:   69-block  4
+call   10 never executed
+    $$$$$:   69-block  5
+        1:   70:    }
+call    0 returned 1
+    $$$$$:   70-block  0
+call    1 never executed
+        5:   71:    const Film p2("Film2", "Type2", "Manufacturer2", 20);
+        1:   71-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   71-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   71-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   71-block  3
+call    9 returned 1
+call   10 returned 1
+        1:   71-block  4
+call   11 returned 1
+        1:   71-block  5
+call   12 returned 1
+    $$$$$:   71-block  6
+    $$$$$:   71-block  7
+    $$$$$:   71-block  8
+call   13 never executed
+    $$$$$:   71-block  9
+    $$$$$:   71-block 10
+    $$$$$:   71-block 11
+call   14 never executed
+    $$$$$:   71-block 12
+    $$$$$:   71-block 13
+        1:   72:    repo.addFilm(p2);
+        1:   72-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+       1*:   73:    assert(repo.getAll().size() == 2);
+        1:   73-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   73-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   73-block  2
+call    6 never executed
+        1:   73-block  3
+call    7 returned 1
+    $$$$$:   73-block  4
+       2*:   74:    assert(repo.searchFilm("Film1") == 0);
+        1:   74-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   74-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   74-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:   74-block  3
+call    8 never executed
+        1:   74-block  4
+call    9 returned 1
+        1:   74-block  5
+    $$$$$:   74-block  6
+call   10 never executed
+    $$$$$:   74-block  7
+    $$$$$:   74-block  8
+       2*:   75:    assert(repo.searchFilm("Film2") == 1);
+        1:   75-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   75-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   75-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:   75-block  3
+call    8 never executed
+        1:   75-block  4
+call    9 returned 1
+        1:   75-block  5
+    $$$$$:   75-block  6
+call   10 never executed
+    $$$$$:   75-block  7
+    $$$$$:   75-block  8
+        -:   76:    try {
+       2*:   77:        repo.removeFilm("Film3");
+        1:   77-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   77-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1 (throw)
+    %%%%%:   77-block  2
+call    6 never executed
+    %%%%%:   77-block  3
+        1:   77-block  4
+call    7 returned 1
+        1:   77-block  5
+        1:   77-block  6
+        -:   78:    }
+        1:   79:    catch (RepoException &e) {
+        1:   79-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   79-block  1
+call    2 returned 1
+        1:   80:        assert(e.getMessage() == "Film not found");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   80-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   80-block  1
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    $$$$$:   80-block  2
+call    8 never executed
+        1:   80-block  3
+call    9 returned 1
+    $$$$$:   80-block  4
+call   10 never executed
+    $$$$$:   80-block  5
+        1:   81:    }
+call    0 returned 1
+    $$$$$:   81-block  0
+call    1 never executed
+        1:   82:    repo.removeFilm("Film1");
+        1:   82-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   82-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   82-block  2
+call    6 returned 1
+    $$$$$:   82-block  3
+call    7 never executed
+    $$$$$:   82-block  4
+    $$$$$:   82-block  5
+       1*:   83:    assert(repo.getAll().size() == 1);
+        1:   83-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   83-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   83-block  2
+call    6 never executed
+        1:   83-block  3
+call    7 returned 1
+    $$$$$:   83-block  4
+        -:   84:    try {
+       2*:   85:        repo.updateFilm("Film1", p2);
+        1:   85-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   85-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1 (throw)
+    %%%%%:   85-block  2
+call    6 never executed
+    %%%%%:   85-block  3
+        1:   85-block  4
+call    7 returned 1
+        1:   85-block  5
+        1:   85-block  6
+        -:   86:    }
+        1:   87:    catch (RepoException &e) {
+        1:   87-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+        1:   87-block  1
+call    2 returned 1
+        1:   88:        assert(e.getMessage() == "Film not found");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   88-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   88-block  1
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    $$$$$:   88-block  2
+call    8 never executed
+        1:   88-block  3
+call    9 returned 1
+    $$$$$:   88-block  4
+call   10 never executed
+    $$$$$:   88-block  5
+        1:   89:    }
+call    0 returned 1
+    $$$$$:   89-block  0
+call    1 never executed
+        6:   90:    const Film p3("Film3", "Type3", "Manufacturer3", 30);
+        1:   90-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   90-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   90-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   90-block  3
+call    9 returned 1
+call   10 returned 1
+        1:   90-block  4
+call   11 returned 1
+        1:   90-block  5
+call   12 returned 1
+        1:   90-block  6
+    $$$$$:   90-block  7
+    $$$$$:   90-block  8
+    $$$$$:   90-block  9
+call   13 never executed
+    $$$$$:   90-block 10
+    $$$$$:   90-block 11
+    $$$$$:   90-block 12
+call   14 never executed
+    $$$$$:   90-block 13
+    $$$$$:   90-block 14
+        1:   91:    repo.updateFilm("Film2", p3);
+        1:   91-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   91-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   91-block  2
+call    6 returned 1
+    $$$$$:   91-block  3
+call    7 never executed
+    $$$$$:   91-block  4
+    $$$$$:   91-block  5
+       1*:   92:    assert(repo.getAll().size() == 1);
+        1:   92-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   92-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1
+    %%%%%:   92-block  2
+call    6 never executed
+        1:   92-block  3
+call    7 returned 1
+    $$$$$:   92-block  4
+       1*:   93:    assert(repo.getAll()[0].getTitle() == "Film3");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   93-block  0
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   93-block  1
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:   93-block  2
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1
+    %%%%%:   93-block  3
+call   12 never executed
+        1:   93-block  4
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   93-block  5
+call   15 never executed
+    $$$$$:   93-block  6
+call   16 never executed
+    $$$$$:   93-block  7
+    $$$$$:   93-block  8
+       1*:   94:    assert(repo.getAll()[0].getGenre() == "Type3");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   94-block  0
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   94-block  1
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:   94-block  2
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1
+    %%%%%:   94-block  3
+call   12 never executed
+        1:   94-block  4
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   94-block  5
+call   15 never executed
+    $$$$$:   94-block  6
+call   16 never executed
+    $$$$$:   94-block  7
+    $$$$$:   94-block  8
+       1*:   95:    assert(repo.getAll()[0].getActor() == "Manufacturer3");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   95-block  0
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   95-block  1
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+        1:   95-block  2
+branch 10 taken 0 (fallthrough)
+branch 11 taken 1
+    %%%%%:   95-block  3
+call   12 never executed
+        1:   95-block  4
+call   13 returned 1
+call   14 returned 1
+    $$$$$:   95-block  5
+call   15 never executed
+    $$$$$:   95-block  6
+call   16 never executed
+    $$$$$:   95-block  7
+    $$$$$:   95-block  8
+       1*:   96:    assert(repo.getAll()[0].getYear() == 30);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   96-block  0
+call    3 returned 1
+call    4 returned 1
+branch  5 taken 1 (fallthrough)
+branch  6 taken 0 (throw)
+        1:   96-block  1
+branch  7 taken 0 (fallthrough)
+branch  8 taken 1
+    %%%%%:   96-block  2
+call    9 never executed
+        1:   96-block  3
+call   10 returned 1
+    $$$$$:   96-block  4
+call   11 never executed
+    $$$$$:   96-block  5
+       1*:   97:    assert(repo.searchFilm("Film4") == -1);
+        1:   97-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   97-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   97-block  2
+branch  6 taken 0 (fallthrough)
+branch  7 taken 1
+    %%%%%:   97-block  3
+call    8 never executed
+        1:   97-block  4
+call    9 returned 1
+    $$$$$:   97-block  5
+call   10 never executed
+    $$$$$:   97-block  6
+    $$$$$:   97-block  7
+        1:   98:}
+        1:   98-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+call    4 returned 1
+    $$$$$:   98-block  1
+call    5 never executed
+    $$$$$:   98-block  2
+call    6 never executed
+    $$$$$:   98-block  3
+call    7 never executed
+    $$$$$:   98-block  4
+call    8 never executed
+    $$$$$:   98-block  5
+call    9 never executed

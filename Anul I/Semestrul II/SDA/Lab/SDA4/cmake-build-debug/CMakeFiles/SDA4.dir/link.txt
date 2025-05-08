@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/SDA4.dir/Proiect_C++/App.cpp.o CMakeFiles/SDA4.dir/Proiect_C++/IteratorMD.cpp.o CMakeFiles/SDA4.dir/Proiect_C++/MD.cpp.o CMakeFiles/SDA4.dir/Teste/TestExtins.cpp.o CMakeFiles/SDA4.dir/Teste/TestScurt.cpp.o -o SDA4 

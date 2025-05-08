@@ -1,4 +1,5 @@
 {
+  "disableDoubleClickTextEditing": false,
   "folder": "",
   "cropFolder": "",
   "annotateFolder": "",
@@ -100,8 +101,106 @@
   "library2": {
     "type": "excalidrawlib",
     "version": 2,
-    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.8.3",
+    "source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.11.0",
     "libraryItems": [
+      {
+        "id": "bzSBB6NgI9jH208vn9Hgv",
+        "status": "unpublished",
+        "elements": [
+          {
+            "id": "Mk5Ic02acMlcaYJTLevv-",
+            "type": "rectangle",
+            "x": -878,
+            "y": 4781,
+            "width": 80.00000000000001,
+            "height": 41,
+            "angle": 0,
+            "strokeColor": "#1e1e1e",
+            "backgroundColor": "transparent",
+            "fillStyle": "solid",
+            "strokeWidth": 2,
+            "strokeStyle": "solid",
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "frameId": null,
+            "index": "bPC",
+            "roundness": {
+              "type": 3
+            },
+            "seed": 1737924537,
+            "version": 72,
+            "versionNonce": 1050563991,
+            "isDeleted": false,
+            "boundElements": [],
+            "updated": 1744805495885,
+            "link": null,
+            "locked": false
+          }
+        ],
+        "created": 1744805496243
+      },
+      {
+        "id": "XMnbdxReDWKcZk20mVvo_",
+        "status": "unpublished",
+        "elements": [
+          {
+            "id": "srb5OQ1j2RRCtntT_tX7_",
+            "type": "freedraw",
+            "x": 329,
+            "y": 3167.7143380301345,
+            "width": 4,
+            "height": 264.99999999999966,
+            "angle": 0,
+            "strokeColor": "#1e1e1e",
+            "backgroundColor": "transparent",
+            "fillStyle": "solid",
+            "strokeWidth": 0.5,
+            "strokeStyle": "solid",
+            "roughness": 1,
+            "opacity": 100,
+            "groupIds": [],
+            "frameId": null,
+            "index": "c1eq",
+            "roundness": null,
+            "seed": 972366783,
+            "version": 346,
+            "versionNonce": 1324065105,
+            "isDeleted": false,
+            "boundElements": [],
+            "updated": 1743594001890,
+            "link": null,
+            "locked": false,
+            "points": [
+              [
+                4,
+                91.28566196986573
+              ],
+              [
+                0.34042569309115134,
+                -152.79327839790074
+              ],
+              [
+                0,
+                -173.71433803013394
+              ],
+              [
+                0,
+                -173.71433803013394
+              ]
+            ],
+            "pressures": [
+              0.4970703125,
+              0.4609375,
+              0.0830078125,
+              0
+            ],
+            "simulatePressure": false,
+            "lastCommittedPoint": null
+          }
+        ],
+        "created": 1743594002543
+      },
       {
         "id": "Vksoi1ViRBSHZI5r2pL85",
         "status": "unpublished",
@@ -189,7 +288,7 @@
   "mdCSS": "",
   "scriptEngineSettings": {},
   "defaultTrayMode": true,
-  "previousRelease": "2.8.3",
+  "previousRelease": "2.11.0",
   "showReleaseNotes": true,
   "showNewVersionNotification": true,
   "latexBoilerplate": "\\color{blue}",
@@ -544,6 +643,7 @@
   "markdownNodeOneClickEditing": false,
   "canvasImmersiveEmbed": true,
   "startupScriptPath": "",
+  "aiEnabled": true,
   "openAIAPIToken": "",
   "openAIDefaultTextModel": "gpt-3.5-turbo-1106",
   "openAIDefaultVisionModel": "gpt-4o",

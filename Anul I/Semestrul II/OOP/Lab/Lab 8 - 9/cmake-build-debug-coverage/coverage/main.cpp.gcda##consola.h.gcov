@@ -1,0 +1,68 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9/consola.h
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/main.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include "service.h"
+        -:    3:#include "Film.h"
+        -:    4:
+        -:    5:class UI {
+        -:    6:private:
+        -:    7:
+        -:    8:	Service& service;
+        -:    9:	ShoppingCart& shoppingCart;
+        -:   10:
+        -:   11:	/*
+        -:   12:	Citeste datele de la tastatura si adauga film nou in repository
+        -:   13:	arunca exceptie daca parametrii nu sunt valizi sau titlul filmului este deja existent
+        -:   14:	*/
+        -:   15:	void ui_adaugaFilm();
+        -:   16:
+        -:   17:	/*
+        -:   18:	Sterge un film din repository
+        -:   19:	*/
+        -:   20:	void ui_stergeFilm();
+        -:   21:
+        -:   22:	/*
+        -:   23:	Modifica un film din repository
+        -:   24:	*/
+        -:   25:	void ui_modificaFilm();
+        -:   26:
+        -:   27:	/*
+        -:   28:	Afiseaza lista de filme din repository
+        -:   29:	*/
+        -:   30:	static void ui_afiseazaFilme(const vector<Film>& filme);
+        -:   31:
+        -:   32:	/*
+        -:   33:	Cauta un film dupa titlul acestuia
+        -:   34:	*/
+        -:   35:	void ui_cautaFilm();
+        -:   36:
+        -:   37:	/*
+        -:   38:	Filtreaza filme dupa gen / anul aparitiei
+        -:   39:	*/
+        -:   40:	void ui_filtrare();
+        -:   41:
+        -:   42:	/*
+        -:   43:	Sorteaza filme dupa actorul principal / gen + anul aparitiei
+        -:   44:	*/
+        -:   45:	void ui_sortare();
+        -:   46:
+        -:   47:	void ui_adaugaInCos();
+        -:   48:	void ui_stergeDinCos();
+        -:   49:	void ui_afiseazaCos();
+        -:   50:	void ui_elibereazaCos();
+        -:   51:	void ui_genereazaCos();
+        -:   52:	void ui_exportCos();
+        -:   53:
+        -:   54:public:
+function _ZN2UIC2ER7ServiceR12ShoppingCart called 1 returned 100% blocks executed 100%
+        1:   55:	explicit UI(Service& service, ShoppingCart& shoppingCart) :service{ service }, shoppingCart{ shoppingCart} {}
+        -:   56:	//nu permitem copierea obiectelor
+        -:   57:	UI(const UI& other) = delete;
+        -:   58:
+        -:   59:	~UI();
+        -:   60:
+        -:   61:	void ruleaza();
+        -:   62:
+        -:   63:};

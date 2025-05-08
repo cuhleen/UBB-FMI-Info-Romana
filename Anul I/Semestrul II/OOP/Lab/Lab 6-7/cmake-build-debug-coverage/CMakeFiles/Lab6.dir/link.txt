@@ -1,0 +1,1 @@
+/usr/bin/c++ --coverage -Wall -Wextra -g CMakeFiles/Lab6.dir/main.cpp.o CMakeFiles/Lab6.dir/Film.cpp.o CMakeFiles/Lab6.dir/FilmRepo.cpp.o CMakeFiles/Lab6.dir/Service.cpp.o CMakeFiles/Lab6.dir/Interface.cpp.o CMakeFiles/Lab6.dir/Validation.cpp.o CMakeFiles/Lab6.dir/Tests.cpp.o CMakeFiles/Lab6.dir/TemplateDynamicVector.cpp.o -o Lab6 

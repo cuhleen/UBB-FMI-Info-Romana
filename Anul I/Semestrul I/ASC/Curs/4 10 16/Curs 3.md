@@ -1,7 +1,7 @@
 ## Computer pe 'n' biți
 Viziunea hardware și software
 
-## [[Curs 2#Operații făcute de ALU|ALU Reminder]]
+## [[Semestrul I/ASC/Curs/4 10 9/Curs 2#Operații făcute de ALU|ALU Reminder]]
 
 ## Flag-uri 🏳️‍🌈
 

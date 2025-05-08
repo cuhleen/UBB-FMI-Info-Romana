@@ -1,0 +1,3 @@
+/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6 - 7/cmake-build-debug/CMakeFiles/Lab_6___7.dir
+/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6 - 7/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6 - 7/cmake-build-debug/CMakeFiles/rebuild_cache.dir

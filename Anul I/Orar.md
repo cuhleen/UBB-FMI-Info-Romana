@@ -34,4 +34,4 @@
 
 https://www.cs.ubbcluj.ro/files/orar/2024-2/
 
-Număr în grupă: 26
+Număr în grupă: 25

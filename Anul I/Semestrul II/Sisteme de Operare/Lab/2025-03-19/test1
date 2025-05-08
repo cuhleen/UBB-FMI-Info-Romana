@@ -1,0 +1,11 @@
+ID Image_Name Name IP_Address Date Username System_Load CPU_Usage Memory_Usage Disk_Space
+1 gentle_dolphin:10.1 User_1 38.232.4.174 2025-03-19 12:24:41 user1 1.92 2% 59% 96%
+2 jolly_cougar:4.0 User_2 23.68.45.125 2025-03-19 12:24:41 user2 4.33 61% 77% 18%
+3 jolly_falcon:5.7 User_3 210.168.208.241 2025-03-19 12:24:41 user3 6.2 68% 37% 60%
+4 gentle_iguana:6.8 User_4 90.186.210.200 2025-03-19 12:24:41 user4 3.84 49% 12% 86%
+5 bold_beaver:5.0 User_5 41.119.78.197 2025-03-19 12:24:41 user5 9.5 52% 80% 94%
+6 happy_hippo:10.9 User_6 184.53.19.24 2025-03-19 12:24:41 user6 3.4 84% 78% 56%
+7 bold_iguana:8.5 User_7 212.34.170.190 2025-03-19 12:24:41 user7 1.47 96% 92% 4%
+8 bold_giraffe:6.0 User_8 33.48.214.228 2025-03-19 12:24:41 user8 3.90 90% 39% 51%
+9 jolly_falcon:9.1 User_9 180.117.2.67 2025-03-19 12:24:41 user9 1.73 88% 82% 9%
+10 fierce_beaver:2.1 User_10 129.242.193.19 2025-03-19 12:24:41 user10 3.29 80% 55% 16%

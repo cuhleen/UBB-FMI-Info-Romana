@@ -1,0 +1,820 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9/service.cpp
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/service.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "service.h"
+        -:    2:#include <functional>
+        -:    3:#include <algorithm>
+        -:    4:#include <assert.h>
+        -:    5:#include <cstdlib>
+        -:    6:#include <fstream>
+        -:    7:
+function _ZNK7Service10adaugaFilmERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_iS7_ called 32 returned 94% blocks executed 67%
+       32:    8:void Service::adaugaFilm(const string& titluFilm, const string& genFilm, const int anAparitie, const string& actorPrincipal) const {
+       32:    9:	const Film film{titluFilm, genFilm, anAparitie, actorPrincipal};
+       32:    9-block  0
+call    0 returned 32
+branch  1 taken 32 (fallthrough)
+branch  2 taken 0 (throw)
+       32:    9-block  1
+call    3 returned 32
+branch  4 taken 32 (fallthrough)
+branch  5 taken 0 (throw)
+       32:    9-block  2
+call    6 returned 32
+branch  7 taken 32 (fallthrough)
+branch  8 taken 0 (throw)
+       32:    9-block  3
+call    9 returned 32
+call   10 returned 32
+call   11 returned 32
+call   12 returned 32
+    $$$$$:    9-block  4
+    $$$$$:    9-block  5
+call   13 never executed
+    $$$$$:    9-block  6
+    $$$$$:    9-block  7
+call   14 never executed
+    $$$$$:    9-block  8
+       32:   10:	validator.valideaza(film);
+call    0 returned 32
+branch  1 taken 30 (fallthrough)
+branch  2 taken 2 (throw)
+       30:   11:	repository.adaugaFilm(film);
+       30:   11-block  0
+call    0 returned 30
+branch  1 taken 30 (fallthrough)
+branch  2 taken 0 (throw)
+       32:   12:}
+       30:   12-block  0
+call    0 returned 30
+        2:   12-block  1
+call    1 returned 2
+        -:   13:
+function _ZN7Service10stergeFilmERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 2 returned 50% blocks executed 79%
+        2:   14:void Service::stergeFilm(const string& titluFilm) {
+        -:   15:	try
+        -:   16:	{
+       3*:   17:		cosFilme.removeFilm(cautaFilm(titluFilm));
+        2:   17-block  0
+call    0 returned 2
+branch  1 taken 1 (fallthrough)
+branch  2 taken 1 (throw)
+        1:   17-block  1
+call    3 returned 1
+branch  4 taken 0 (fallthrough)
+branch  5 taken 1 (throw)
+    %%%%%:   17-block  2
+call    6 never executed
+        1:   17-block  3
+call    7 returned 1
+        2:   17-block  4
+        -:   18:	}
+        2:   19:	catch (const ExceptieRepo&) {
+        2:   19-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 2
+        2:   19-block  1
+call    2 returned 2
+        -:   20:
+        2:   21:	}
+        2:   22:	const int pozitie = repository.cautaPozitieDupaTitlu(titluFilm);
+        2:   22-block  0
+call    0 returned 1
+        1:   23:	repository.stergeFilm(pozitie);
+call    0 returned 1
+        1:   24:}
+        -:   25:
+function _ZN7Service12modificaFilmERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES7_iS7_ called 1 returned 100% blocks executed 56%
+        1:   26:void Service::modificaFilm(const string& titluFilm, const string& genFilm, int anAparitie, const string& actorPrincipal) {
+        1:   27:	const Film film{ titluFilm, genFilm, anAparitie, actorPrincipal };
+        1:   27-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   27-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   27-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   27-block  3
+call    9 returned 1
+call   10 returned 1
+call   11 returned 1
+call   12 returned 1
+    $$$$$:   27-block  4
+    $$$$$:   27-block  5
+call   13 never executed
+    $$$$$:   27-block  6
+    $$$$$:   27-block  7
+call   14 never executed
+    $$$$$:   27-block  8
+        1:   28:	Validator::valideaza(film);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   29:	const int pozitie = repository.cautaPozitieDupaTitlu(titluFilm);
+        1:   29-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   30:	repository.modificaFilm(film, pozitie);
+        1:   30-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   30-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   30-block  2
+call    6 returned 1
+    $$$$$:   30-block  3
+call    7 never executed
+    $$$$$:   30-block  4
+        1:   31:}
+call    0 returned 1
+    $$$$$:   31-block  0
+call    1 never executed
+        -:   32:
+function _ZNK7Service6getAllEv called 9 returned 100% blocks executed 100%
+        9:   33:const vector<Film>& Service::getAll() const {
+        9:   34:	return repository.getAll();
+        9:   34-block  0
+call    0 returned 9
+        -:   35:}
+        -:   36:
+function _ZN7Service11adaugaInCosERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 5 returned 40% blocks executed 100%
+        5:   37:void Service::adaugaInCos(const string& titluFilm)
+        -:   38:{
+        5:   39:	Film f = cautaFilm(titluFilm);
+        5:   39-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:   40:	cosFilme.addFilm(f);
+        5:   40-block  0
+call    0 returned 5
+branch  1 taken 2 (fallthrough)
+branch  2 taken 3 (throw)
+        5:   41:}
+        2:   41-block  0
+call    0 returned 2
+        3:   41-block  1
+call    1 returned 3
+        -:   42:
+function _ZN7Service12stergeDinCosERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 2 returned 50% blocks executed 71%
+        2:   43:void Service::stergeDinCos(const string& titluFilm)
+        -:   44:{
+        2:   45:	Film f = cautaFilm(titluFilm);
+        2:   45-block  0
+call    0 returned 2
+branch  1 taken 1 (fallthrough)
+branch  2 taken 1 (throw)
+        1:   46:	cosFilme.removeFilm(f);
+        1:   46-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   47:
+        1:   48:}
+        1:   48-block  0
+call    0 returned 1
+    $$$$$:   48-block  1
+call    1 never executed
+        -:   49:
+function _ZN7Service13elibereazaCosEv called 1 returned 100% blocks executed 100%
+        1:   50:void Service::elibereazaCos()
+        -:   51:{
+        1:   52:	cosFilme.clearCart();
+        1:   52-block  0
+call    0 returned 1
+        1:   53:}
+        -:   54:
+function _ZN7Service12genereazaCosEi called 2 returned 100% blocks executed 81%
+        2:   55:void Service::genereazaCos(int n)
+        -:   56:{
+        -:   57:
+        2:   58:	const auto& allFilme = repository.getAll();
+        2:   58-block  0
+call    0 returned 2
+        2:   59:	if (n > allFilme.size()) return;
+call    0 returned 2
+branch  1 taken 1 (fallthrough)
+branch  2 taken 1
+        1:   59-block  0
+        1:   59-block  1
+        -:   60:
+        1:   61:	vector<int> viz(allFilme.size(), 0);
+        1:   61-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   61-block  1
+call    4 returned 1
+    $$$$$:   61-block  2
+    $$$$$:   61-block  3
+        1:   62:	int count = 0;
+        -:   63:
+        5:   64:	while (count < n) {
+        4:   64-block  0
+branch  0 taken 3
+branch  1 taken 1 (fallthrough)
+        3:   65:		int random = rand() % allFilme.size();
+        3:   65-block  0
+call    0 returned 3
+call    1 returned 3
+        -:   66:
+        3:   67:		if (viz[random] == 0) {
+call    0 returned 3
+branch  1 taken 2 (fallthrough)
+branch  2 taken 1
+        2:   68:			viz[random] = 1;
+        2:   68-block  0
+call    0 returned 2
+        2:   69:			cosFilme.addFilm(allFilme[random]);
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   70:			count++;
+        2:   70-block  0
+        -:   71:		}
+        -:   72:	}
+        -:   73:
+        1:   74:}
+        1:   74-block  0
+call    0 returned 1
+    $$$$$:   74-block  1
+call    1 never executed
+        -:   75:
+function _ZN7Service14getNumFilmeCosEv called 6 returned 100% blocks executed 100%
+        6:   76:int Service::getNumFilmeCos()
+        -:   77:{
+        6:   78:	return cosFilme.getNumFilms();
+        6:   78-block  0
+call    0 returned 6
+        -:   79:}
+        -:   80:
+function _ZNK7Service11getFilmeCosEv called 1 returned 100% blocks executed 100%
+        1:   81:vector<Film> Service::getFilmeCos() const
+        -:   82:{
+        1:   83:	return cosFilme.getCart();
+        1:   83-block  0
+call    0 returned 1
+        -:   84:}
+        -:   85:
+function _ZN7Service16exportaCosInHTMLERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   86:void Service::exportaCosInHTML(const string& numeFisier) {
+        -:   87:
+    #####:   88:	std::ofstream fisier(numeFisier);
+    %%%%%:   88-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:   89:
+    #####:   90:	if (!fisier.is_open()) {
+    %%%%%:   90-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:   91:		throw ExceptieRepo("Nu s-a putut deschide fisierul!");
+    %%%%%:   91-block  0
+call    0 never executed
+    %%%%%:   91-block  1
+call    1 never executed
+branch  2 never executed (fallthrough)
+branch  3 never executed (throw)
+    %%%%%:   91-block  2
+call    4 never executed
+call    5 never executed
+call    6 never executed
+    $$$$$:   91-block  3
+    $$$$$:   91-block  4
+    $$$$$:   91-block  5
+call    7 never executed
+        -:   92:	}
+        -:   93:
+    #####:   94:	fisier << "<!DOCTYPE html>\n";
+    %%%%%:   94-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   95:	fisier << "<html>\n";
+    %%%%%:   95-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   96:	fisier << "<head><title>Coș de Filme</title></head>\n";
+    %%%%%:   96-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   97:	fisier << "<body>\n";
+    %%%%%:   97-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   98:	fisier << "<h1>Lista de filme din coș</h1>\n";
+    %%%%%:   98-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:   99:	fisier << "<ul>\n";
+    %%%%%:   99-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  100:
+        -:  101:
+    #####:  102:	for (const auto& film : cosFilme.getCart()) {
+    %%%%%:  102-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  102-block  1
+call    3 never executed
+call    4 never executed
+    %%%%%:  102-block  2
+call    5 never executed
+    %%%%%:  102-block  3
+call    6 never executed
+    %%%%%:  102-block  4
+call    7 never executed
+branch  8 never executed
+branch  9 never executed (fallthrough)
+    #####:  103:		fisier << "<li>\n";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  104:		fisier << "<strong>" << film.getTitluFilm() << "</strong>\n";
+    %%%%%:  104-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  104-block  1
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  104-block  2
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  104-block  3
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:  104-block  4
+call   12 never executed
+    $$$$$:  104-block  5
+call   13 never executed
+    $$$$$:  104-block  6
+    #####:  105:		fisier << " - " << film.getGenFilm() << " - " << film.getAnAparitie() << " - " << film.getActorPrincipal() << "\n";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    %%%%%:  105-block  0
+call    3 never executed
+branch  4 never executed (fallthrough)
+branch  5 never executed (throw)
+    %%%%%:  105-block  1
+call    6 never executed
+branch  7 never executed (fallthrough)
+branch  8 never executed (throw)
+    %%%%%:  105-block  2
+call    9 never executed
+branch 10 never executed (fallthrough)
+branch 11 never executed (throw)
+    %%%%%:  105-block  3
+call   12 never executed
+branch 13 never executed (fallthrough)
+branch 14 never executed (throw)
+    %%%%%:  105-block  4
+call   15 never executed
+branch 16 never executed (fallthrough)
+branch 17 never executed (throw)
+    %%%%%:  105-block  5
+call   18 never executed
+branch 19 never executed (fallthrough)
+branch 20 never executed (throw)
+    %%%%%:  105-block  6
+call   21 never executed
+branch 22 never executed (fallthrough)
+branch 23 never executed (throw)
+    %%%%%:  105-block  7
+call   24 never executed
+branch 25 never executed (fallthrough)
+branch 26 never executed (throw)
+    %%%%%:  105-block  8
+call   27 never executed
+branch 28 never executed (fallthrough)
+branch 29 never executed (throw)
+    %%%%%:  105-block  9
+call   30 never executed
+call   31 never executed
+    $$$$$:  105-block 10
+call   32 never executed
+    $$$$$:  105-block 11
+    $$$$$:  105-block 12
+call   33 never executed
+    $$$$$:  105-block 13
+    #####:  106:		fisier << "</li>\n";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  107:	}
+    %%%%%:  107-block  0
+call    0 never executed
+    $$$$$:  107-block  1
+call    1 never executed
+        -:  108:
+    #####:  109:	fisier << "</ul>\n";
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  110:	fisier << "</body>\n";
+    %%%%%:  110-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  111:	fisier << "</html>\n";
+    %%%%%:  111-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+        -:  112:
+    #####:  113:	fisier.close();
+    %%%%%:  113-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed (throw)
+    #####:  114:}
+    %%%%%:  114-block  0
+call    0 never executed
+    $$$$$:  114-block  1
+call    1 never executed
+        -:  115:
+function _ZNK7Service9cautaFilmERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 11 returned 73% blocks executed 100%
+       11:  116:Film Service::cautaFilm(const string& titluFilm) const {
+       11:  117:	return repository.cautaFilm(titluFilm);
+       11:  117-block  0
+call    0 returned 8
+call    1 returned 8
+        -:  118:}
+        -:  119:
+function _ZN7Service16filtreazaDupaGenERKNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 1 returned 100% blocks executed 76%
+        1:  120:vector<Film> Service::filtreazaDupaGen(const string& genFilm) {
+        1:  121:	vector<Film> filmeFiltrate;
+        1:  121-block  0
+call    0 returned 1
+        1:  122:	vector<Film> filme = repository.getAll();
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        6:  123:	for (const auto& film : filme) {
+        1:  123-block  0
+call    0 returned 1
+call    1 returned 1
+        5:  123-block  1
+call    2 returned 5
+        5:  123-block  2
+call    3 returned 5
+        6:  123-block  3
+call    4 returned 6
+branch  5 taken 5
+branch  6 taken 1 (fallthrough)
+        5:  124:		if (film.getGenFilm() == genFilm) {
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:  124-block  0
+call    3 returned 5
+call    4 returned 5
+branch  5 taken 2 (fallthrough)
+branch  6 taken 3
+    $$$$$:  124-block  1
+        2:  125:			filmeFiltrate.push_back(film);
+        2:  125-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  126:		}
+        -:  127:	}
+        2:  128:	return filmeFiltrate;
+        1:  128-block  0
+        1:  128-block  1
+        1:  129:}
+        1:  129-block  0
+call    0 returned 1
+    $$$$$:  129-block  1
+call    1 never executed
+    $$$$$:  129-block  2
+call    2 never executed
+        -:  130:
+function _ZN7Service23filtreazaDupaAnAparitieEi called 1 returned 100% blocks executed 77%
+        1:  131:vector<Film> Service::filtreazaDupaAnAparitie(int anAparitie) {
+        1:  132:	vector<Film> filmeFiltrate;
+        1:  132-block  0
+call    0 returned 1
+        1:  133:	vector<Film> filme = repository.getAll();
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        6:  134:	for (const auto& film : filme) {
+        1:  134-block  0
+call    0 returned 1
+call    1 returned 1
+        5:  134-block  1
+call    2 returned 5
+        5:  134-block  2
+call    3 returned 5
+        6:  134-block  3
+call    4 returned 6
+branch  5 taken 5
+branch  6 taken 1 (fallthrough)
+        5:  135:		if (film.getAnAparitie() == anAparitie) {
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:  135-block  0
+branch  3 taken 3 (fallthrough)
+branch  4 taken 2
+        3:  136:			filmeFiltrate.push_back(film);
+        3:  136-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        -:  137:		}
+        -:  138:	}
+        2:  139:	return filmeFiltrate;
+        1:  139-block  0
+        1:  139-block  1
+        1:  140:}
+        1:  140-block  0
+call    0 returned 1
+    $$$$$:  140-block  1
+call    1 never executed
+    $$$$$:  140-block  2
+call    2 never executed
+        -:  141:
+function _Z27comparareDupaTitluCrescatorRK4FilmS1_ called 10 returned 100% blocks executed 73%
+       10:  142:bool comparareDupaTitluCrescator(const Film& film1, const Film& film2) {
+       10:  143:	return film1.getTitluFilm() < film2.getTitluFilm();
+       10:  143-block  0
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+       10:  143-block  1
+call    3 returned 10
+branch  4 taken 10 (fallthrough)
+branch  5 taken 0 (throw)
+       10:  143-block  2
+call    6 returned 10
+call    7 returned 10
+call    8 returned 10
+       10:  143-block  3
+    $$$$$:  143-block  4
+    $$$$$:  143-block  5
+call    9 never executed
+        -:  144:}
+        -:  145:
+function _Z36comparareDupaActorPrincipalCrescatorRK4FilmS1_ called 10 returned 100% blocks executed 73%
+       10:  146:bool comparareDupaActorPrincipalCrescator(const Film& film1, const Film& film2) {
+       10:  147:	return film1.getActorPrincipal() < film2.getActorPrincipal();
+       10:  147-block  0
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+       10:  147-block  1
+call    3 returned 10
+branch  4 taken 10 (fallthrough)
+branch  5 taken 0 (throw)
+       10:  147-block  2
+call    6 returned 10
+call    7 returned 10
+call    8 returned 10
+       10:  147-block  3
+    $$$$$:  147-block  4
+    $$$$$:  147-block  5
+call    9 never executed
+        -:  148:}
+        -:  149:
+function _Z29comparareDupaGenSiAnCrescatorRK4FilmS1_ called 10 returned 100% blocks executed 82%
+       10:  150:bool comparareDupaGenSiAnCrescator(const Film& film1, const Film& film2) {
+       10:  151:	if (film1.getAnAparitie() == film2.getAnAparitie())
+       10:  151-block  0
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 3 (fallthrough)
+branch  3 taken 7
+        3:  152:		return film1.getGenFilm() < film2.getGenFilm();
+        3:  152-block  0
+call    0 returned 3
+branch  1 taken 3 (fallthrough)
+branch  2 taken 0 (throw)
+        3:  152-block  1
+call    3 returned 3
+branch  4 taken 3 (fallthrough)
+branch  5 taken 0 (throw)
+        3:  152-block  2
+call    6 returned 3
+call    7 returned 3
+call    8 returned 3
+    $$$$$:  152-block  3
+    $$$$$:  152-block  4
+call    9 never executed
+        7:  153:	return film1.getAnAparitie() < film2.getAnAparitie();
+        7:  153-block  0
+call    0 returned 7
+call    1 returned 7
+        -:  154:}
+        -:  155:
+function _Z30comparareDupaTitluDescrescatorRK4FilmS1_ called 10 returned 100% blocks executed 73%
+       10:  156:bool comparareDupaTitluDescrescator(const Film& film1, const Film& film2) {
+       10:  157:	return film1.getTitluFilm() > film2.getTitluFilm();
+       10:  157-block  0
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+       10:  157-block  1
+call    3 returned 10
+branch  4 taken 10 (fallthrough)
+branch  5 taken 0 (throw)
+       10:  157-block  2
+call    6 returned 10
+call    7 returned 10
+call    8 returned 10
+       10:  157-block  3
+    $$$$$:  157-block  4
+    $$$$$:  157-block  5
+call    9 never executed
+        -:  158:}
+        -:  159:
+function _Z39comparareDupaActorPrincipalDescrescatorRK4FilmS1_ called 10 returned 100% blocks executed 73%
+       10:  160:bool comparareDupaActorPrincipalDescrescator(const Film& film1, const Film& film2) {
+       10:  161:	return film1.getActorPrincipal() > film2.getActorPrincipal();
+       10:  161-block  0
+call    0 returned 10
+branch  1 taken 10 (fallthrough)
+branch  2 taken 0 (throw)
+       10:  161-block  1
+call    3 returned 10
+branch  4 taken 10 (fallthrough)
+branch  5 taken 0 (throw)
+       10:  161-block  2
+call    6 returned 10
+call    7 returned 10
+call    8 returned 10
+       10:  161-block  3
+    $$$$$:  161-block  4
+    $$$$$:  161-block  5
+call    9 never executed
+        -:  162:}
+        -:  163:
+function _Z32comparareDupaGenSiAnDescrescatorRK4FilmS1_ called 10 returned 100% blocks executed 82%
+       10:  164:bool comparareDupaGenSiAnDescrescator(const Film& film1, const Film& film2) {
+       10:  165:	if (film1.getAnAparitie() == film2.getAnAparitie())
+       10:  165-block  0
+call    0 returned 10
+call    1 returned 10
+branch  2 taken 5 (fallthrough)
+branch  3 taken 5
+        5:  166:		return film1.getGenFilm() > film2.getGenFilm();
+        5:  166-block  0
+call    0 returned 5
+branch  1 taken 5 (fallthrough)
+branch  2 taken 0 (throw)
+        5:  166-block  1
+call    3 returned 5
+branch  4 taken 5 (fallthrough)
+branch  5 taken 0 (throw)
+        5:  166-block  2
+call    6 returned 5
+call    7 returned 5
+call    8 returned 5
+    $$$$$:  166-block  3
+    $$$$$:  166-block  4
+call    9 never executed
+        5:  167:	return film1.getAnAparitie() > film2.getAnAparitie();
+        5:  167-block  0
+call    0 returned 5
+call    1 returned 5
+        -:  168:}
+        -:  169:
+function _ZN7Service8sorteazaEii called 6 returned 100% blocks executed 90%
+        6:  170:vector<Film> Service::sorteaza(int reperSortare, int ordineSortare) {
+        -:  171:
+        6:  172:	vector<Film> filme = repository.getAll();
+        6:  172-block  0
+call    0 returned 6
+call    1 returned 6
+        -:  173:
+        6:  174:	bool(*functieDeComparare)(const Film & film1, const Film & film2) { comparareDupaActorPrincipalCrescator };
+        -:  175:	
+        6:  176:	if (reperSortare == 1) {
+branch  0 taken 2 (fallthrough)
+branch  1 taken 4
+        2:  177:		if (ordineSortare == 1)
+        2:  177-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  178:			functieDeComparare = comparareDupaTitluCrescator;
+        1:  178-block  0
+        -:  179:		else
+        1:  180:			functieDeComparare = comparareDupaTitluDescrescator;
+        1:  180-block  0
+        -:  181:	}
+        4:  182:	else if (reperSortare == 2) {
+        4:  182-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 2
+        2:  183:		if (ordineSortare == 1)
+        2:  183-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  184:			functieDeComparare = comparareDupaActorPrincipalCrescator;
+        1:  184-block  0
+        -:  185:		else
+        1:  186:			functieDeComparare = comparareDupaActorPrincipalDescrescator;
+        1:  186-block  0
+        -:  187:	}
+        2:  188:	else if (reperSortare == 3){
+        2:  188-block  0
+branch  0 taken 2 (fallthrough)
+branch  1 taken 0
+        2:  189:		if (ordineSortare == 1)
+        2:  189-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:  190:			functieDeComparare = comparareDupaGenSiAnCrescator;
+        1:  190-block  0
+        -:  191:		else
+        1:  192:			functieDeComparare = comparareDupaGenSiAnDescrescator;
+        1:  192-block  0
+        -:  193:	}
+       30:  194:	for (int i = 0; i < (int)filme.size() - 1; i++) {
+        6:  194-block  0
+       24:  194-block  1
+       30:  194-block  2
+call    0 returned 30
+branch  1 taken 24
+branch  2 taken 6 (fallthrough)
+       84:  195:		for (int j = i + 1; j < (int)filme.size(); j++) {
+       24:  195-block  0
+       60:  195-block  1
+       84:  195-block  2
+call    0 returned 84
+branch  1 taken 60
+branch  2 taken 24 (fallthrough)
+       60:  196:			if ((functieDeComparare)(filme[i], filme[j]) == false) {
+       60:  196-block  0
+call    0 returned 60
+call    1 returned 60
+call    2 returned 60
+branch  3 taken 60 (fallthrough)
+branch  4 taken 0 (throw)
+       60:  196-block  1
+branch  5 taken 32 (fallthrough)
+branch  6 taken 28
+       32:  197:				Film aux = filme[i];
+       32:  197-block  0
+call    0 returned 32
+call    1 returned 32
+branch  2 taken 32 (fallthrough)
+branch  3 taken 0 (throw)
+       32:  198:				filme[i] = filme[j];
+       32:  198-block  0
+call    0 returned 32
+call    1 returned 32
+call    2 returned 32
+branch  3 taken 32 (fallthrough)
+branch  4 taken 0 (throw)
+       32:  199:				filme[j] = aux;
+       32:  199-block  0
+call    0 returned 32
+call    1 returned 32
+branch  2 taken 32 (fallthrough)
+branch  3 taken 0 (throw)
+       32:  200:			}
+       32:  200-block  0
+call    0 returned 32
+    $$$$$:  200-block  1
+call    1 never executed
+        -:  201:		}
+        -:  202:	}
+        6:  203:	return filme;
+        6:  203-block  0
+        6:  203-block  1
+    =====:  204:}
+    $$$$$:  204-block  0
+call    0 never executed
+        -:  205:
+function _ZN7ServiceD2Ev called 8 returned 100% blocks executed 100%
+        8:  206:Service::~Service() 
+        -:  207:= default;

@@ -1,0 +1,63 @@
+EN: 
+Copy this file to another file having a .c extension (eg a.c) and fix the compilation errors/warnings and the runtime problems (use valgrind)
+This program reads three sentences from a text file provided as a command-line argument, modifies the text by converting letters at odd positions to uppercase and replacing letters at even positions with the next character in the ASCII table,
+and writes the transformed text to an output file specified in the arguments.
+
+RO: 
+Copiati acest fisier intr-un alt fisier cu extensia .c (de exemplu a.c) si rezolvati problemele compilare (erori si warning-uri)
+si rulare (folositi valgrind).
+Acest program citeste trei propozitii dintr-un fisier text furnizat ca argument in linia de comanda, modifica textul prin transformarea literelor de pe pozitiile impare in majuscule si inlocuirea literelor de pe pozitiile pare cu urmatorul caracter din tabelul ASCII, apoi scrie textul transformat intr-un fisier de iesire specificat in argumente.
+*/
+
+void process_text(char *text) {
+    for (int i = 0; text[i] != '\0'; i++) {
+        if (text[i] >= 'a' && text[i] <= 'z') {
+            if (i % 2 == 0) {
+                text[i] -= 32;
+            } else {
+                text[i] += 1;
+            }
+        } else if (text[i] >= 'A' && text[i] <= 'Z') {
+            if (i % 2 != 0) {
+                text[i] += 1;
+            }
+        }
+    }
+}
+
+int main() {
+    if (argc != 3) {
+        fprintf(stderr, "Usage: %s <input_file> <output_file>\n", argv[0]);
+        return 1;
+    }
+
+    FILE *input = fopen(argv[1], );
+    if (!input) {
+        perror("Error opening input file");
+        return 1;
+    }
+
+    FILE *output = fopen(argv[2],);
+    if (!output) {
+        perror("Error opening output file");
+        fclose(input);
+        return 1;
+    }
+
+    char *buffer = (char *)malloc(2*sizeof(char));
+    if (!buffer) {
+        perror("Memory allocation failed");
+        fclose(input);
+        fclose(output);
+        return 1;
+    }
+
+    for (int i = 0; i < 3 && fgets(buffer, 1, input); i++) {
+        process_text(buffer);
+        fputs(buffer, output);
+    }
+
+
+    return 0;
+}
+

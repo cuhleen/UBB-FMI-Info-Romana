@@ -1,0 +1,412 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 2 - 4 - Copy/UI/ui.c
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 2 - 4 - Copy/cmake-build-debug-coverage/CMakeFiles/5_3_13.dir/UI/ui.c.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 2 - 4 - Copy/cmake-build-debug-coverage/CMakeFiles/5_3_13.dir/UI/ui.c.gcda
+        -:    0:Runs:1
+        -:    1:#include <stdio.h>
+        -:    2:
+        -:    3:#include "ui.h"
+        -:    4:
+function ui_adaugaMedicament called 0 returned 0% blocks executed 0%
+    #####:    5:void ui_adaugaMedicament(Farmacie* farmacie) {
+        -:    6:	int id;
+        -:    7:	int concentratie;
+        -:    8:	int cantitate;
+        -:    9:	char nume[30];
+    #####:   10:	printf("Introduceti id-ul medicamentului:\n"); scanf("%d", &id);
+    %%%%%:   10-block  0
+call    0 never executed
+call    1 never executed
+    #####:   11:	printf("Introduceti concentratia medicamentului:\n"); scanf("%d", &concentratie);
+call    0 never executed
+call    1 never executed
+    #####:   12:	printf("Introduceti cantitatea medicamentului:\n"); scanf("%d", &cantitate);
+call    0 never executed
+call    1 never executed
+    #####:   13:	printf("Introduceti numele medicamentului:\n"); scanf("%s", nume);
+call    0 never executed
+call    1 never executed
+        -:   14:
+    #####:   15:	int erori = adaugaMedicamentInFarmacie(farmacie, id, concentratie, cantitate, nume);
+call    0 never executed
+    #####:   16:	if (erori == 0) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   17:		printf("Medicamentul cu id %d a fost adaugat cu succes!\n", id);
+    %%%%%:   17-block  0
+call    0 never executed
+        -:   18:	}
+        -:   19:	else {
+    #####:   20:		printf("Date introduse gresite!\n");
+    %%%%%:   20-block  0
+call    0 never executed
+        -:   21:	}
+        -:   22:
+    #####:   23:}
+        -:   24:
+function ui_modificaMedicament called 0 returned 0% blocks executed 0%
+    #####:   25:void ui_modificaMedicament(Farmacie* farmacie) {
+        -:   26:	int id;
+        -:   27:	int concentratie;
+        -:   28:	int cantitate;
+        -:   29:	char nume[30];
+    #####:   30:	printf("Introduceti id-ul medicamentului:\n"); scanf("%d", &id);
+    %%%%%:   30-block  0
+call    0 never executed
+call    1 never executed
+    #####:   31:	printf("Introduceti concentratia medicamentului:\n"); scanf("%d", &concentratie);
+call    0 never executed
+call    1 never executed
+    #####:   32:	printf("Introduceti cantitatea medicamentului:\n"); scanf("%d", &cantitate);
+call    0 never executed
+call    1 never executed
+    #####:   33:	printf("Introduceti numele medicamentului:\n"); scanf("%s", nume);
+call    0 never executed
+call    1 never executed
+    #####:   34:	int erori = modificaMedicamentInFarmacie(farmacie, id, concentratie, cantitate, nume);
+call    0 never executed
+    #####:   35:	if (erori == 0) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   36:		printf("Medicamentul cu id %d a fost modificat cu succes!\n", id);
+    %%%%%:   36-block  0
+call    0 never executed
+        -:   37:	}
+        -:   38:	else {
+    #####:   39:		printf("Date introduse gresite!\n");
+    %%%%%:   39-block  0
+call    0 never executed
+        -:   40:	}
+    #####:   41:}
+        -:   42:
+function ui_stergeMedicament called 0 returned 0% blocks executed 0%
+    #####:   43:void ui_stergeMedicament(Farmacie* farmacie) {
+    #####:   44:	int id = -1;
+    #####:   45:	printf("Introduceti id-ul medicamentului pentru stergere:\n");
+    %%%%%:   45-block  0
+call    0 never executed
+    #####:   46:	scanf("%d", &id);
+call    0 never executed
+    #####:   47:	int validare = stergeMedicamentDinFarmacie(farmacie, id);
+call    0 never executed
+    #####:   48:	if (validare == 0) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   49:		printf("Medicamentul cu id %d a fost sters cu succes!\n", id);
+    %%%%%:   49-block  0
+call    0 never executed
+        -:   50:	}
+        -:   51:	else {
+    #####:   52:		printf("Optiune invalida!");
+    %%%%%:   52-block  0
+call    0 never executed
+        -:   53:	}
+    #####:   54:}
+        -:   55:
+function ui_afiseazaFarmacia called 0 returned 0% blocks executed 0%
+    #####:   56:void ui_afiseazaFarmacia(Lista* lista) {
+    #####:   57:	int existaMedicamente = 0;
+    #####:   58:	for (int i = 0; i < size(lista); i++){
+    %%%%%:   58-block  0
+    %%%%%:   58-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed (fallthrough)
+    #####:   59:		Medicament* medicament = getElement(lista, i);
+    %%%%%:   59-block  0
+call    0 never executed
+    #####:   60:		existaMedicamente++;
+    #####:   61:		if (existaMedicamente == 1) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   62:			printf("   Farmacie:\n");
+    %%%%%:   62-block  0
+call    0 never executed
+        -:   63:		}
+    #####:   64:		printf("%d. Medicamentul cu id %d cu concentratia %d de cantitate %d cu numele %s.\n", existaMedicamente, medicament->id, medicament->concentratie, medicament->cantitate, medicament->nume);
+    %%%%%:   64-block  0
+call    0 never executed
+        -:   65:	}
+    #####:   66:	if (existaMedicamente == 0) {
+    %%%%%:   66-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   67:		printf("Optiune invalida!\n");
+    %%%%%:   67-block  0
+call    0 never executed
+        -:   68:	}
+    #####:   69:}
+        -:   70:
+function ui_filtreaza called 0 returned 0% blocks executed 0%
+    #####:   71:void ui_filtreaza(Farmacie* farmacie) {
+    #####:   72:	int reperDeFiltrare = 0;
+    #####:   73:	printf("Introduceti reperul dupa care se va filtra (concentratie mai mica decat un numar dat -> 1; stoc mai mic decât un numar dat -> 2; nume incepand cu o litera data -> 3):\n");
+    %%%%%:   73-block  0
+call    0 never executed
+    #####:   74:	scanf("%d", &reperDeFiltrare);
+call    0 never executed
+    #####:   75:	if (reperDeFiltrare == 1) {
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   76:		printf("Introduceti concentratia dupa care sa se filtreze:\n");
+    %%%%%:   76-block  0
+call    0 never executed
+        -:   77:		int concentratie;
+    #####:   78:		scanf("%d", &concentratie);
+call    0 never executed
+    #####:   79:		Lista* listaFiltrataDupaconcentratie = filtreazaDupaConcentratie(farmacie, concentratie);
+call    0 never executed
+    #####:   80:		ui_afiseazaFarmacia(listaFiltrataDupaconcentratie);
+call    0 never executed
+    #####:   81:		distrugeLista(listaFiltrataDupaconcentratie);
+call    0 never executed
+        -:   82:	}
+    #####:   83:	else if (reperDeFiltrare == 2) {
+    %%%%%:   83-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   84:		printf("Introduceti stocul dupa care sa se filtreze:\n");
+    %%%%%:   84-block  0
+call    0 never executed
+        -:   85:		int cantitate;
+    #####:   86:		scanf("%d", &cantitate);
+call    0 never executed
+    #####:   87:		Lista* listaFiltrataDupaCantitate = filtreazaDupaCantitate(farmacie, cantitate);
+call    0 never executed
+    #####:   88:		ui_afiseazaFarmacia(listaFiltrataDupaCantitate);
+call    0 never executed
+    #####:   89:		distrugeLista(listaFiltrataDupaCantitate);
+call    0 never executed
+        -:   90:	}
+    #####:   91:	else if (reperDeFiltrare == 3) {
+    %%%%%:   91-block  0
+branch  0 never executed (fallthrough)
+branch  1 never executed
+    #####:   92:		printf("Introduceti litera numelelui dupa care sa se filtreze:\n");
+    %%%%%:   92-block  0
+call    0 never executed
+        -:   93:		char nume[20];
+    #####:   94:		scanf(" %c", nume);
+call    0 never executed
+    #####:   95:		Lista* listaFiltrataDupaNume = filtreazaDupaNume(farmacie, nume);
+call    0 never executed
+    #####:   96:		ui_afiseazaFarmacia(listaFiltrataDupaNume);
+call    0 never executed
+    #####:   97:		distrugeLista(listaFiltrataDupaNume);
+call    0 never executed
+        -:   98:	}
+        -:   99:	else {
+    #####:  100:		printf("Optiune invalida!");
+    %%%%%:  100-block  0
+call    0 never executed
+        -:  101:	}
+    #####:  102:}
+        -:  103:
+function ui_sorteaza called 0 returned 0% blocks executed 0%
+    #####:  104:void ui_sorteaza(Farmacie* farmacie) {
+        -:  105:	int reperDeSortare;
+        -:  106:	int ordineDeSortare;
+    #####:  107:	printf("Introduceti reperul dupa care sa se sorteze (1->id, 2->concentratie, 3->cantitate, 4->nume):\n");
+    %%%%%:  107-block  0
+call    0 never executed
+    #####:  108:	scanf("%d", &reperDeSortare);
+call    0 never executed
+    #####:  109:	printf("Introduceti ordinea de sortare (0 pentru crescator, 1 pentru descrescator):\n");
+call    0 never executed
+    #####:  110:	scanf("%d", &ordineDeSortare);
+call    0 never executed
+        -:  111:	Lista* MedicamenteSortate;
+    #####:  112:	switch (reperDeSortare) {
+branch  0 never executed
+branch  1 never executed
+branch  2 never executed
+branch  3 never executed
+branch  4 never executed
+    #####:  113:	case 1:
+    #####:  114:		MedicamenteSortate = sorteazaDupaId(farmacie, ordineDeSortare);
+    %%%%%:  114-block  0
+call    0 never executed
+    #####:  115:		break;
+    #####:  116:	case 2:
+    #####:  117:		MedicamenteSortate = sorteazaDupaConcentratie(farmacie, ordineDeSortare);
+    %%%%%:  117-block  0
+call    0 never executed
+    #####:  118:		break;
+    #####:  119:	case 3:
+    #####:  120:		MedicamenteSortate = sorteazaDupaCantitate(farmacie, ordineDeSortare);
+    %%%%%:  120-block  0
+call    0 never executed
+    #####:  121:		break;
+    #####:  122:	case 4:
+    #####:  123:		MedicamenteSortate = sorteazaDupaNume(farmacie, ordineDeSortare);
+    %%%%%:  123-block  0
+call    0 never executed
+    #####:  124:		break;
+    #####:  125:	default:
+    #####:  126:		printf("Optiune invalida!\n");
+    %%%%%:  126-block  0
+call    0 never executed
+        -:  127:	}
+    #####:  128:	ui_afiseazaFarmacia(MedicamenteSortate);
+    %%%%%:  128-block  0
+call    0 never executed
+    #####:  129:	distrugeLista(MedicamenteSortate);
+call    0 never executed
+    #####:  130:}
+        -:  131:
+function run called 1 returned 100% blocks executed 29%
+        1:  132:void run() {
+        1:  133:	Farmacie farmacie = creeazaFarmacie();
+        1:  133-block  0
+call    0 returned 1
+        1:  134:	int ruleaza = 1;
+        2:  135:	while (ruleaza) {
+        2:  135-block  0
+branch  0 taken 1
+branch  1 taken 1 (fallthrough)
+        1:  136:		int comanda = 0;
+        1:  137:		printf("\n   Meniu farmacie:\n1. Adauga medicament\n2. Modifica medicament\n3. Sterge medicament\n4. Afiseaza toate medicamentele farmaciei\n5. Filtreaza medicamentele farmaciei\n6. Afiseaza medicamentele farmaciei sortate\n7. Pune medicamente default in farmacie\n8. Undo\n0. Iesire din aplicatie\n\n");
+        1:  137-block  0
+call    0 returned 1
+        1:  138:		scanf("%d", &comanda);
+call    0 returned 1
+        1:  139:		switch (comanda) {
+branch  0 taken 0
+branch  1 taken 0
+branch  2 taken 0
+branch  3 taken 0
+branch  4 taken 0
+branch  5 taken 0
+branch  6 taken 0
+branch  7 taken 0
+branch  8 taken 1
+branch  9 taken 0
+    #####:  140:		case 1:
+    #####:  141:			ui_adaugaMedicament(&farmacie);
+    %%%%%:  141-block  0
+call    0 never executed
+    #####:  142:			break;
+    #####:  143:		case 2:
+    #####:  144:			ui_modificaMedicament(&farmacie);
+    %%%%%:  144-block  0
+call    0 never executed
+    #####:  145:			break;
+    #####:  146:		case 3:
+    #####:  147:			ui_stergeMedicament(&farmacie);
+    %%%%%:  147-block  0
+call    0 never executed
+    #####:  148:			break;
+    #####:  149:		case 4:
+    #####:  150:			ui_afiseazaFarmacia(farmacie.Medicamente);
+    %%%%%:  150-block  0
+call    0 never executed
+    #####:  151:			break;
+    #####:  152:		case 5:
+    #####:  153:			ui_filtreaza(&farmacie);
+    %%%%%:  153-block  0
+call    0 never executed
+    #####:  154:			break;
+    #####:  155:		case 6:
+    #####:  156:			ui_sorteaza(&farmacie);
+    %%%%%:  156-block  0
+call    0 never executed
+    #####:  157:			break;
+    #####:  158:		case 7:
+    #####:  159:			adaugaMedicamentInFarmacie(&farmacie, 3, 1, 100, "nume1");
+    %%%%%:  159-block  0
+call    0 never executed
+    #####:  160:			adaugaMedicamentInFarmacie(&farmacie, 4, 10, 15, "nume2");
+call    0 never executed
+    #####:  161:			adaugaMedicamentInFarmacie(&farmacie, 1, 13, 15, "nume3");
+call    0 never executed
+    #####:  162:			adaugaMedicamentInFarmacie(&farmacie, 2, 15, 15, "nume4");
+call    0 never executed
+    #####:  163:			adaugaMedicamentInFarmacie(&farmacie, 6, 13, 15, "nume1");
+call    0 never executed
+    #####:  164:			adaugaMedicamentInFarmacie(&farmacie, 5, 15, 15, "nume1");
+call    0 never executed
+    #####:  165:			break;
+    #####:  166:		case 8:
+    #####:  167:			if (undo(&farmacie) == 1)
+    %%%%%:  167-block  0
+call    0 never executed
+branch  1 never executed (fallthrough)
+branch  2 never executed
+    #####:  168:				printf("Nu se mai poate face undo\n");
+    %%%%%:  168-block  0
+call    0 never executed
+    #####:  169:			break;
+    %%%%%:  169-block  0
+        1:  170:		case 0:
+        1:  171:			ruleaza = 0;
+        1:  172:			break;
+        1:  172-block  0
+    #####:  173:		default:
+    #####:  174:			printf("Optiune invalida!\n");
+    %%%%%:  174-block  0
+call    0 never executed
+        -:  175:		}
+        -:  176:	}
+        1:  177:	distrugeFarmacie(&farmacie);
+        1:  177-block  0
+call    0 returned 1
+        1:  178:}
+        -:  179:
+        -:  180:
+        -:  181:
+        -:  182:
+        -:  183:
+        -:  184:
+        -:  185:
+        -:  186:
+        -:  187:
+        -:  188:
+        -:  189:
+        -:  190:
+        -:  191:
+        -:  192:
+        -:  193:
+        -:  194:
+        -:  195:
+        -:  196:
+        -:  197:
+        -:  198:
+        -:  199:
+        -:  200:
+        -:  201:
+        -:  202:
+        -:  203:
+        -:  204:
+        -:  205:
+        -:  206:
+        -:  207:
+        -:  208:
+        -:  209:
+        -:  210:
+        -:  211:
+        -:  212:
+        -:  213:
+        -:  214:
+        -:  215:
+        -:  216:
+        -:  217:
+        -:  218:
+        -:  219:
+        -:  220:
+        -:  221:
+        -:  222:
+        -:  223:
+        -:  224:
+        -:  225:
+        -:  226:
+        -:  227:
+        -:  228:
+        -:  229:
+        -:  230:
+        -:  231:
+        -:  232:
+        -:  233:
+        -:  234:
+        -:  235:// void ruleazaToateTestele()
+        -:  236:// {
+        -:  237:// 	printf("\nToate testele au rulat cu succes!\n\n");
+        -:  238:// }

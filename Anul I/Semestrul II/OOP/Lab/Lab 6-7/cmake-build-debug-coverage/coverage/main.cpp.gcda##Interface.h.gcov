@@ -1,0 +1,25 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/Interface.h
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/cmake-build-debug-coverage/CMakeFiles/Lab6.dir/main.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/cmake-build-debug-coverage/CMakeFiles/Lab6.dir/main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef UI_H
+        -:    2:#define UI_H
+        -:    3:#include <utility>
+        -:    4:
+        -:    5:#include "Service.h"
+        -:    6:
+        -:    7:class Interface {
+        -:    8:private:
+        -:    9:    Service service;
+        -:   10:public:
+function _ZN9InterfaceC2E7Service called 1 returned 100% blocks executed 100%
+        1:   11:    explicit Interface(Service service) : service(std::move(service)) {}
+        1:   11-block  0
+call    0 returned 1
+call    1 returned 1
+        -:   12:    void Run();
+        -:   13:};
+        -:   14:
+        -:   15:
+        -:   16:
+        -:   17:#endif //UI_H

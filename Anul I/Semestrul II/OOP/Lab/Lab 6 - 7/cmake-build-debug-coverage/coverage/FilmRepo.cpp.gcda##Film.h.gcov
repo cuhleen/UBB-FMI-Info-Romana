@@ -1,0 +1,63 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6 - 7/Domain/Film.h
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6 - 7/cmake-build-debug-coverage/CMakeFiles/Lab_6___7.dir/Repo/FilmRepo.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6 - 7/cmake-build-debug-coverage/CMakeFiles/Lab_6___7.dir/Repo/FilmRepo.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include <iostream>
+        -:    3:#include <string>
+        -:    4:using std::string;
+        -:    5:using std::cout;
+        -:    6:
+        -:    7:class Film {
+        -:    8:
+        -:    9:private:
+        -:   10:
+        -:   11:    string titluFilm;
+        -:   12:    string genFilm;
+        -:   13:    int anAparitie;
+        -:   14:    string actorPrincipal;
+        -:   15:
+        -:   16:public:
+        -:   17:
+        -:   18:    int getAnAparitie() const;
+        -:   19:
+        -:   20:    string getTitluFilm() const;
+        -:   21:
+        -:   22:    string getGenFilm() const;
+        -:   23:
+        -:   24:    string getActorPrincipal() const;
+        -:   25:
+        -:   26:    void setGenFilm(const string genFilmNou);
+        -:   27:
+        -:   28:    void setAnAparitie(const int anAparitieNou);
+        -:   29:
+        -:   30:    void setActorPrincipal(const string actorPrincipalNou);
+        -:   31:
+        -:   32:    Film(const string titluFilm, const string genFilm, const int anAparitie, const string actorPrincipal) : titluFilm{ titluFilm }, genFilm{ genFilm }, anAparitie{ anAparitie }, actorPrincipal{ actorPrincipal } {}
+        -:   33:
+function _ZN4FilmC2ERKS_ called 161 returned 100% blocks executed 55%
+      161:   34:    Film(const Film& other) :titluFilm{ other.titluFilm }, genFilm{ other.genFilm }, anAparitie{ other.anAparitie }, actorPrincipal{ other.actorPrincipal } {
+      161:   34-block  0
+call    0 returned 161
+call    1 returned 161
+branch  2 taken 161 (fallthrough)
+branch  3 taken 0 (throw)
+      161:   34-block  1
+call    4 returned 161
+branch  5 taken 161 (fallthrough)
+branch  6 taken 0 (throw)
+      161:   35:        cout <<"";
+      161:   35-block  0
+call    0 returned 161
+branch  1 taken 161 (fallthrough)
+branch  2 taken 0 (throw)
+      161:   36:    }
+      161:   36-block  0
+    $$$$$:   36-block  1
+call    0 never executed
+    $$$$$:   36-block  2
+call    1 never executed
+    $$$$$:   36-block  3
+call    2 never executed
+        -:   37:
+        -:   38:};

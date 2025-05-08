@@ -1,29 +1,40 @@
 #include "IteratorColectie.h"
 #include "Colectie.h"
+#include <exception>
 
-
-IteratorColectie::IteratorColectie(const Colectie& c): col(c) {
-	/* de adaugat */
+// Complexitate = BC = WC = AC = θ(1)
+IteratorColectie::IteratorColectie(const Colectie& c) : col(c) {
+	curent = 0;
+	frecventaCurent = 0;
 }
 
+// Complexitate = BC = WC = AC = θ(1)
 void IteratorColectie::prim() {
-	/* de adaugat */
+	curent = 0;
+	frecventaCurent = col.nrAparitii(curent);
 }
 
-
+// Complexitate = BC = WC = AC = θ(1)
 void IteratorColectie::urmator() {
-	/* de adaugat */
+	if (!valid())
+		throw std::exception();
+
+	frecventaCurent++;
+	if (frecventaCurent >= col.frecventa[curent]) {
+		curent++;
+		frecventaCurent = 0;
+	}
 }
 
-
+// Complexitate = BC = WC = AC = θ(1)
 bool IteratorColectie::valid() const {
-	/* de adaugat */
-	return false;
+	return curent < col.dimIndiv();
 }
 
-
-
+// Complexitate = BC = WC = AC = θ(1)
 TElem IteratorColectie::element() const {
-	/* de adaugat */
-	return -1;
+	if (!valid())
+		throw std::exception();
+	return col.elemente[curent];
 }
+

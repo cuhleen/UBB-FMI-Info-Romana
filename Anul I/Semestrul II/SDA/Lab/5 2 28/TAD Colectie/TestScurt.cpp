@@ -1,11 +1,9 @@
 #include "TestScurt.h"
 #include <assert.h>
+#include <exception>
+
 #include "Colectie.h"
 #include "IteratorColectie.h"
-
-
-
-
 
 void testAll() { //apelam fiecare functie sa vedem daca exista
 	Colectie c;
@@ -32,5 +30,28 @@ void testAll() { //apelam fiecare functie sa vedem daca exista
 	while (ic.valid()) {
 		TElem e = ic.element();
 		ic.urmator();
-	}	 
+	}
+
+	//Teste functie noua
+	c.adaugaAparitiiMultiple(20, 999); // se adauga
+	assert(c.cauta(999) == true); // se afla
+	assert(c.nrAparitii(999) == 20); // apare de cate ori i-am zis
+	assert(c.sterge(999) == true); // se poate sterge
+	assert(c.nrAparitii(999) == 19); // chiar se sterge
+
+	c.adaugaAparitiiMultiple(0, 999); // se adauga cu nr 0
+
+	bool exceptiePrinsa = false;
+
+	try
+	{
+		c.adaugaAparitiiMultiple(-20, 1000); // se adauga cu nr negativ
+	}catch (const std::exception&)
+	{
+		exceptiePrinsa = true;
+	}
+	assert(exceptiePrinsa);
+
+
+
 }

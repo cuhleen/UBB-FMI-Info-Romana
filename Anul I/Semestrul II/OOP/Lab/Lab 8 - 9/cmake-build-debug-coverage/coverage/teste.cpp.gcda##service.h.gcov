@@ -1,0 +1,79 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9/service.h
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/teste.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/teste.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:#include "Film.h"
+        -:    4:#include "repo.h"
+        -:    5:#include "validator.h"
+        -:    6:#include <string>
+        -:    7:#include <vector>
+        -:    8:#include <functional>
+        -:    9:
+        -:   10:#include "ShoppingCart.h"
+        -:   11:
+        -:   12:using std::vector;
+        -:   13:using std::function;
+        -:   14:
+        -:   15:class Service
+        -:   16:{
+        -:   17:private:
+        -:   18:
+        -:   19:	Repo& repository;
+        -:   20:	Validator& validator;
+        -:   21:	ShoppingCart& cosFilme;
+        -:   22:
+        -:   23:public:
+        -:   24:
+function _ZN7ServiceC2ER4RepoR9ValidatorR12ShoppingCart called 0 returned 0% blocks executed 0%
+    #####:   25:	Service(Repo& repository, Validator& validator, ShoppingCart& cosFilme) noexcept: repository{ repository }, validator{ validator }, cosFilme { cosFilme } {}
+        -:   26:	//nu permitem copierea de obiecte Service
+        -:   27:	Service(const Service& other) = delete;
+        -:   28:
+        -:   29:	/*
+        -:   30:	Functia creeaza, valideaza si adauga un nou film in repository
+        -:   31:	arunca exceptie daca parametrii filmului nu sunt valizi sau daca exista deja un film cu acelasi titlu
+        -:   32:	*/
+        -:   33:	void adaugaFilm(const string& titluFilm, const string& genFilm, int anAparitie, const string& actorPrincipal) const ;
+        -:   34:
+        -:   35:	/*
+        -:   36:	Functia sterge un film din repository
+        -:   37:	arunca exceptie daca nu s-a gasit titlul filmului
+        -:   38:	*/
+        -:   39:	void stergeFilm(const string& titluFilm);
+        -:   40:
+        -:   41:	/*
+        -:   42:	Functia modifica un film din repository
+        -:   43:	arunca exceptie daca nu s-a gasit titlul filmului
+        -:   44:	*/
+        -:   45:	void modificaFilm(const string& titluFilm, const string& genFilm, int anAparitie, const string& actorPrincipal);
+        -:   46:
+        -:   47:	/*
+        -:   48:	Functia cauta un film in repository dupa titlul acestuia
+        -:   49:	arunca exceptie daca nu s-a gasit titlul filmului
+        -:   50:	*/
+        -:   51:	Film cautaFilm(const string& titluFilm) const;
+        -:   52:
+        -:   53:	/*
+        -:   54:	Functia returneaza toate filmele in ordinea adaugarii lor in repository
+        -:   55:	*/
+        -:   56:	const vector<Film>& getAll() const;
+        -:   57:
+        -:   58:	void adaugaInCos(const string& titluFilm);
+        -:   59:	void stergeDinCos(const string& titluFilm);
+        -:   60:	void elibereazaCos();
+        -:   61:	void genereazaCos(int n);
+        -:   62:	int getNumFilmeCos();
+        -:   63:	vector<Film> getFilmeCos() const;
+        -:   64:	void exportaCosInHTML(const string& numeFisier);
+        -:   65:
+        -:   66:	vector<Film> filtreazaDupaGen(const string& genFilm);
+        -:   67:
+        -:   68:	vector<Film> filtreazaDupaAnAparitie(int anAparitie);
+        -:   69:
+        -:   70:	vector<Film> sorteaza(int reperSortare, int ordineSortare);
+        -:   71:
+        -:   72:	~Service();
+        -:   73:
+        -:   74:};

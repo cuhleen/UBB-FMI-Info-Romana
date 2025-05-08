@@ -1,0 +1,53 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9/main.cpp
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/main.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:﻿#include <iostream>
+        -:    2:#include "Film.h"
+        -:    3:#include "repo.h"
+        -:    4:#include "teste.h"
+        -:    5:#include "consola.h"
+        -:    6:
+function _Z10rulareMainv called 1 returned 100% blocks executed 58%
+        1:    7:void rulareMain() {
+        1:    8:    Repo repository;
+        1:    8-block  0
+call    0 returned 1
+        -:    9:    Validator validator;
+        1:   10:    ShoppingCart cosFilme;
+call    0 returned 1
+        1:   11:    Service service{ repository, validator, cosFilme };
+call    0 returned 1
+        1:   12:    UI ui{ service, cosFilme};
+call    0 returned 1
+        1:   13:    ui.ruleaza();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   14:    
+        1:   15:}
+        1:   15-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+call    3 returned 1
+    $$$$$:   15-block  1
+call    4 never executed
+    $$$$$:   15-block  2
+call    5 never executed
+    $$$$$:   15-block  3
+call    6 never executed
+    $$$$$:   15-block  4
+call    7 never executed
+        -:   16:
+function main called 1 returned 100% blocks executed 100%
+        1:   17:int main()
+        -:   18:{
+        1:   19:    ruleazaToateTestele();
+        1:   19-block  0
+call    0 returned 1
+        1:   20:    rulareMain();
+call    0 returned 1
+        -:   21:
+        1:   22:    return 0;
+        -:   23:}

@@ -1,0 +1,90 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9 - undo - fisier/service.h
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9 - undo - fisier/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/teste.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9 - undo - fisier/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/teste.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:
+        -:    3:#include "Film.h"
+        -:    4:#include "repo.h"
+        -:    5:#include "validator.h"
+        -:    6:#include <string>
+        -:    7:#include <vector>
+        -:    8:#include <functional>
+        -:    9:#include <memory>
+        -:   10:
+        -:   11:#include "ShoppingCart.h"
+        -:   12:#include "undo.h"
+        -:   13:
+        -:   14:using std::vector;
+        -:   15:using std::function;
+        -:   16:
+        -:   17:class Service
+        -:   18:{
+        -:   19:private:
+        -:   20:
+        -:   21:	Repo& repository;
+        -:   22:	Validator& validator;
+        -:   23:	ShoppingCart& cosFilme;
+        -:   24:
+        -:   25:	vector<std::unique_ptr<ActiuneUndo>> undoActions;
+        -:   26:
+        -:   27:public:
+        -:   28:
+function _ZN7ServiceC2ER4RepoR9ValidatorR12ShoppingCart called 0 returned 0% blocks executed 0%
+    #####:   29:	Service(Repo& repository, Validator& validator, ShoppingCart& cosFilme) noexcept: repository{ repository }, validator{ validator }, cosFilme { cosFilme } {}
+    %%%%%:   29-block  0
+call    0 never executed
+        -:   30:	//nu permitem copierea de obiecte Service
+        -:   31:	Service(const Service& other) = delete;
+        -:   32:
+        -:   33:	/*
+        -:   34:	Functia creeaza, valideaza si adauga un nou film in repository
+        -:   35:	arunca exceptie daca parametrii filmului nu sunt valizi sau daca exista deja un film cu acelasi titlu
+        -:   36:	*/
+        -:   37:	void adaugaFilm(const string& titluFilm, const string& genFilm, int anAparitie, const string& actorPrincipal) ;
+        -:   38:
+        -:   39:	/*
+        -:   40:	Functia sterge un film din repository
+        -:   41:	arunca exceptie daca nu s-a gasit titlul filmului
+        -:   42:	*/
+        -:   43:	void stergeFilm(const string& titluFilm);
+        -:   44:
+        -:   45:	/*
+        -:   46:	Functia modifica un film din repository
+        -:   47:	arunca exceptie daca nu s-a gasit titlul filmului
+        -:   48:	*/
+        -:   49:	void modificaFilm(const string& titluFilm, const string& genFilm, int anAparitie, const string& actorPrincipal);
+        -:   50:
+        -:   51:	/*
+        -:   52:	Functia cauta un film in repository dupa titlul acestuia
+        -:   53:	arunca exceptie daca nu s-a gasit titlul filmului
+        -:   54:	*/
+        -:   55:	Film cautaFilm(const string& titluFilm) const;
+        -:   56:
+        -:   57:	/*
+        -:   58:	Functia returneaza toate filmele in ordinea adaugarii lor in repository
+        -:   59:	*/
+        -:   60:	const vector<Film>& getAll() const;
+        -:   61:
+        -:   62:	void adaugaInCos(const string& titluFilm);
+        -:   63:	void stergeDinCos(const string& titluFilm);
+        -:   64:	void elibereazaCos();
+        -:   65:	void genereazaCos(int n);
+        -:   66:	int getNumFilmeCos();
+        -:   67:	vector<Film> getFilmeCos() const;
+        -:   68:	void exportaCosInHTML(const string& numeFisier);
+        -:   69:
+        -:   70:	vector<Film> filtreazaDupaGen(const string& genFilm);
+        -:   71:
+        -:   72:	vector<Film> filtreazaDupaAnAparitie(int anAparitie);
+        -:   73:
+        -:   74:	vector<Film> sorteaza(int reperSortare, int ordineSortare);
+        -:   75:
+        -:   76:	void salveazaInFisier(const string& numeFisier);
+        -:   77:	void incarcaDateDinFisier(const string& numeFisier);
+        -:   78:	void salveazaDateInFisier(const string& numeFisier);
+        -:   79:	void undo();
+        -:   80:
+        -:   81:	~Service();
+        -:   82:
+        -:   83:};

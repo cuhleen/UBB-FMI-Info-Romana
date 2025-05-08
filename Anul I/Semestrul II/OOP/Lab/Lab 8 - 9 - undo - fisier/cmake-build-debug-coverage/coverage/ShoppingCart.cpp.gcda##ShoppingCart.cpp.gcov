@@ -1,0 +1,161 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9 - undo - fisier/ShoppingCart.cpp
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9 - undo - fisier/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/ShoppingCart.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9 - undo - fisier/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/ShoppingCart.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "ShoppingCart.h"
+        -:    2:
+        -:    3:#include "repo.h"
+        -:    4:#include <cassert>
+        -:    5:#include <algorithm>
+        -:    6:
+function _ZN12ShoppingCart7addFilmERK4Film called 12 returned 67% blocks executed 70%
+       12:    7:void ShoppingCart::addFilm(const Film& f) {
+       17:    8:    for(const Film &film: filmCart)
+       12:    8-block  0
+call    0 returned 12
+call    1 returned 12
+        9:    8-block  1
+call    2 returned 9
+        5:    8-block  2
+call    3 returned 5
+       17:    8-block  3
+call    4 returned 17
+branch  5 taken 9
+branch  6 taken 8 (fallthrough)
+        -:    9:    {
+        9:   10:        if (film.getTitluFilm() == f.getTitluFilm())
+call    0 returned 9
+branch  1 taken 9 (fallthrough)
+branch  2 taken 0 (throw)
+        9:   10-block  0
+call    3 returned 9
+branch  4 taken 9 (fallthrough)
+branch  5 taken 0 (throw)
+        9:   10-block  1
+call    6 returned 9
+call    7 returned 9
+call    8 returned 9
+branch  9 taken 4 (fallthrough)
+branch 10 taken 5
+    $$$$$:   10-block  2
+    $$$$$:   10-block  3
+call   11 never executed
+    $$$$$:   10-block  4
+       12:   11:            throw ExceptieRepo("Filmul deja se afla in cos");
+        4:   11-block  0
+call    0 returned 4
+        4:   11-block  1
+call    1 returned 4
+branch  2 taken 4 (fallthrough)
+branch  3 taken 0 (throw)
+        4:   11-block  2
+call    4 returned 4
+call    5 returned 4
+call    6 returned 4
+    $$$$$:   11-block  3
+    $$$$$:   11-block  4
+    $$$$$:   11-block  5
+call    7 never executed
+        -:   12:    }
+        8:   13:    filmCart.push_back(f);
+        8:   13-block  0
+call    0 returned 8
+        8:   14:}
+        -:   15:
+function _ZN12ShoppingCart10removeFilmERK4Film called 7 returned 43% blocks executed 72%
+        7:   16:void ShoppingCart::removeFilm(const Film& f)
+        -:   17:{
+        -:   18:    // for (int i = 0; i < filmCart.size(); i++)
+        -:   19:    //
+        -:   20:    //     if (filmCart[i].getTitluFilm() == f.getTitluFilm())
+        -:   21:    //     {
+        -:   22:    //         filmCart.erase(filmCart.begin() + i);
+        -:   23:    //         return;
+        -:   24:    //     }
+        -:   25:    // throw ExceptieRepo("Filmul nu a fost gasit in cos");
+        -:   26:
+function _ZZN12ShoppingCart10removeFilmERK4FilmENKUlS2_E_clES2_ called 4 returned 100% blocks executed 73%
+        7:   27:    auto it = std::find_if(filmCart.begin(), filmCart.end(), [&](const Film& film) {
+        7:   27-block  0
+call    0 returned 7
+call    1 returned 7
+call    2 returned 7
+branch  3 taken 7 (fallthrough)
+branch  4 taken 0 (throw)
+        4:   28:        return film.getTitluFilm() == f.getTitluFilm();
+        4:   28-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:   28-block  1
+call    3 returned 4
+branch  4 taken 4 (fallthrough)
+branch  5 taken 0 (throw)
+        4:   28-block  2
+call    6 returned 4
+call    7 returned 4
+call    8 returned 4
+        4:   28-block  3
+    $$$$$:   28-block  4
+    $$$$$:   28-block  5
+call    9 never executed
+        -:   29:    });
+        -:   30:
+        7:   31:    if (it != filmCart.end()) {
+        7:   31-block  0
+call    0 returned 7
+call    1 returned 7
+branch  2 taken 3 (fallthrough)
+branch  3 taken 4
+        3:   32:        filmCart.erase(it);
+        3:   32-block  0
+call    0 returned 3
+call    1 returned 3
+branch  2 taken 3 (fallthrough)
+branch  3 taken 0 (throw)
+    $$$$$:   32-block  1
+        -:   33:    } else {
+       12:   34:        throw ExceptieRepo("Filmul nu a fost gasit in cos");
+        4:   34-block  0
+call    0 returned 4
+        4:   34-block  1
+call    1 returned 4
+branch  2 taken 4 (fallthrough)
+branch  3 taken 0 (throw)
+        4:   34-block  2
+call    4 returned 4
+call    5 returned 4
+call    6 returned 4
+    $$$$$:   34-block  3
+    $$$$$:   34-block  4
+    $$$$$:   34-block  5
+call    7 never executed
+        -:   35:    }
+        -:   36:
+        3:   37:}
+        3:   37-block  0
+        -:   38:
+function _ZN12ShoppingCart9clearCartEv called 3 returned 100% blocks executed 100%
+        3:   39:void ShoppingCart::clearCart()
+        -:   40:{
+        3:   41:    filmCart.clear();
+        3:   41-block  0
+call    0 returned 3
+        3:   42:}
+        -:   43:
+function _ZN12ShoppingCart7getCartEv called 4 returned 100% blocks executed 100%
+        4:   44:vector<Film> ShoppingCart::getCart()
+        -:   45:{
+        4:   46:    return filmCart;
+        4:   46-block  0
+call    0 returned 4
+        -:   47:}
+        -:   48:
+function _ZNK12ShoppingCart11getNumFilmsEv called 11 returned 100% blocks executed 100%
+       11:   49:int ShoppingCart::getNumFilms() const
+        -:   50:{
+       11:   51:    return filmCart.size();
+       11:   51-block  0
+call    0 returned 11
+        -:   52:}
+        -:   53:

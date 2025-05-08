@@ -1,0 +1,1 @@
+/usr/bin/cc --coverage -g -Wall -Wextra -g CMakeFiles/5_3_13.dir/main.c.o CMakeFiles/5_3_13.dir/Domain/medicament.c.o CMakeFiles/5_3_13.dir/Repo/lista.c.o CMakeFiles/5_3_13.dir/Service/service.c.o CMakeFiles/5_3_13.dir/UI/ui.c.o CMakeFiles/5_3_13.dir/Tests/teste.c.o -o 5_3_13 

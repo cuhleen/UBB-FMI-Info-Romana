@@ -1,0 +1,48 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9/Film.h
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/service.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 8 - 9/cmake-build-debug-coverage/CMakeFiles/Lab_8___9.dir/service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include <iostream>
+        -:    3:#include <string>
+        -:    4:#include <utility>
+        -:    5:using std::string;
+        -:    6:using std::cout;
+        -:    7:
+        -:    8:class Film {
+        -:    9:
+        -:   10:private:
+        -:   11:
+        -:   12:	string titluFilm;
+        -:   13:	string genFilm;
+        -:   14:	int anAparitie;
+        -:   15:	string actorPrincipal;
+        -:   16:
+        -:   17:public:
+        -:   18:
+        -:   19:	int getAnAparitie() const;
+        -:   20:
+        -:   21:	string getTitluFilm() const;
+        -:   22:
+        -:   23:	string getGenFilm() const;
+        -:   24:
+        -:   25:	string getActorPrincipal() const;
+        -:   26:	
+        -:   27:	void setGenFilm(const string& genFilmNou);
+        -:   28:
+        -:   29:	void setAnAparitie(int anAparitieNou);
+        -:   30:
+        -:   31:	void setActorPrincipal(const string& actorPrincipalNou);
+        -:   32:
+function _ZN4FilmC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_iS5_ called 53 returned 100% blocks executed 100%
+       53:   33:	Film(string  titluFilm, string  genFilm, const int anAparitie, string  actorPrincipal) : titluFilm{std::move( titluFilm )}, genFilm{std::move( genFilm )}, anAparitie{ anAparitie }, actorPrincipal{std::move( actorPrincipal )} {}
+       53:   33-block  0
+call    0 returned 53
+call    1 returned 53
+call    2 returned 53
+call    3 returned 53
+call    4 returned 53
+call    5 returned 53
+        -:   34:
+        -:   35:
+        -:   36:};

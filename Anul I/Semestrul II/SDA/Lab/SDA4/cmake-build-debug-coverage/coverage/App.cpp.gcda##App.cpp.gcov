@@ -1,0 +1,23 @@
+        -:    0:Source:/mnt/c/Users/Tudor Macri/Downloads/SDA4/Proiect C++/App.cpp
+        -:    0:Graph:/mnt/c/Users/Tudor Macri/Downloads/SDA4/cmake-build-debug-coverage/CMakeFiles/SDA4.dir/Proiect_C++/App.cpp.gcno
+        -:    0:Data:/mnt/c/Users/Tudor Macri/Downloads/SDA4/cmake-build-debug-coverage/CMakeFiles/SDA4.dir/Proiect_C++/App.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include <iostream>
+        -:    2:#include "TestExtins.h"
+        -:    3:#include "TestScurt.h"
+        -:    4:
+        -:    5:using namespace std;
+        -:    6:
+function main called 1 returned 100% blocks executed 100%
+        1:    7:int main() {
+        -:    8:
+        1:    9:	testAll();
+        1:    9-block  0
+call    0 returned 1
+        1:   10:	testAllExtins();
+call    0 returned 1
+        -:   11:
+        1:   12:	cout<<"End";
+call    0 returned 1
+        -:   13:
+        1:   14:}

@@ -1,0 +1,18 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/Tests.cpp
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/cmake-build-debug-coverage/CMakeFiles/Lab6.dir/Tests.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/cmake-build-debug-coverage/CMakeFiles/Lab6.dir/Tests.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "Tests.h"
+        -:    2:#include "FilmRepo.h"
+        -:    3:#include "Service.h"
+        -:    4:
+function _ZN5Tests11runAllTestsEv called 1 returned 100% blocks executed 100%
+        1:    5:void Tests::runAllTests() {
+        1:    6:	testRepo();
+        1:    6-block  0
+call    0 returned 1
+        1:    7:	testService();
+call    0 returned 1
+        1:    8:	testValidation();
+call    0 returned 1
+        1:    9:}

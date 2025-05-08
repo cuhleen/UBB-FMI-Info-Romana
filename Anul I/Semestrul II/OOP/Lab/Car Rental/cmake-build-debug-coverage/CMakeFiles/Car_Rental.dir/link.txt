@@ -1,0 +1,1 @@
+/usr/bin/cc --coverage -g CMakeFiles/Car_Rental.dir/list.c.o CMakeFiles/Car_Rental.dir/main.c.o CMakeFiles/Car_Rental.dir/masina.c.o CMakeFiles/Car_Rental.dir/repo_masini.c.o CMakeFiles/Car_Rental.dir/service_masini.c.o CMakeFiles/Car_Rental.dir/teste.c.o CMakeFiles/Car_Rental.dir/ui.c.o CMakeFiles/Car_Rental.dir/validare.c.o -o Car_Rental 

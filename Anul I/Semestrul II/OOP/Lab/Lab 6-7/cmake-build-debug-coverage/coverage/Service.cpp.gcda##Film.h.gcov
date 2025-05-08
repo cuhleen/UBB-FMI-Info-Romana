@@ -1,0 +1,76 @@
+        -:    0:Source:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/Film.h
+        -:    0:Graph:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/cmake-build-debug-coverage/CMakeFiles/Lab6.dir/Service.cpp.gcno
+        -:    0:Data:/mnt/e/002 Facultate/Obsidian/Anul I/Semestrul II/OOP/Lab/Lab 6-7/cmake-build-debug-coverage/CMakeFiles/Lab6.dir/Service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#ifndef FILM_H
+        -:    2:#define FILM_H
+        -:    3:
+        -:    4:#include <string>
+        -:    5:#include <utility>
+        -:    6:using std::string;
+        -:    7:
+        -:    8:class Film {
+        -:    9:private:
+        -:   10:	string title;
+        -:   11:	string genre;
+        -:   12:	string actor;
+        -:   13:	int year{};
+        -:   14:
+        -:   15:public:
+        -:   16:	[[nodiscard]] string getTitle() const;
+        -:   17:
+        -:   18:	[[nodiscard]] string getGenre() const;
+        -:   19:
+        -:   20:	[[nodiscard]] string getActor() const;
+        -:   21:
+        -:   22:	[[nodiscard]] int getYear() const;
+        -:   23:
+function _ZN4FilmC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES5_S5_i called 0 returned 0% blocks executed 0%
+    #####:   24:	Film(string title, string genre, string actor, const int year): title(std::move(title)), genre(std::move(genre)), actor(std::move(actor)), year(year) {
+    %%%%%:   24-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+call    4 never executed
+call    5 never executed
+    #####:   25:	}
+        -:   26:
+function _ZN4FilmC2ERKS_ called 6 returned 100% blocks executed 62%
+        6:   27:	Film(const Film &film) = default;
+        6:   27-block  0
+call    0 returned 6
+call    1 returned 6
+branch  2 taken 6 (fallthrough)
+branch  3 taken 0 (throw)
+        6:   27-block  1
+call    4 returned 6
+branch  5 taken 6 (fallthrough)
+branch  6 taken 0 (throw)
+        6:   27-block  2
+    $$$$$:   27-block  3
+call    7 never executed
+    $$$$$:   27-block  4
+call    8 never executed
+        -:   28:
+function _ZN4FilmC2Ev called 0 returned 0% blocks executed 0%
+    #####:   29:	Film() = default;
+    %%%%%:   29-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   30:
+        -:   31:	bool operator==(const Film &other) const {
+        -:   32:		return title == other.title && genre == other.genre && actor == other.actor && year == other.year;
+        -:   33:	}
+        -:   34:
+function _ZN4FilmaSERKS_ called 0 returned 0% blocks executed 0%
+    #####:   35:	Film &operator=(const Film &other) = default;
+    %%%%%:   35-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   36:};
+        -:   37:
+        -:   38:
+        -:   39:#endif
