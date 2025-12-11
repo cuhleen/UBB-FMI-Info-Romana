@@ -1,0 +1,263 @@
+{
+  "main": {
+    "id": "3bc153c66d890431",
+    "type": "split",
+    "children": [
+      {
+        "id": "0e39629704c97759",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7aaa55dfa2016b38",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Orar.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Orar"
+            }
+          },
+          {
+            "id": "2a55a58b6adcdb5a",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "kanban",
+              "state": {
+                "file": "ToDo.md",
+                "kanbanViewState": {
+                  "kanban-plugin": "board",
+                  "list-collapse": [
+                    false,
+                    false,
+                    false
+                  ]
+                }
+              },
+              "pinned": true,
+              "icon": "lucide-trello",
+              "title": "ToDo"
+            }
+          },
+          {
+            "id": "636744fe91d2a617",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Semestrul I/Rețele de Calc/Laborator/Lab 12/Lab 12.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lab 12"
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4ba37910f44b7641",
+    "type": "split",
+    "children": [
+      {
+        "id": "3a8b26d0940dd968",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "63d4074e9394f0ff",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "17485391af5c1839",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "ffe258f7acaabc7b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 213.5
+  },
+  "right": {
+    "id": "4346918187212787",
+    "type": "split",
+    "children": [
+      {
+        "id": "679bc91234efda18",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6b6ab24f9c24a9b1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "ToDo.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for ToDo"
+            }
+          },
+          {
+            "id": "30e9d81bdddabf8d",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Orar.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Orar"
+            }
+          },
+          {
+            "id": "517bf8ec1bd172b4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "f2d7ff5372af4b97",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Orar.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Orar"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-kanban:Create new board": false
+    }
+  },
+  "active": "636744fe91d2a617",
+  "lastOpenFiles": [
+    "Semestrul I/MAP/Laborator/DuckSocialNetworkGUI/build/classes/java/main/core/model/ReplyMessage.class",
+    "Semestrul I/MAP/Laborator/DuckSocialNetworkGUI/build/classes/java/main/core/model/RaceEvent.class",
+    "Semestrul I/MAP/Laborator/DuckSocialNetworkGUI/build/classes/java/main/core/model/RaceEvent$RaceResult.class",
+    "Semestrul I/MAP/Laborator/DuckSocialNetworkGUI/build/classes/java/main/core/repository/RepoEventDB.class",
+    "Semestrul I/MAP/Laborator/DuckSocialNetworkGUI/build/classes/java/main/core/service/RaceEventService.class",
+    "Semestrul I/MAP/Laborator/DuckSocialNetworkGUI/build/tmp/compileJava/compileTransaction/stash-dir/RepoEventDB.class.uniqueId37",
+    "Semestrul I/MAP/Laborator/DuckSocialNetworkGUI/build/tmp/compileJava/compileTransaction/stash-dir/RepoMessageDB.class.uniqueId36",
+    "Semestrul I/MAP/Laborator/DuckSocialNetworkGUI/build/tmp/compileJava/compileTransaction/stash-dir/RaceEvent$RaceResult.class.uniqueId35",
+    "Semestrul I/MAP/Laborator/DuckSocialNetworkGUI/build/tmp/compileJava/compileTransaction/stash-dir/Card.class.uniqueId34",
+    "Semestrul I/MAP/Laborator/DuckSocialNetworkGUI/build/tmp/compileJava/compileTransaction/stash-dir/MessageService.class.uniqueId33",
+    "Semestrul I/MAP/Laborator/DuckSocialNetworkGUI/build/tmp/compileJava/compileTransaction/stash-dir/AppService.class.uniqueId32",
+    "ToDo.md",
+    "Semestrul I/Rețele de Calc/Laborator/Lab 12/Lab 12.md",
+    "Semestrul I/Rețele de Calc/Curs/Curs 11.md",
+    "Semestrul I/Rețele de Calc/Laborator/Lab 11/Lab 11.md",
+    "Semestrul I/Rețele de Calc/Laborator/Lab 10/Lab 10.md",
+    "zzz Imagini Excalidraw/Pasted image 20251210182936.png",
+    "Orar.md",
+    "Semestrul I/PLF/Seminar/Seminar 6.md",
+    "Semestrul I/PLF/Seminar/Seminar 5.md",
+    "Semestrul I/P&S/Seminar/Seminar 6.md",
+    "zzz Imagini Excalidraw/Pasted image 20251209102440.png",
+    "zzz Imagini Excalidraw/Pasted Image 20251209094626_552.png",
+    "Semestrul I/P&S/Seminar/Seminar 5.md",
+    "zzz Imagini Excalidraw/Pasted Image 20251209092644_833.png",
+    "zzz Imagini Excalidraw/Pasted Image 20251209091310_186.png",
+    "zzz Imagini Excalidraw/Pasted Image 20251209084325_861.png",
+    "zzz Imagini Excalidraw/Pasted Image 20251209083148_600.png",
+    "Semestrul I/P&S/Seminar/Seminar 4.md",
+    "Semestrul I/Baze de Date/Laborator/PAȘI Lab 4.md",
+    "Semestrul I/PLF/Laborator/Lab 4/L1 P3 d).md",
+    "Semestrul I/PLF/Laborator/Lab 4/L1 P3 b).md",
+    "Semestrul I/PLF/Laborator/Lab 4/L1 P3 a).md",
+    "Semestrul I/PLF/Laborator/Lab 4/L1 P3 c).md",
+    "Semestrul I/MAP/Notare.md",
+    "zzz Imagini Excalidraw/Pasted image 20251204125437.png",
+    "zzz Imagini Excalidraw/Pasted image 20251204123817.png",
+    "zzz Imagini Excalidraw/Pasted image 20251204123159.png",
+    "Semestrul I/PLF/Seminar/Seminar 4.md",
+    "Semestrul I/Rețele de Calc/Laborator/Lab 9/Configurare Switch VLAN.md",
+    "Semestrul I/P&S/Notare.md",
+    "message.md",
+    "Cogito.md",
+    "Semestrul I/Rețele de Calc/Curs/Curs 7.md",
+    "Semestrul I/Rețele de Calc/Curs/Curs 6.md",
+    "Semestrul I/PLF/Laborator/Lab 3/P3 1 Rez Prolog.md",
+    "Semestrul I/Baze de Date/Laborator/Rez Lab 1/Plan 1.canvas"
+  ]
+}

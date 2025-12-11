@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" alignment="CENTER"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="app.controllers.MostSocialCommunityController">
+
+    <ListView fx:id="listUsers" prefWidth="300" prefHeight="300"/>
+</VBox>

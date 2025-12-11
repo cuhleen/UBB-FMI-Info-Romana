@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="20" alignment="CENTER"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="app.controllers.CommunityCountController">
+
+    <Label fx:id="lblCount" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+</VBox>

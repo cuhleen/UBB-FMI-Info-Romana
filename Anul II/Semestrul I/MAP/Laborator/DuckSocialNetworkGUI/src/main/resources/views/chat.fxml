@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Label?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controllers.ChatController"
+            prefWidth="800" prefHeight="600">
+    <children>
+        <SplitPane prefWidth="800" prefHeight="600" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+                   AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+            <!-- Stânga: lista de utilizatori -->
+            <VBox prefWidth="200">
+                <ListView fx:id="listUsers" VBox.vgrow="ALWAYS"/>
+            </VBox>
+            <!-- Dreapta: conversația + trimitere mesaj -->
+            <VBox>
+                <ListView fx:id="listMessages" VBox.vgrow="ALWAYS"/>
+                <Label fx:id="lblReplyingTo" text="" style="-fx-text-fill: gray; -fx-font-style: italic;" />
+                <HBox spacing="5">
+                    <padding>
+                        <Insets top="5" right="5" bottom="5" left="5"/>
+                    </padding>
+                    <TextField fx:id="txtMessage" HBox.hgrow="ALWAYS" promptText="Scrie un mesaj..."/>
+                    <Button text="Trimite" onAction="#onSendMessage"/>
+                </HBox>
+            </VBox>
+        </SplitPane>
+    </children>
+</AnchorPane>

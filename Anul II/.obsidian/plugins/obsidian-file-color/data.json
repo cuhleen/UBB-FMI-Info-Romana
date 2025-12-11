@@ -1,0 +1,204 @@
+{
+  "cascadeColors": true,
+  "colorBackground": true,
+  "palette": [
+    {
+      "id": "O_Lq31mD37aveN4WD2Wz8",
+      "name": "Red",
+      "value": "#ff0000"
+    },
+    {
+      "id": "pL3o4ABCoMiYBhetEr-1S",
+      "name": "Orange",
+      "value": "#ff8800"
+    },
+    {
+      "id": "MDCGGTAK8zsaJm5n7XXmq",
+      "name": "Yellow",
+      "value": "#ffff00"
+    },
+    {
+      "id": "0cmokTP2jzOUJEVsMuVUK",
+      "name": "Green",
+      "value": "#00ff00"
+    },
+    {
+      "id": "LSHfwI-lZW7zqZ_R4cejS",
+      "name": "Blue",
+      "value": "#009dff"
+    },
+    {
+      "id": "5nxlf4idGFuVAWFYY1MK7",
+      "name": "Indigo",
+      "value": "#8c00ff"
+    },
+    {
+      "id": "oUSduxMDz3bbDt-48Mnfw",
+      "name": "Violet",
+      "value": "#ff00ff"
+    },
+    {
+      "id": "lkj2BF6s9vdpD5-bKBvhu",
+      "name": "Light Red",
+      "value": "#fe7c7c"
+    },
+    {
+      "id": "2M3z7G0_2Q8dZZVxf52-X",
+      "name": "Light Orange",
+      "value": "#fec381"
+    },
+    {
+      "id": "HoDSf7LoROKvT1WP0i6Pz",
+      "name": "Light Yellow",
+      "value": "#fcfe7c"
+    },
+    {
+      "id": "tf24HAcFpci9ScFecAO2P",
+      "name": "Light Green",
+      "value": "#7cfe7e"
+    },
+    {
+      "id": "upGBWVbcniiDaKh9F5VtV",
+      "name": "Light Blue",
+      "value": "#7cccfe"
+    },
+    {
+      "id": "37N-9H5kUN-KzCisRQ3uJ",
+      "name": "Light Indigo",
+      "value": "#c37aff"
+    },
+    {
+      "id": "YDv7XtMwnvpYVJ8VqMLbZ",
+      "name": "Light Violet",
+      "value": "#ff7aff"
+    },
+    {
+      "id": "QEQFamreU5yyf8-pcwzUL",
+      "name": "White",
+      "value": "#ffffff"
+    },
+    {
+      "id": "yewOCzRiqwS5ZDzbDXy4a",
+      "name": "Black",
+      "value": "#000000"
+    }
+  ],
+  "fileColors": [
+    {
+      "path": "Orar.md",
+      "color": "QEQFamreU5yyf8-pcwzUL"
+    },
+    {
+      "path": "ToDo.md",
+      "color": "yewOCzRiqwS5ZDzbDXy4a"
+    },
+    {
+      "path": "Semestrul I/Baze de Date",
+      "color": "O_Lq31mD37aveN4WD2Wz8"
+    },
+    {
+      "path": "Semestrul I/Engleză",
+      "color": "pL3o4ABCoMiYBhetEr-1S"
+    },
+    {
+      "path": "Semestrul I/MAP",
+      "color": "MDCGGTAK8zsaJm5n7XXmq"
+    },
+    {
+      "path": "Semestrul I/P&S",
+      "color": "0cmokTP2jzOUJEVsMuVUK"
+    },
+    {
+      "path": "Semestrul I/PLF",
+      "color": "LSHfwI-lZW7zqZ_R4cejS"
+    },
+    {
+      "path": "Semestrul I/Rețele de Calc",
+      "color": "5nxlf4idGFuVAWFYY1MK7"
+    },
+    {
+      "path": "Semestrul I/P&S/Seminar",
+      "color": "tf24HAcFpci9ScFecAO2P"
+    },
+    {
+      "path": "Semestrul I/P&S/Notare.md",
+      "color": "tf24HAcFpci9ScFecAO2P"
+    },
+    {
+      "path": "Semestrul I/PLF/Seminar",
+      "color": "upGBWVbcniiDaKh9F5VtV"
+    },
+    {
+      "path": "Semestrul I/PLF/Notare.md",
+      "color": "upGBWVbcniiDaKh9F5VtV"
+    },
+    {
+      "path": "Semestrul I/Baze de Date/Laborator",
+      "color": "lkj2BF6s9vdpD5-bKBvhu"
+    },
+    {
+      "path": "Semestrul I/Baze de Date/Notare.md",
+      "color": "lkj2BF6s9vdpD5-bKBvhu"
+    },
+    {
+      "path": "Semestrul I/Baze de Date/Curs",
+      "color": "lkj2BF6s9vdpD5-bKBvhu"
+    },
+    {
+      "path": "Semestrul I/Baze de Date/Seminar",
+      "color": "lkj2BF6s9vdpD5-bKBvhu"
+    },
+    {
+      "path": "Semestrul I/MAP/Curs",
+      "color": "HoDSf7LoROKvT1WP0i6Pz"
+    },
+    {
+      "path": "Semestrul I/MAP/Laborator",
+      "color": "HoDSf7LoROKvT1WP0i6Pz"
+    },
+    {
+      "path": "Semestrul I/MAP/Seminar",
+      "color": "HoDSf7LoROKvT1WP0i6Pz"
+    },
+    {
+      "path": "Semestrul I/MAP/Notare.md",
+      "color": "HoDSf7LoROKvT1WP0i6Pz"
+    },
+    {
+      "path": "Semestrul I/Rețele de Calc/Notare.md",
+      "color": "37N-9H5kUN-KzCisRQ3uJ"
+    },
+    {
+      "path": "Semestrul I/Rețele de Calc/Cursuri - notițe",
+      "color": "37N-9H5kUN-KzCisRQ3uJ"
+    },
+    {
+      "path": "Semestrul I/P&S/Laborator",
+      "color": "tf24HAcFpci9ScFecAO2P"
+    },
+    {
+      "path": "Semestrul I/PLF/Curs",
+      "color": "upGBWVbcniiDaKh9F5VtV"
+    },
+    {
+      "path": "Semestrul I/PLF/Descriere&Cerinte.pdf",
+      "color": "upGBWVbcniiDaKh9F5VtV"
+    },
+    {
+      "path": "Semestrul I/P&S/Curs",
+      "color": "tf24HAcFpci9ScFecAO2P"
+    },
+    {
+      "path": "Semestrul I/PLF/Laborator",
+      "color": "upGBWVbcniiDaKh9F5VtV"
+    },
+    {
+      "path": "Semestrul I/Rețele de Calc/Curs",
+      "color": "37N-9H5kUN-KzCisRQ3uJ"
+    },
+    {
+      "path": "Semestrul I/Rețele de Calc/Laborator",
+      "color": "37N-9H5kUN-KzCisRQ3uJ"
+    }
+  ]
+}

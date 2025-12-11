@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.GridPane?>
+
+<AnchorPane prefHeight="200.0" prefWidth="300.0"
+            xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="app.controllers.LoginController">
+
+    <children>
+        <GridPane layoutX="30" layoutY="20" hgap="10" vgap="10">
+            <children>
+
+                <Label text="Username:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtUsername"
+                           promptText="username"
+                           GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Password:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <PasswordField fx:id="txtPassword"
+                               promptText="password"
+                               GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Button text="Login"
+                        onAction="#onLogin"
+                        GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+
+                <Button text="Cancel"
+                        onAction="#onCancel"
+                        GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            </children>
+        </GridPane>
+    </children>
+
+</AnchorPane>

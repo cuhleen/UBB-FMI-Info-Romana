@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane prefHeight="900.0" prefWidth="667.0"
+            xmlns="http://javafx.com/javafx/24.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="app.controllers.MainController">
+    <children>
+        <VBox spacing="10" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+
+            <!-- - Rațe - -->
+            <Label text="Rațe:" style="-fx-font-weight: bold;"/>
+            <HBox spacing="10">
+                <Label text="Filtrează după tip:"/>
+                <ComboBox fx:id="comboFilter" onAction="#onFilterChanged"/>
+            </HBox>
+
+            <TableView fx:id="duckTable">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" />
+                    <TableColumn fx:id="colUsername" text="Username" />
+                    <TableColumn fx:id="colEmail" text="Email" />
+                    <TableColumn fx:id="colPassword" text="Password" />
+                    <TableColumn fx:id="colTip" text="Tip" />
+                    <TableColumn fx:id="colViteza" text="Viteza" />
+                    <TableColumn fx:id="colRezistenta" text="Rezistenta" />
+                    <TableColumn fx:id="colCard" text="Cârd" />
+                </columns>
+            </TableView>
+
+            <HBox alignment="CENTER" spacing="10">
+                <HBox alignment="CENTER" spacing="10">
+                    <Button onAction="#onAdd" text="Add Duck" />
+                    <Button onAction="#onUpdate" text="Update Duck" />
+                    <Button onAction="#onDelete" text="Delete Duck" />
+                </HBox>
+            </HBox>
+
+            <HBox alignment="CENTER" spacing="15">
+                <Button text="&lt; Previous" onAction="#onPrevPage"/>
+                <Button text="Next &gt;" onAction="#onNextPage"/>
+            </HBox>
+
+            <!-- - Persoane - -->
+            <Label text="Persoane:" style="-fx-font-weight: bold;"/>
+            <TableView fx:id="personTable">
+                <columns>
+                    <TableColumn fx:id="colPersonId" text="ID"/>
+                    <TableColumn fx:id="colPersonUsername" text="Username"/>
+                    <TableColumn fx:id="colPersonEmail" text="Email"/>
+                    <TableColumn fx:id="colPersonPassword" text="Password"/>
+                    <TableColumn fx:id="colPersonNume" text="Nume"/>
+                    <TableColumn fx:id="colPersonPrenume" text="Prenume"/>
+                    <TableColumn fx:id="colPersonDataNasterii" text="Data nașterii"/>
+                    <TableColumn fx:id="colPersonOcupatie" text="Ocupatie"/>
+                    <TableColumn fx:id="colPersonEmpatie" text="Empatie"/>
+                </columns>
+            </TableView>
+
+            <HBox alignment="CENTER" spacing="10">
+                <Button onAction="#onAddPerson" text="Add Person" />
+                <Button onAction="#onDeletePerson" text="Delete Person" />
+            </HBox>
+
+            <HBox alignment="CENTER" spacing="15">
+                <Button text="&lt; Previous" onAction="#onPrevPersonPage"/>
+                <Button text="Next &gt;" onAction="#onNextPersonPage"/>
+            </HBox>
+
+            <!-- - TABELA PRIETENII - -->
+            <TableView fx:id="friendshipTable">
+                <columns>
+                    <TableColumn fx:id="colFriendA" text="User A ID" />
+                    <TableColumn fx:id="colFriendB" text="User B ID" />
+                </columns>
+            </TableView>
+
+            <HBox alignment="CENTER" spacing="10">
+                <Button text="Add Friendship" onAction="#onAddFriendship" />
+                <Button text="Delete Friendship" onAction="#onDeleteFriendship" />
+            </HBox>
+
+            <HBox alignment="CENTER" spacing="15">
+                <Button text="&lt; Previous" onAction="#onPrevFriendPage"/>
+                <Button text="Next &gt;" onAction="#onNextFriendPage"/>
+            </HBox>
+
+            <!-- - Analiza Comunități - -->
+            <HBox alignment="CENTER" spacing="15">
+                <Button text="Număr Comunități" onAction="#onShowCommunityCount"/>
+                <Button text="Cea Mai Sociabilă Comunitate" onAction="#onShowMostSocialCommunity"/>
+            </HBox>
+
+            <HBox alignment="CENTER" spacing="15">
+                <ImageView fitHeight="217.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../images/important.jpg" />
+                    </image>
+                    <HBox.margin>
+                        <Insets left="20.0" />
+                    </HBox.margin>
+                </ImageView>
+            </HBox>
+        </VBox>
+    </children>
+</AnchorPane>

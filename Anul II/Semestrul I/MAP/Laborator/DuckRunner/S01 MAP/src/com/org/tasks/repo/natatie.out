@@ -1,0 +1,15 @@
+OptimisationResult{ 
+Duck{duckId=5, speed=45, resistance=1}
+Duck{duckId=12, speed=45, resistance=1}
+Duck{duckId=20, speed=45, resistance=1}
+Duck{duckId=3, speed=45, resistance=2}
+Duck{duckId=15, speed=45, resistance=3}
+Duck{duckId=17, speed=45, resistance=3}
+Duck{duckId=4, speed=45, resistance=3}
+Duck{duckId=22, speed=45, resistance=3}
+Duck{duckId=11, speed=45, resistance=4}
+Duck{duckId=1, speed=45, resistance=4}
+Duck{duckId=7, speed=45, resistance=4}
+Duck{duckId=6, speed=45, resistance=5}
+Duck{duckId=10, speed=45, resistance=6}
+time=39.022222222222226}
