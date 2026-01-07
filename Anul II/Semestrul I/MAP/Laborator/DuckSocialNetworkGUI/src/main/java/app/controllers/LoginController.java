@@ -1,11 +1,9 @@
 package app.controllers;
 
 import core.AppService;
-import core.repository.RepoMessageDB;
+import core.repository.*;
 import core.security.PasswordUtil;
-import core.service.DuckService;
-import core.service.MessageService;
-import core.service.PersonService;
+import core.service.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -25,7 +23,6 @@ public class LoginController {
 
     @FXML
     public void initialize() {
-        // Enter pe parola apasă Login
         txtPassword.setOnAction(event -> onLogin());
         txtUsername.setOnAction(event -> onLogin());
     }
@@ -66,11 +63,30 @@ public class LoginController {
             AnchorPane root = loader.load();
 
             ChatController chatController = loader.getController();
+
+            var unu = new RepoEventDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123");
+            var doi = new RepoDuckDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123");
+            var trei = new PersonService(
+                    new RepoPersonDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123"),
+                    new RepoUsersDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123"),
+                    new FriendshipService(
+                            new RepoFriendshipDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123")
+                    ));
+            var patru = new MessageService(new RepoMessageDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123"));
+
+            var cinci = new NotificationService(new RepoNotificationDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123"));
+
             chatController.setServices(appService, new MessageService(new RepoMessageDB(
                     "jdbc:postgresql://localhost:5432/duckdb",
                     "duckuser",
                     "parola123"
-            )), loggedUserId);
+            )), loggedUserId, new RaceEventService(
+                    unu,
+                    doi,
+                    trei,
+                    patru,
+                    cinci
+                    ));
 
             Stage stage = new Stage();
             stage.setTitle("Chat");

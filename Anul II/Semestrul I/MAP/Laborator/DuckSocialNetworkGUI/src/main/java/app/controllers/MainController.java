@@ -475,8 +475,10 @@ public class MainController {
             new PersonService(new RepoPersonDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123"), new RepoUsersDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123"), new FriendshipService(new RepoFriendshipDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123"))),
             new CardService(new RepoCardDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123"), new RepoDuckDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123")),
             new FriendshipService(new RepoFriendshipDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123")),
-            new RaceEventService(new RepoEventDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123"), new RepoDuckDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123"), new PersonService(new RepoPersonDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123"), new RepoUsersDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123"), new FriendshipService(new RepoFriendshipDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123")))),
-            new RepoUsersDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123")
+            new RaceEventService(new RepoEventDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123"), new RepoDuckDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123"), new PersonService(new RepoPersonDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123"), new RepoUsersDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123"), new FriendshipService(new RepoFriendshipDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123"))), new MessageService(new RepoMessageDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123")), new NotificationService(new RepoNotificationDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123"))),
+            new RepoUsersDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123"),
+            new FriendRequestService(new RepoFriendRequestDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123"), new FriendshipService(new RepoFriendshipDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123"))),
+            new NotificationService(new RepoNotificationDB("jdbc:postgresql://localhost:5432/duckdb", "duckuser", "parola123"))
     );
 
     @FXML

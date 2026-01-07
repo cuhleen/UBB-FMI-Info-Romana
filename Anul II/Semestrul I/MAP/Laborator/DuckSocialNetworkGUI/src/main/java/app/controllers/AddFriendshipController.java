@@ -1,6 +1,7 @@
 package app.controllers;
 
 import core.service.FriendshipService;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
@@ -57,5 +58,11 @@ public class AddFriendshipController {
         alert.setHeaderText("Add Friendship Error");
         alert.setContentText(msg);
         alert.showAndWait();
+    }
+
+    public void onSendRequest(ActionEvent actionEvent) {
+    }
+
+    public void onClose(ActionEvent actionEvent) {
     }
 }

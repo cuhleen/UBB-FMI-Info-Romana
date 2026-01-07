@@ -2,6 +2,7 @@ package core.service;
 
 import core.repository.RepoFriendshipDB;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FriendshipService {
@@ -32,6 +33,27 @@ public class FriendshipService {
     // -----------------------------
     public List<long[]> getAllFriendships() {
         return repo.findAll();
+    }
+
+    // -------------------------------------------
+    // GET ALL friendships for one user
+    // -------------------------------------------
+
+    public List<Long> getFriendsOf(long userId) {
+        List<Long> friends = new ArrayList<>();
+
+        for (long[] pair : repo.findAll()) {
+            long a = pair[0];
+            long b = pair[1];
+
+            if (a == userId) {
+                friends.add(b);
+            } else if (b == userId) {
+                friends.add(a);
+            }
+        }
+
+        return friends;
     }
 
     // -----------------------------

@@ -1,6 +1,8 @@
 package core.repository;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import core.model.UserAuthData;
 
@@ -93,4 +95,32 @@ public class RepoUsersDB {
         return Optional.empty();
     }
 
+    public static record UserBasic(long id, String username) {}
+
+    public List<UserBasic> findAllUsersBasic() {
+        List<UserBasic> list = new ArrayList<>();
+
+        String sql = """
+        SELECT id, username FROM ducks
+        UNION
+        SELECT id, username FROM persons
+        """;
+
+        try (Connection conn = DriverManager.getConnection(url, user, pass);
+             PreparedStatement ps = conn.prepareStatement(sql);
+             ResultSet rs = ps.executeQuery()) {
+
+            while (rs.next()) {
+                list.add(new UserBasic(
+                        rs.getLong("id"),
+                        rs.getString("username")
+                ));
+            }
+
+        } catch (SQLException e) {
+            System.err.println("[EROARE RepoUsersDB.findAllUsersBasic] " + e.getMessage());
+        }
+
+        return list;
+    }
 }

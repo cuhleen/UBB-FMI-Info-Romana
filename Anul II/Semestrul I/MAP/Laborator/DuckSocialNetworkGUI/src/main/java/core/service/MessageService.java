@@ -17,14 +17,13 @@ public class MessageService {
     }
 
     // -----------------------------
-    // SEND new + reply
+    // SEND
     // -----------------------------
     public Message sendMessage(long senderId, long receiverId, String content, Long replyToId) {
 
         if (content == null || content.isBlank())
             throw new IllegalArgumentException("Content gol");
 
-        // lista cu un singur receiver (minimul cerut)
         List<Long> receivers = List.of(receiverId);
 
         Message msg;
@@ -63,8 +62,6 @@ public class MessageService {
         return repo.findById(id);
     }
 
-    /** toate mesajele către userId — ține cont că receiver-ul e acum listă,
-     * dar în DB tot un singur id este stocat */
     public List<Message> getInbox(long userId) {
         return repo.findByReceiver(userId);
     }

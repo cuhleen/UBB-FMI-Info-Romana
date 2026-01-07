@@ -91,7 +91,10 @@ public class RaceEvent extends core.model.Event {
     }
 
     public void addParticipant(Duck duck) {
-        this.participants.add(duck);
+        if (participants.stream().noneMatch(d -> d.getId() == duck.getId())) {
+            participants.add(duck);
+        }
     }
+
 }
 

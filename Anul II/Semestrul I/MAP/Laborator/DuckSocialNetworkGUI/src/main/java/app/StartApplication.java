@@ -1,5 +1,6 @@
 package app;
 
+import app.controllers.AllUsersController;
 import app.controllers.LoginController;
 import app.controllers.MainController;
 import core.AppService;
@@ -26,6 +27,12 @@ public class StartApplication extends Application {
     private AppService appService;
     private RepoEventDB eventRepository;
     private RaceEventService raceEventService;
+    private RepoFriendRequestDB friendRequestRepository;
+    private FriendRequestService friendRequestService;
+    private RepoMessageDB messageRepository;
+    private MessageService messageService;
+    private RepoNotificationDB notificationRepository;
+    private NotificationService notificationService;
 
     public static void main(String[] args) {
         launch(args);
@@ -70,9 +77,40 @@ public class StartApplication extends Application {
                 "duckuser",
                 "parola123");
 
-        raceEventService = new RaceEventService(eventRepository, duckRepository, personService);
+        messageRepository = new RepoMessageDB("jdbc:postgresql://localhost:5432/duckdb",
+                "duckuser",
+                "parola123");
 
-        appService = new AppService(duckService, personService, cardService, friendshipService, raceEventService, repoUsers);
+        messageService = new MessageService(messageRepository);
+
+
+        notificationRepository = new RepoNotificationDB("jdbc:postgresql://localhost:5432/duckdb",
+                "duckuser",
+                "parola123");
+
+        notificationService = new NotificationService(notificationRepository);
+
+        raceEventService = new RaceEventService(eventRepository, duckRepository, personService, messageService, notificationService);
+
+        friendRequestRepository = new RepoFriendRequestDB("jdbc:postgresql://localhost:5432/duckdb",
+                "duckuser",
+                "parola123");
+
+        friendRequestService = new FriendRequestService(friendRequestRepository, friendshipService);
+
+        appService = new AppService(duckService, personService, cardService, friendshipService, raceEventService, repoUsers, friendRequestService, notificationService);
+
+        Stage userListStage = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/users/all-users.fxml"));
+        AnchorPane root = loader.load();
+
+        AllUsersController controller = loader.getController();
+        controller.setAppService(appService);
+
+        userListStage.setScene(new Scene(root));
+        userListStage.setTitle("Toți utilizatorii");
+        userListStage.show();
+
 
         initView(primaryStage);
 //        primaryStage.setWidth(900);

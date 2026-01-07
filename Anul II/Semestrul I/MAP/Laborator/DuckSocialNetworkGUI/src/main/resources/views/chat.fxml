@@ -16,21 +16,39 @@
         <SplitPane prefWidth="800" prefHeight="600" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
                    AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
             <!-- Stânga: lista de utilizatori -->
-            <VBox prefWidth="200">
+            <VBox prefWidth="200" spacing="10">
+                <Label text="Prieteni:"/>
                 <ListView fx:id="listUsers" VBox.vgrow="ALWAYS"/>
+
+                <Label text="Curse:"/>
+                <ListView fx:id="listRaces" VBox.vgrow="ALWAYS"/>
             </VBox>
             <!-- Dreapta: conversația + trimitere mesaj -->
             <VBox>
-                <ListView fx:id="listMessages" VBox.vgrow="ALWAYS"/>
-                <Label fx:id="lblReplyingTo" text="" style="-fx-text-fill: gray; -fx-font-style: italic;" />
+                <!-- Bara de sus -->
                 <HBox spacing="5">
                     <padding>
                         <Insets top="5" right="5" bottom="5" left="5"/>
                     </padding>
-                    <TextField fx:id="txtMessage" HBox.hgrow="ALWAYS" promptText="Scrie un mesaj..."/>
+                    <Button text="Adaugă prieteni" onAction="#onAddFriends"/>
+                    <Button fx:id="btnViewNotifs" text="Vezi notificări" onAction="#onViewNotifs"/>
+                </HBox>
+
+                <ListView fx:id="listMessages" VBox.vgrow="ALWAYS"/>
+                <Label fx:id="lblReplyingTo" text=""
+                       style="-fx-text-fill: gray; -fx-font-style: italic;" />
+
+                <HBox spacing="5">
+                    <padding>
+                        <Insets top="5" right="5" bottom="5" left="5"/>
+                    </padding>
+                    <TextField fx:id="txtMessage"
+                               HBox.hgrow="ALWAYS"
+                               promptText="Scrie un mesaj..."/>
                     <Button text="Trimite" onAction="#onSendMessage"/>
                 </HBox>
             </VBox>
+
         </SplitPane>
     </children>
 </AnchorPane>

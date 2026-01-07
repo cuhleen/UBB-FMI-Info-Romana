@@ -22,7 +22,6 @@ public class RepoMessageDB {
 
     // save (daca id==0 -> foloseste DEFAULT din DB; altfel insereaza id explicit)
     public Message save(Message message) {
-        // dacă vrei să lași DB să genereze id-ul (recomandat), folosește varianta cu DEFAULT
         String sqlWithId = "INSERT INTO messages (id, sender_id, receiver_id, content, timestamp, reply_to) VALUES (?, ?, ?, ?, ?, ?)";
         String sqlNoId = "INSERT INTO messages (sender_id, receiver_id, content, timestamp, reply_to) VALUES (?, ?, ?, ?, ?)";
 
@@ -33,19 +32,18 @@ public class RepoMessageDB {
                     ps.setLong(2, message.getSenderId());
                     ps.setLong(3, message.getFirstReceiverId());
                     ps.setString(4, message.getContent());
-                    ps.setTimestamp(5, Timestamp.valueOf(message.getTimestamp())); // <--- corecție
+                    ps.setTimestamp(5, Timestamp.valueOf(message.getTimestamp()));
                     if (message.getReplyToId() != null) ps.setLong(6, message.getReplyToId());
                     else ps.setNull(6, Types.BIGINT);
                     ps.executeUpdate();
                     return message;
                 }
             } else {
-                // lasăm DB să genereze id (DEFAULT nextval(...)); apoi returnăm un Message cu id-ul generat
                 try (PreparedStatement ps = conn.prepareStatement(sqlNoId, Statement.RETURN_GENERATED_KEYS)) {
                     ps.setLong(1, message.getSenderId());
                     ps.setLong(2, message.getFirstReceiverId());
                     ps.setString(3, message.getContent());
-                    ps.setTimestamp(4, Timestamp.valueOf(message.getTimestamp())); // <--- corecție
+                    ps.setTimestamp(4, Timestamp.valueOf(message.getTimestamp()));
                     if (message.getReplyToId() != null) ps.setLong(5, message.getReplyToId());
                     else ps.setNull(5, Types.BIGINT);
                     ps.executeUpdate();
@@ -55,7 +53,7 @@ public class RepoMessageDB {
                             return new Message(generatedId, message.getSenderId(), message.getFirstReceiverId(),
                                     message.getContent(), message.getTimestamp(), message.getReplyToId());
                         } else {
-                            return message; // fallback
+                            return message;
                         }
                     }
                 }
@@ -123,7 +121,6 @@ public class RepoMessageDB {
         Timestamp ts = rs.getTimestamp("timestamp");
         LocalDateTime ldt = ts.toLocalDateTime();
 
-        // construim lista de receiveri
         List<Long> receivers = new ArrayList<>();
         receivers.add(receiverId);
 
@@ -134,7 +131,7 @@ public class RepoMessageDB {
             return new ReplyMessage(
                     id,
                     senderId,
-                    receivers, // lista
+                    receivers,
                     content,
                     ldt,
                     replyTo
@@ -143,7 +140,7 @@ public class RepoMessageDB {
             return new Message(
                     id,
                     senderId,
-                    receivers, // lista
+                    receivers,
                     content,
                     ldt,
                     null

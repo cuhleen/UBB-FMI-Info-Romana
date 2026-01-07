@@ -5,9 +5,11 @@ import core.model.User;
 import core.model.UserAuthData;
 import core.repository.RepoUsersDB;
 import core.service.*;
+import core.model.FriendRequest;
 
 import java.time.Instant;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class AppService {
 
@@ -17,6 +19,8 @@ public class AppService {
     private final FriendshipService friendshipService;
     private final RaceEventService raceEventService;
     private final RepoUsersDB repoUsers;
+    private final FriendRequestService friendRequestService;
+    private final NotificationService notificationService;
 
     // Cache local
     private final Map<Long, User> usersById = new HashMap<>();
@@ -33,7 +37,8 @@ public class AppService {
             CardService cardService,
             FriendshipService friendshipService,
             RaceEventService raceEventService,
-            RepoUsersDB repoUsers
+            RepoUsersDB repoUsers, FriendRequestService friendRequestService,
+            NotificationService notificationService
     ) {
         this.duckService = duckService;
         this.personService = personService;
@@ -41,6 +46,8 @@ public class AppService {
         this.friendshipService = friendshipService;
         this.raceEventService = raceEventService;
         this.repoUsers = repoUsers;
+        this.friendRequestService = friendRequestService;
+        this.notificationService = notificationService;
 
         loadInitialData();
     }
@@ -154,6 +161,49 @@ public class AppService {
         }
     }
 
+    public List<String> getFriendUsernames(long userId) {
+        List<Long> friendIds = friendshipService.getFriendsOf(userId);
+
+        List<String> usernames = new ArrayList<>();
+        for (Long id : friendIds) {
+            findUser(id).ifPresent(u -> usernames.add(u.getUsername()));
+        }
+
+        return usernames;
+    }
+
+    // ------------------------------------------------------------
+    // FRIEND REQUEST OPERATIONS
+    // ------------------------------------------------------------
+
+    public List<String> getUsernamesNotFriends(long userId) {
+
+        // toți userii
+        List<RepoUsersDB.UserBasic> allUsers =
+                repoUsers.findAllUsersBasic();
+
+        // prieteni ACCEPTED (doar id-uri)
+//        Set<Long> friendIds = friendshipService.getFriendsOf(userId)
+//                .stream()
+//                .collect(Collectors.toSet());
+        Set<Long> friendIds =
+                new HashSet<>(friendshipService.getFriendsOf(userId));
+
+        // cereri existente (trimise sau primite)
+        Set<Long> blockedIds = new HashSet<>();
+        for (FriendRequest fr : friendRequestService.getAllRequestsOf(userId)) {
+            blockedIds.add(fr.getFromUserId());
+            blockedIds.add(fr.getToUserId());
+        }
+
+        return allUsers.stream()
+                .filter(u -> u.id() != userId)
+                .filter(u -> !friendIds.contains(u.id()))
+                .filter(u -> !blockedIds.contains(u.id()))
+                .map(RepoUsersDB.UserBasic::username)
+                .toList();
+    }
+
     // ------------------------------------------------------------
     // CARD OPERATIONS
     // ------------------------------------------------------------
@@ -179,14 +229,14 @@ public class AppService {
         return e;
     }
 
-    public void subscribeUserToEvent(long eventId, long userId) {
-        raceEventService.subscribe(eventId, userId);
-        log("User " + userId + " subscribed to event " + eventId);
+    public void subscribeUserToEvent(long eventId, User user) {
+        raceEventService.subscribe(eventId, user);
+        log("User " + user.getUsername() + " subscribed to event " + eventId);
     }
 
-    public void unsubscribeUserFromEvent(long eventId, long userId) {
-        raceEventService.unsubscribe(eventId, userId);
-        log("User " + userId + " unsubscribed from event " + eventId);
+    public void unsubscribeUserFromEvent(long eventId, User user) {
+        raceEventService.unsubscribe(eventId, user);
+        log("User " + user.getUsername() + " unsubscribed from event " + eventId);
     }
 
     public List<Event> getAllEvents() {
@@ -368,4 +418,8 @@ public class AppService {
     public RaceEventService getRaceEventService() {
         return raceEventService;
     }
+
+    public FriendRequestService getFriendRequestService() {return  friendRequestService;}
+
+    public NotificationService getNotificationService() {return notificationService;}
 }

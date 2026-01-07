@@ -1,69 +1,79 @@
 package core.service;
 
-import core.model.Event;
-import core.model.RaceEvent;
-import core.repository.RepoEventDB;
+import core.model.*;
 import core.repository.RepoDuckDB;
-import core.model.Duck;
-import core.model.User;
+import core.repository.RepoEventDB;
 
+import java.time.Instant;
 import java.util.*;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class RaceEventService {
 
     private final RepoEventDB repoEvent;
     private final RepoDuckDB repoDuck;
-    private final core.service.PersonService personService;
+    private final PersonService personService;
+    private final MessageService messageService;
+    private final NotificationService notificationService;
+
     // cache in-memory
     private final Map<Long, RaceEvent> events = new HashMap<>();
 
-    public RaceEventService(RepoEventDB repoEvent, RepoDuckDB repoDuck, core.service.PersonService personService) {
+    // Executor pentru curse asincrone
+    private final ExecutorService executor = Executors.newFixedThreadPool(2);
+
+    public RaceEventService(RepoEventDB repoEvent,
+                            RepoDuckDB repoDuck,
+                            PersonService personService,
+                            MessageService messageService,
+                            NotificationService notificationService) {
         this.repoEvent = repoEvent;
         this.repoDuck = repoDuck;
         this.personService = personService;
+        this.messageService = messageService;
+        this.notificationService = notificationService;
 
         loadEvents();
     }
 
-    // ------------------------------------------------------
-    // INITIAL LOAD
-    // ------------------------------------------------------
+    // ------------------------------------------
+    // LOAD FROM DB
+    // ------------------------------------------
     private void loadEvents() {
         List<RaceEvent> list = repoEvent.findAllRaceEvents();
         for (RaceEvent e : list) {
             events.put(e.getId(), e);
 
-            // restore subscribers
-            List<Long> subs = repoEvent.findSubscribersForEvent(e.getId());
-            subs.forEach(subId -> {
-                // în mod normal trebuie repoUser, dar nu există,
-                // așa că va fi recuperat mai târziu de AppService
-                // care conectează userii între ei
-            });
+            // clear subscribers first
+            e.clearSubscribers();
+
+            List<Long> subIds = repoEvent.findSubscribersForEvent(e.getId());
+            for (Long subId : subIds) {
+                personService.getPerson(subId).ifPresent(e::subscribe);
+            }
 
             // restore participants
             List<Duck> parts = repoEvent.findParticipantsForEvent(e.getId());
-            for (Duck duck : parts) {
-                e.addParticipant(duck);
+            for (Duck d : parts) {
+                e.addParticipant(d);
             }
         }
     }
 
-    // ------------------------------------------------------
-    // CRUD
-    // ------------------------------------------------------
 
+    // ------------------------------------------
+    // CRUD
+    // ------------------------------------------
     public RaceEvent createRaceEvent(String title, String desc, long creatorId, List<Double> balize) {
         long id = repoEvent.generateId();
-
         User creator = personService.getPerson(creatorId)
                 .orElseThrow(() -> new RuntimeException("Creator not found"));
 
         RaceEvent event = new RaceEvent(id, title, desc, creator, balize);
-
         repoEvent.saveRaceEvent(event);
         events.put(id, event);
-
         return event;
     }
 
@@ -84,38 +94,44 @@ public class RaceEventService {
         events.remove(id);
     }
 
-    // ------------------------------------------------------
-    // SUBSCRIBE
-    // ------------------------------------------------------
-
-    public void subscribe(long eventId, long userId) {
+    // ------------------------------------------
+    // SUBSCRIBE / UNSUBSCRIBE
+    // ------------------------------------------
+    public void subscribe(long eventId, User user) {
         RaceEvent e = events.get(eventId);
         if (e == null) return;
 
-        repoEvent.addSubscriber(eventId, userId);
-        // user-ul efectiv va fi injectat de AppService după ce este cunoscut
-    }
-
-    public void unsubscribe(long eventId, long userId) {
-        RaceEvent e = events.get(eventId);
-        if (e == null) return;
-
-        repoEvent.removeSubscriber(eventId, userId);
-    }
-
-    /**
-     * Folosit de AppService când se șterge un user.
-     */
-    public void removeUserFromAllEvents(long userId) {
-        for (RaceEvent e : events.values()) {
-            repoEvent.removeSubscriber(e.getId(), userId);
+        if (!e.getSubscribers().contains(user)) {
+            e.subscribe(user);
+            repoEvent.addSubscriber(eventId, user.getId());
+        } else {
+            System.out.println("User " + user.getUsername() + " already subscribed!");
         }
     }
 
-    // ------------------------------------------------------
-    // PARTICIPANTS
-    // ------------------------------------------------------
+    public void unsubscribe(long eventId, User user) {
+        RaceEvent e = events.get(eventId);
+        if (e == null) return;
 
+        e.unsubscribe(user);
+        repoEvent.removeSubscriber(eventId, user.getId());
+    }
+
+    /**
+     * Folosit când un user este șters
+     */
+    public void removeUserFromAllEvents(long userId) {
+        for (RaceEvent e : events.values()) {
+            e.getSubscribers().stream()
+                    .filter(u -> u.getId() == userId)
+                    .findFirst()
+                    .ifPresent(u -> unsubscribe(e.getId(), u));
+        }
+    }
+
+    // ------------------------------------------
+    // PARTICIPANTS
+    // ------------------------------------------
     public void addParticipant(long eventId, long duckId) {
         RaceEvent e = events.get(eventId);
         if (e == null) return;
@@ -136,14 +152,56 @@ public class RaceEventService {
         e.getParticipants().removeIf(d -> d.getId() == duckId);
     }
 
-    // ------------------------------------------------------
-    // RUN RACE (delegat din RaceTask)
-    // ------------------------------------------------------
-
-    public RaceEvent.RaceResult simulate(long eventId) {
+    // ------------------------------------------
+    // START RACE ASINCRON
+    // ------------------------------------------
+    public CompletableFuture<RaceEvent.RaceResult> startRaceAsync(long eventId) {
         RaceEvent e = events.get(eventId);
         if (e == null) throw new RuntimeException("Eventul nu există");
 
+        return CompletableFuture.supplyAsync(() -> runRaceAndNotify(e), executor);
+    }
+
+    private RaceEvent.RaceResult runRaceAndNotify(RaceEvent e) {
+        System.out.println("=== Running race for event: " + e.getTitle() + " ===");
+        System.out.println("Subscribers BEFORE notification:");
+        for (User u : e.getSubscribers()) {
+            System.out.println(" - " + u.getUsername() + " (id=" + u.getId() + ")");
+        }
+
+        RaceEvent.RaceResult result = e.simulateRace();
+
+        for (User u : new ArrayList<>(e.getSubscribers())) {
+            System.out.println("Notifying user: " + u.getUsername() + " (id=" + u.getId() + ")");
+            notificationService.notifyUser(u.getId(), "[RaceEvent " + e.getTitle() + "] Rezultatul cursei:\n" +
+                    String.join("\n", result.lines));
+
+            System.out.println("Unsubscribing user: " + u.getUsername());
+            unsubscribe(e.getId(), u);
+        }
+
+        System.out.println("Subscribers AFTER notification:");
+        for (User u : e.getSubscribers()) {
+            System.out.println(" - " + u.getUsername() + " (id=" + u.getId() + ")");
+        }
+
+        return result;
+    }
+
+
+    // ------------------------------------------
+    // SIMULARE SINCRONĂ
+    // ------------------------------------------
+    public RaceEvent.RaceResult simulate(long eventId) {
+        RaceEvent e = events.get(eventId);
+        if (e == null) throw new RuntimeException("Eventul nu există");
         return e.simulateRace();
+    }
+
+    // ------------------------------------------
+    // CLEANUP
+    // ------------------------------------------
+    public void shutdown() {
+        executor.shutdown();
     }
 }

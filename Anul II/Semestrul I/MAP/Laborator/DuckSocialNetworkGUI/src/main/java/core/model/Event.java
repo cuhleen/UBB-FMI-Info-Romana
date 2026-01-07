@@ -74,4 +74,8 @@ public abstract class Event {
     public String toString() {
         return String.format("Event{id=%d, title='%s', creator=%s}", id, title, creator.getUsername());
     }
+
+    public void clearSubscribers() {
+        subscribers.clear();
+    }
 }

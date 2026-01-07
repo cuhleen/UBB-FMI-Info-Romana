@@ -9,7 +9,7 @@ public class Message {
 
     private final long id;
     private final long senderId;
-    private final List<Long> receiverIds;  // <--- lista cerută
+    private final List<Long> receiverIds;
     private final String content;
     private final LocalDateTime timestamp;
     private final Long replyToId;
@@ -23,7 +23,6 @@ public class Message {
         this.timestamp = timestamp;
         this.replyToId = replyToId;
     }
-
 
     public Message(long id, long senderId, long receiverId, String content,
                    LocalDateTime timestamp, Long replyToId) {
